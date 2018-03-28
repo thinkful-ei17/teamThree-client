@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
+import Chart from './chart';
 
 export class Dashboard extends React.Component {
     render() {
@@ -10,6 +11,7 @@ export class Dashboard extends React.Component {
                     Username: {this.props.username}
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
+                <Chart />
             </div>
         );
     }
