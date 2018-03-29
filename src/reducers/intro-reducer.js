@@ -1,5 +1,6 @@
 import {
   SHOW_INTRO_CARD,
+  NEXT_INTRO_CARD,
   HIDE_INTRO_CARD,
 } from "../actions/intro-page";
 
@@ -10,11 +11,17 @@ const initialState = {
     {number: 2, title: 'Bonds', details: 'Bonds Lorem Ipsum Concise'},
     {number: 3, title: 'Managed Fund', details: 'Managed Fund Lorem Ipsum Concise'}],
   numCard: 0,
-  introComplete: false
+  introComplete: true
 };
 
 export function introReducer(state = initialState, action) {
   if (action.type === SHOW_INTRO_CARD) {
+    return Object.assign({}, state, {
+      introCard: action.introCard,
+      numCard: action.numCard,
+  });
+  }
+  else if (action.type === NEXT_INTRO_CARD) {
     return Object.assign({}, state, {
       introCard: action.introCard,
       numCard: action.numCard + 1,

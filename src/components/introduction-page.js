@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import requiresLogin from './requires-login';
+//import requiresLogin from './requires-login';
 import { Redirect } from 'react-router-dom';
-import { showIntroCard , hideIntroCard } from '../actions/intro-page';
+import { showIntroCard , nextIntroCard, hideIntroCard } from '../actions/intro-page';
 import Button from './button';
 
 export class IntroductionPage extends React.Component {
@@ -12,8 +12,10 @@ export class IntroductionPage extends React.Component {
       //risk breakdown => direct to risk breakdown
       return <Redirect to="/dashboard"/>;
     }
+    else{
     this.props.dispatch(showIntroCard(this.props.numCard, this.props.introCard));
     console.log('component did mount intro page');
+    }
   }
 
   nextCardClick = () => {
@@ -23,8 +25,10 @@ export class IntroductionPage extends React.Component {
       this.props.dispatch(hideIntroCard());
       return <Redirect to="/dashboard"/>;
     }
-    this.props.dispatch(showIntroCard(this.props.numCard, this.props.introCard));
+    else{
+    this.props.dispatch(nextIntroCard(this.props.numCard, this.props.introCard));
     console.log('The button was clicked in intro page');
+    }
   }
 
   render() {
@@ -47,6 +51,8 @@ export class IntroductionPage extends React.Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state.introReducer.introCard);
+  console.log(state.introReducer.numCard);
   return{
     introCard: state.introReducer.introCard,
     numCard: state.introReducer.numCard,
@@ -54,4 +60,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default requiresLogin()(connect(mapStateToProps)(IntroductionPage));
+export default /*requiresLogin()*/(connect(mapStateToProps)(IntroductionPage));
