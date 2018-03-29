@@ -22,10 +22,10 @@ export class IntroductionPage extends React.Component {
         <div className="row">
             <section className="introduction">
               <header>
-                <h1 className="title">{/*this.props.introCard[this.props.]*/}</h1>
+                <h1 className="title">{this.props.introCard[this.props.numCard].title}</h1>
               </header>
               <main>
-                <div className="introduction-details">{/*this.props.introCard*/}</div>
+                <div className="introduction-details">{this.props.introCard[this.props.numCard].details}</div>
                 <Button name='Got It!' handleClick={this.nextCardClick}/>
               </main>
           </section>
