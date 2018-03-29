@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
 import Input from './input';
+import { hideLoginForm } from '../actions/users';
 import { login } from '../actions/auth';
 import { required, nonEmpty } from '../validators';
 
@@ -44,6 +45,7 @@ export class LoginForm extends React.Component {
                 <button disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button>
+                <span className="close js-close" onClick={() => this.props.dispatch(hideLoginForm()) }> &times; </span>
             </form>
         );
     }
