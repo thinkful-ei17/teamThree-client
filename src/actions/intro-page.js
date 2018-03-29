@@ -1,13 +1,6 @@
-export const SHOW_INTRO_START = 'SHOW_INTRO_START';
-export const showIntroStart = (numCard, introCard) => ({
+export const SHOW_INTRO_CARD = 'SHOW_INTRO_CARD';
+export const showIntroCard = (numCard, introCard) => ({
     introCard,
     numCard,
-    type: SHOW_INTRO_START
-});
-
-export const SHOW_NEXT_INTRO = 'SHOW_NEXT_INTRO ';
-export const showNextIntro= (numCard, introCard) => ({
-    introCard,
-    numCard,
-    type: SHOW_NEXT_INTRO
+    type: SHOW_INTRO_CARD
 });

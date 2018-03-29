@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 //import requiresLogin from './requires-login';
 import { Redirect } from 'react-router-dom';
-import { showIntroStart, showNextIntro } from '../actions/intro-page';
+import { showIntroCard } from '../actions/intro-page';
 import Button from './button';
 
 export class IntroductionPage extends React.Component {
   componentDidMount(){
-    this.props.dispatch(showIntroStart(this.props.numCard, this.props.introCard));
+    this.props.dispatch(showIntroCard(this.props.numCard, this.props.introCard));
     console.log('component did mount intro page');
   }
 
@@ -16,7 +16,7 @@ export class IntroductionPage extends React.Component {
       console.log('Last intro card - redirect to dashboard');
       return <Redirect to="/dashboard"/>;
     }
-    this.props.dispatch(showNextIntro(this.props.numCard, this.props.introCard));
+    this.props.dispatch(showIntroCard(this.props.numCard, this.props.introCard));
     console.log('The button was clicked in intro page');
   }
 //risk breakdown => direct to risk breakdown

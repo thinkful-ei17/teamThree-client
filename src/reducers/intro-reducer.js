@@ -1,6 +1,5 @@
 import {
-  SHOW_INTRO_START,
-  SHOW_NEXT_INTRO,
+  SHOW_INTRO_CARD,
 } from "../actions/intro-page";
 
 const initialState = {
@@ -13,15 +12,11 @@ const initialState = {
 };
 
 export function introReducer(state = initialState, action) {
-  if (action.type === SHOW_INTRO_START) {
-    return Object.assign({}, state, {
-      introCard: action.introCard
-  });
-  } else if (action.type === SHOW_NEXT_INTRO) {
+  if (action.type === SHOW_INTRO_CARD) {
     return Object.assign({}, state, {
       introCard: action.introCard,
       numCard: action.numCard + 1
-    });
+  });
   } else {
     return state;
   }
