@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import Chart from './chart';
 import Button from './button';
+import YearSummaryList from './year-summary-list';
 import {hideLoginForm} from '../actions/users';
 import {hideRegistrationForm} from '../actions/users';
 
@@ -11,6 +12,7 @@ export class Dashboard extends React.Component {
         this.props.dispatch(hideLoginForm());
         this.props.dispatch(hideRegistrationForm());
     }
+  
     handleClick = () => {
         console.log('The button was clicked');
     }
@@ -22,8 +24,7 @@ export class Dashboard extends React.Component {
                     Username: {this.props.username}
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
-                <Chart />
-                <Button name='Test' handleClick={this.handleClick}/>
+                {/* <YearSummaryList/> */}
             </div>
         );
     }
