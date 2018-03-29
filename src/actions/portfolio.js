@@ -17,7 +17,6 @@ export const fetchPortfolioError = error => ({
   error
 });
 
-
 export const fetchPortfolio = () => (dispatch, getState) => {
     dispatch(fetchPortfolioRequest());
     const authToken = getState().auth.authToken;
