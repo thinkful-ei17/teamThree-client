@@ -10,7 +10,7 @@ export class Dashboard extends React.Component {
     componentDidMount() {
         this.props.dispatch(hideLoginForm());
         this.props.dispatch(hideRegistrationForm());
-
+    }
     handleClick = () => {
         console.log('The button was clicked');
     }
