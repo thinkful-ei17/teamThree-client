@@ -4,3 +4,10 @@ export const showIntroCard = (numCard, introCard) => ({
     numCard,
     type: SHOW_INTRO_CARD
 });
+
+export const HIDE_INTRO_CARD = 'HIDE_INTRO_CARD';
+export const hideIntroCard = () => ({
+    introComplete,
+    type: HIDE_INTRO_CARD
+});
+

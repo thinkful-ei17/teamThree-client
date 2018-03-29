@@ -2,11 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import { Redirect } from 'react-router-dom';
-import { showIntroCard } from '../actions/intro-page';
+import { showIntroCard , hideIntroCard } from '../actions/intro-page';
 import Button from './button';
 
 export class IntroductionPage extends React.Component {
   componentDidMount(){
+    if(this.props.introComplete === true){
+      console.log('already viewed intro - redirect to dashboard');
+      //risk breakdown => direct to risk breakdown
+      return <Redirect to="/dashboard"/>;
+    }
     this.props.dispatch(showIntroCard(this.props.numCard, this.props.introCard));
     console.log('component did mount intro page');
   }
@@ -15,6 +20,7 @@ export class IntroductionPage extends React.Component {
     if(this.props.numCard === 3){
       console.log('Last intro card - redirect to dashboard');
       //risk breakdown => direct to risk breakdown
+      this.props.dispatch(hideIntroCard());
       return <Redirect to="/dashboard"/>;
     }
     this.props.dispatch(showIntroCard(this.props.numCard, this.props.introCard));
@@ -44,6 +50,7 @@ const mapStateToProps = state => {
   return{
     introCard: state.introReducer.introCard,
     numCard: state.introReducer.numCard,
+    introComplete: state.introReducer.introComplete
   };
 };
 
