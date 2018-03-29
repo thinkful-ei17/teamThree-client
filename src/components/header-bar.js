@@ -64,7 +64,7 @@ export class HeaderBar extends React.Component {
         //     );
 
         //     investmentData = (
-        //         <button className="investment" onClick={() => <Route exact path="/investments" component={investment} />}>investmentData</button>
+        //         <button className="investment" onClick={() => <Route exact path="/investments" component={investment} />}>Investment Information</button>
         //     );
         // }
         return (
