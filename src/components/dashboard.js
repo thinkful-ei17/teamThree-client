@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import Chart from './chart';
 import Button from './button';
+import YearSummaryList from './year-summary-list';
 
 export class Dashboard extends React.Component {
 
@@ -17,8 +18,7 @@ export class Dashboard extends React.Component {
                     Username: {this.props.username}
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
-                <Chart />
-                <Button name='Test' handleClick={this.handleClick}/>
+                <YearSummaryList/>
             </div>
         );
     }
