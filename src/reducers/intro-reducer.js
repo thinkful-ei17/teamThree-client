@@ -22,11 +22,7 @@ export function introReducer(state = initialState, action) {
       introCard: action.introCard,
       numCard: action.numCard + 1
     });
-  } /*else if (action.type === ) {
-    return Object.assign({}, state, {
-      
-    });
-  }*/ else {
+  } else {
     return state;
   }
 }
