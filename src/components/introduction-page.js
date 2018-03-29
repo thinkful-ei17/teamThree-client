@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-//import requiresLogin from './requires-login';
+import requiresLogin from './requires-login';
 import { Redirect } from 'react-router-dom';
 import { showIntroCard } from '../actions/intro-page';
 import Button from './button';
@@ -14,12 +14,13 @@ export class IntroductionPage extends React.Component {
   nextCardClick = () => {
     if(this.props.numCard === 3){
       console.log('Last intro card - redirect to dashboard');
+      //risk breakdown => direct to risk breakdown
       return <Redirect to="/dashboard"/>;
     }
     this.props.dispatch(showIntroCard(this.props.numCard, this.props.introCard));
     console.log('The button was clicked in intro page');
   }
-//risk breakdown => direct to risk breakdown
+
   render() {
     return (
       <div className="introduction">
@@ -46,4 +47,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default /*requiresLogin()*/(connect(mapStateToProps)(IntroductionPage));
+export default requiresLogin()(connect(mapStateToProps)(IntroductionPage));
