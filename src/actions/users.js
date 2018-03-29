@@ -1,7 +1,7 @@
-import {SubmissionError} from 'redux-form';
+import { SubmissionError } from 'redux-form';
 
-import {API_BASE_URL} from '../config';
-import {normalizeResponseErrors} from './utils';
+import { API_BASE_URL } from '../config';
+import { normalizeResponseErrors } from './utils';
 
 export const SHOW_LOGIN_FORM = 'SHOW_LOGIN_FORM';
 export const showLoginForm = () => ({
