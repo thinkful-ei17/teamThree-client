@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import Chart from './chart';
 import Button from './button';
-// import YearSummaryList from './year-summary-list';
+import YearSummaryList from './year-summary-list';
 
 export function Portfolio (props){
     const toInvestmentData = () => {
@@ -20,7 +20,7 @@ export function Portfolio (props){
         <h2>Current Worth: {props.currentWorth}</h2>
         <section>
             <Chart/>
-            {/* <YearSummaryList/> */}
+            <YearSummaryList/>
         </section>
         <Button name='Review Investment Data' handleClick={toInvestmentData}/>
         <Button name='Back to Investing!' handleClick={toInvestmentForm}/> 
