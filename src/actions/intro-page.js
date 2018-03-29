@@ -7,7 +7,6 @@ export const showIntroCard = (numCard, introCard) => ({
 
 export const HIDE_INTRO_CARD = 'HIDE_INTRO_CARD';
 export const hideIntroCard = () => ({
-    introComplete,
     type: HIDE_INTRO_CARD
 });
 
