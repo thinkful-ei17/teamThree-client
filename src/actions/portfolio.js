@@ -20,8 +20,8 @@ export const fetchPortfolioError = error => ({
 export const fetchPortfolio = () => (dispatch, getState) => {
     dispatch(fetchPortfolioRequest());
     const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/`, 
-        {
+    return fetch(`${API_BASE_URL}/users/self`, 
+    {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${authToken}`
@@ -33,8 +33,8 @@ export const fetchPortfolio = () => (dispatch, getState) => {
             }
             return res.json()
         })
-        .then(portfolio => {
-            dispatch(fetchPortfolioSuccess(portfolio))
+        .then(user => {
+            dispatch(fetchPortfolioSuccess(user))
         })
         .catch(err => 
             dispatch(fetchPortfolioError(err))

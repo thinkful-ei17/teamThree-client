@@ -4,6 +4,7 @@ import requiresLogin from './requires-login';
 import Chart from './chart';
 import Button from './button';
 import Portfolio from './portfolio';
+import InvestmentReturn from './investment-return';
 // import { hideLoginForm } from '../actions/users';
 // import { hideRegistrationForm } from '../actions/users';
 
@@ -19,6 +20,7 @@ export class Dashboard extends React.Component {
                     Username: {this.props.username}
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
+                <InvestmentReturn />
             </div>
         );
     }

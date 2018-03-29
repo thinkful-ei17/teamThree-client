@@ -17,7 +17,7 @@ export function portfolioReducer(state = initialState, action) {
       });
     } else if (action.type === FETCH_PORTFOLIO_SUCCESS) {
       return Object.assign({}, state, {
-        portfolio: action.portfolio,
+        portfolio: action.portfolio.risk,
         loading: false,
         error: null
       });
