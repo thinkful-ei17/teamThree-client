@@ -2,8 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import Chart from './chart';
+import Button from './button';
 
 export class Dashboard extends React.Component {
+
+    handleClick = () => {
+        console.log('The button was clicked');
+    }
+
     render() {
         return (
             <div className="dashboard">
@@ -12,6 +18,7 @@ export class Dashboard extends React.Component {
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
                 <Chart />
+                <Button name='Test' handleClick={this.handleClick}/>
             </div>
         );
     }
