@@ -15,9 +15,9 @@ export default class IntroductionPage extends React.Component {
   handleClick = () => {
     this.setState(prevState => {
       console.log('what is cardNum', this.state.cardNum);
-      if (this.state.cardNum > 3) {
+      if (this.state.cardNum === 3) {
         console.log('did this work????');
-        return <Redirect to="/" />;
+        return <Redirect to="/dashboard" />;
       }
       else {
         return {cardNum: prevState.cardNum + 1}
@@ -27,7 +27,7 @@ export default class IntroductionPage extends React.Component {
 
 
   }
-
+//risk breakdown => direct to risk breakdown
   render() {
     return (
       <div className="introduction">
@@ -46,5 +46,3 @@ export default class IntroductionPage extends React.Component {
     );
   }
 }
-
-//how to get last button to redirect to next page?
