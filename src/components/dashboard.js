@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import Chart from './chart';
-import Button from './button';
+import RiskBreakdown from './risk-breakdown';
 import {hideLoginForm} from '../actions/users';
 import {hideRegistrationForm} from '../actions/users';
 
@@ -23,7 +23,7 @@ export class Dashboard extends React.Component {
                     Username: {this.props.username}
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
-
+                <RiskBreakdown />
             </div>
         );
     }
