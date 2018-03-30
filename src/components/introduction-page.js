@@ -18,7 +18,7 @@ export class IntroductionPage extends React.Component {
   }
 
   render() {
-    if(this.props.numCard === 3 || this.props.introComplete) {
+    if(this.props.numCard > 3 || this.props.introComplete) {
       //should redirect to risk dashboard - Sam/Scott to add
       return (<Redirect to="/dashboard"/>);
     }
