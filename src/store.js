@@ -1,18 +1,24 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import thunk from 'redux-thunk';
+
 import { loadAuthToken } from './local-storage';
+import { setAuthToken, refreshAuthToken } from './actions/auth';
+
 import authReducer from './reducers/auth';
 import userReducer from './reducers/users-reducer';
 import introReducer from './reducers/intro-reducer';
-import { setAuthToken, refreshAuthToken } from './actions/auth';
+import portfolioReducer from './reducers/portfolio';
+
+
 
 const store = createStore(
     combineReducers({
         form: formReducer,
         auth: authReducer,
         userReducer: userReducer,
-        introReducer: introReducer
+        introReducer: introReducer,
+        portfolio: portfolioReducer
     }),
     applyMiddleware(thunk)
 );
