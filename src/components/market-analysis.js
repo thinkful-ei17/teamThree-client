@@ -25,9 +25,9 @@ export function MarketAnalysis(props){
       <div>  
         <h1>Market Analysis: Year {props.year}</h1>
         <section className='market-analysis-risks'>
-        <p>Aggressive: {aggressive}% change</p>
-        <p>Moderate: {moderate}% change</p>
-        <p>Conservative: {conservative}% change</p>
+        <p>Aggressive: {props.aggressive}% change</p>
+        <p>Moderate: {props.moderate}% change</p>
+        <p>Conservative: {props.conservative}% change</p>
         <p>Mattress: 0.0% change</p>
         </section>
         <Button name={name} handleClick={handleClick}/>
