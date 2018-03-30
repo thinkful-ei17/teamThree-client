@@ -19,7 +19,7 @@ export class Dashboard extends React.Component {
                     Username: {this.props.username}
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
-                <MarketOutcomeDetail year={this.props.year}/>
+                {/* <MarketOutcomeDetail year={this.props.year}/> */}
             </div>
         );
     }
@@ -32,12 +32,12 @@ const mapStateToProps = state => {
         name: `${currentUser.firstName} ${currentUser.lastName}`,
         year: {
             year: 1,
-            riskTypes:[
-                {mattress: {start:'5000', end:'5000', change: '0'}},
-                {moderate: {start:'5000', end:'5200', change: '1.2'}},
-                {conservative: {start:'5000', end:'5200', change: '1.2'}},
-                {aggressive: {start:'5000', end:'5200', change: '1.2'}}
-             ]
+            riskTypes:{
+                mattress: {start:'5000', end:'5000', change: '0'},
+                moderate: {start:'5000', end:'5200', change: '1.2'},
+                conservative: {start:'5000', end:'5200', change: '1.2'},
+                aggressive: {start:'5000', end:'5200', change: '1.2'}         
+            }
         }
     };
 };
