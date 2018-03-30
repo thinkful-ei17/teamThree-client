@@ -1,5 +1,11 @@
 import { API_BASE_URL } from '../config';
 
+export const CHOOSE_RISK_TOLERANCE = 'CHOOSE_RISK_TOLERANCE';
+export const chooseRiskTolerance = riskChoice => ({
+  type: CHOOSE_RISK_TOLERANCE,
+  riskChoice
+});
+
 export const FETCH_PORTFOLIO_REQUEST = 'FETCH_PORTFOLIO_REQUEST';
 export const fetchPortfolioRequest = () => ({
   type: FETCH_PORTFOLIO_REQUEST
@@ -20,8 +26,8 @@ export const fetchPortfolioError = error => ({
 export const fetchPortfolio = () => (dispatch, getState) => {
     dispatch(fetchPortfolioRequest());
     const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/`, 
-        {
+    return fetch(`${API_BASE_URL}/users/self`, 
+    {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${authToken}`
@@ -33,8 +39,8 @@ export const fetchPortfolio = () => (dispatch, getState) => {
             }
             return res.json()
         })
-        .then(portfolio => {
-            dispatch(fetchPortfolioSuccess(portfolio))
+        .then(user => {
+            dispatch(fetchPortfolioSuccess(user))
         })
         .catch(err => 
             dispatch(fetchPortfolioError(err))
