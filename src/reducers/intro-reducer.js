@@ -11,7 +11,7 @@ const initialState = {
     {number: 2, title: 'Bonds', details: 'Bonds Lorem Ipsum Concise'},
     {number: 3, title: 'Managed Fund', details: 'Managed Fund Lorem Ipsum Concise'}],
   numCard: 0,
-  introComplete: true
+  introComplete: false
 };
 
 export function introReducer(state = initialState, action) {
