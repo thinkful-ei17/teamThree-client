@@ -17,8 +17,3 @@ export default function RiskDetail(props){
     );
 };
 
-//keeping these here for putting into the RiskBreakdown later//
-/* <RiskDetail riskType='Conservative' stocks='20' bonds='80'/>
-<RiskDetail riskType='Moderate' stocks='50' bonds='50'/>
-<RiskDetail riskType='Aggressive' stocks='80' bonds='20'/> */
-
