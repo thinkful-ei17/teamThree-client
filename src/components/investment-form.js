@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import Button from './button';
+import { chooseRiskTolerance } from '../actions/portfolio';
 
 export class InvestmentForm extends React.Component {
     // componentDidMount() {
@@ -13,7 +14,7 @@ export class InvestmentForm extends React.Component {
     }
 
     onChange = event => {
-        console.log(event.target.value);
+        this.props.dispatch(chooseRiskTolerance(event.target.value));
     }
 
     render() {
@@ -39,7 +40,7 @@ export class InvestmentForm extends React.Component {
 const mapStateToProps = state => {
     return {
         year: 1,
-        riskChoice: state.riskChoice
+        riskChoice: state.portfolio.riskChoice
     };
 };
 

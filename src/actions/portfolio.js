@@ -1,5 +1,11 @@
 import { API_BASE_URL } from '../config';
 
+export const CHOOSE_RISK_TOLERANCE = 'CHOOSE_RISK_TOLERANCE';
+export const chooseRiskTolerance = riskChoice => ({
+  type: CHOOSE_RISK_TOLERANCE,
+  riskChoice
+});
+
 export const FETCH_PORTFOLIO_REQUEST = 'FETCH_PORTFOLIO_REQUEST';
 export const fetchPortfolioRequest = () => ({
   type: FETCH_PORTFOLIO_REQUEST
