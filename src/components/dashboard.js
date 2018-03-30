@@ -3,18 +3,16 @@ import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import Chart from './chart';
 import Button from './button';
+
 import {hideLoginForm} from '../actions/users';
 import {hideRegistrationForm} from '../actions/users';
+
 
 export class Dashboard extends React.Component {
     // componentDidMount() {
     //     this.props.dispatch(hideLoginForm());
     //     this.props.dispatch(hideRegistrationForm());
     // }
-  
-    handleClick = () => {
-        console.log('The button was clicked');
-    }
 
     render() {
         return (
@@ -23,7 +21,6 @@ export class Dashboard extends React.Component {
                     Username: {this.props.username}
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
-
             </div>
         );
     }
