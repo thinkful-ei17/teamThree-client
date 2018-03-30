@@ -1,4 +1,4 @@
-import React from React;
+import React from 'react';
 
 export default function RiskOutcomeDetail(props){
 
@@ -11,3 +11,6 @@ export default function RiskOutcomeDetail(props){
         </dl>
     );
 }
+
+//Props should pass in from parent:
+//<RiskOutcomeDetail riskType='Mattress' start='5500' end='5500' change='0'/>
