@@ -2,16 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import Chart from './chart';
-import Button from './button';
-import Portfolio from './portfolio';
-// import { hideLoginForm } from '../actions/users';
-// import { hideRegistrationForm } from '../actions/users';
+
+import {hideLoginForm} from '../actions/users';
+import {hideRegistrationForm} from '../actions/users';
 
 export class Dashboard extends React.Component {
     // componentDidMount() {
     //     this.props.dispatch(hideLoginForm());
     //     this.props.dispatch(hideRegistrationForm());
     // }
+
     render() {
         return (
             <div className="dashboard">
@@ -19,6 +19,7 @@ export class Dashboard extends React.Component {
                     Username: {this.props.username}
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
+
             </div>
         );
     }
