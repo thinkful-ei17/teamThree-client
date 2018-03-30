@@ -6,8 +6,6 @@ import Chart from './chart';
 import {hideLoginForm} from '../actions/users';
 import {hideRegistrationForm} from '../actions/users';
 
-
-
 export class Dashboard extends React.Component {
     // componentDidMount() {
     //     this.props.dispatch(hideLoginForm());
