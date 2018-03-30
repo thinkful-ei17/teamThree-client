@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import Button from './button';
-import { chooseRiskTolerance } from '../actions/portfolio';
+import { chooseRiskTolerance, investFunds } from '../actions/portfolio';
 
 export class InvestmentForm extends React.Component {
     // componentDidMount() {
@@ -10,7 +10,7 @@ export class InvestmentForm extends React.Component {
     // }
 
     invest = () => {
-        console.log(this.props.riskChoice);
+        this.props.dispatch(investFunds(this.props.riskChoice, this.props.year + 1, this.props.currentFund));
     }
 
     onChange = event => {
@@ -21,7 +21,8 @@ export class InvestmentForm extends React.Component {
 
         return (
             <div className="investment-return-container">
-                Year {this.props.year}
+                <h2>Year {this.props.year}</h2>
+                <h3>Current Fund: $5000</h3>
                 <input type='radio' name='strategy' id='rb1' value='high' onChange={this.onChange.bind(this)} />
                 <label htmlFor='rb1'>Aggressive</label>
                 <input type='radio' name='strategy' id='rb2' value='moderate' onChange={this.onChange.bind(this)} />
@@ -39,7 +40,8 @@ export class InvestmentForm extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        year: 1,
+        year: 0,
+        currentFund: 5000,
         riskChoice: state.portfolio.riskChoice
     };
 };
