@@ -1,48 +1,53 @@
 import React from 'react';
+
+import { connect } from 'react-redux';
+import requiresLogin from './requires-login';
 import { Redirect } from 'react-router-dom';
+import { showIntroCard , nextIntroCard, hideIntroCard } from '../actions/intro-page';
 import Button from './button';
 
-export default class IntroductionPage extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {cardNum: 0, introCard: [
-    {number: 0, title: 'So You Want to Be An Investor...', details: 'There are a couple of things you should know about to get started.'},
-    {number: 1, title: 'Stocks', details: 'Stocks Lorem Ipsum Concise'},
-    {number: 2, title: 'Bonds', details: 'Bonds Lorem Ipsum Concise'},
-    {number: 3, title: 'Managed Fund', details: 'Managed Fund Lorem Ipsum Concise'}]}
+export class IntroductionPage extends React.Component {
+  componentDidMount(){
+    this.props.dispatch(showIntroCard(this.props.numCard, this.props.introCard));
+    console.log('component did mount intro page');
   }
 
-  handleClick = () => {
-    this.setState(prevState => {
-      console.log('what is cardNum', this.state.cardNum);
-      if (this.state.cardNum === 3) {
-        console.log('did this work????');
-        return <Redirect to="/dashboard" />;
-      }
-      else {
-        return {cardNum: prevState.cardNum + 1}
-      }
-    })
-    console.log('The button was clicked');
-
-
+  nextCardClick = () => {
+    this.props.dispatch(nextIntroCard(this.props.numCard, this.props.introCard));
+    console.log('The button was clicked in intro page');
   }
-//risk breakdown => direct to risk breakdown
+
   render() {
-    return (
-      <div className="introduction">
-        <div className="row">
-            <section className="introduction">
-              <header>
-                <h1 className="title">{this.state.introCard[this.state.cardNum].title}</h1>
-              </header>
-              <main>
-                <div className="introduction-details">{this.state.introCard[this.state.cardNum].details}</div>
-                <Button name='Got It!' handleClick={this.handleClick}/>
-              </main>
-          </section>
+    if(this.props.numCard === 3 || this.props.introComplete) {
+      //should redirect to risk dashboard - Sam/Scott to add
+      return (<Redirect to="/dashboard"/>);
+    }
+    else {
+      return (
+        <div className="introduction">
+          <div className="row">
+              <section className="introduction">
+                <header>
+                  <h1 className="title">{this.props.introCard[this.props.numCard].title}</h1>
+                </header>
+                <main>
+                  <div className="introduction-details">{this.props.introCard[this.props.numCard].details}</div>
+                  <Button name='Got It!' handleClick={this.nextCardClick}/>
+                </main>
+            </section>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
+
+const mapStateToProps = state => {
+  return{
+    introCard: state.introReducer.introCard,
+    numCard: state.introReducer.numCard,
+    introComplete: state.introReducer.introComplete
+  };
+};
+
+export default requiresLogin()(connect(mapStateToProps)(IntroductionPage));
