@@ -12,9 +12,12 @@ export const fetchPortfolioRequest = () => ({
 });
 
 export const FETCH_PORTFOLIO_SUCCESS = 'FETCH_PORTFOLIO_SUCCESS';
-export const fetchPortfolioSuccess = portfolio => ({
+export const fetchPortfolioSuccess = user => ({
   type: FETCH_PORTFOLIO_SUCCESS,
-  portfolio
+  year: user.year,
+  portfolio: user.risk,
+  previousFund: user.previousFund,
+  currentFund: user.currentFund
 });
 
 export const FETCH_PORTFOLIO_ERROR = 'FETCH_PORTFOLIO_ERROR';
@@ -53,8 +56,12 @@ export const investFundsRequest = () => ({
 });
 
 export const INVEST_FUNDS_SUCCESS = 'INVEST_FUNDS_SUCCESS';
-export const investFundsSuccess = () => ({
-  type: INVEST_FUNDS_SUCCESS
+export const investFundsSuccess = user => ({
+  type: INVEST_FUNDS_SUCCESS,
+  year: user.year,
+  portfolio: user.risk,
+  previousFund: user.previousFund,
+  currentFund: user.currentFund
 });
 
 export const INVEST_FUNDS_ERROR = 'INVEST_FUNDS_ERROR';
