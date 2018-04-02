@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import requiresLogin from './requires-login';
 
 import Button from './button';
 
@@ -45,4 +46,4 @@ const mapStateToProps = (state, props) => ({
     aggressive: '3.2' //change to come from state
 });
 
-export default connect(mapStateToProps)(MarketAnalysis)
+export default requiresLogin()(connect(mapStateToProps)(MarketAnalysis));
