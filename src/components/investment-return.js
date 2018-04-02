@@ -36,7 +36,7 @@ export class InvestmentReturn extends React.Component {
             investmentLink = '/five-year-market';
             name = 'See Five Year Review';
             handleClick = this.toFiveYearReview;
-        }else{
+        } else{
             investmentLink='/investment-form';
             name = 'Keep Investing!';
             handleClick = this.keepInvesting;
