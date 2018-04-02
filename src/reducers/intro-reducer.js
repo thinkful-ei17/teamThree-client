@@ -11,7 +11,7 @@ const initialState = {
     {number: 2, title: 'Bonds', details: 'A bond represents you lending money to a company or government body for a specific amount and specific period of time, the amount will be returned to you with interest. You are a debtholder.'},
     {number: 3, title: 'Managed Fund', details: 'A managed fund is managed professionally by an expert. The professional decides the  type and mix of investments in the fund. You choose to pool your money with other investors so you get access to investing opportunities that you may not have as an individual investor and diversify your risk. You own units of a fund'}],
   numCard: 0,
-  introComplete: false
+  introComplete: true
 };
 
 export function introReducer(state = initialState, action) {
