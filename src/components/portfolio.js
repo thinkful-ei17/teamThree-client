@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import requiresLogin from './requires-login';
 
 import Chart from './chart';
 import Button from './button';
@@ -37,4 +38,4 @@ const mapStateToProps = (state, props) => ({
     currentWorth: '$5,000' //change to state.user.currentWorth when reducer is set up
 });
 
-export default connect(mapStateToProps)(Portfolio);
+export default requiresLogin()(connect(mapStateToProps)(Portfolio));
