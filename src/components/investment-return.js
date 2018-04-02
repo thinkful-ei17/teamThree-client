@@ -16,12 +16,32 @@ export class InvestmentReturn extends React.Component {
         console.log('Keep Investing');
     }
 
+    toFiveYearReview = () => {
+        console.log('to Five Year Review was clicked');
+    }
+
     returnToPortfolio = () => {
         console.log('Return to Portfolio');
     }
 
     render() {
         let investmentReturnContent = 'Loading...';
+        let investmentLink,
+            name,
+            handleClick;
+
+
+
+        if (this.props.year === 5){
+            investmentLink = '/five-year-market';
+            name = 'See Five Year Review';
+            handleClick = this.toFiveYearReview;
+        } else{
+            investmentLink='/investment-form';
+            name = 'Keep Investing!';
+            handleClick = this.keepInvesting;
+        }
+
         if (this.props.data) {
             const data = [
                 {									
@@ -36,8 +56,8 @@ export class InvestmentReturn extends React.Component {
                     <Link to='/portfolio'>
                         <Button name='Return to Portfolio' handleClick={this.returnToPortfolio} />
                     </Link>
-                    <Link to='/investment-form'>
-                        <Button name='Keep Investing' handleClick={this.keepInvesting} />
+                    <Link to={investmentLink}>
+                        <Button name={name} handleClick={handleClick} />
                     </Link>
                 </div>
             )
@@ -54,7 +74,8 @@ export class InvestmentReturn extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        data: state.portfolio.portfolio
+        data: state.portfolio.portfolio,
+        year: state.portfolio.year
     };
 };
 

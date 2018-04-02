@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import Button from './button';
 import RiskDetail from './risk-detail';
 import {connect} from 'react-redux';
+import requiresLogin from './requires-login';
 
 import {hideIntroCard} from '../actions/intro-page';
 
@@ -28,4 +29,4 @@ export function RiskBreakdown(props){
     );
 }
 
-export default connect()(RiskBreakdown);
+export default requiresLogin()(connect()(RiskBreakdown));

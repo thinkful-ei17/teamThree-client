@@ -1,5 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import requiresLogin from './requires-login';
 
 import Chart from './chart';
 import Button from './button';
@@ -22,8 +24,12 @@ export function Portfolio (props){
             {/* <Chart/> */}
             <YearSummaryList/>
         </section>
-        <Button name='Review Investment Data' handleClick={toInvestmentData}/>
-        <Button name='Back to Investing!' handleClick={toInvestmentForm}/> 
+        <Link to='/market-analysis'>
+            <Button name='Review Investment Data' handleClick={toInvestmentData}/>
+        </Link>
+        <Link to='/investment-form'>
+            <Button name='Back to Investing!' handleClick={toInvestmentForm}/> 
+        </Link>
         </div> 
     );
 }
@@ -32,4 +38,4 @@ const mapStateToProps = (state, props) => ({
     currentWorth: '$5,000' //change to state.user.currentWorth when reducer is set up
 });
 
-export default connect(mapStateToProps)(Portfolio);
+export default requiresLogin()(connect(mapStateToProps)(Portfolio));
