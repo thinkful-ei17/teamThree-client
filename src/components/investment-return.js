@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
+import {Link} from 'react-router-dom';
 import Chart from './chart';
 import Button from './button';
 import { fetchPortfolio } from '../actions/portfolio';
@@ -32,8 +33,12 @@ export class InvestmentReturn extends React.Component {
             investmentReturnContent = (
                 <div>    
                     <Chart yMin={0} xMax={5} data={data} />
-                    <Button name='Return to Portfolio' handleClick={this.returnToPortfolio} />
-                    <Button name='Keep Investing' handleClick={this.keepInvesting} />
+                    <Link to='/portfolio'>
+                        <Button name='Return to Portfolio' handleClick={this.returnToPortfolio} />
+                    </Link>
+                    <Link to='/investment-form'>
+                        <Button name='Keep Investing' handleClick={this.keepInvesting} />
+                    </Link>
                 </div>
             )
         }
