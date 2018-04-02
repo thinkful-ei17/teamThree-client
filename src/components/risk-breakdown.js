@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 import Button from './button';
 import RiskDetail from './risk-detail';
 import {connect} from 'react-redux';
@@ -9,6 +9,7 @@ import {hideIntroCard} from '../actions/intro-page';
 export function RiskBreakdown(props){
     const markIntroComplete = () => {
         console.log('mark intro complete ran');
+        //not sure this dispatch is working how it should
         props.dispatch(hideIntroCard());
     };
 
