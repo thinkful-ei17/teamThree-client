@@ -19,7 +19,7 @@ export function Portfolio (props){
         <h1>Your Investment Portfolio</h1>
         <h2>Current Worth: {props.currentWorth}</h2>
         <section>
-            <Chart/>
+            {/* <Chart/> */}
             <YearSummaryList/>
         </section>
         <Button name='Review Investment Data' handleClick={toInvestmentData}/>

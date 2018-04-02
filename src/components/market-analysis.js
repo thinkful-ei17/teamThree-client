@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import Button from './button';
 
@@ -30,7 +31,9 @@ export function MarketAnalysis(props){
         <p>Conservative: {props.conservative}% change</p>
         <p>Mattress: 0.0% change</p>
         </section>
-        <Button name={name} handleClick={handleClick}/>
+        <Link to='/investment-return'>
+            <Button name={name} handleClick={handleClick}/>
+        </Link>
       </div>  
     );
 }

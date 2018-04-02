@@ -28,6 +28,7 @@ export function introReducer(state = initialState, action) {
   });
   }
   else if (action.type === HIDE_INTRO_CARD) {
+    console.log('introComplete is true');
     return Object.assign({}, state, {
       introComplete: true
   }); 
