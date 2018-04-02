@@ -57,9 +57,9 @@ export class MarketAnalysis extends React.Component {
 }
 
 const mapStateToProps = (state, props) => ({
-    conservative: '0.75', // state.portfolio.conservative
-    moderate: '1.2', // state.portfolio.moderate
-    aggressive: '3.2', // state.portfolio.aggressive
+    conservative: '0.75', // state.portfolio.risks[0].gain
+    moderate: '1.2', // state.portfolio.risks[1].gain
+    aggressive: '3.2', // state.portfolio.risks[2].gain
     riskChoice: state.portfolio.riskChoice,
     previousFund: state.portfolio.previousFund,
     currentFund: state.portfolio.currentFund,
