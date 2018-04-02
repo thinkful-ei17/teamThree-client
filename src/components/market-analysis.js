@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Button from './button';
-import './market-analysis.css';
+import { fetchRiskOverview } from '../actions/portfolio';
 
 
 export class MarketAnalysis extends React.Component {

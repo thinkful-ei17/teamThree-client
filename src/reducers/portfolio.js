@@ -5,7 +5,10 @@ import {
     CHOOSE_RISK_TOLERANCE,
     INVEST_FUNDS_REQUEST,
     INVEST_FUNDS_SUCCESS,
-    INVEST_FUNDS_ERROR
+    INVEST_FUNDS_ERROR,
+    FETCH_RISK_OVERVIEW_REQUEST,
+    FETCH_RISK_OVERVIEW_SUCCESS,
+    FETCH_RISK_OVERVIEW_ERROR
 } from "../actions/portfolio";
   
 const initialState = {
@@ -14,6 +17,7 @@ const initialState = {
   currentFund: 5000,
   riskChoice: null,
   portfolio: null,
+  risks: null,
   loading: false,
   error: null
 };
@@ -55,6 +59,21 @@ export function portfolioReducer(state = initialState, action) {
         error: null
       });
     } else if (action.type === INVEST_FUNDS_ERROR) {
+      return Object.assign({}, state, {
+        error: action.error,
+        loading: false
+      });
+    } else if (action.type === FETCH_RISK_OVERVIEW_REQUEST) {
+      return Object.assign({}, state, {
+        loading: true
+      });
+    } else if (action.type === FETCH_RISK_OVERVIEW_SUCCESS) {
+      return Object.assign({}, state, {
+        risks: action.risks,
+        loading: false,
+        error: null
+      });
+    } else if (action.type === FETCH_RISK_OVERVIEW_ERROR) {
       return Object.assign({}, state, {
         error: action.error,
         loading: false

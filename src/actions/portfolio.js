@@ -77,7 +77,7 @@ export const investFunds = (risk, year, currentFund) => (dispatch, getState) => 
         risk,
         year,
         currentFund
-    })
+    });
 	return fetch(`${API_BASE_URL}/risk/invest`, 
 		{
       method: 'PUT',
@@ -99,4 +99,49 @@ export const investFunds = (risk, year, currentFund) => (dispatch, getState) => 
 		.catch(err => 
 			dispatch(investFundsError(err))
 		)
+}
+
+export const FETCH_RISK_OVERVIEW_REQUEST = 'FETCH_RISK_OVERVIEW_REQUEST';
+export const fetchRiskOverviewRequest = () => ({
+  type: FETCH_RISK_OVERVIEW_REQUEST
+});
+
+export const FETCH_RISK_OVERVIEW_SUCCESS = 'FETCH_RISK_OVERVIEW_SUCCESS';
+export const fetchRiskOverviewSuccess = risks => ({
+  type: FETCH_RISK_OVERVIEW_SUCCESS,
+  risks
+});
+
+export const FETCH_RISK_OVERVIEW_ERROR = 'FETCH_RISK_OVERVIEW_ERROR';
+export const fetchRiskOverviewError = error => ({
+  type: FETCH_RISK_OVERVIEW_ERROR,
+  error
+});
+
+export const fetchRiskOverview = year => (dispatch, getState) => {
+    dispatch(fetchRiskOverviewRequest());
+    const authToken = getState().auth.authToken;
+    const data = ({
+        year
+    });
+    return fetch(`${API_BASE_URL}/risk/overview`, 
+    {
+          method: 'GET',
+          body: JSON.stringify(data),
+          headers: {
+            'Authorization': `Bearer ${authToken}`
+        }
+    })
+        .then(res => {
+            if (!res.ok) {
+                return Promise.reject('Something has gone wrong');
+            }
+            return res.json()
+        })
+        .then(risks => {
+            dispatch(fetchRiskOverviewSuccess(risks))
+        })
+        .catch(err => 
+            dispatch(fetchRiskOverviewError(err))
+        )
 }
