@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import Chart from './chart';
 import Button from './button';
@@ -22,8 +23,12 @@ export function Portfolio (props){
             {/* <Chart/> */}
             <YearSummaryList/>
         </section>
-        <Button name='Review Investment Data' handleClick={toInvestmentData}/>
-        <Button name='Back to Investing!' handleClick={toInvestmentForm}/> 
+        <Link to='/market-analysis'>
+            <Button name='Review Investment Data' handleClick={toInvestmentData}/>
+        </Link>
+        <Link to='/investment-form'>
+            <Button name='Back to Investing!' handleClick={toInvestmentForm}/> 
+        </Link>
         </div> 
     );
 }
