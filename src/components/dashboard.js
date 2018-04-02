@@ -4,6 +4,7 @@ import requiresLogin from './requires-login';
 import Chart from './chart';
 import {hideLoginForm} from '../actions/users';
 import {hideRegistrationForm} from '../actions/users';
+import MarketAnalysis from './market-analysis';
 
 export class Dashboard extends React.Component {
     // componentDidMount() {
@@ -18,6 +19,7 @@ export class Dashboard extends React.Component {
                     Username: {this.props.username}
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
+                <MarketAnalysis />
             </div>
         );
     }
