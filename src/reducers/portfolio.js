@@ -9,10 +9,13 @@ import {
 } from "../actions/portfolio";
   
 const initialState = {
-    riskChoice: null,
-    portfolio: null,
-    loading: false,
-    error: null
+  year: 0,
+  previousFund: null,
+  currentFund: 5000,
+  riskChoice: null,
+  portfolio: null,
+  loading: false,
+  error: null
 };
   
 export function portfolioReducer(state = initialState, action) {
@@ -26,7 +29,10 @@ export function portfolioReducer(state = initialState, action) {
       });
     } else if (action.type === FETCH_PORTFOLIO_SUCCESS) {
       return Object.assign({}, state, {
-        portfolio: action.portfolio.risk,
+        portfolio: action.portfolio,
+        year: action.year,
+        previousFund: action.previousFund,
+        currentFund: action.currentFund,
         loading: false,
         error: null
       });
@@ -41,6 +47,10 @@ export function portfolioReducer(state = initialState, action) {
       });
     } else if (action.type === INVEST_FUNDS_SUCCESS) {
       return Object.assign({}, state, {
+        year: action.year,
+        portfolio: action.portfolio,
+        previousFund: action.previousFund,
+        currentFund: action.currentFund,
         loading: false,
         error: null
       });
