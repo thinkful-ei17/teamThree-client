@@ -37,7 +37,7 @@ export class InvestmentReturn extends React.Component {
             name = 'See Five Year Review';
             handleClick = this.toFiveYearReview;
         } else{
-            investmentLink='/investment-form';
+            investmentLink = '/investment-form';
             name = 'Keep Investing!';
             handleClick = this.keepInvesting;
         }
@@ -45,8 +45,7 @@ export class InvestmentReturn extends React.Component {
         if (this.props.data) {
             const data = [
                 {									
-                    color: 'steelblue', 
-                    name: 'Sample Portfolio',
+                    color: 'steelblue',
                     points: this.props.data
                 }
             ];

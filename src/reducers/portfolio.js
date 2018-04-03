@@ -8,7 +8,8 @@ import {
     INVEST_FUNDS_ERROR,
     FETCH_RISK_OVERVIEW_REQUEST,
     FETCH_RISK_OVERVIEW_SUCCESS,
-    FETCH_RISK_OVERVIEW_ERROR
+    FETCH_RISK_OVERVIEW_ERROR,
+    INCREMENT_YEAR
 } from "../actions/portfolio";
   
 const initialState = {
@@ -62,6 +63,10 @@ export function portfolioReducer(state = initialState, action) {
       return Object.assign({}, state, {
         error: action.error,
         loading: false
+      });
+    } else if (action.type === INCREMENT_YEAR) {
+      return Object.assign({}, state, {
+        year: state.year + 1
       });
     } else if (action.type === FETCH_RISK_OVERVIEW_REQUEST) {
       return Object.assign({}, state, {
