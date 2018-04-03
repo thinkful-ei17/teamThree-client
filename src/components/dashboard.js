@@ -1,13 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, withRouter } from 'react-router-dom';
 
 import requiresLogin from './requires-login';
 import IntroductionPage from './introduction-page';
 import Portfolio from './portfolio';
-
-import { hideLoginForm } from '../actions/users';
-import { hideRegistrationForm } from '../actions/users';
 
 export class Dashboard extends React.Component {
 

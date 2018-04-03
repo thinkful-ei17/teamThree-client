@@ -7,7 +7,13 @@ import Chart from './chart';
 import Button from './button';
 import YearSummaryList from './year-summary-list';
 
+import { fetchPortfolio } from '../actions/portfolio';
+
 export class Portfolio extends React.Component {    
+    componentDidMount() {
+        this.props.dispatch(fetchPortfolio());
+    }
+    
     toInvestmentData = () => {
         console.log('Links to InvestmentData');
     };

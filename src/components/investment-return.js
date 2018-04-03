@@ -6,8 +6,13 @@ import requiresLogin from './requires-login';
 import Chart from './chart';
 import Button from './button';
 
+import { fetchPortfolio } from '../actions/portfolio';
 
 export class InvestmentReturn extends React.Component {
+    componentDidMount() {
+        this.props.dispatch(fetchPortfolio());
+    }
+    
     keepInvesting = () => {
         console.log('Keep Investing');
     }

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import Button from './button';
 
-import { showIntroCard , nextIntroCard, hideIntroCard } from '../actions/intro-page';
+import { showIntroCard , nextIntroCard } from '../actions/intro-page';
 
 export class IntroductionPage extends React.Component {
   componentDidMount(){
@@ -19,10 +19,12 @@ export class IntroductionPage extends React.Component {
   }
 
   render() {
-    let link='';
+    let link = '';
+
     if(this.props.numCard === 3 || this.props.introComplete) {
       link = '/risk-breakdown';
     }
+    
     return (
       <div className="introduction">
         <div className="row">
