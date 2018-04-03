@@ -121,13 +121,9 @@ export const fetchRiskOverviewError = error => ({
 export const fetchRiskOverview = year => (dispatch, getState) => {
     dispatch(fetchRiskOverviewRequest());
     const authToken = getState().auth.authToken;
-    const data = ({
-        year
-    });
-    return fetch(`${API_BASE_URL}/risk/overview`, 
+    return fetch(`${API_BASE_URL}/risk/invest/${year}`, 
     {
           method: 'GET',
-          body: JSON.stringify(data),
           headers: {
             'Authorization': `Bearer ${authToken}`
         }
