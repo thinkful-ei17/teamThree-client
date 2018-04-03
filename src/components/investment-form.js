@@ -1,15 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import requiresLogin from './requires-login';
-import {Link} from 'react-router-dom';
 import Button from './button';
-import { chooseRiskTolerance, investFunds, incrementYear } from '../actions/portfolio';
+
+import { chooseRiskTolerance, investFunds } from '../actions/portfolio';
 
 export class InvestmentForm extends React.Component {
 
     invest = () => {
         this.props.dispatch(investFunds(this.props.riskChoice, this.props.year + 1, this.props.currentFund));
-        this.props.dispatch(incrementYear());
     }
 
     onChange = event => {

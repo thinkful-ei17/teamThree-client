@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 export function YearSummaryList(props){
     const years = props.years.slice(1);

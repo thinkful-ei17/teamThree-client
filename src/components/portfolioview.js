@@ -1,7 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
+
 import Button from "./button";
+
 import './portfolioview.css';
 
 export function PortfolioView(props) {

@@ -5,7 +5,6 @@ import { showLoginForm } from '../actions/users';
 import { showRegistrationForm } from '../actions/users';
 import { clearAuthToken } from '../local-storage';
 
-
 // import './header-bar.css';
 
 export class HeaderBar extends React.Component {

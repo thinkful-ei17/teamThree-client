@@ -1,11 +1,12 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import requiresLogin from './requires-login';
 import Button from './button';
 import RiskDetail from './risk-detail';
-import {connect} from 'react-redux';
-import requiresLogin from './requires-login';
 
-import {hideIntroCard} from '../actions/intro-page';
+import { hideIntroCard } from '../actions/intro-page';
 
 export function RiskBreakdown(props){
     const markIntroComplete = () => {

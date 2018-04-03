@@ -1,18 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import requiresLogin from './requires-login';
 
+import requiresLogin from './requires-login';
 import Chart from './chart';
 import Button from './button';
 import YearSummaryList from './year-summary-list';
-import { fetchPortfolio } from '../actions/portfolio';
 
-export class Portfolio extends React.Component {
-    componentDidMount() {
-        this.props.dispatch(fetchPortfolio());
-    }
-    
+export class Portfolio extends React.Component {    
     toInvestmentData = () => {
         console.log('Links to InvestmentData');
     };

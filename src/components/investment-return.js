@@ -1,17 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import requiresLogin from './requires-login';
-import {Link} from 'react-router-dom';
 import Chart from './chart';
 import Button from './button';
-import { fetchPortfolio } from '../actions/portfolio';
 
 
 export class InvestmentReturn extends React.Component {
-    componentDidMount() {
-        this.props.dispatch(fetchPortfolio());
-    }
-
     keepInvesting = () => {
         console.log('Keep Investing');
     }
