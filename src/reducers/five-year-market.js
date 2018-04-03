@@ -31,4 +31,4 @@ export function marketReducer(state = initialState, action) {
   return state;
 }
 
-export default portfolioReducer;
+export default marketReducer;

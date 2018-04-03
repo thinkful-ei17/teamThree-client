@@ -306,9 +306,9 @@ export class FiveYearMarket extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log('what is in state marketData', state.marketData);
+  console.log('what is in state marketData', state.market);
   return{
-    marketData: state.marketData,
+    marketData: state.market,
   };
 };
 
