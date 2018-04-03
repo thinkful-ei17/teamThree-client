@@ -5,15 +5,8 @@ import { Route, withRouter } from 'react-router-dom';
 
 import {hideLoginForm} from '../actions/users';
 import {hideRegistrationForm} from '../actions/users';
-<<<<<<< HEAD
-import MarketAnalysis from './market-analysis';
-import InvestmentForm from './investment-form';
-import InvestmentReturn from './investment-return';
-=======
 import IntroductionPage from './introduction-page';
 import Portfolio from './portfolio';
-
->>>>>>> 6fa666a9bed782fd5546f95d71c2ec35cbc90185
 
 export class Dashboard extends React.Component {
     // componentDidMount() {
@@ -36,13 +29,7 @@ export class Dashboard extends React.Component {
                     Username: {this.props.username}
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
-<<<<<<< HEAD
-                <InvestmentForm />
-                <InvestmentReturn />
-                <MarketAnalysis />
-=======
                 {dashboardComponent}
->>>>>>> 6fa666a9bed782fd5546f95d71c2ec35cbc90185
             </div>
         );
     }
