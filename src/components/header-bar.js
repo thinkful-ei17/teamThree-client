@@ -5,7 +5,6 @@ import { showLoginForm } from '../actions/users';
 import { showRegistrationForm } from '../actions/users';
 import { clearAuthToken } from '../local-storage';
 
-
 // import './header-bar.css';
 
 export class HeaderBar extends React.Component {
@@ -16,14 +15,13 @@ export class HeaderBar extends React.Component {
 
     render() {
         // Only render the log out button if we are logged in
-        let currentUsername;
-        let logOutButton;
-        let loginFormNav;
-        let regFormNav;
-        let appName;
-        let portfolio;
-        let investmentData;
-
+        let currentUsername,
+            logOutButton,
+            loginFormNav,
+            regFormNav,
+            appName;
+        // let portfolio;
+        // let investmentData;
 
         if (this.props.loggedIn) {
             currentUsername = (

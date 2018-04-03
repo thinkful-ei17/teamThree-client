@@ -1,15 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
-import { refreshAuthToken } from '../actions/auth';
 
 import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import RegistrationPage from './registration-page';
-
 import Dashboard from './dashboard';
 import IntroductionPage from './introduction-page';
-
 import Portfolio from './portfolio';
 import RiskBreakdown from './risk-breakdown';
 import InvestmentForm from './investment-form';
@@ -18,7 +15,8 @@ import InvestmentReturn from './investment-return';
 // import FiveYearMarket from './five-year-market';
 // import FiveYearPersonal from './five-year-personal';
 
-
+import { refreshAuthToken } from '../actions/auth';
+import { fetchPortfolio } from '../actions/portfolio';
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {
@@ -48,6 +46,10 @@ export class App extends React.Component {
         }
 
         clearInterval(this.refreshInterval);
+    }
+
+    componentDidMount() {
+        this.props.dispatch(fetchPortfolio());
     }
 
     render() {
