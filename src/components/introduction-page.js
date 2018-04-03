@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import { Link } from 'react-router-dom';
-import { showIntroCard , nextIntroCard, hideIntroCard } from '../actions/intro-page';
+import { showIntroCard , nextIntroCard/*, hideIntroCard*/ } from '../actions/intro-page';
 
 
 import Button from './button';

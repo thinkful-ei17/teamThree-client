@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
-import { Route, withRouter } from 'react-router-dom';
+//import { Route, withRouter } from 'react-router-dom';
 
-import {hideLoginForm} from '../actions/users';
-import {hideRegistrationForm} from '../actions/users';
+//import {hideLoginForm} from '../actions/users';
+//import {hideRegistrationForm} from '../actions/users';
 import IntroductionPage from './introduction-page';
 import Portfolio from './portfolio';
 

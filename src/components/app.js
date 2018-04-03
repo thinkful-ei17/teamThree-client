@@ -8,14 +8,14 @@ import LandingPage from './landing-page';
 import RegistrationPage from './registration-page';
 
 import Dashboard from './dashboard';
-import IntroductionPage from './introduction-page';
+//import IntroductionPage from './introduction-page';
 
-import Portfolio from './portfolio';
-import RiskBreakdown from './risk-breakdown';
-import InvestmentForm from './investment-form';
-import MarketAnalysis from './market-analysis';
-import InvestmentReturn from './investment-return';
-// import FiveYearMarket from './five-year-market';
+//import Portfolio from './portfolio';
+//import RiskBreakdown from './risk-breakdown';
+//import InvestmentForm from './investment-form';
+//import MarketAnalysis from './market-analysis';
+//import InvestmentReturn from './investment-return';
+import FiveYearMarket from './five-year-market';
 // import FiveYearPersonal from './five-year-personal';
 
 
@@ -58,16 +58,16 @@ export class App extends React.Component {
                 <Route exact path="/register" component={RegistrationPage} />
 
                 <Route exact path="/dashboard" component={Dashboard} />
-                <Route exact path="/portfolio" component={Portfolio} />
+                {/*<Route exact path="/portfolio" component={Portfolio} />
                
                 <Route exact path="/introduction" component={IntroductionPage}/>
                 <Route exact path="/risk-breakdown" component={RiskBreakdown}/>
 
-                <Route exact path="/investment-form" component={InvestmentForm}/>
+                <Route exact path="/investment-form" component={InvestmentForm}/>*
                 <Route exact path="/market-analysis" component={MarketAnalysis}/>
-                <Route exact path="/investment-return" component={InvestmentReturn}/>
+                <Route exact path="/investment-return" component={InvestmentReturn}/>*/}
 
-                {/* <Route exact path="/five-year-market" component={FiveYearMarket}/> */}
+                <Route exact path="/five-year-market" component={FiveYearMarket}/>
                 {/* <Route exact path="/five-year-personal" component={FiveYearPersonal}/> */}
 
             </div>

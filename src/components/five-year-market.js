@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
-import Button from "./button";
-import './marketview.css';
+//import { Link, Redirect } from "react-router-dom";
+//import Button from "./button";
+import './five-year-market.css';
 
-export function MarketView(props) {
+export function FiveYearMarket(props) {
   return (
     //line graph
     <div className="market-view">
@@ -176,4 +176,4 @@ const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null
 });
 
-export default connect(mapStateToProps)(PortfolioView);
+export default connect(mapStateToProps)(FiveYearMarket);

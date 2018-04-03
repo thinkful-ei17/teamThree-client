@@ -21,8 +21,8 @@ export class HeaderBar extends React.Component {
         let loginFormNav;
         let regFormNav;
         let appName;
-        let portfolio;
-        let investmentData;
+        //let portfolio;
+        //let investmentData;
 
 
         if (this.props.loggedIn) {
