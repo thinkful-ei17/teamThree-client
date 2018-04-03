@@ -5,11 +5,23 @@ import { fetchRiskOverview } from '../actions/portfolio';
 
 
 export class MarketAnalysis extends React.Component {
-    componentDidMount() {
+    componentWillMount() {
         this.props.dispatch(fetchRiskOverview(this.props.year))
     }
     
     render () {
+      let marketRecap;
+      if(this.props.risks  !== null) {
+        marketRecap = (
+          <section className='market-analysis-risks'>
+            <p>Aggressive: {this.props.risks[0].gain}% change</p>
+            <p>Moderate: {this.props.risks[2].gain}% change</p>
+            <p>Conservative: {this.props.risks[1].gain}% change</p>
+            <p>Mattress: 0.0% change</p>
+          </section> 
+        );
+      }
+    
         let growth;
         let selected;
 
@@ -44,12 +56,7 @@ export class MarketAnalysis extends React.Component {
             </section>
             
             <h3>Market Recap</h3>
-            <section className='market-analysis-risks'>
-                <p>Aggressive: {this.props.aggressive}% change</p>
-                <p>Moderate: {this.props.moderate}% change</p>
-                <p>Conservative: {this.props.conservative}% change</p>
-                <p>Mattress: 0.0% change</p>
-            </section>
+              {marketRecap}
             <Button name="View Portfolio" handleClick={handleClick}/>
         </div>  
         );
@@ -57,12 +64,10 @@ export class MarketAnalysis extends React.Component {
 }
 
 const mapStateToProps = (state, props) => ({
-    // conservative: state.portfolio.risks[1].gain,
-    // moderate: state.portfolio.risks[2].gain,
-    // aggressive: state.portfolio.risks[0].gain,
-    conservative: 3,
-    moderate: 3,
-    aggressive: 3,
+    risks: state.portfolio.risks,
+    // conservative: 3,
+    // moderate: 3,
+    // aggressive: 3,
     riskChoice: state.portfolio.riskChoice,
     previousFund: state.portfolio.previousFund,
     currentFund: state.portfolio.currentFund,
