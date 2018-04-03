@@ -75,4 +75,4 @@ const mapStateToProps = (state, props) => ({
     year: 3
 });
 
-export default connect(mapStateToProps)(MarketAnalysis)
+export default requiresLogin()(connect(mapStateToProps)(MarketAnalysis));

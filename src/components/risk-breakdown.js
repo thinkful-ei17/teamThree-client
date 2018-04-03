@@ -1,11 +1,17 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 import Button from './button';
 import RiskDetail from './risk-detail';
+import {connect} from 'react-redux';
+import requiresLogin from './requires-login';
 
-export default function RiskBreakdown(props){
-    const toInvestmentForm = () => {
-        console.log('This button links to InvestmentForm');
+import {hideIntroCard} from '../actions/intro-page';
+
+export function RiskBreakdown(props){
+    const markIntroComplete = () => {
+        console.log('mark intro complete ran');
+        //not sure this dispatch is working how it should
+        props.dispatch(hideIntroCard());
     };
 
     return (
@@ -16,7 +22,11 @@ export default function RiskBreakdown(props){
                 <RiskDetail riskType='Moderate' stocks='50' bonds='50'/>
                 <RiskDetail riskType='Aggressive' stocks='80' bonds='20'/>
             </section>
-            <Button name="Let's Get Investing!" handleClick={toInvestmentForm}/>
+            <Link to='/investment-form'>
+                <Button name="Let's Get Investing!" handleClick={markIntroComplete} />
+            </Link>
         </div>    
     );
 }
+
+export default requiresLogin()(connect()(RiskBreakdown));
