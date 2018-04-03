@@ -42,8 +42,8 @@ export class InvestmentForm extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        year: 0,
-        currentFund: 5000,
+        year: state.portfolio.year,
+        currentFund: state.portfolio.currentFund,
         riskChoice: state.portfolio.riskChoice
     };
 };
