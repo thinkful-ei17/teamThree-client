@@ -6,7 +6,7 @@ import { showRegistrationForm } from '../actions/users';
 import { clearAuthToken } from '../local-storage';
 
 
-// import './header-bar.css';
+import './header-bar.css';
 
 export class HeaderBar extends React.Component {
     logOut() {
@@ -31,11 +31,11 @@ export class HeaderBar extends React.Component {
             );
 
             logOutButton = (
-                <button className="red btn-logout" onClick={() => this.logOut()}>Log out</button>
+                <li className="red btn-logout" onClick={() => this.logOut()}>Log out</li>
             );
 
             appName = (
-                <li className="appname">App Name</li>
+                <li className="appname"><span>Cents</span>ible.</li>
             );
         }
 
@@ -75,8 +75,8 @@ export class HeaderBar extends React.Component {
                     {loginFormNav}
                     {regFormNav}
                     {appName}
+                    {/* {currentUsername} */}
                     {logOutButton}
-                    {currentUsername}
                 </ul>
             </div>
         );

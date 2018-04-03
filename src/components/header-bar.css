@@ -1,55 +1,37 @@
 .header-bar {
-    text-align: center;
-    height: 50px;
-    margin: 0;
+  display: flex;
+  text-align: center;
+  height: 100px;
+  background-color:#192C4D;
+  color: #39A7B1;
 }
 
 .nav-bar-ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 2em;
+  width: 100%;
+  max-width: 900px;
   display: flex;
-  margin-top: 0px;
-  padding-top: 15px;
-  margin-bottom: 0px;
-  flex-direction: row-reverse;
-  margin-right: 10%;
-  padding-bottom: 5px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
-.user-span {
-  margin-bottom: 0;
-  color: #F55536;
+.nav-bar-ul li{
+  list-style: none;
+  text-align: left;
+  margin: 0 1em;
 }
 
-.login-text {
-  list-style-type: none;
-  color: #141414;
-  font-size: 1.1em;
-  margin-left: 15px;
+.appname {
+  margin-left: 0;
+  font-size: 3em;
+  flex-grow: 2;
+  color: #B6DF9B;
+  
 }
 
-.login-text:hover {
-  cursor:pointer;
- }
-
- .app-name-li {
-   align-self: flex-end;
- }
-
- .btn-logout {
-  align-self: flex-end;
-  display: inline-block;
-  font-size: 1.2em;
-	text-decoration: none;
-	color: white;
-  padding: 5px 10px;
-  margin-bottom: 10px;
-  margin-left: auto;
-	position: relative;
-	border: 1px solid rgba(0,0,0,0.21);
-	border-bottom: 4px solid rgba(0,0,0,0.21);
-	border-radius: 4px;
-	text-shadow: 0 1px 0 rgba(0,0,0,0.15);
- }
-
- .current-user {
-   font-weight: 300;
+.appname span {
+  color: #5DCB6E;
 }
