@@ -1,0 +1,45 @@
+#year {
+	height: 84px;
+}
+
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+}
+
+ul#horizontal-list {
+	min-width: 696px;
+	list-style: none;
+	padding-top: 20px;
+  }
+  
+ul#horizontal-list li {
+  display: inline;
+}
+
+.market-vector-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  min-height: 250px;
+  /* border-bottom: 2px solid rgb(164, 164, 164); */
+}
+
+.market-blurb-wrapper {
+  display: flex;
+  width: 250px;
+  height: 150px;
+  margin-top: 60px;
+  border-radius: 10px;
+  background-color: rgb(232, 228, 228);
+  justify-content:center;
+  text-align: center;
+  align-content: center;
+  flex-direction: column;
+  color: rgb(67, 66, 66);
+  padding: 5px;
+}
+
+li {
+  list-style-type: none;
+  font-size: 1.2em;
+}
