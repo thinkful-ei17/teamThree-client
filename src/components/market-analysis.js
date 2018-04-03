@@ -1,5 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import requiresLogin from './requires-login';
 import Button from './button';
 import { fetchRiskOverview } from '../actions/portfolio';
 
@@ -9,21 +11,21 @@ export class MarketAnalysis extends React.Component {
         this.props.dispatch(fetchRiskOverview(this.props.year))
     }
     
-    render () {
-      let marketRecap;
-      if(this.props.risks  !== null) {
-        marketRecap = (
-          <section className='market-analysis-risks'>
-            <p>Aggressive: {this.props.risks[0].gain}% change</p>
-            <p>Moderate: {this.props.risks[2].gain}% change</p>
-            <p>Conservative: {this.props.risks[1].gain}% change</p>
-            <p>Mattress: 0.0% change</p>
-          </section> 
-        );
-      }
-    
+    render () {    
         let growth;
         let selected;
+        let marketRecap;
+        
+        if(this.props.risks !== null) {
+          marketRecap = (
+            <section className='market-analysis-risks'>
+              <p>Aggressive: {this.props.risks[0].gain}% change</p>
+              <p>Moderate: {this.props.risks[2].gain}% change</p>
+              <p>Conservative: {this.props.risks[1].gain}% change</p>
+              <p>Mattress: 0.0% change</p>
+            </section> 
+          );
+        }
 
         if (this.props.riskChoice === 'high') {
             growth = this.props.aggressive;
@@ -56,8 +58,10 @@ export class MarketAnalysis extends React.Component {
             </section>
             
             <h3>Market Recap</h3>
-              {marketRecap}
-            <Button name="View Portfolio" handleClick={handleClick}/>
+            {marketRecap}
+            <Link to='/investment-return'>
+                <Button name="View Portfolio" handleClick={handleClick}/>
+            </Link>
         </div>  
         );
     }
@@ -65,14 +69,10 @@ export class MarketAnalysis extends React.Component {
 
 const mapStateToProps = (state, props) => ({
     risks: state.portfolio.risks,
-    // conservative: 3,
-    // moderate: 3,
-    // aggressive: 3,
     riskChoice: state.portfolio.riskChoice,
     previousFund: state.portfolio.previousFund,
     currentFund: state.portfolio.currentFund,
-    // year: state.portfolio.year
-    year: 3
+    year: state.portfolio.year
 });
 
-export default connect(mapStateToProps)(MarketAnalysis)
+export default requiresLogin()(connect(mapStateToProps)(MarketAnalysis));
