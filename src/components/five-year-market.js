@@ -9,161 +9,282 @@ export function FiveYearMarket(props) {
     //line graph
     <div className="market-view">
       <h1>Five Year Market Summary:</h1>
+      {/* {Chart} */}
       <h2> Investment Outcome by Year:</h2>
       <section className="market-vector-wrapper risk-mattress">
-       <div id="year">
-           <div className="table">
-               <ul id="horizontal-list">
-                    <li>Year 1</li>
-                    <li>Year 2</li>
-                    <li>Year 3 </li>
-                    <li>Year 4 </li>
-                    <li>Year 5 </li>
-                </ul>
-            </div>
-        </div> 
-      </section>
-      <section className="market-vector-wrapper risk-mattress">
-        <div className="market-blurb-wrapper market-blurb-one">
+        <div className="market-blurb-wrapper market-blurb-one year-one">
+          <h3 className="year-title">Year 1</h3>
+          <h3>Mattress</h3>
           <li>
-            {/* Year 1: {props.risk} */}
-            Start: $5,000 Change: idk
+            {/* Start: {props.risk} */}
+            Balance: 
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY % change: idk
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY $ change: idk
+          </li>
+          <h3>Conservative</h3>
+          <li>
+            {/* Start: {props.risk} */}
+            Balance: 
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY % change: idk
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY $ change: idk
+          </li>
+          <h3>Moderate</h3>
+          <li>
+            {/* Start: {props.risk} */}
+            Balance: 
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY % change: idk
+          </li>
+          <li>
+            {/* Start: {props.risk} */}
+            Balance: 
+          </li>
+          <h3>Aggressive</h3>
+          <li>
+            {/* Start: {props.risk} */}
+            Balance: 
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY % change: idk
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY $ change: idk
           </li>
         </div>
-        <div className="market-blurb-wrapper market-blurb-two">
+        <div className="market-blurb-wrapper market-blurb-one year-two">
+          <h3 className="year-title">Year 2</h3>
+          <h3>Mattress</h3>
           <li>
-            {/* Year 2: {props.risk} */}
-            {/* Start: {props.currentfund} */}
-            Change: idk
+            {/* Start: {props.risk} */}
+            Balance: $5,000
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY % change: idk
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY $ change: idk
+          </li>
+          <h3>Conservative</h3>
+          <li>
+            {/* Start: {props.risk} */}
+            Balance: $5,000
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY % change: idk
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY $ change: idk
+          </li>
+          <h3>Moderate</h3>
+          <li>
+            {/* Start: {props.risk} */}
+            Balance: $5,000
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY % change: idk
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY $ change: idk
+          </li>
+          <h3>Aggressive</h3>
+          <li>
+            {/* Start: {props.risk} */}
+            Balance: $5,000
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY % change: idk
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY $ change: idk
           </li>
         </div>
-        <div className="market-blurb-wrapper market-blurb-three">
+        <div className="market-blurb-wrapper market-blurb-one year-three">
+          <h3 className="year-title">Year 3</h3>
+          <h3>Mattress</h3>
           <li>
-            {/* Year 3: {props.risk} */}
-            {/* Start: {props.currentfund} */}
-            Change: idk
+            {/* Start: {props.risk} */}
+            Balance: $5,000
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY % change: idk
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY $ change: idk
+          </li>
+          <h3>Conservative</h3>
+          <li>
+            {/* Start: {props.risk} */}
+            Balance: $5,000
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY % change: idk
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY $ change: idk
+          </li>
+          <h3>Moderate</h3>
+          <li>
+            {/* Start: {props.risk} */}
+            Balance: $5,000
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY % change: idk
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY $ change: idk
+          </li>
+          <h3>Aggressive</h3>
+          <li>
+            {/* Start: {props.risk} */}
+            Balance: $5,000
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY % change: idk
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY $ change: idk
           </li>
         </div>
-        <div className="market-blurb-wrapper market-blurb-four">
+        <div className="market-blurb-wrapper market-blurb-one year-four">
+          <h3 className="year-title">Year 4</h3>
+          <h3>Mattress</h3>
           <li>
-            {/* Year 4: {props.risk} */}
-            {/* Start: {props.currentfund} */}
-            Change: idk
+            {/* Start: {props.risk} */}
+            Balance: $5,000
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY % change: idk
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY $ change: idk
+          </li>
+          <h3>Conservative</h3>
+          <li>
+            {/* Start: {props.risk} */}
+            Balance: $5,000
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY % change: idk
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY $ change: idk
+          </li>
+          <h3>Moderate</h3>
+          <li>
+            {/* Start: {props.risk} */}
+            Balance: $5,000
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY % change: idk
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY $ change: idk
+          </li>
+          <h3>Aggressive</h3>
+          <li>
+            {/* Start: {props.risk} */}
+            Balance: $5,000
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY % change: idk
+          </li>
+          <li>
+            {/* change: {props.risk} */}
+            YoY $ change: idk
           </li>
         </div>
-        <div className="market-blurb-wrapper market-blurb-five">
+        <div className="market-blurb-wrapper market-blurb-one year-five">
+          <h3 className="year-title">Year 5</h3>
+          <h3>Mattress</h3>
           <li>
-            {/* Year 5: {props.risk} */}
-            {/* Start: {props.currentfund} */}
-            Change: idk
+            {/* Start: {props.risk} */}
+            Balance: $5,000
           </li>
-        </div>
-      </section>
-      <section className="market-vector-wrapper risk-conservative">
-        <div className="market-blurb-wrapper market-blurb-one">
           <li>
-            {/* Year 1: {props.risk} */}
-            Start: $5,000 Change: idk
+            {/* change: {props.risk} */}
+            YoY % change: idk
           </li>
-        </div>
-        <div className="market-blurb-wrapper market-blurb-two">
           <li>
-            {/* Year 2: {props.risk} */}
-            {/* Start: {props.currentfund} */}
-            Change: idk
+            {/* change: {props.risk} */}
+            YoY $ change: idk
           </li>
-        </div>
-        <div className="market-blurb-wrapper market-blurb-three">
+          <h3>Conservative</h3>
           <li>
-            {/* Year 3: {props.risk} */}
-            {/* Start: {props.currentfund} */}
-            Change: idk
+            {/* Start: {props.risk} */}
+            Balance: $5,000
           </li>
-        </div>
-        <div className="market-blurb-wrapper market-blurb-four">
           <li>
-            {/* Year 4: {props.risk} */}
-            {/* Start: {props.currentfund} */}
-            Change: idk
+            {/* change: {props.risk} */}
+            YoY % change: idk
           </li>
-        </div>
-        <div className="market-blurb-wrapper market-blurb-five">
           <li>
-            {/* Year 5: {props.risk} */}
-            {/* Start: {props.currentfund} */}
-            Change: idk
+            {/* change: {props.risk} */}
+            YoY $ change: idk
           </li>
-        </div>
-      </section>
-      <section className="market-vector-wrapper risk-moderate">
-        <div className="market-blurb-wrapper market-blurb-one">
+          <h3>Moderate</h3>
           <li>
-            {/* Year 1: {props.risk} */}
-            Start: $5,000 Change: idk
+            {/* Start: {props.risk} */}
+            Balance: $5,000
           </li>
-        </div>
-        <div className="market-blurb-wrapper market-blurb-two">
           <li>
-            {/* Year 2: {props.risk} */}
-            {/* Start: {props.currentfund} */}
-            Change: idk
+            {/* change: {props.risk} */}
+            YoY % change: idk
           </li>
-        </div>
-        <div className="market-blurb-wrapper market-blurb-three">
           <li>
-            {/* Year 3: {props.risk} */}
-            {/* Start: {props.currentfund} */}
-            Change: idk
+            {/* change: {props.risk} */}
+            YoY $ change: idk
           </li>
-        </div>
-        <div className="market-blurb-wrapper market-blurb-four">
+          <h3>Aggressive</h3>
           <li>
-            {/* Year 4: {props.risk} */}
-            {/* Start: {props.currentfund} */}
-            Change: idk
+            {/* Start: {props.risk} */}
+            Balance: $5,000
           </li>
-        </div>
-        <div className="market-blurb-wrapper market-blurb-five">
           <li>
-            {/* Year 5: {props.risk} */}
-            {/* Start: {props.currentfund} */}
-            Change: idk
+            {/* change: {props.risk} */}
+            YoY % change: idk
           </li>
-        </div>
-      </section>
-      <section className="market-vector-wrapper risk-aggressive">
-        <div className="market-blurb-wrapper market-blurb-one">
           <li>
-            {/* Year 1: {props.risk} */}
-            Start: $5,000 Change: idk
-          </li>
-        </div>
-        <div className="market-blurb-wrapper market-blurb-two">
-          <li>
-            {/* Year 2: {props.risk} */}
-            {/* Start: {props.currentfund} */}
-            Change: idk
-          </li>
-        </div>
-        <div className="market-blurb-wrapper market-blurb-three">
-          <li>
-            {/* Year 3: {props.risk} */}
-            {/* Start: {props.currentfund} */}
-            Change: idk
-          </li>
-        </div>
-        <div className="market-blurb-wrapper market-blurb-four">
-          <li>
-            {/* Year 4: {props.risk} */}
-            {/* Start: {props.currentfund} */}
-            Change: idk
-          </li>
-        </div>
-        <div className="market-blurb-wrapper market-blurb-five">
-          <li>
-            {/* Year 5: {props.risk} */}
-            {/* Start: {props.currentfund} */}
-            Change: idk
+            {/* change: {props.risk} */}
+            YoY $ change: idk
           </li>
         </div>
       </section>
