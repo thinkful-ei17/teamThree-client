@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
+import {Link} from 'react-router-dom';
 import Button from './button';
 import { chooseRiskTolerance, investFunds } from '../actions/portfolio';
 
@@ -31,8 +32,9 @@ export class InvestmentForm extends React.Component {
                 <label htmlFor='rb1'>Conservative</label>
                 <input type='radio' name='strategy' id='rb4' value='mattress' onChange={this.onChange.bind(this)} />
                 <label htmlFor='rb1'>Under Your Mattress</label>
-                
-                <Button name='Invest' handleClick={this.invest} />
+                <Link to='/market-analysis'>
+                    <Button name='Invest' handleClick={this.invest} />
+                </Link>    
             </div>
         );
     }

@@ -2,8 +2,10 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { showIntroCard , nextIntroCard, hideIntroCard } from '../actions/intro-page';
+
+
 import Button from './button';
 
 export class IntroductionPage extends React.Component {
@@ -18,27 +20,27 @@ export class IntroductionPage extends React.Component {
   }
 
   render() {
-    if(this.props.numCard > 3 || this.props.introComplete) {
-      //should redirect to risk dashboard - Sam/Scott to add
-      return (<Redirect to="/dashboard"/>);
+    let link='';
+    if(this.props.numCard === 3 || this.props.introComplete) {
+      link = '/risk-breakdown';
     }
-    else {
-      return (
-        <div className="introduction">
-          <div className="row">
-              <section className="introduction">
-                <header>
-                  <h1 className="title">{this.props.introCard[this.props.numCard].title}</h1>
-                </header>
-                <main>
-                  <div className="introduction-details">{this.props.introCard[this.props.numCard].details}</div>
+    return (
+      <div className="introduction">
+        <div className="row">
+            <section className="introduction">
+              <header>
+                <h1 className="title">{this.props.introCard[this.props.numCard].title}</h1>
+              </header>
+              <main>
+                <div className="introduction-details">{this.props.introCard[this.props.numCard].details}</div>
+                <Link to={link}>
                   <Button name='Got It!' handleClick={this.nextCardClick}/>
-                </main>
-            </section>
-          </div>
+                </Link>
+              </main>
+          </section>
         </div>
-      );
-    }
+      </div>
+    );
   }
 }
 
