@@ -9,9 +9,9 @@ import './five-year-market.css';
 export class FiveYearMarket extends React.Component {
   componentWillMount() {
       this.props.dispatch(fetchRiskMarket('mattress'));
-      this.props.dispatch(fetchRiskMarket('low'));
-      this.props.dispatch(fetchRiskMarket('moderate'));
-      this.props.dispatch(fetchRiskMarket('high'));
+      // this.props.dispatch(fetchRiskMarket('low'));
+      // this.props.dispatch(fetchRiskMarket('moderate'));
+      // this.props.dispatch(fetchRiskMarket('high'));
   };
     //line graph
     render() {
@@ -306,8 +306,9 @@ export class FiveYearMarket extends React.Component {
 }
 
 const mapStateToProps = state => {
+  console.log('what is in state marketData', state.marketData);
   return{
-    marketData: null,
+    marketData: state.marketData,
   };
 };
 
