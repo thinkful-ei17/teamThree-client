@@ -8,6 +8,7 @@ import './five-year-market.css';
 
 export class FiveYearMarket extends React.Component {
   componentWillMount() {
+    console.log('hello from will mount five year mkt');
       this.props.dispatch(fetchRiskMarket('mattress'));
       // this.props.dispatch(fetchRiskMarket('low'));
       // this.props.dispatch(fetchRiskMarket('moderate'));
@@ -15,6 +16,9 @@ export class FiveYearMarket extends React.Component {
   };
     //line graph
     render() {
+      if(this.props.marketData === null) {
+        
+      }
       return (
         <div className="market-view">
           <h1>Five Year Market Summary:</h1>
@@ -26,7 +30,7 @@ export class FiveYearMarket extends React.Component {
               <h3>Mattress</h3>
               <li>
                 {/* Start: {props.risk} */}
-                Balance: 
+                Balance: {this.props.marketData[0]}
               </li>
               <li>
                 {/* change: {props.risk} */}
@@ -307,6 +311,17 @@ export class FiveYearMarket extends React.Component {
 
 const mapStateToProps = state => {
   console.log('what is in state marketData', state.market);
+    if(state.market.marketData === null){
+    console.log('do nothing');
+  }
+  else{
+  console.log('test', state.market.marketData[1].gain);
+  // for(let i = 0; i < state.market.marketData.length; i++){
+  //   for(let prop in state.market.marketData[i]){
+  //     console.log('test 2', prop);
+  //   }
+  // }
+  }
   return{
     marketData: state.market,
   };
