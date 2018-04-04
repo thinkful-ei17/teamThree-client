@@ -9,10 +9,7 @@ import './five-year-market.css';
 export class FiveYearMarket extends React.Component {
   componentWillMount() {
     console.log('hello from will mount five year mkt');
-      this.props.dispatch(fetchRiskMarket('mattress'));
-      // this.props.dispatch(fetchRiskMarket('low'));
-      // this.props.dispatch(fetchRiskMarket('moderate'));
-      // this.props.dispatch(fetchRiskMarket('high'));
+      this.props.dispatch(fetchRiskMarket());
   };
     //line graph
     render() {
@@ -313,8 +310,10 @@ const mapStateToProps = state => {
     };
   }
   else{
+    console.log('hi in state');
+    console.log(state.marketReducer.marketData)
     return{
-      marketDataGainOne: state.marketReducer.marketData[0].gain,
+      marketDataGainOne: state.marketReducer.marketData[15].gain,
     };
   }
 };
