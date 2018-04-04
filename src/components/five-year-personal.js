@@ -1,15 +1,18 @@
 import React from "react";
-import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import {connect} from "react-redux";
 import Button from "./button";
 import { fetchPortfolio } from '../actions/portfolio';
+<<<<<<< HEAD
 // import './five-year-personal.css';
+=======
+import "./five-year-personal.css";
+>>>>>>> 8051b351974c2647eb5501e2981ffb2512fc96d6
 
 export class FiveYearPersonal extends React.Component {
-  componentDidMount() {
-    // this.props.dispatch(fetchPortfolio());
-    console.log(this.props)
-}
+//   componentDidMount() {
+//     // this.props.dispatch(fetchPortfolio());
+//     console.log(this.props.data)
+// }
 
 render() {
   // if(this.props.data) {
@@ -104,10 +107,11 @@ render() {
   }
 }
 
-const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null,
+const mapStateToProps = state => {
+  console.log('hey',state);
+  return {
   data: state.portfolio.portfolio,
   year: state.portfolio.year
-});
+}};
 
 export default connect(mapStateToProps)(FiveYearPersonal);

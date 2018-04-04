@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import Button from './button';
 
-import { showIntroCard , nextIntroCard } from '../actions/intro-page';
+import { showIntroCard , nextIntroCard } from '../actions/intro';
 
 export class IntroductionPage extends React.Component {
   componentDidMount(){
