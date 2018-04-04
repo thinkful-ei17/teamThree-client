@@ -18,10 +18,7 @@ export class Dashboard extends React.Component {
 
         return (
             <div className="dashboard">
-                <div className="dashboard-username">
-                    Username: {this.props.username}
-                </div>
-                <div className="dashboard-name">Name: {this.props.name}</div>
+                <div className="dashboard-name">Welcome {this.props.name}!</div>
                 {dashboardComponent}
             </div>
         );
@@ -32,7 +29,8 @@ const mapStateToProps = state => {
     const {currentUser} = state.auth;
     return {
         username: state.auth.currentUser.username,
-        name: `${currentUser.firstName} ${currentUser.lastName}`,
+        // name: `${currentUser.firstName} ${currentUser.lastName}`,
+        name: currentUser.firstName,
         introComplete: state.introReducer.introComplete
     };
 };

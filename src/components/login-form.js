@@ -6,6 +6,7 @@ import Input from './input';
 import { hideLoginForm } from '../actions/users';
 import { login } from '../actions/auth';
 import { required, nonEmpty } from '../validators';
+import './login-form.css';
 
 export class LoginForm extends React.Component {
     onSubmit(values) {
