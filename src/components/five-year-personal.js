@@ -2,11 +2,8 @@ import React from "react";
 import {connect} from "react-redux";
 import Button from "./button";
 import { fetchPortfolio } from '../actions/portfolio';
-<<<<<<< HEAD
-// import './five-year-personal.css';
-=======
 import "./five-year-personal.css";
->>>>>>> 8051b351974c2647eb5501e2981ffb2512fc96d6
+
 
 export class FiveYearPersonal extends React.Component {
 //   componentDidMount() {
