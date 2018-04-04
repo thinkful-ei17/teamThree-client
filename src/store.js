@@ -19,7 +19,7 @@ const store = createStore(
         userReducer: userReducer,
         introReducer: introReducer,
         portfolio: portfolioReducer,
-        market: marketReducer
+        marketReducer: marketReducer
     }),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     applyMiddleware(thunk)

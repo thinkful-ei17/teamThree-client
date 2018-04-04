@@ -16,9 +16,6 @@ export class FiveYearMarket extends React.Component {
   };
     //line graph
     render() {
-      if(this.props.marketData === null) {
-        
-      }
       return (
         <div className="market-view">
           <h1>Five Year Market Summary:</h1>
@@ -30,11 +27,11 @@ export class FiveYearMarket extends React.Component {
               <h3>Mattress</h3>
               <li>
                 {/* Start: {props.risk} */}
-                Balance: {this.props.marketData[0]}
+                Balance: {this.props.marketData}
               </li>
               <li>
                 {/* change: {props.risk} */}
-                YoY % change: idk
+                YoY % change: {this.props.marketDataGainOne}
               </li>
               <li>
                 {/* change: {props.risk} */}
@@ -47,7 +44,7 @@ export class FiveYearMarket extends React.Component {
               </li>
               <li>
                 {/* change: {props.risk} */}
-                YoY % change: idk
+                YoY % change: {/*this.props.marketDataGainTwo*/}
               </li>
               <li>
                 {/* change: {props.risk} */}
@@ -60,11 +57,11 @@ export class FiveYearMarket extends React.Component {
               </li>
               <li>
                 {/* change: {props.risk} */}
-                YoY % change: idk
+                YoY % change: {/*this.props.marketDataGainThree*/}
               </li>
               <li>
                 {/* Start: {props.risk} */}
-                Balance: 
+                YoY $ change: 
               </li>
               <h3>Aggressive</h3>
               <li>
@@ -73,7 +70,7 @@ export class FiveYearMarket extends React.Component {
               </li>
               <li>
                 {/* change: {props.risk} */}
-                YoY % change: idk
+                YoY % change: {/*this.props.marketDataGainFour*/}
               </li>
               <li>
                 {/* change: {props.risk} */}
@@ -89,7 +86,7 @@ export class FiveYearMarket extends React.Component {
               </li>
               <li>
                 {/* change: {props.risk} */}
-                YoY % change: idk
+                YoY % change: {this.props.marketDataGainTwo}
               </li>
               <li>
                 {/* change: {props.risk} */}
@@ -144,7 +141,7 @@ export class FiveYearMarket extends React.Component {
               </li>
               <li>
                 {/* change: {props.risk} */}
-                YoY % change: idk
+                YoY % change: {this.props.marketDataGainThree}
               </li>
               <li>
                 {/* change: {props.risk} */}
@@ -199,7 +196,7 @@ export class FiveYearMarket extends React.Component {
               </li>
               <li>
                 {/* change: {props.risk} */}
-                YoY % change: idk
+                YoY % change: {this.props.marketDataGainFour}
               </li>
               <li>
                 {/* change: {props.risk} */}
@@ -254,7 +251,7 @@ export class FiveYearMarket extends React.Component {
               </li>
               <li>
                 {/* change: {props.risk} */}
-                YoY % change: idk
+                YoY % change: {this.props.marketDataGainFive}
               </li>
               <li>
                 {/* change: {props.risk} */}
@@ -310,21 +307,20 @@ export class FiveYearMarket extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log('what is in state marketData', state.market);
-    if(state.market.marketData === null){
-    console.log('do nothing');
+  if(state.marketReducer.marketData === null){ //ensure data mounted properly
+    return {
+      marketData: null,
+    };
   }
   else{
-  console.log('test', state.market.marketData[1].gain);
-  // for(let i = 0; i < state.market.marketData.length; i++){
-  //   for(let prop in state.market.marketData[i]){
-  //     console.log('test 2', prop);
-  //   }
-  // }
+    return{
+      marketDataGainOne: state.marketReducer.marketData[0].gain,
+      marketDataGainTwo: state.marketReducer.marketData[1].gain,
+      marketDataGainThree:state.marketReducer.marketData[2].gain,
+      marketDataGainFour: state.marketReducer.marketData[3].gain,
+      marketDataGainFive: state.marketReducer.marketData[3].gain,
+    };
   }
-  return{
-    marketData: state.market,
-  };
 };
 
 export default /*requiresLogin()*/(connect(mapStateToProps)(FiveYearMarket));
