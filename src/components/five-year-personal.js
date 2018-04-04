@@ -1,15 +1,14 @@
 import React from "react";
-import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import {connect} from "react-redux";
 import Button from "./button";
 import { fetchPortfolio } from '../actions/portfolio';
-import "./portfolioview.css";
+import "./five-year-personal.css";
 
 export class FiveYearPersonal extends React.Component {
-  componentDidMount() {
-    // this.props.dispatch(fetchPortfolio());
-    console.log(this.props)
-}
+//   componentDidMount() {
+//     // this.props.dispatch(fetchPortfolio());
+//     console.log(this.props.data)
+// }
 
 render() {
   // if(this.props.data) {
@@ -104,10 +103,11 @@ render() {
   }
 }
 
-const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null,
+const mapStateToProps = state => {
+  console.log('hey',state);
+  return {
   data: state.portfolio.portfolio,
   year: state.portfolio.year
-});
+}};
 
 export default connect(mapStateToProps)(FiveYearPersonal);
