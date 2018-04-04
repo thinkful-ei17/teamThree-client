@@ -7,7 +7,7 @@ export function YearSummaryList(props){
         return(
             <li key={year.x} className='year-summary-item'>
                 <h4 className='list-item-heading'>Year {year.x}: {year.strategy}</h4>
-                <p classname='list-item-content'> Start: ${year.previousYear}  End: ${year.y}</p>
+                <p className='list-item-content'> Start: ${year.previousYear}  End: ${year.y}</p>
             </li>
         )
     });

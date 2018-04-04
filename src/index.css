@@ -199,6 +199,10 @@ font-family: 'Roboto', sans-serif; */
     /* border-bottom: 2px solid rgb(164, 164, 164); */
 }
 
+ul {
+    padding: 0;
+}
+
 .blurb-wrapper {
     display: flex;
     width: 250px;
@@ -217,5 +221,5 @@ font-family: 'Roboto', sans-serif; */
 li {
     list-style-type: none;
     font-size: 1.2em;
-
+    margin: 10px;
 }
