@@ -56,12 +56,8 @@ export const investFundsRequest = () => ({
 });
 
 export const INVEST_FUNDS_SUCCESS = 'INVEST_FUNDS_SUCCESS';
-export const investFundsSuccess = user => ({
-  type: INVEST_FUNDS_SUCCESS,
-  year: user.year,
-  portfolio: user.risk,
-  previousFund: user.previousFund,
-  currentFund: user.currentFund
+export const investFundsSuccess = () => ({
+  type: INVEST_FUNDS_SUCCESS
 });
 
 export const INVEST_FUNDS_ERROR = 'INVEST_FUNDS_ERROR';
@@ -78,7 +74,6 @@ export const investFunds = (risk, year, currentFund) => (dispatch, getState) => 
         year,
         currentFund
     });
-    console.log('investFunds is running');
 	return fetch(`${API_BASE_URL}/risk/invest`, 
 		{
       method: 'PUT',
@@ -94,9 +89,8 @@ export const investFunds = (risk, year, currentFund) => (dispatch, getState) => 
 			}
 			return res.json()
 		})
-		.then(user => {
-            console.log(user);
-            dispatch(investFundsSuccess(user));
+		.then(() => {
+            dispatch(investFundsSuccess());
 		})
 		.catch(err => 
 			dispatch(investFundsError(err))
