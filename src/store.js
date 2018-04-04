@@ -6,8 +6,8 @@ import { loadAuthToken } from './local-storage';
 import { setAuthToken, refreshAuthToken } from './actions/auth';
 
 import authReducer from './reducers/auth';
-import userReducer from './reducers/users-reducer';
-import introReducer from './reducers/intro-reducer';
+import userReducer from './reducers/users';
+import introReducer from './reducers/intro';
 import portfolioReducer from './reducers/portfolio';
 
 

@@ -1,0 +1,8 @@
+.risk-breakdown {
+    text-align: center;
+}
+
+.risk-details {
+    display: flex;
+    justify-content: space-around;
+}

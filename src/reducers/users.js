@@ -32,9 +32,10 @@ export function userReducer(state = initialState, action) {
       showRegistrationForm: false,
       userLoggedIn: false
     });
-  } else {
-    return state;
   }
+
+  return state;
+
 }
 
 export default userReducer;

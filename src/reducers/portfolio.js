@@ -52,10 +52,6 @@ export function portfolioReducer(state = initialState, action) {
       });
     } else if (action.type === INVEST_FUNDS_SUCCESS) {
       return Object.assign({}, state, {
-        year: action.year,
-        portfolio: action.portfolio,
-        previousFund: action.previousFund,
-        currentFund: action.currentFund,
         loading: false,
         error: null
       });
