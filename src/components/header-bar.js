@@ -7,7 +7,6 @@ import { showLoginForm } from '../actions/users';
 import { showRegistrationForm } from '../actions/users';
 import { clearAuthToken } from '../local-storage';
 
-
 export class HeaderBar extends React.Component {
     logOut() {
         this.props.dispatch(clearAuth());

@@ -7,8 +7,6 @@ import Chart from "./chart";
 
 import { fetchPortfolio } from "../actions/portfolio";
 
-import "./five-year-personal.css";
-
 export class FiveYearPersonal extends React.Component {
   render() {
     let listItems,
