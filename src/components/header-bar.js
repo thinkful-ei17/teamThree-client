@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
+
 import { clearAuth } from '../actions/auth';
 import { showLoginForm } from '../actions/users';
 import { showRegistrationForm } from '../actions/users';
 import { clearAuthToken } from '../local-storage';
-
 
 import './header-bar.css';
 
@@ -17,17 +17,16 @@ export class HeaderBar extends React.Component {
 
     render() {
         // Only render the log out button if we are logged in
-        let currentUsername;
-        let logOutButton;
-        let loginFormNav;
-        let regFormNav;
-        let portfolio;
-        let investmentData;
+        let currentUsername,
+            logOutButton,
+            loginFormNav,
+            regFormNav,
+            portfolio,
+            investmentData;
 
         let appName = (
             <li className="appname"><span>Cents</span>ible.</li>
         );
-
 
         if (this.props.loggedIn) {
 

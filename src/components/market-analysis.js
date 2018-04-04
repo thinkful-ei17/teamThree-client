@@ -1,19 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import requiresLogin from './requires-login';
+
 import Button from './button';
+import requiresLogin from './requires-login';
+
 import { fetchRiskOverview } from '../actions/portfolio';
 
 
 export class MarketAnalysis extends React.Component {
-    componentWillMount() {
+    componentDidMount() {
         this.props.dispatch(fetchRiskOverview(this.props.year))
     }
     
     render () {    
-        let growth;
-        let selected;
         let marketRecap;
         
         if(this.props.risks !== null) {
@@ -27,20 +27,6 @@ export class MarketAnalysis extends React.Component {
           );
         }
 
-        if (this.props.riskChoice === 'high') {
-            growth = this.props.aggressive;
-            selected = 'Aggressive';
-        } else if (this.props.riskChoice === 'moderate') {
-            growth = this.props.moderate;
-            selected = 'Moderate';
-        } else if (this.props.riskChoice === 'low') {
-            growth = this.props.conservative;
-            selected = 'Conservative';
-        } else if (this.props.riskChoice === 'mattress') {
-            growth = 0.0;
-            selected = 'Mattress';
-        }
-
         const handleClick = () => {
             console.log('This button links to InvestmentReturn');
         };
@@ -48,16 +34,6 @@ export class MarketAnalysis extends React.Component {
         return(
         <div>  
             <h2>Market Analysis: Year {this.props.year}</h2>
-            
-            <h3>Individual Overview</h3>
-            <h4>Current Fund Value: {this.props.currentFund}</h4>
-            <section>
-                <p>Strategy:{selected}</p>
-                <p>Growth: {growth}%</p>
-                <p>Previous Fund Value: {this.props.previousFund}</p>
-            </section>
-            
-            <h3>Market Recap</h3>
             {marketRecap}
             <Link to='/investment-return'>
                 <Button name="View Portfolio" handleClick={handleClick}/>
@@ -72,7 +48,8 @@ const mapStateToProps = (state, props) => ({
     riskChoice: state.portfolio.riskChoice,
     previousFund: state.portfolio.previousFund,
     currentFund: state.portfolio.currentFund,
-    year: state.portfolio.year
+    year: state.portfolio.year,
+    loading: state.portfolio.loading
 });
 
 export default requiresLogin()(connect(mapStateToProps)(MarketAnalysis));

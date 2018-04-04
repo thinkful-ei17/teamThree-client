@@ -78,6 +78,7 @@ export const investFunds = (risk, year, currentFund) => (dispatch, getState) => 
         year,
         currentFund
     });
+    console.log('investFunds is running');
 	return fetch(`${API_BASE_URL}/risk/invest`, 
 		{
       method: 'PUT',
@@ -94,12 +95,18 @@ export const investFunds = (risk, year, currentFund) => (dispatch, getState) => 
 			return res.json()
 		})
 		.then(user => {
-			dispatch(investFundsSuccess(user));
+            console.log(user);
+            dispatch(investFundsSuccess(user));
 		})
 		.catch(err => 
 			dispatch(investFundsError(err))
 		)
 }
+
+export const INCREMENT_YEAR = 'INCREMENT_YEAR';
+export const incrementYear = () => ({
+  type: INCREMENT_YEAR
+});
 
 export const FETCH_RISK_OVERVIEW_REQUEST = 'FETCH_RISK_OVERVIEW_REQUEST';
 export const fetchRiskOverviewRequest = () => ({
