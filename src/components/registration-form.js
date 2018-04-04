@@ -27,41 +27,41 @@ export class RegistrationForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-                <label htmlFor="firstName">First name</label>
+                <label className="app-label" htmlFor="firstName">First name</label>
                 <Field component={Input} type="text" name="firstName" />
-                <label htmlFor="lastName">Last name</label>
+                <label className="app-label" htmlFor="lastName">Last name</label>
                 <Field component={Input} type="text" name="lastName" />
-                <label htmlFor="bday">Birth Day</label>
+                <label className="app-label" htmlFor="bday">Birth Day</label>
                 <Field component={Input} type="date" name="bday" />
-                <label htmlFor="email">Email</label>
+                <label className="app-label" htmlFor="email">Email</label>
                 <Field
                     component={Input}
                     type="text"
                     name="email"
                     validate={[required, nonEmpty, isTrimmed]}
                 />
-                <label htmlFor="username">Username</label>
+                <label className="app-label" htmlFor="username">Username</label>
                 <Field
                     component={Input}
                     type="text"
                     name="username"
                     validate={[required, nonEmpty, isTrimmed]}
                 />
-                <label htmlFor="password">Password</label>
+                <label className="app-label" htmlFor="password">Password</label>
                 <Field
                     component={Input}
                     type="password"
                     name="password"
                     validate={[required, passwordLength, isTrimmed]}
                 />
-                <label htmlFor="passwordConfirm">Confirm password</label>
+                <label className="app-label" htmlFor="passwordConfirm">Confirm password</label>
                 <Field
                     component={Input}
                     type="password"
                     name="passwordConfirm"
                     validate={[required, nonEmpty, matchesPassword]}
                 />
-                <button
+                <button className='app-button'
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
                     Register
