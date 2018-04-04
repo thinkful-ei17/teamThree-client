@@ -51,7 +51,7 @@ export class Portfolio extends React.Component {
             ];
             portfolioContent = (
                 <div>
-                    <h3>Current Worth: {this.props.currentFund}</h3>
+                    <h3 className='secondary-heading'>Current Worth: {this.props.currentFund}</h3>
                     <section>
                         <YearSummaryList />
                         <Chart yMin={0} xMax={5} data={data} />
@@ -61,14 +61,14 @@ export class Portfolio extends React.Component {
         }
 
         return (
-            <div className='view-port'> 
-            <h2>Your Investment Portfolio</h2>
+            <div className='viewport'> 
+            <h2 className='primary-heading'>Your Investment Portfolio</h2>
             {portfolioContent}
-            <Link to='/market-analysis'>
-                <Button name='Review Investment Data' handleClick={this.toInvestmentData}/>
+            <Link to='/market-analysis' >
+                <Button class='green-button' name='Review Investment Data' handleClick={this.toInvestmentData}/>
             </Link>
             <Link to={investmentLink}>
-                <Button name={name} handleClick={handleClick}/> 
+                <Button class='blue-button' name={name} handleClick={handleClick}/> 
             </Link>
             </div> 
         );

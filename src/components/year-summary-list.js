@@ -6,8 +6,8 @@ export function YearSummaryList(props){
     const yearList = years.map( year => {
         return(
             <li key={year.x} className='year-summary-item'>
-                <h4>Year {year.x}: {year.strategy}</h4>
-                <p> Start: ${year.previousYear}  End: ${year.y}</p>
+                <h4 className='list-item-heading'>Year {year.x}: {year.strategy}</h4>
+                <p classname='list-item-content'> Start: ${year.previousYear}  End: ${year.y}</p>
             </li>
         )
     });
