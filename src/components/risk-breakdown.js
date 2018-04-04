@@ -9,6 +9,8 @@ import PieChart from './pie-chart';
 
 import { hideIntroCard } from '../actions/intro';
 
+import './risk-breakdown.css';
+
 export function RiskBreakdown(props){
     const markIntroComplete = () => {
         console.log('mark intro complete ran');
@@ -17,7 +19,7 @@ export function RiskBreakdown(props){
     };
 
     return (
-        <div>
+        <div className='risk-breakdown'>
             <h1>Risk Breakdown</h1>
             <section className='risk-details'>
                 <div className='risk-overview-container'>
