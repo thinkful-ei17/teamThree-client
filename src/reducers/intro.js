@@ -1,8 +1,8 @@
 import {
   SHOW_INTRO_CARD,
   NEXT_INTRO_CARD,
-  HIDE_INTRO_CARD,
-} from "../actions/intro-page";
+  HIDE_INTRO_CARD
+} from "../actions/intro";
 
 const initialState = {
   introCard: [
@@ -19,22 +19,22 @@ export function introReducer(state = initialState, action) {
     return Object.assign({}, state, {
       introCard: action.introCard,
       numCard: action.numCard,
-  });
+    });
   }
   else if (action.type === NEXT_INTRO_CARD) {
     return Object.assign({}, state, {
       introCard: action.introCard,
       numCard: action.numCard + 1,
-  });
+    });
   }
   else if (action.type === HIDE_INTRO_CARD) {
-    console.log('introComplete is true');
     return Object.assign({}, state, {
       introComplete: true
-  }); 
-  } else {
-    return state;
+    }); 
   }
+
+  return state;
+
 }
 
 export default introReducer;

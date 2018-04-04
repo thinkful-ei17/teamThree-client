@@ -1,6 +1,8 @@
 import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
+
 import Input from './input';
+
 import { hideLoginForm } from '../actions/users';
 import { login } from '../actions/auth';
 import { required, nonEmpty } from '../validators';
@@ -30,7 +32,7 @@ export class LoginForm extends React.Component {
                 )}>
             
                 {error}
-                <label htmlFor="username">Username</label>
+                <label className="app-label" htmlFor="username">Username</label>
                 <Field
                     component={Input}
                     type="text"
@@ -38,7 +40,7 @@ export class LoginForm extends React.Component {
                     id="username"
                     validate={[required, nonEmpty]}
                 />
-                <label htmlFor="password">Password</label>
+                <label className="app-label" htmlFor="password">Password</label>
                 <Field
                     component={Input}
                     type="password"

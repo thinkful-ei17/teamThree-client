@@ -1,18 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import requiresLogin from './requires-login';
-import { Route, withRouter } from 'react-router-dom';
 
-import {hideLoginForm} from '../actions/users';
-import {hideRegistrationForm} from '../actions/users';
+import requiresLogin from './requires-login';
 import IntroductionPage from './introduction-page';
 import Portfolio from './portfolio';
 
 export class Dashboard extends React.Component {
-    // componentDidMount() {
-    //     this.props.dispatch(hideLoginForm());
-    //     this.props.dispatch(hideRegistrationForm());
-    // }
 
     render() {
         let dashboardComponent;
@@ -25,7 +18,7 @@ export class Dashboard extends React.Component {
 
         return (
             <div className="dashboard">
-                <div className="dashboard-name">Welcome {this.props.name}!</div>
+                <h3 className="dashboard-name">Welcome {this.props.name}!</h3>
                 {dashboardComponent}
             </div>
         );
