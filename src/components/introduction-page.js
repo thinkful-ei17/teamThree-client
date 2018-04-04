@@ -30,10 +30,10 @@ export class IntroductionPage extends React.Component {
         <div className="row">
             <section className="introduction">
               <header>
-                <h1 className="app-h1-text">{this.props.introCard[this.props.numCard].title}</h1>
+                <h1 className="primary-heading">{this.props.introCard[this.props.numCard].title}</h1>
               </header>
               <main>
-                <h3 className="app-h3-text">{this.props.introCard[this.props.numCard].details}</h3>
+                <h3 className="descriptive-content">{this.props.introCard[this.props.numCard].details}</h3>
                 <Link to={link}>
                   <Button name='Got It!' handleClick={this.nextCardClick}/>
                 </Link>
