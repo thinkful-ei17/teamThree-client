@@ -69,7 +69,7 @@ export class App extends React.Component {
                 <Route exact path="/investment-return" component={InvestmentReturn}/>
 
                 {/* <Route exact path="/five-year-market" component={FiveYearMarket}/> */}
-                <Route exact path="/personal" component={FiveYearPersonal}/>
+                {/* <Route exact path="/personal" component={FiveYearPersonal}/> */}
 
             </div>
         );

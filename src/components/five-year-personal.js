@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import Button from "./button";
 import { fetchPortfolio } from '../actions/portfolio';
-import "./portfolioview.css";
+import "./five-year-personal.css";
 
 export class FiveYearPersonal extends React.Component {
   componentDidMount() {
