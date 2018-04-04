@@ -11,25 +11,30 @@ import "./five-year-personal.css";
 
 export class FiveYearPersonal extends React.Component {
   render() {
-    let listItems = null;
-    let profitloss = null;
-    let fund = null;
-    let change = null;
-    let investmentReturnContent = null;
+    let listItems,
+      profitloss,
+      currentFund,
+      overallChange,
+      overallGrowth,
+      investmentReturnContent;
+    
     if (this.props.data) {
-      console.log(this.props);
-      fund = this.props.user.currentFund;
-      change = this.props.risk[this.props.risk.length - 1].previousYear - fund;
-      listItems = this.props.risk.map((year, index) => (
+      currentFund = this.props.currentFund;
+
+      overallChange = currentFund - 5000;
+      overallGrowth = (overallChange/5000) * 100;
+
+      let investmentData = this.props.data.slice(1);
+
+      listItems = investmentData.map((year, index) => (
         <div className="blurb-wrapper blurb-one">
-          <li>
-            Year {index + 1}: {year.strategy}
+          <li key={index}>
+            Year {year.year}: {year.strategy}
             <br />
             Start: {year.y}
             <br />
             Change: {year.growth}%
           </li>
-          {listItems}
         </div>
       ));
       const data = [
@@ -63,15 +68,17 @@ export class FiveYearPersonal extends React.Component {
       //line graph
       <div className="portfolio-view">
         <h1>Five Year Personal Summary:</h1>
-        <h2>Your portfolio Worth:${fund}</h2>
-        <h2>Change:${change}</h2>
-        <h2>Your Investment Choices Vs Optimal Choices:</h2>
+        <h2>Your portfolio Worth: ${currentFund}</h2>
+        <h2>Change: ${overallChange}</h2>
+        <h2>Growth: {overallGrowth}%</h2>
+        <h2>Your Investment Strategy Vs Optimal Investment Strategy:</h2>
         <p>Black is Optimal</p>
         {investmentReturnContent}
-        <h2> Your Investment Choices by Year:</h2>
-        <section className="vector-wrapper">{listItems}
+        <h2> Your Investment Strategy by Year:</h2>
+        <section className="vector-wrapper">
+          {listItems}
         </section>
-        <h2> Optimal Investment Choice By Year:</h2>
+        <h2> Optimal Investment Strategy By Year:</h2>
         <section className="vector-wrapper">
           <div className="blurb-wrapper blurb-one">
             <li>
@@ -112,17 +119,11 @@ export class FiveYearPersonal extends React.Component {
 }
 
 const mapStateToProps = state => {
-  if (state.portfolio.portfolio === null) {
-    return {
-      risk: null
-    };
-  } else {
-    return {
-      user: state.auth.currentUser,
-      data: state.portfolio.portfolio,
-      risk: state.portfolio.portfolio.filter(index => index.strategy),
-      year: state.portfolio.year
-    };
+  return {
+    user: state.auth.currentUser,
+    data: state.portfolio.portfolio,
+    year: state.portfolio.year,
+    currentFund: state.portfolio.currentFund
   }
 };
 
