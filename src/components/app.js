@@ -13,11 +13,9 @@ import InvestmentForm from './investment-form';
 import MarketAnalysis from './market-analysis';
 import InvestmentReturn from './investment-return';
 // import FiveYearMarket from './five-year-market';
-// import FiveYearPersonal from './five-year-personal';
-
 import { refreshAuthToken } from '../actions/auth';
 import { fetchPortfolio } from '../actions/portfolio';
-import { PortfolioView } from './portfolioview';
+import { FiveYearPersonal } from './five-year-personal';
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {
@@ -71,7 +69,7 @@ export class App extends React.Component {
                 <Route exact path="/investment-return" component={InvestmentReturn}/>
 
                 {/* <Route exact path="/five-year-market" component={FiveYearMarket}/> */}
-                <Route exact path="/personal" component={PortfolioView}/>
+                <Route exact path="/personal" component={FiveYearPersonal}/>
 
             </div>
         );

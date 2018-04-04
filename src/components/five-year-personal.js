@@ -5,7 +5,7 @@ import Button from "./button";
 import { fetchPortfolio } from '../actions/portfolio';
 import "./portfolioview.css";
 
-export class PortfolioView extends React.Component {
+export class FiveYearPersonal extends React.Component {
   componentDidMount() {
     // this.props.dispatch(fetchPortfolio());
     console.log(this.props)
@@ -110,4 +110,4 @@ const mapStateToProps = state => ({
   year: state.portfolio.year
 });
 
-export default connect(mapStateToProps)(PortfolioView);
+export default connect(mapStateToProps)(FiveYearPersonal);
