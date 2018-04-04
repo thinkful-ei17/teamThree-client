@@ -307,7 +307,7 @@ export class FiveYearMarket extends React.Component {
 }
 
 const mapStateToProps = state => {
-  if(state.marketReducer.marketData === null){ //ensure data mounted properly
+  if(state.marketReducer.marketData === null){ //ensure data mounted properly - prevents error prior to proper data state
     return {
       marketData: null,
     };
@@ -315,10 +315,6 @@ const mapStateToProps = state => {
   else{
     return{
       marketDataGainOne: state.marketReducer.marketData[0].gain,
-      marketDataGainTwo: state.marketReducer.marketData[1].gain,
-      marketDataGainThree:state.marketReducer.marketData[2].gain,
-      marketDataGainFour: state.marketReducer.marketData[3].gain,
-      marketDataGainFive: state.marketReducer.marketData[3].gain,
     };
   }
 };
