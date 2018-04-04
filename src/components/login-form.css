@@ -25,6 +25,7 @@
 
 .login-form input {
   width: 100%;
+  max-width: 400px;
   color: #B6DF9B;
   font-size: 1.2em;
   border-top: none;
@@ -55,7 +56,8 @@
   color:#EDF8E8;
   font-size: 2.7em;
   position: relative;
+  top: 1.2em;
   right: -3.8em; 
-  z-index: 2;
-  
+  z-index: 2; 
 }
+

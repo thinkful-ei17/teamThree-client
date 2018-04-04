@@ -1,0 +1,35 @@
+.registration-form {
+  padding-left: 1em;
+  overflow: auto;
+  width: 100%;
+  max-width:756px;
+  height: 400px;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-div {
+  margin-left: 1em;
+}
+.registration-form button {
+  margin-top: .75em;
+  width: 300px;
+  max-width: 100%;
+}
+
+.registration .close {
+  position: relative;
+  top: 1.3em;
+}
+
+@media (min-width: 650px ){
+
+  .registration-form {
+    flex-wrap: wrap;
+  }
+
+  .registration .close {
+    right: -7.8em;
+  }
+}
