@@ -4,6 +4,11 @@
    min-height: 250px;
    /* border-bottom: 2px solid rgb(164, 164, 164); */
 }
+
+ul {
+    list-style: none;
+    padding: 0;
+}
  
 .blurb-wrapper {
    display: flex;
@@ -19,7 +24,7 @@
    color: rgb(67, 66, 66);
    padding: 5px;
 }
- 
+
 li {
    list-style-type: none;
    font-size: 1.2em;

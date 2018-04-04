@@ -27,15 +27,13 @@ export class FiveYearPersonal extends React.Component {
       let investmentData = this.props.data.slice(1);
 
       listItems = investmentData.map((year, index) => (
-        <div className="blurb-wrapper blurb-one">
-          <li key={index}>
+          <li key={index} className="blurb-wrapper">
             Year {year.year}: {year.strategy}
             <br />
             Start: {year.y}
             <br />
             Change: {year.growth}%
           </li>
-        </div>
       ));
       const data = [
         {
@@ -75,43 +73,33 @@ export class FiveYearPersonal extends React.Component {
         <p>Black is Optimal</p>
         {investmentReturnContent}
         <h2> Your Investment Strategy by Year:</h2>
-        <section className="vector-wrapper">
+        <ul className="vector-wrapper">
           {listItems}
-        </section>
+        </ul>
         <h2> Optimal Investment Strategy By Year:</h2>
-        <section className="vector-wrapper">
-          <div className="blurb-wrapper blurb-one">
-            <li>
+        <ul className="vector-wrapper">
+            <li className="blurb-wrapper">
               Year 1: Moderate
               <br />
               56%
             </li>
-          </div>
-          <div className="blurb-wrapper blurb-two">
-            <li>
+            <li className="blurb-wrapper">
               Year 2: Moderate<br />
               70%
             </li>
-          </div>
-          <div className="blurb-wrapper blurb-three">
-            <li>
+            <li className="blurb-wrapper">
               Year 3: High<br />
               79%
             </li>
-          </div>
-          <div className="blurb-wrapper blurb-four">
-            <li>
+            <li className="blurb-wrapper">
               Year 4: Moderate<br />
               57%
             </li>
-          </div>
-          <div className="blurb-wrapper blurb-five">
-            <li>
+            <li className="blurb-wrapper">
               Year 5: High<br />
               87%
             </li>
-          </div>
-        </section>
+        </ul>
         {/* {Button} */}
       </div>
     );
