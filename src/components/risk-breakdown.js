@@ -6,7 +6,7 @@ import requiresLogin from './requires-login';
 import Button from './button';
 import RiskDetail from './risk-detail';
 
-import { hideIntroCard } from '../actions/intro-page';
+import { hideIntroCard } from '../actions/intro';
 
 export function RiskBreakdown(props){
     const markIntroComplete = () => {
