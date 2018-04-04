@@ -4,6 +4,7 @@ import Button from "./button";
 import { fetchPortfolio } from '../actions/portfolio';
 import "./five-year-personal.css";
 
+
 export class FiveYearPersonal extends React.Component {
 //   componentDidMount() {
 //     // this.props.dispatch(fetchPortfolio());
