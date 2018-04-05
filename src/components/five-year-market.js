@@ -26,21 +26,22 @@ export class FiveYearMarket extends React.Component {
         
         let investmentData = this.props.data;
         listItemsHigh = investmentData.filter(item => item.risk === 'high').map((risk, index) => (
+          <ul>
+            <li className="column-heading-year">
+              Year {risk.year}
+            </li>
             <li key={index} className="market-blurb-wrapper">
-              Year: {risk.year}
-              <br />
               Balance: {risk.yearEndBalance}
               <br />
               % Change: {risk.gain}
               <br />
               $ Change: {risk.amtChange}
             </li>
-        ));
+          </ul>
+      ));
 
         listItemsLow = investmentData.filter(item => item.risk === 'low').map((risk, index) => (
           <li key={index} className="market-blurb-wrapper">
-            Year: {risk.year}
-            <br />
             Balance: {risk.yearEndBalance}
             <br />
             % Change: {risk.gain}
@@ -49,22 +50,18 @@ export class FiveYearMarket extends React.Component {
           </li>
       ));
 
-      listItemsModerate = investmentData.filter(item => item.risk === 'moderate').map((risk, index) => (
-        <li key={index} className="market-blurb-wrapper">
-          Year: {risk.year}
-          <br />
-          Balance: {risk.yearEndBalance}
-          <br />
-          % Change: {risk.gain}
-          <br />
-          $ Change: {risk.amtChange}
-        </li>
+    listItemsModerate = investmentData.filter(item => item.risk === 'moderate').map((risk, index) => (
+      <li key={index} className="market-blurb-wrapper">
+        Balance: {risk.yearEndBalance}
+        <br />
+        % Change: {risk.gain}
+        <br />
+        $ Change: {risk.amtChange}
+      </li>
     ));
 
     listItemsMattress = investmentData.filter(item => item.risk === 'mattress').map((risk, index) => (
       <li key={index} className="market-blurb-wrapper">
-        Year: {risk.year}
-        <br />
         Balance: {risk.yearEndBalance}
         <br />
         % Change: {risk.gain}
@@ -83,10 +80,10 @@ export class FiveYearMarket extends React.Component {
             {listItemsHigh}
           </ul>
           <ul className="market-vector-wrapper">
-            {listItemsLow}
+            {listItemsModerate}
           </ul>
           <ul className="market-vector-wrapper">
-            {listItemsModerate}
+            {listItemsLow}
           </ul>
           <ul className="market-vector-wrapper">
              {listItemsMattress}

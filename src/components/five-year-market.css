@@ -3,32 +3,27 @@
 .market-vector-wrapper {
   display: flex;
   justify-content: space-evenly;
-  min-height: 250px;
-  /* border-bottom: 2px solid rgb(164, 164, 164); */
-}
-
-ul {
-  padding: 0;
-}
-
-.market-blurb-wrapper {
-  display: flex;
-  width: 250px;
-  min-height: 150px;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 60px;
   margin-bottom: 60px;
   border-radius: 10px;
   background-color: rgb(232, 228, 228);
-  justify-content:left;
-  text-align: left;
-  align-content: left;
   flex-direction: row;
   color: rgb(67, 66, 66);
-  padding: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-.year-title{
+.column-heading-year{
+  font-weight: bold;
+  font-size: 1.5em;
   text-align: center;
+}
+
+ul {
+  padding: 0;
 }
 
 li {
