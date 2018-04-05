@@ -24,6 +24,17 @@ img {
     justify-content: space-around;
 }
 
+.splash-div section {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.virtue {
+
+}
+
 
 @media (min-width: 720px){
 
@@ -36,5 +47,13 @@ img {
         justify-content: flex-start;
         position: relative;
         top: -2em;
+    }
+
+    .splash-div section {
+        height: 400px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
     }
 }
