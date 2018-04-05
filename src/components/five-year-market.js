@@ -310,7 +310,7 @@ const mapStateToProps = state => {
     };
   }
   else{
-    console.log('hi in state');
+    console.log('hi in state  modify');
     console.log(state.marketReducer.marketData)
     return{
       marketDataGainOne: state.marketReducer.marketData[15].gain,
