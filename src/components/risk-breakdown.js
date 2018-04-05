@@ -9,16 +9,14 @@ import PieChart from './pie-chart';
 
 import { hideIntroCard } from '../actions/intro';
 
-import './risk-breakdown.css';
-
 export function RiskBreakdown(props){
     const markIntroComplete = () => {
         props.dispatch(hideIntroCard());
     };
 
     return (
-        <div className='risk-breakdown'>
-            <h1>Risk Breakdown</h1>
+        <div className='risk-breakdown viewport'>
+            <h2 className='primary-heading'>Risk Breakdown</h2>
             <section className='risk-details'>
                 <div className='risk-overview-container'>
                 <RiskDetail riskType='Conservative' stocks='20' bonds='80'/>
@@ -34,7 +32,7 @@ export function RiskBreakdown(props){
                 </div>
             </section>
             <Link to='/investment-form'>
-                <Button name="Let's Get Investing!" handleClick={markIntroComplete} />
+                <Button class='blue-button' name="Let's Get Investing!" handleClick={markIntroComplete} />
             </Link>
         </div>    
     );
