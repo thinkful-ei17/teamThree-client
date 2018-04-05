@@ -28,7 +28,9 @@ export class FiveYearPersonal extends React.Component {
           <li key={index} className="blurb-wrapper">
             Year {year.year}: {year.strategy}
             <br />
-            Start: {year.y}
+            Start: ${year.previousYear}
+            <br />
+            End: ${year.y}
             <br />
             Change: {year.growth}%
           </li>
@@ -49,7 +51,23 @@ export class FiveYearPersonal extends React.Component {
             },
             {
               x: 1,
-              y: 5100
+              y: 7800
+            },
+            {
+              x: 2,
+              y: 13260
+            },
+            {
+              x: 3,
+              y: 23735
+            },
+            {
+              x: 4,
+              y: 37265
+            },
+            {
+              x: 5,
+              y: 69685
             }
           ]
         }
@@ -79,23 +97,47 @@ export class FiveYearPersonal extends React.Component {
             <li className="blurb-wrapper">
               Year 1: Moderate
               <br />
-              56%
+              Start: $5000
+              <br />
+              End: $7800
+              <br />
+              Change: 56%
             </li>
             <li className="blurb-wrapper">
-              Year 2: Moderate<br />
-              70%
+              Year 2: Moderate
+              <br />
+              Start: $7800
+              <br />
+              End: $13,260
+              <br />
+              Change: 70%
             </li>
             <li className="blurb-wrapper">
-              Year 3: High<br />
-              79%
+              Year 3: High
+              <br />
+              Start: $13,260
+              <br />
+              End: $23,735
+              <br />
+              Change: 79%
             </li>
             <li className="blurb-wrapper">
-              Year 4: Moderate<br />
-              57%
+              Year 4: Moderate
+              <br />
+              Start: $23,735
+              <br />
+              End: $37,265
+              <br />
+              Change: 57%
             </li>
             <li className="blurb-wrapper">
-              Year 5: High<br />
-              87%
+              Year 5: High
+              <br />
+              Start: $37,265
+              <br />
+              End: $69,685
+              <br />
+              Change: 87%
             </li>
         </ul>
         {/* {Button} */}
