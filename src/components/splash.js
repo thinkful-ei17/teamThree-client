@@ -11,10 +11,10 @@ export default function Splash(props){
 
         <div className='splash-div'>
             <img src={confettiMan} alt='A very happy man in a cloud of confetti.'/>
-            {/* <h1 className='white-text'>Centsible.</h1> */}
                 <p className='primary-text-color'>
-                    Start Making Cents of Investing
+                    Start Making Cents of Investing.
                 </p>
+         
             <section className='virtues'>
                 <div className='virtue'>
                     <img src={piggyBank} alt='Piggy-bank'/>
@@ -40,6 +40,10 @@ export default function Splash(props){
                         </h2>
                     </span>    
                 </div>    
+            </section>
+            <section className='words background-dark'>
+                <h1><span className='appname-span'>Cents</span>ible.</h1>
+                <p>The Investment Training Application.</p>
             </section>
 
         </div>
