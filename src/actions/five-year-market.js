@@ -6,9 +6,9 @@ export const fetchRiskMarketRequest = () => ({
 });
 
 export const FETCH_RISK_MARKET_SUCCESS = 'FETCH_RISK_MARKET_SUCCESS';
-export const fetchRiskMarketSuccess = marketData => ({
+export const fetchRiskMarketSuccess = data => ({
   type: FETCH_RISK_MARKET_SUCCESS,
-  marketData
+  data
 });
 
 export const FETCH_RISK_MARKET_ERROR = 'FETCH_RISK_MARKET_ERROR';

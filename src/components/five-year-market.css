@@ -1,8 +1,14 @@
+/*FIVE-YEAR-MARKET COMPONENT*/
+
 .market-vector-wrapper {
   display: flex;
   justify-content: space-evenly;
   min-height: 250px;
   /* border-bottom: 2px solid rgb(164, 164, 164); */
+}
+
+ul {
+  padding: 0;
 }
 
 .market-blurb-wrapper {
@@ -13,10 +19,10 @@
   margin-bottom: 60px;
   border-radius: 10px;
   background-color: rgb(232, 228, 228);
-  justify-content:center;
+  justify-content:left;
   text-align: left;
-  align-content: center;
-  flex-direction: column;
+  align-content: left;
+  flex-direction: row;
   color: rgb(67, 66, 66);
   padding: 10px;
 }

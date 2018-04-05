@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import Chart from './chart';
 import Button from './button';
 import { fetchPortfolio } from '../actions/portfolio';
+import { fetchRiskMarketRequest } from "../actions/five-year-market";
 
 
 export class InvestmentReturn extends React.Component {
@@ -36,6 +37,7 @@ export class InvestmentReturn extends React.Component {
             investmentLink = '/five-year-market';
             name = 'See Five Year Review';
             handleClick = this.toFiveYearReview;
+            this.props.dispatch(fetchRiskMarketRequest());
         } else{
             investmentLink='/investment-form';
             name = 'Keep Investing!';

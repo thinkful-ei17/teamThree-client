@@ -5,7 +5,7 @@ import {
 } from "../actions/five-year-market";
 
 const initialState = {
-  marketData: null,
+  data: null,
   loading: false,
   error: null
 }
@@ -17,7 +17,7 @@ export function marketReducer(state = initialState, action) {
     });
   } else if (action.type === FETCH_RISK_MARKET_SUCCESS) {
     return Object.assign({}, state, {
-      marketData: action.marketData,
+      data: action.data,
       loading: false,
       error: null
     });
