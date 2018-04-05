@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import Modal from './modal.js';
+import Splash from './splash';
 
 export function LandingPage(props) {
     // If we are logged in redirect straight to the user's dashboard
@@ -13,6 +14,7 @@ export function LandingPage(props) {
     return (
         <div className="home">
             <Modal />
+            <Splash/>
         </div>
     );
 }

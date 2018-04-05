@@ -1,0 +1,26 @@
+img {
+    width:100%;
+    position: relative;
+    z-index: -1;
+    margin: 0;
+}
+
+.splash-did {
+    width: 100%;
+}
+/* .splash-div h1 {
+    font-size: 4em;
+    position: relative;
+    top: -3em;
+    left: 1em;
+} */
+
+.splash-div p {
+    margin-left: 1em;
+    font-size: 3em;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    top: -2.5em;
+   
+}
