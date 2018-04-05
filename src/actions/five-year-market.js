@@ -17,10 +17,10 @@ export const fetchRiskMarketError = error => ({
   error
 });
 
-export const fetchRiskMarket = risk => (dispatch, getState) => {
+export const fetchRiskMarket = () => (dispatch, getState) => {
     dispatch(fetchRiskMarketRequest());
     const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/risk/market/all`, 
+    return fetch(`${API_BASE_URL}/risk/all/market`, 
     {
           method: 'GET',
           headers: {

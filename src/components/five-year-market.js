@@ -28,10 +28,10 @@ export class FiveYearMarket extends React.Component {
         listItemsHigh = investmentData.filter(item => item.risk === 'high').map((risk, index) => (
           <ul>
             <li className="column-heading-year">
-              Year {risk.year}
+              Year {risk.x}
             </li>
             <li key={index} className="market-blurb-wrapper">
-              Balance: {risk.yearEndBalance}
+              Balance: {risk.y}
               <br />
               % Change: {risk.gain}
               <br />
@@ -42,7 +42,7 @@ export class FiveYearMarket extends React.Component {
 
         listItemsLow = investmentData.filter(item => item.risk === 'low').map((risk, index) => (
           <li key={index} className="market-blurb-wrapper">
-            Balance: {risk.yearEndBalance}
+            Balance: {risk.y}
             <br />
             % Change: {risk.gain}
             <br />
@@ -52,7 +52,7 @@ export class FiveYearMarket extends React.Component {
 
     listItemsModerate = investmentData.filter(item => item.risk === 'moderate').map((risk, index) => (
       <li key={index} className="market-blurb-wrapper">
-        Balance: {risk.yearEndBalance}
+        Balance: {risk.y}
         <br />
         % Change: {risk.gain}
         <br />
@@ -62,7 +62,7 @@ export class FiveYearMarket extends React.Component {
 
     listItemsMattress = investmentData.filter(item => item.risk === 'mattress').map((risk, index) => (
       <li key={index} className="market-blurb-wrapper">
-        Balance: {risk.yearEndBalance}
+        Balance: {risk.y}
         <br />
         % Change: {risk.gain}
         <br />
@@ -97,7 +97,6 @@ export class FiveYearMarket extends React.Component {
   }
 
 const mapStateToProps = state => {
-  console.log('what is in state? - 5 market', state.marketReducer.data);
   return {
   data: state.marketReducer.data,
   };
