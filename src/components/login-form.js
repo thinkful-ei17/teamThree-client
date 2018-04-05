@@ -7,6 +7,8 @@ import { hideLoginForm } from '../actions/users';
 import { login } from '../actions/auth';
 import { required, nonEmpty } from '../validators';
 import './login-form.css';
+import '../index.css';
+
 
 export class LoginForm extends React.Component {
     onSubmit(values) {
@@ -23,11 +25,14 @@ export class LoginForm extends React.Component {
             );
         }
         return (
+            <div className='login'>
+                <span className="close js-close" onClick={() => this.props.dispatch(hideLoginForm())}> &times; </span>
             <form
-                className="login-form"
+                    className="login-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
+            
                 {error}
                 <label className="app-label" htmlFor="username">Username</label>
                 <Field
@@ -45,11 +50,14 @@ export class LoginForm extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}>
+                <button 
+                    className='user-form-button'
+                    disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button>
-                <span className="close js-close" onClick={() => this.props.dispatch(hideLoginForm()) }> &times; </span>
+                
             </form>
+          </div>  
         );
     }
 }
