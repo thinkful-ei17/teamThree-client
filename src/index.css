@@ -1,5 +1,225 @@
+body * {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
+}
+
+/* font-family: 'Open Sans', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+/*CLASSES FOR COMMON APP OBJECTS*/
+
+.viewport {
+    width: 90%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+/* ===========  TEXT OPTIONS ========================*/
+
+.primary-heading {
+    font-size: 3em;
+    color: #0C1F27;
+}
+
+.secondary-heading {
+    font-size: 2em;
+}
+
+.list-item-heading {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    font-weight: bolder;
+}
+
+.list-item-content {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 1em;
+}
+
+.descriptive-content {
+    font-size: 1.7em;
+}
+
+/* =============== MAIN TEXT COLORS =================== */
+
+.primary-text-color {
+    color: #0C1F27;
+}
+
+.white-text {
+    color: #EDF8E8;
+}
+
+/*  ================= MAIN BACKGROUND COLORS ========== */
+
+.background-dk {
+    color: #192C4D;
+}
+
+.background-med {
+    color: #3478A2;
+}
+
+.background-lt {
+    color: #EDF8E8;
+}
+
+/* ===================== ACCENT COLORS ================= */
+
+.accent-dk-green {
+    color: #2C8B39;
+}
+
+.accent-med-green {
+    color: #5DCB6E;
+}
+
+.accent-lt-green {
+    color: #B6DF9B;
+}
+
+.accent-med-blue {
+    color: #3478A2;
+}
+.accent-aqua{
+    color: #3478A2;
+}
+
+/* ======================  GRAPH COLORS =============== */
+
+.graph-green {
+    color:  #B6DF9B;
+}
+
+.graph-aqua{
+    color: #3478A2;
+}
+.graph-pink {
+    color: #C24275;
+}
+.graph-purple {
+    color: #783DB8;
+}
+
+
+/*  ======================  BUTTONS ===================== */
+
+.blue-button {
+    margin: 1em;
+    padding: .5em;
+    background-color: #3478A2;
+    color: #EDF8E8;
+    width: 15em;
+    max-width: 48%;
+    font-size: 1.3em;
+    border-radius: 10px;
+}
+
+.green-button {
+    margin: 1em;
+    padding: .5em;
+    background-color: #5DCB6E ;
+    color: #0C1F27;
+    width: 15em;
+    max-width: 48%;
+    font-size: 1.3em;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+/*HEADER-BAR COMPONENT*/
+
+.header-bar {
+    display: flex;
+    text-align: center;
+    height: 100px;
+    background-color: #192C4D;
+    color: #39A7B1;
+}
+
+.nav-bar-ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 2em;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.nav-bar-ul li {
+    text-decoration: none;
+    list-style: none;
+    text-align: left;
+    margin: 0 1em;
+}
+
+.nav-bar-ul li a {
+    text-decoration: none;
+    color: #39A7B1;
+}
+
+.appname {
+    margin-left: 0;
+    font-size: 3em;
+    flex-grow: 2;
+    color: #B6DF9B;
+}
+
+.appname span {
+    color: #5DCB6E;
+}
+
+
+/*FIVE-YEAR-PLAN-PERSONAL COMPONENT*/
+
+.vector-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    min-height: 250px;
+    /* border-bottom: 2px solid rgb(164, 164, 164); */
+}
+
+ul {
+    padding: 0;
+}
+
+.blurb-wrapper {
+    display: flex;
+    width: 250px;
+    height: 150px;
+    margin-top: 60px;
+    border-radius: 10px;
+    background-color: rgb(232, 228, 228);
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    flex-direction: column;
+    color: rgb(67, 66, 66);
+    padding: 5px;
+}
+
+li {
+    list-style-type: none;
+    font-size: 1.2em;
+    margin: 10px;
 }

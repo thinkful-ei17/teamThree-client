@@ -1,12 +1,13 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 export function YearSummaryList(props){
-    const yearList = props.years.map( year => {
+    const years = props.years.slice(1);
+    const yearList = years.map( year => {
         return(
-            <li key={year.year} className='year-summary-item'>
-                <h3>Year {year.year}: {year.choice}</h3>
-                <p> Start: ${year.start}  End: ${year.end}</p>
+            <li key={year.x} className='year-summary-item'>
+                <h4 className='list-item-heading'>Year {year.x}: {year.strategy}</h4>
+                <p className='list-item-content'> Start: ${year.previousYear}  End: ${year.y}</p>
             </li>
         )
     });
@@ -19,10 +20,7 @@ export function YearSummaryList(props){
 }
 
 const mapStateToProps = (state, props) => ({
-    years:[
-        {year: 1, choice: 'aggressive', start:'5000', end:'6000'},
-        {year: 2, choice: 'mattress', start:'6000', end:'6000'}
-    ] //change to actually get from user state once there is state
+    years: state.portfolio.portfolio
 });
 
 export default connect(mapStateToProps)(YearSummaryList)

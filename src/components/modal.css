@@ -1,13 +1,16 @@
 .login-modal {
     position: fixed;
     margin: 0 auto;
+    text-align: center;
     z-index: 1;
     padding-top: 100px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.7); 
+    /* background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.7);
+    background-color:rgba(25,44,77,0.7); */
+    background-color:rgba(12,31,39,0.7);
   }
+

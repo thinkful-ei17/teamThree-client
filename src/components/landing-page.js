@@ -1,8 +1,8 @@
 import React from 'react';
-import Modal from './modal.js';
 import { connect } from 'react-redux';
-import { /*Link,*/ Redirect } from 'react-router-dom';
-//import LoginForm from './login-form';
+import { Redirect } from 'react-router-dom';
+
+import Modal from './modal.js';
 
 export function LandingPage(props) {
     // If we are logged in redirect straight to the user's dashboard
@@ -12,10 +12,7 @@ export function LandingPage(props) {
 
     return (
         <div className="home">
-            {/* <h2>Welcome to Foo App</h2> */}
-            {/* <LoginForm /> */}
             <Modal />
-            {/* <Link to="/register">Register</Link> */}
         </div>
     );
 }

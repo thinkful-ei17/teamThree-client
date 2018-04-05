@@ -1,12 +1,11 @@
 import React from 'react';
-
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import { Link } from 'react-router-dom';
-import { showIntroCard , nextIntroCard/*, hideIntroCard*/ } from '../actions/intro-page';
-
 
 import Button from './button';
+
+import { showIntroCard , nextIntroCard } from '../actions/intro';
 
 export class IntroductionPage extends React.Component {
   componentDidMount(){
@@ -20,19 +19,21 @@ export class IntroductionPage extends React.Component {
   }
 
   render() {
-    let link='';
+    let link = '';
+
     if(this.props.numCard === 3 || this.props.introComplete) {
       link = '/risk-breakdown';
     }
+    
     return (
       <div className="introduction">
         <div className="row">
             <section className="introduction">
               <header>
-                <h1 className="title">{this.props.introCard[this.props.numCard].title}</h1>
+                <h1 className="primary-heading">{this.props.introCard[this.props.numCard].title}</h1>
               </header>
               <main>
-                <div className="introduction-details">{this.props.introCard[this.props.numCard].details}</div>
+                <h3 className="descriptive-content">{this.props.introCard[this.props.numCard].details}</h3>
                 <Link to={link}>
                   <Button name='Got It!' handleClick={this.nextCardClick}/>
                 </Link>

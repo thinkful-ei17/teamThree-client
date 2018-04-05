@@ -56,12 +56,8 @@ export const investFundsRequest = () => ({
 });
 
 export const INVEST_FUNDS_SUCCESS = 'INVEST_FUNDS_SUCCESS';
-export const investFundsSuccess = user => ({
-  type: INVEST_FUNDS_SUCCESS,
-  year: user.year,
-  portfolio: user.risk,
-  previousFund: user.previousFund,
-  currentFund: user.currentFund
+export const investFundsSuccess = () => ({
+  type: INVEST_FUNDS_SUCCESS
 });
 
 export const INVEST_FUNDS_ERROR = 'INVEST_FUNDS_ERROR';
@@ -93,13 +89,18 @@ export const investFunds = (risk, year, currentFund) => (dispatch, getState) => 
 			}
 			return res.json()
 		})
-		.then(user => {
-			dispatch(investFundsSuccess(user));
+		.then(() => {
+            dispatch(investFundsSuccess());
 		})
 		.catch(err => 
 			dispatch(investFundsError(err))
 		)
 }
+
+export const INCREMENT_YEAR = 'INCREMENT_YEAR';
+export const incrementYear = () => ({
+  type: INCREMENT_YEAR
+});
 
 export const FETCH_RISK_OVERVIEW_REQUEST = 'FETCH_RISK_OVERVIEW_REQUEST';
 export const fetchRiskOverviewRequest = () => ({

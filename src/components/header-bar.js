@@ -1,12 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
+
 import { clearAuth } from '../actions/auth';
 import { showLoginForm } from '../actions/users';
 import { showRegistrationForm } from '../actions/users';
 import { clearAuthToken } from '../local-storage';
-
-
-// import './header-bar.css';
 
 export class HeaderBar extends React.Component {
     logOut() {
@@ -16,26 +15,30 @@ export class HeaderBar extends React.Component {
 
     render() {
         // Only render the log out button if we are logged in
-        let currentUsername;
-        let logOutButton;
-        let loginFormNav;
-        let regFormNav;
-        let appName;
-        //let portfolio;
-        //let investmentData;
+        let currentUsername,
+            logOutButton,
+            loginFormNav,
+            regFormNav,
+            portfolio,
+            investmentData;
 
+        let appName = (
+            <li className="appname"><span>Cents</span>ible.</li>
+        );
 
         if (this.props.loggedIn) {
-            currentUsername = (
-                <li className="current-user">Logged in as <span className="user-span">{this.props.currentUser.username}</span></li>
+
+            portfolio = (
+                <li><Link to='/portfolio'>Portfolio</Link></li>
+            );
+            investmentData = (
+                <li><Link to='/market-analysis'>Investment Data</Link></li>
             );
 
             logOutButton = (
-                <button className="red btn-logout" onClick={() => this.logOut()}>Log out</button>
-            );
-
-            appName = (
-                <li className="appname">App Name</li>
+                <li className="red btn-logout" onClick={() => this.logOut()}>
+                    <Link to='/market-analysis'>Log Out</Link>
+                </li>
             );
         }
 
@@ -72,11 +75,14 @@ export class HeaderBar extends React.Component {
         return (
             <div className="header-bar">
                 <ul className="nav-bar-ul">
+                    {appName}
+
                     {loginFormNav}
                     {regFormNav}
-                    {appName}
+                    
+                    {portfolio}
+                    {investmentData}
                     {logOutButton}
-                    {currentUsername}
                 </ul>
             </div>
         );

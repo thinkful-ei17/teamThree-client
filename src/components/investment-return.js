@@ -1,18 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import requiresLogin from './requires-login';
-import {Link} from 'react-router-dom';
 import Chart from './chart';
 import Button from './button';
-import { fetchPortfolio } from '../actions/portfolio';
-import { fetchRiskMarketRequest } from "../actions/five-year-market";
 
+import { fetchPortfolio } from '../actions/portfolio';
 
 export class InvestmentReturn extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchPortfolio());
     }
-
+    
     keepInvesting = () => {
         console.log('Keep Investing');
     }
@@ -39,7 +39,7 @@ export class InvestmentReturn extends React.Component {
             handleClick = this.toFiveYearReview;
             this.props.dispatch(fetchRiskMarketRequest());
         } else{
-            investmentLink='/investment-form';
+            investmentLink = '/investment-form';
             name = 'Keep Investing!';
             handleClick = this.keepInvesting;
         }
@@ -47,8 +47,7 @@ export class InvestmentReturn extends React.Component {
         if (this.props.data) {
             const data = [
                 {									
-                    color: 'steelblue', 
-                    name: 'Sample Portfolio',
+                    color: 'steelblue',
                     points: this.props.data
                 }
             ];
