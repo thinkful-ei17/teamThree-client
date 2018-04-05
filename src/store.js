@@ -9,7 +9,7 @@ import authReducer from './reducers/auth';
 import userReducer from './reducers/users';
 import introReducer from './reducers/intro';
 import portfolioReducer from './reducers/portfolio';
-
+import marketReducer from './reducers/five-year-market';
 
 
 const store = createStore(
@@ -18,7 +18,8 @@ const store = createStore(
         auth: authReducer,
         userReducer: userReducer,
         introReducer: introReducer,
-        portfolio: portfolioReducer
+        portfolio: portfolioReducer,
+        marketReducer: marketReducer
     }),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     applyMiddleware(thunk)

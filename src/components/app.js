@@ -12,7 +12,7 @@ import RiskBreakdown from './risk-breakdown';
 import InvestmentForm from './investment-form';
 import MarketAnalysis from './market-analysis';
 import InvestmentReturn from './investment-return';
-// import FiveYearMarket from './five-year-market';
+import FiveYearMarket from './five-year-market';
 import { refreshAuthToken } from '../actions/auth';
 import { fetchPortfolio } from '../actions/portfolio';
 import FiveYearPersonal from './five-year-personal';
@@ -59,18 +59,16 @@ export class App extends React.Component {
                 <Route exact path="/register" component={RegistrationPage} />
 
                 <Route exact path="/dashboard" component={Dashboard} />
-                <Route exact path="/portfolio" component={Portfolio} />
+                {/*<Route exact path="/portfolio" component={Portfolio} />
                
                 <Route exact path="/introduction" component={IntroductionPage}/>
                 <Route exact path="/risk-breakdown" component={RiskBreakdown}/>
 
-                <Route exact path="/investment-form" component={InvestmentForm}/>
+                <Route exact path="/investment-form" component={InvestmentForm}/>*
                 <Route exact path="/market-analysis" component={MarketAnalysis}/>
-                <Route exact path="/investment-return" component={InvestmentReturn}/>
-
-                {/* <Route exact path="/five-year-market" component={FiveYearMarket}/> */}
+                <Route exact path="/investment-return" component={InvestmentReturn}/>*/}
+                <Route exact path="/five-year-market" component={FiveYearMarket}/>
                 <Route exact path="/personal" component={FiveYearPersonal}/>
-
             </div>
         );
     }
