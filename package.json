@@ -8,13 +8,16 @@
         "jsdom": "^11.7.0",
         "mocha": "^5.0.5",
         "react-addons-test-utils": "^15.6.2",
-        "react-scripts": "1.1.1"
+        "react-scripts": "1.1.4"
     },
     "dependencies": {
         "chai-enzyme": "^0.8.0",
         "enzyme-adapter-react-16": "^1.1.1",
+        "jest": "^22.4.3",
+        "jest-cli": "^22.4.3",
         "jwt-decode": "^2.2.0",
         "npm": "^5.8.0",
+        "npm-watch": "^0.3.0",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
         "react-linechart": "^1.1.12",
