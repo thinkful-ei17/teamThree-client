@@ -27,11 +27,10 @@ export class InvestmentReturn extends React.Component {
 
     render() {
         let investmentReturnContent = 'Loading...';
+        let { portfolio, year, previousFund, currentFund } = this.props;
         let investmentLink,
             name,
             handleClick;
-
-
 
         if (this.props.year === 5){
             investmentLink = '/five-year-market';
@@ -43,21 +42,37 @@ export class InvestmentReturn extends React.Component {
             handleClick = this.keepInvesting;
         }
 
-        if (this.props.data) {
+        if (portfolio) {
             const data = [
                 {									
-                    color: '#C24275',
-                    points: this.props.data
+                    points: portfolio,
+                    color: '#C24275'
                 }
             ];
+            let growth,
+                strategy;
+
+            if (portfolio[year]) {
+                growth = portfolio[year].growth;
+                strategy = portfolio[year].strategy;
+            }
+            
             investmentReturnContent = (
                 <div>    
+                    <h2 className='primary-heading'>Investment Returns: Year {year}</h2>
                     <Chart yMin={0} xMax={5} data={data} />
+                    <h3 className='secondary-heading primary-text-color'>Investment Strategy Year {year}: {strategy}</h3>
+                    <h3 className='secondary-heading primary-text-color'>Portfolio Review:</h3>
+                    <div className="vector-wrapper">
+                        <div className='blurb-wrapper secondary-heading'>Start: ${previousFund}</div>
+                        <div className='blurb-wrapper secondary-heading'>Growth: {growth}%</div>
+                        <div className='blurb-wrapper secondary-heading'>End: ${currentFund}</div>
+                    </div>
                     <Link to='/portfolio'>
-                        <Button name='Return to Portfolio' handleClick={this.returnToPortfolio} />
+                        <Button class='green-button' name='Return to Portfolio' handleClick={this.returnToPortfolio} />
                     </Link>
                     <Link to={investmentLink}>
-                        <Button name={name} handleClick={handleClick} />
+                        <Button class='blue-button' name={name} handleClick={handleClick} />
                     </Link>
                 </div>
             )
@@ -65,7 +80,7 @@ export class InvestmentReturn extends React.Component {
         
 
         return (
-            <div className="investment-return-container">
+            <div className="viewport">
                 {investmentReturnContent}    
             </div>
         );
@@ -74,8 +89,10 @@ export class InvestmentReturn extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        data: state.portfolio.portfolio,
-        year: state.portfolio.year
+        portfolio: state.portfolio.portfolio,
+        year: state.portfolio.year,
+        previousFund: state.portfolio.previousFund,
+        currentFund: state.portfolio.currentFund
     };
 };
 

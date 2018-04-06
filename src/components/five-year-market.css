@@ -1,0 +1,30 @@
+/*FIVE-YEAR-MARKET COMPONENT*/
+
+.market-vector-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 1500px;
+  margin: 30px 10px 10px 10px;
+  border-radius: 10px;
+  background-color: rgb(232, 228, 228);
+  flex-direction: row;
+  color: rgb(67, 66, 66);
+  padding: 20px;
+}
+
+.column-heading{
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  font-size: 1.2em;
+  margin-left: 10px;
+}

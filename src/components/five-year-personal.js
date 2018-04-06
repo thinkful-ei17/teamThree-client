@@ -26,7 +26,7 @@ export class FiveYearPersonal extends React.Component {
 
       listItems = investmentData.map((year, index) => (
           <li key={index} className="blurb-wrapper">
-            Year {year.year}: {year.strategy}
+            Year {year.x}: {year.strategy}
             <br />
             Start: ${year.previousYear}
             <br />
@@ -38,7 +38,7 @@ export class FiveYearPersonal extends React.Component {
       const data = [
         {
           color: "#783DB8",
-          name: "Optimal Choices",
+          name: "Optimal Strategy",
           points: [
             {
               x: 0,
@@ -68,13 +68,13 @@ export class FiveYearPersonal extends React.Component {
         },
         {
           color: '#C24275',
-          name: "Your Choices",
+          name: "Your Strategy",
           points: this.props.data
         },
       ];
       investmentReturnContent = (
-        <div>
-          <Chart yMin={0} xMax={5} data={data} />
+        <div className='center-object'>
+          <Chart yMin={0} xMax={5} legend={true} data={data} />
         </div>
       );
     }
