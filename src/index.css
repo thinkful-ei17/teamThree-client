@@ -212,7 +212,7 @@ ul {
     display: flex;
     width: 250px;
     height: 150px;
-    margin-top: 60px;
+    margin-top: 30px 10px 10px 10px;
     border-radius: 10px;
     background-color: rgb(232, 228, 228);
     justify-content: center;
