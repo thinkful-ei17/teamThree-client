@@ -73,8 +73,8 @@ export class FiveYearPersonal extends React.Component {
         },
       ];
       investmentReturnContent = (
-        <div>
-          <Chart yMin={0} xMax={5} data={data} />
+        <div className='center-object'>
+          <Chart yMin={0} xMax={5} legend={true} data={data} />
         </div>
       );
     }

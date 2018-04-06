@@ -11,9 +11,9 @@ import { fetchRiskMarket } from "../actions/five-year-market";
 import "./five-year-market.css";
 
 export class FiveYearMarket extends React.Component {
-     componentWillMount() {
-       this.props.dispatch(fetchRiskMarket());
-     }
+    componentWillMount() {
+      this.props.dispatch(fetchRiskMarket());
+    }
 
     render() {
       let listItemsHigh,
@@ -26,123 +26,151 @@ export class FiveYearMarket extends React.Component {
         graphModerate,
         graphMattress;
       
+      let id = 0;
+      
       if (this.props.data) {
         
         let investmentData = this.props.data;
-        listItemsHigh = investmentData.filter(item => item.risk === 'high').map((risk, index) => (
-          <ul>
-            <li className="column-heading">
-              Year {risk.x}
-            </li>
-            <li key={index} className="market-blurb-wrapper">
+
+        listItemsHigh = investmentData.filter(item => item.risk === 'high').map(risk => {
+            id++;
+            return (
+              <li key={id} className="market-blurb-wrapper">
+                <div className='column-heading'>Year {risk.x}</div>
+                Balance: {risk.y}
+                <br />
+                % Change: {risk.gain}
+                <br />
+                $ Change: {risk.amtChange}
+              </li>
+            )
+      });
+
+        listItemsLow = investmentData.filter(item => item.risk === 'low').map(risk => {
+          id++;
+          return (
+            <li key={id} className="market-blurb-wrapper">
+              <div className='column-heading'>Year {risk.x}</div>
               Balance: {risk.y}
               <br />
               % Change: {risk.gain}
               <br />
               $ Change: {risk.amtChange}
             </li>
-          </ul>
-      ));
+          )
+        });
 
-        listItemsLow = investmentData.filter(item => item.risk === 'low').map((risk, index) => (
-          <li key={index} className="market-blurb-wrapper">
-            Balance: {risk.y}
-            <br />
-            % Change: {risk.gain}
-            <br />
-            $ Change: {risk.amtChange}
-          </li>
-      ));
+        listItemsModerate = investmentData.filter(item => item.risk === 'moderate').map(risk => {
+          id++;
+          return (
+            <li key={id} className="market-blurb-wrapper">
+              <div className='column-heading'>Year {risk.x}</div>
+              Balance: {risk.y}
+              <br />
+              % Change: {risk.gain}
+              <br />
+              $ Change: {risk.amtChange}
+            </li>
+          )
+        });
 
-    listItemsModerate = investmentData.filter(item => item.risk === 'moderate').map((risk, index) => (
-      <li key={index} className="market-blurb-wrapper">
-        Balance: {risk.y}
-        <br />
-        % Change: {risk.gain}
-        <br />
-        $ Change: {risk.amtChange}
-      </li>
-    ));
+        listItemsMattress = investmentData.filter(item => item.risk === 'mattress').map(risk => {
+          id++;
+          return (
+            <li key={id} className="market-blurb-wrapper">
+              <div className='column-heading'>Year {risk.x}</div>
+              Balance: {risk.y}
+              <br />
+              % Change: {risk.gain}
+              <br />
+              $ Change: {risk.amtChange}
+            </li>
+          )
+        });
 
-    listItemsMattress = investmentData.filter(item => item.risk === 'mattress').map((risk, index) => (
-      <li key={index} className="market-blurb-wrapper">
-        Balance: {risk.y}
-        <br />
-        % Change: {risk.gain}
-        <br />
-        $ Change: {risk.amtChange}
-      </li>
-  ));
+        graphMattress = investmentData.filter(item => item.risk === 'mattress').map(risk => {
+          id++;
+          return (
+            {x: risk.x, y: risk.y, key: id}
+          )
+        });
 
-  graphMattress = investmentData.filter(item => item.risk === 'mattress').map((risk, index) => (
-    {x: risk.x, y: risk.y}
-  ));
+        graphHigh = investmentData.filter(item => item.risk === 'high').map(risk => {
+          id++;
+          return (
+            {x: risk.x, y: risk.y, key: id}
+          )
+        });
 
-  graphHigh = investmentData.filter(item => item.risk === 'high').map((risk, index) => (
-    {x: risk.x, y: risk.y}
-  ));
+        graphLow = investmentData.filter(item => item.risk === 'low').map(risk => {
+          id++;
+          return (
+            {x: risk.x, y: risk.y, key: id}
+          )
+        });
 
-  graphLow = investmentData.filter(item => item.risk === 'low').map((risk, index) => (
-    {x: risk.x, y: risk.y}
-  ));
+        graphModerate = investmentData.filter(item => item.risk === 'moderate').map(risk => {
+          id++;
+          return (
+            {x: risk.x, y: risk.y, key: id}
+          )
+        });
 
-  graphModerate = investmentData.filter(item => item.risk === 'moderate').map((risk, index) => (
-    {x: risk.x, y: risk.y}
-  ));
+        const data = [
+          {
+            color: "#5DCB6E",
+            name: "Aggressive",
+            points: [{x: 0, y: 5000},...graphHigh]
+          },
+          {
+            color: "#39A7B1",
+            name: "Moderate",
+            points: [{x: 0, y: 5000},...graphModerate]
+          },
+          {
+            color: "#C24275",
+            name: "Conservative",
+            points: [{x: 0, y: 5000},...graphLow]
+          },
+          {
+            color: "#783DB8",
+            name: "Mattress",
+            points: 
+            [{x: 0, y: 5000},...graphMattress]
+          }
+        ];
 
-  const data = [
-    {
-      color: "#5DCB6E",
-      name: "High",
-      points: [{x: 0, y: 5000},...graphHigh]
-    },
-    {
-      color: "#C24275",
-      name: "Conservative",
-      points: [{x: 0, y: 5000},...graphLow]
-    },
-    {
-      color: "steelblue",
-      name: "Moderate",
-      points: [{x: 0, y: 5000},...graphModerate]
-    },
-    {
-      color: "black",
-      name: "Mattress",
-      points: 
-      [{x: 0, y: 5000},...graphMattress]
-    }
-  ];
-  investmentReturnContent = (
-    <div>
-      <Chart yMin={0} xMax={5} data={data} />
-    </div>
-  );
+        investmentReturnContent = (
+          <div className='center-object'>
+            <Chart yMin={0} xMax={5} legend={true} data={data} />
+          </div>
+        );
+
       }
       return (
         //line graph
-        <div className="market-view">
-          <h1>Five Year Market Summary:</h1>
+        <div className="market-view viewport">
+          <h2 className='primary-heading'>Five Year Market Summary:</h2>
           {investmentReturnContent}
-          <h2> Investment Outcomes By Year:</h2>
-          <h3>Aggressive</h3>
+          <h2 className='secondary-heading primary-text-color'> Investment Outcomes By Year:</h2>
+          <h3 className='descriptive-content primary-text-color'>Aggressive</h3>
           <ul className="market-vector-wrapper">
             {listItemsHigh}
           </ul>
-          <h3>Moderate</h3>
+          <h3 className='descriptive-content primary-text-color'>Moderate</h3>
           <ul className="market-vector-wrapper">
             {listItemsModerate}
           </ul>
-          <h3>Conservative</h3>
+          <h3 className='descriptive-content primary-text-color'>Conservative</h3>
           <ul className="market-vector-wrapper">
             {listItemsLow}
           </ul>
-          <h3>Mattress</h3>
+          <h3 className='descriptive-content primary-text-color'>Mattress</h3>
           <ul className="market-vector-wrapper">
              {listItemsMattress}
           </ul>
             <Link to='/five-year-personal'>
-                <Button name="Compare Personal Success" handleClick={ () => false} />
+                <Button class='blue-button' name="Compare Personal Success" handleClick={ () => false} />
             </Link>
           </div>
         );

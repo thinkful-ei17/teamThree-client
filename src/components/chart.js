@@ -14,6 +14,7 @@ export default function Chart(props) {
                 xMax={props.xMax}
                 interpolate='linear'
                 data={props.data}
+                showLegends={props.legend}
             />
         </div>				
     );
