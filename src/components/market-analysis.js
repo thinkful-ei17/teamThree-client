@@ -5,12 +5,19 @@ import { Link } from 'react-router-dom';
 import Button from './button';
 import requiresLogin from './requires-login';
 
-import { fetchRiskOverview } from '../actions/portfolio';
+import { fetchPortfolio, fetchRiskOverview } from '../actions/portfolio';
 
 
 export class MarketAnalysis extends React.Component {
     componentDidMount() {
-        this.props.dispatch(fetchRiskOverview(this.props.year))
+        if (this.props.year) {
+            this.props.dispatch(fetchRiskOverview(this.props.year));
+        } else {
+            Promise.resolve(this.props.dispatch(fetchPortfolio()))
+            .then(() => {
+                return this.props.dispatch(fetchRiskOverview(this.props.year));
+            })
+        }
     }
     
     render () {    
