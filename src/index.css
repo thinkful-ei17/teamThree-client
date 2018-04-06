@@ -20,8 +20,21 @@ body {
     text-align: left;
 }
 
+.small-viewport {
+    width: 90%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10em;
+    text-align: left;
+}
+
 .center-object {
     text-align: center;
+}
+
+.right-align-object {
+    text-align: end;
 }
 
 /* ===========  TEXT OPTIONS ========================*/
@@ -186,6 +199,10 @@ body {
 
 
 /*INVESTMENT-FORM COMPONENT RADIO BUTTONS */
+
+.radio-button-container {
+    padding-left: 60px;
+}
 
 .radio-button-label {
     display: block;
