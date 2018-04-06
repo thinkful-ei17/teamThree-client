@@ -189,6 +189,12 @@ font-family: 'Roboto', sans-serif; */
     color: #5DCB6E;
 }
 
+/*INTRO COMPONENT*/
+
+.intro-block-text {
+    display: block;
+    height: 150px;
+}
 
 /*FIVE-YEAR-PLAN-PERSONAL COMPONENT*/
 
