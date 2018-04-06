@@ -10,10 +10,14 @@ import { fetchPortfolio, fetchRiskOverview } from '../actions/portfolio';
 
 export class MarketAnalysis extends React.Component {
     componentDidMount() {
-        Promise.resolve(this.props.dispatch(fetchPortfolio()))
+        if (this.props.year) {
+            this.props.dispatch(fetchRiskOverview(this.props.year));
+        } else {
+            Promise.resolve(this.props.dispatch(fetchPortfolio()))
             .then(() => {
-                return this.props.dispatch(fetchRiskOverview(this.props.year))
+                return this.props.dispatch(fetchRiskOverview(this.props.year));
             })
+        }
     }
     
     render () {    
