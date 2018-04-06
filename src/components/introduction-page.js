@@ -38,9 +38,11 @@ export class IntroductionPage extends React.Component {
                   <p className="descriptive-content primary-text-color intro-description-p">{this.props.introCard[this.props.numCard].detailB}</p>
                   <p className="descriptive-content primary-text-color intro-description-p intro-emphasis">{this.props.introCard[this.props.numCard].detailC}</p>
                 </section>
-                <Link to={link}>
-                  <Button class='blue-button' name='Got It!' handleClick={this.nextCardClick}/>
-                </Link>
+                <div className='right-align-object'>
+                  <Link to={link}>
+                    <Button class='blue-button' name='Got It!' handleClick={this.nextCardClick}/>
+                  </Link>
+                </div>
               </main>
           </section>
         </div>
