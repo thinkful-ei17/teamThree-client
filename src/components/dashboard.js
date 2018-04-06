@@ -17,7 +17,7 @@ export class Dashboard extends React.Component {
         }
 
         return (
-            <div className="dashboard">
+            <div className="dashboard viewport">
                 <h3 className="dashboard-name">Welcome {this.props.name}!</h3>
                 {dashboardComponent}
             </div>
@@ -29,7 +29,6 @@ const mapStateToProps = state => {
     const {currentUser} = state.auth;
     return {
         username: state.auth.currentUser.username,
-        // name: `${currentUser.firstName} ${currentUser.lastName}`,
         name: currentUser.firstName,
         introComplete: state.introReducer.introComplete
     };
