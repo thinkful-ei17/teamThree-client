@@ -19,7 +19,7 @@ export default function Footer(props) {
               </a>
               <span role="img">🧠</span>
             </li>
-            <ls>
+            <li>
               <a
                 href="https://github.com/JohnLCastillo"
                 target="_blank"
@@ -28,8 +28,8 @@ export default function Footer(props) {
                 John
               </a>
               <span role="img">👨‍💻</span>
-            </ls>
-            <ls>
+            </li>
+            <li>
               <a
                 href="https://github.com/samuelgould"
                 target="_blank"
@@ -38,8 +38,8 @@ export default function Footer(props) {
                 Sam
               </a>
               <span role="img">🕵</span>
-            </ls>
-            <ls>
+            </li>
+            <li>
               <a
                 href="https://github.com/ASTribble"
                 target="_blank"
@@ -48,8 +48,8 @@ export default function Footer(props) {
                 Scott
               </a>
               <span role="img">😎</span>
-            </ls>
-            <ls>
+            </li>
+            <li>
               <a
                 href="https://github.com/TriciaF"
                 target="_blank"
@@ -58,7 +58,7 @@ export default function Footer(props) {
                 Tricia
               </a>
               <span role="img">🤗</span>
-            </ls>
+            </li>
           </ul>{" "}
         </div>
       </div>
