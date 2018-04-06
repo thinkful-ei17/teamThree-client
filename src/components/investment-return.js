@@ -45,8 +45,8 @@ export class InvestmentReturn extends React.Component {
         if (portfolio) {
             const data = [
                 {									
-                    color: 'steelblue',
-                    points: portfolio
+                    points: portfolio,
+                    color: '#C24275'
                 }
             ];
             let growth,

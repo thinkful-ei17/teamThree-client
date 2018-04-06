@@ -5,15 +5,18 @@ export function YearSummaryList(props){
     const years = props.years.slice(1);
     const yearList = years.map( year => {
         return(
-            <li key={year.x} className='year-summary-item'>
-                <h4 className='list-item-heading'>Year {year.x}: {year.strategy}</h4>
-                <p className='list-item-content'> Start: ${year.previousYear}  End: ${year.y}</p>
+            <li key={year.x} className='year-summary-item blurb-wrapper'>
+                Year {year.x}: {year.strategy}
+                <br />
+                Start: ${year.previousYear}
+                <br />
+                End: ${year.y}
             </li>
         )
     });
 
     return (
-        <ul className='year-summary-list'>
+        <ul className='year-summary-list vector-wrapper'>
             {yearList}
         </ul>
     )
