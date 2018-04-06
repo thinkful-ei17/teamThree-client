@@ -18,11 +18,11 @@ export class MarketAnalysis extends React.Component {
         
         if(this.props.risks !== null) {
           marketRecap = (
-            <section className='market-analysis-risks'>
-              <p>Aggressive: {this.props.risks[0].gain}% change</p>
-              <p>Moderate: {this.props.risks[2].gain}% change</p>
-              <p>Conservative: {this.props.risks[1].gain}% change</p>
-              <p>Mattress: 0.0% change</p>
+            <section className='vector-wrapper'>
+              <p className='blurb-wrapper'>Aggressive: {this.props.risks[0].gain}%</p>
+              <p className='blurb-wrapper'>Moderate: {this.props.risks[2].gain}%</p>
+              <p className='blurb-wrapper'>Conservative: {this.props.risks[1].gain}%</p>
+              <p className='blurb-wrapper'>Mattress: 0.0%</p>
             </section> 
           );
         }
@@ -32,11 +32,12 @@ export class MarketAnalysis extends React.Component {
         };
 
         return(
-        <div>  
-            <h2>Market Analysis: Year {this.props.year}</h2>
+        <div className='viewport'>  
+            <h2 className='primary-heading'>Market Analysis: Year {this.props.year}</h2>
+            <h3 className='secondary-heading primary-text-color'>Annual Percent Growth</h3>
             {marketRecap}
             <Link to='/investment-return'>
-                <Button name="View Portfolio" handleClick={handleClick}/>
+                <Button class='blue-button' name="View Portfolio" handleClick={handleClick}/>
             </Link>
         </div>  
         );
