@@ -139,11 +139,6 @@ font-family: 'Roboto', sans-serif; */
     border-radius: 10px;
 }
 
-
-
-
-
-
 /*HEADER-BAR COMPONENT*/
 
 .header-bar {
@@ -194,6 +189,16 @@ font-family: 'Roboto', sans-serif; */
 .intro-block-text {
     display: block;
     height: 150px;
+
+
+.risk-breakdown {
+    text-align: center;
+}
+
+.risk-details {
+    display: flex;
+    justify-content: space-around;
+
 }
 
 /*FIVE-YEAR-PLAN-PERSONAL COMPONENT*/
@@ -213,7 +218,11 @@ ul {
     display: flex;
     width: 250px;
     height: 150px;
-    margin-top: 60px;
+
+
+
+    margin: 30px 10px 10px 10px;
+
     border-radius: 10px;
     background-color: rgb(232, 228, 228);
     justify-content: center;
