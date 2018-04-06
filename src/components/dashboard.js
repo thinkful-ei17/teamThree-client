@@ -10,9 +10,9 @@ export class Dashboard extends React.Component {
     render() {
         let dashboardComponent;
 
-        if(!this.props.introComplete){
+        if (!this.props.introComplete) {
            dashboardComponent =  <IntroductionPage/>
-        }else{
+        } else {
             dashboardComponent = <Portfolio/>
         }
 
@@ -26,7 +26,7 @@ export class Dashboard extends React.Component {
 }
 
 const mapStateToProps = state => {
-    const {currentUser} = state.auth;
+    const { currentUser } = state.auth;
     return {
         username: state.auth.currentUser.username,
         name: currentUser.firstName,

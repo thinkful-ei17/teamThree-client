@@ -48,10 +48,6 @@ export class App extends React.Component {
         clearInterval(this.refreshInterval);
     }
 
-    componentDidMount() {
-        this.props.dispatch(fetchPortfolio());
-    }
-
     render() {
         return (
             <div className="app">

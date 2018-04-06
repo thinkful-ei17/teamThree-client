@@ -5,9 +5,14 @@ import { Link } from 'react-router-dom';
 import requiresLogin from './requires-login';
 import Button from './button';
 
-import { chooseRiskTolerance, investFunds, incrementYear } from '../actions/portfolio';
+import { fetchPortfolio, chooseRiskTolerance, investFunds, incrementYear } from '../actions/portfolio';
 
 export class InvestmentForm extends React.Component {
+    componentDidMount() {
+        if (this.props.portfolio === null) {
+            this.props.dispatch(fetchPortfolio());
+        }
+    }
 
     invest = () => {
         this.props.dispatch(investFunds(this.props.riskChoice, this.props.year + 1, this.props.currentFund));
@@ -54,7 +59,8 @@ const mapStateToProps = state => {
     return {
         year: state.portfolio.year,
         currentFund: state.portfolio.currentFund,
-        riskChoice: state.portfolio.riskChoice
+        riskChoice: state.portfolio.riskChoice,
+        portfolio: state.portfolio.portfolio
     };
 };
 
