@@ -13,9 +13,10 @@ import InvestmentForm from './investment-form';
 import MarketAnalysis from './market-analysis';
 import InvestmentReturn from './investment-return';
 import FiveYearMarket from './five-year-market';
+import FiveYearPersonal from './five-year-personal';
+
 import { refreshAuthToken } from '../actions/auth';
 import { fetchPortfolio } from '../actions/portfolio';
-import FiveYearPersonal from './five-year-personal';
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {
@@ -69,7 +70,7 @@ export class App extends React.Component {
                 <Route exact path="/investment-return" component={InvestmentReturn}/>
 
                 <Route exact path="/five-year-market" component={FiveYearMarket}/>
-                <Route exact path="/personal" component={FiveYearPersonal}/>
+                <Route exact path="/five-year-personal" component={FiveYearPersonal}/>
 
             </div>
         );
@@ -82,5 +83,3 @@ const mapStateToProps = state => ({
 });
 
 export default withRouter(connect(mapStateToProps)(App));
-
-//LINDA - comment out to get stuff to work
