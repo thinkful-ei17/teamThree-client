@@ -21,20 +21,28 @@ export class InvestmentForm extends React.Component {
     render() {
 
         return (
-            <div className="investment-return-container">
-                <h1 className="app-h1-text">Year {this.props.year + 1}</h1>
-                <h3 className="app-h3-text">Current Fund: {this.props.currentFund}</h3>
-                    <input type='radio' name='strategy' id='rb1' value='high' onChange={this.onChange.bind(this)} />
-                    <label className="app-label" htmlFor='rb1'>Aggressive</label>
-                    <input type='radio' name='strategy' id='rb2' value='moderate' onChange={this.onChange.bind(this)} />
-                    <label className="app-label" htmlFor='rb1'>Moderate</label>
-                    <input type='radio' name='strategy' id='rb3' value='low' onChange={this.onChange.bind(this)} />
-                    <label className="app-label" htmlFor='rb1'>Conservative</label>
-                    <input type='radio' name='strategy' id='rb4' value='mattress' onChange={this.onChange.bind(this)} />
-                    <label className="app-label" htmlFor='rb1'>Under Your Mattress</label>
+            <div className="viewport">
+                <h2 className="primary-heading">Year {this.props.year + 1}</h2>
+                <h3 className="secondary-heading primary-text-color">Current Fund: {this.props.currentFund}</h3>
+                    <label className="descriptive-content primary-text-color radio-button-label" htmlFor='rb1'>Aggressive
+                        <input className='native-button' type='radio' name='strategy' id='rb1' value='high' onChange={this.onChange.bind(this)} />
+                        <span className='custom-radio-button'></span>
+                    </label>
+                    <label className="descriptive-content primary-text-color radio-button-label" htmlFor='rb2'>Moderate
+                        <input className='native-button' type='radio' name='strategy' id='rb2' value='moderate' onChange={this.onChange.bind(this)} />
+                        <span className='custom-radio-button'></span>
+                    </label>
+                    <label className="descriptive-content primary-text-color radio-button-label" htmlFor='rb3'>Conservative
+                        <input className='native-button' type='radio' name='strategy' id='rb3' value='low' onChange={this.onChange.bind(this)} />
+                        <span className='custom-radio-button'></span>
+                    </label>
+                    <label className="descriptive-content primary-text-color radio-button-label" htmlFor='rb4'>Under Your Mattress
+                        <input className='native-button' type='radio' name='strategy' id='rb4' value='mattress' onChange={this.onChange.bind(this)} />
+                        <span className='custom-radio-button'></span>
+                    </label>
                   <div>
                     <Link to='/market-analysis'>
-                        <Button name='Invest' handleClick={this.invest} />
+                        <Button class='blue-button' name='Invest' handleClick={this.invest} />
                     </Link>   
                   </div>
             </div>

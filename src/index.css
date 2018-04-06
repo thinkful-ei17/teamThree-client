@@ -184,12 +184,79 @@ font-family: 'Roboto', sans-serif; */
     color: #5DCB6E;
 }
 
+
+/*INVESTMENT-FORM COMPONENT RADIO BUTTONS */
+
+.radio-button-label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-button-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.custom-radio-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-button-label:hover input ~ .custom-radio-button {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add green background */
+.radio-button-label input:checked ~ .custom-radio-button {
+    background-color: #5DCB6E;
+    border: none;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.custom-radio-button:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-button-label input:checked ~ .custom-radio-button:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-button-label .custom-radio-button:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
 /*INTRO COMPONENT*/
 
 .intro-block-text {
     display: block;
     height: 150px;
 }
+
+/*RISK BREAKDOWN COMPONENT*/
 
 .risk-breakdown {
     text-align: center;
@@ -198,7 +265,6 @@ font-family: 'Roboto', sans-serif; */
 .risk-details {
     display: flex;
     justify-content: space-around;
-
 }
 
 /*FIVE-YEAR-PLAN-PERSONAL COMPONENT*/
