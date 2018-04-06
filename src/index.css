@@ -139,11 +139,6 @@ font-family: 'Roboto', sans-serif; */
     border-radius: 10px;
 }
 
-
-
-
-
-
 /*HEADER-BAR COMPONENT*/
 
 .header-bar {
@@ -189,6 +184,16 @@ font-family: 'Roboto', sans-serif; */
     color: #5DCB6E;
 }
 
+/*RISK BREAKDOWN COMPONENT*/
+
+.risk-breakdown {
+    text-align: center;
+}
+
+.risk-details {
+    display: flex;
+    justify-content: space-around;
+}
 
 /*FIVE-YEAR-PLAN-PERSONAL COMPONENT*/
 
