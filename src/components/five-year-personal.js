@@ -26,7 +26,7 @@ export class FiveYearPersonal extends React.Component {
 
       listItems = investmentData.map((year, index) => (
           <li key={index} className="blurb-wrapper">
-            Year {year.year}: {year.strategy}
+            Year {year.x}: {year.strategy}
             <br />
             Start: ${year.previousYear}
             <br />
