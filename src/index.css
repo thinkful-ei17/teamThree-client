@@ -247,6 +247,14 @@ font-family: 'Roboto', sans-serif; */
 	height: 8px;
 	border-radius: 50%;
 	background: white;
+}
+
+/*INTRO COMPONENT*/
+
+.intro-block-text {
+    display: block;
+    height: 150px;
+}
 
 /*RISK BREAKDOWN COMPONENT*/
 
@@ -257,7 +265,6 @@ font-family: 'Roboto', sans-serif; */
 .risk-details {
     display: flex;
     justify-content: space-around;
-
 }
 
 /*FIVE-YEAR-PLAN-PERSONAL COMPONENT*/
@@ -277,7 +284,11 @@ ul {
     display: flex;
     width: 250px;
     height: 150px;
+
+
+
     margin: 30px 10px 10px 10px;
+
     border-radius: 10px;
     background-color: rgb(232, 228, 228);
     justify-content: center;

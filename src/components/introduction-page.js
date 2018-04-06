@@ -26,16 +26,16 @@ export class IntroductionPage extends React.Component {
     }
     
     return (
-      <div className="introduction">
+      <div className="introduction viewport">
         <div className="row">
             <section className="introduction">
               <header>
-                <h1 className="primary-heading">{this.props.introCard[this.props.numCard].title}</h1>
+                <h2 className="primary-heading">{this.props.introCard[this.props.numCard].title}</h2>
               </header>
               <main>
-                <h3 className="descriptive-content">{this.props.introCard[this.props.numCard].details}</h3>
+                <h3 className="descriptive-content primary-text-color intro-block-text">{this.props.introCard[this.props.numCard].details}</h3>
                 <Link to={link}>
-                  <Button name='Got It!' handleClick={this.nextCardClick}/>
+                  <Button class='blue-button' name='Got It!' handleClick={this.nextCardClick}/>
                 </Link>
               </main>
           </section>
