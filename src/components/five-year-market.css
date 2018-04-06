@@ -4,21 +4,18 @@
   display: flex;
   justify-content: space-evenly;
   max-width: 1500px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin: 30px 10px 10px 10px;
   border-radius: 10px;
   background-color: rgb(232, 228, 228);
   flex-direction: row;
   color: rgb(67, 66, 66);
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 20px;
 }
 
 .column-heading{
   font-weight: bold;
   font-size: 1.5em;
+  line-height: 1.5em;
   text-align: center;
 }
 
