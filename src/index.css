@@ -255,9 +255,26 @@ font-family: 'Roboto', sans-serif; */
 
 /*INTRO COMPONENT*/
 
-.intro-block-text {
-    display: block;
-    height: 150px;
+.intro-description {
+    padding: 2em 2em 4em;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+}
+
+.intro-description-p {
+    margin: 0;
+    padding: 0 1em 1em;
+}
+
+.intro-emphasis {
+    margin-top: 1em;
+    margin-bottom: 0;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 /*RISK BREAKDOWN COMPONENT*/
