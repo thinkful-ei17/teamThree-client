@@ -38,7 +38,7 @@ export class FiveYearPersonal extends React.Component {
       const data = [
         {
           color: "#783DB8",
-          name: "Optimal Choices",
+          name: "Optimal Strategy",
           points: [
             {
               x: 0,
@@ -68,7 +68,7 @@ export class FiveYearPersonal extends React.Component {
         },
         {
           color: '#C24275',
-          name: "Your Choices",
+          name: "Your Strategy",
           points: this.props.data
         },
       ];
