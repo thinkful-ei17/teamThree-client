@@ -14,7 +14,7 @@ import MarketAnalysis from './market-analysis';
 import InvestmentReturn from './investment-return';
 import FiveYearMarket from './five-year-market';
 import FiveYearPersonal from './five-year-personal';
-
+import Footer from './footer';
 import { refreshAuthToken } from '../actions/auth';
 import { fetchPortfolio } from '../actions/portfolio';
 
@@ -71,7 +71,7 @@ export class App extends React.Component {
 
                 <Route exact path="/five-year-market" component={FiveYearMarket}/>
                 <Route exact path="/five-year-personal" component={FiveYearPersonal}/>
-
+                <Footer/>
             </div>
         );
     }
