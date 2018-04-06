@@ -28,7 +28,7 @@
         "redux-form": "^7.3.0",
         "redux-thunk": "^2.2.0"
     },
-    "script": {
+    "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
