@@ -17,7 +17,7 @@ export class Dashboard extends React.Component {
         }
 
         return (
-            <div className="dashboard">
+            <div className="dashboard viewport">
                 <h3 className="dashboard-name">Welcome {this.props.name}!</h3>
                 {dashboardComponent}
             </div>
