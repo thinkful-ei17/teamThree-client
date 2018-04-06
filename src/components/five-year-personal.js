@@ -20,7 +20,7 @@ export class FiveYearPersonal extends React.Component {
       currentFund = this.props.currentFund;
 
       overallChange = currentFund - 5000;
-      overallGrowth = (overallChange/5000) * 100;
+      overallGrowth = Math.round((overallChange/5000) * 100);
 
       let investmentData = this.props.data.slice(1);
 
@@ -28,19 +28,16 @@ export class FiveYearPersonal extends React.Component {
           <li key={index} className="blurb-wrapper">
             Year {year.year}: {year.strategy}
             <br />
-            Start: {year.y}
+            Start: ${year.previousYear}
+            <br />
+            End: ${year.y}
             <br />
             Change: {year.growth}%
           </li>
       ));
       const data = [
         {
-          color: "steelblue",
-          name: "Your Choices",
-          points: this.props.data
-        },
-        {
-          color: "black",
+          color: "#783DB8",
           name: "Optimal Choices",
           points: [
             {
@@ -49,10 +46,31 @@ export class FiveYearPersonal extends React.Component {
             },
             {
               x: 1,
-              y: 5100
+              y: 7800
+            },
+            {
+              x: 2,
+              y: 13260
+            },
+            {
+              x: 3,
+              y: 23735
+            },
+            {
+              x: 4,
+              y: 37265
+            },
+            {
+              x: 5,
+              y: 69685
             }
           ]
-        }
+        },
+        {
+          color: '#C24275',
+          name: "Your Choices",
+          points: this.props.data
+        },
       ];
       investmentReturnContent = (
         <div>
@@ -62,40 +80,63 @@ export class FiveYearPersonal extends React.Component {
     }
     return (
       //line graph
-      <div className="portfolio-view">
-        <h1>Five Year Personal Summary:</h1>
-        <h2>Your portfolio Worth: ${currentFund}</h2>
-        <h2>Change: ${overallChange}</h2>
-        <h2>Growth: {overallGrowth}%</h2>
-        <h2>Your Investment Strategy Vs Optimal Investment Strategy:</h2>
-        <p>Black is Optimal</p>
+      <div className="portfolio-view viewport">
+        <h2 className='primary-heading'>Five Year Personal Summary:</h2>
+        <h3 className='secondary-heading primary-text-color'>Your Portfolio Worth: ${currentFund}</h3>
+        <h3 className='descriptive-content accent-dk-green'>Change: ${overallChange}</h3>
+        <h3 className='descriptive-content accent-dk-green'>Growth: {overallGrowth}%</h3>
+        <h3 className='secondary-heading primary-text-color'>Your Investment Strategy Vs Optimal Investment Strategy:</h3>
         {investmentReturnContent}
-        <h2> Your Investment Strategy by Year:</h2>
+        <h3 className='secondary-heading primary-text-color'> Your Investment Strategy by Year:</h3>
         <ul className="vector-wrapper">
           {listItems}
         </ul>
-        <h2> Optimal Investment Strategy By Year:</h2>
+        <h3 className='secondary-heading primary-text-color'> Optimal Investment Strategy By Year:</h3>
         <ul className="vector-wrapper">
             <li className="blurb-wrapper">
               Year 1: Moderate
               <br />
-              56%
+              Start: $5000
+              <br />
+              End: $7800
+              <br />
+              Change: 56%
             </li>
             <li className="blurb-wrapper">
-              Year 2: Moderate<br />
-              70%
+              Year 2: Moderate
+              <br />
+              Start: $7800
+              <br />
+              End: $13,260
+              <br />
+              Change: 70%
             </li>
             <li className="blurb-wrapper">
-              Year 3: High<br />
-              79%
+              Year 3: High
+              <br />
+              Start: $13,260
+              <br />
+              End: $23,735
+              <br />
+              Change: 79%
             </li>
             <li className="blurb-wrapper">
-              Year 4: Moderate<br />
-              57%
+              Year 4: Moderate
+              <br />
+              Start: $23,735
+              <br />
+              End: $37,265
+              <br />
+              Change: 57%
             </li>
             <li className="blurb-wrapper">
-              Year 5: High<br />
-              87%
+              Year 5: High
+              <br />
+              Start: $37,265
+              <br />
+              End: $69,685
+              <br />
+              Change: 87%
             </li>
         </ul>
         {/* {Button} */}
