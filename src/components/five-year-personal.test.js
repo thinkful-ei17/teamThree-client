@@ -1,5 +1,5 @@
 import React from 'react';
-import FiveYearPersonal from './five-year-personal';
+import {FiveYearPersonal} from './five-year-personal';
 import {shallow, mount} from 'enzyme';
 import './setupTests';
 
