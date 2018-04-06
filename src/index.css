@@ -64,6 +64,9 @@ font-family: 'Roboto', sans-serif; */
 }
 
 /*  ================= MAIN BACKGROUND COLORS ========== */
+.background-darkest {
+    color: #0C1F27
+}
 
 .background-dk {
     color: #192C4D;

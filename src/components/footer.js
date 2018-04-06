@@ -3,21 +3,22 @@ import './footer.css';
 
 export default function Footer(props) {
   return (
-    <footer>
+    <footer className="background-darkest">
       <div className="content-grid">
         <div>
           Made by:
           <ul>
-            <ls>
+            <li>
               <a
                 href="https://github.com/lindafoodev"
                 target="_blank"
                 rel="noopener noreferrer"
+                
               >
                 Linda
               </a>
               <span role="img">🧠</span>
-            </ls>
+            </li>
             <ls>
               <a
                 href="https://github.com/JohnLCastillo"
