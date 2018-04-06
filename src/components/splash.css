@@ -1,0 +1,140 @@
+img {
+    width:100%;
+    position: relative;
+    z-index: -1;
+    margin: 0;
+}
+
+.splash-div {
+    width: 100%;
+}
+
+.splash-div p{
+    margin-top: 0;
+    padding: .5em 1em;
+
+    font-size: 2.7em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.virtues {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.virtue {
+    margin-bottom: 2em;
+    font-size: 1.5em;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+.virtue:nth-child(2){
+    flex-direction: row-reverse;
+}
+
+.virtue img {
+    padding: 1em;
+    width: 50%;
+}
+
+.words {
+    margin: 0 auto;
+    padding: 2em;
+    width: 100%;
+    background-color: #192C4D;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+   
+}
+
+.words h1 {
+    font-size: 4em;
+    margin: 0; 
+    color: #B6DF9B;
+}
+
+.words h1 span {
+    color: #2C8B39;
+}
+
+.words p{
+    margin: 0;
+    padding: 1em 0;
+    color: #3478A2;
+    font-size: 2.5em;
+    top: 0;
+}
+
+
+
+@media (min-width: 720px){
+
+    .splash-div p {
+        color: #EDF8E8;
+        margin-left: 1em;
+        padding: 0;
+        font-size: 3em;
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        top: -2em;
+    }
+
+    .virtues {
+        margin-top: 0;
+        padding-top: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .virtue, .virtue:nth-child(2){
+        text-align: center;
+        font-size: 3em;
+        margin-bottom: 0;
+        max-width: 380px;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+
+
+    .virtue img {
+        width: 75%;
+    }
+
+    .virtue h2 {
+        margin-top: 0;
+        max-width: 100%;
+    }
+
+    .words {
+        margin: 2em auto 0;
+        padding: 2em 4em;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+
+    .words p{
+        margin: 0;
+        padding: 1em 0;
+        color: #3478A2;
+        font-size: 2.5em;
+        top: 0;
+    } 
+
+}

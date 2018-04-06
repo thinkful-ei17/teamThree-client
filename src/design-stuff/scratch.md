@@ -43,3 +43,13 @@ font-family: 'Open Sans', sans-serif;
 font-family: 'Raleway', sans-serif;
 font-family: 'Lato', sans-serif;
 font-family: 'Roboto', sans-serif;
+
+confetti-concert.jpg
+Dockville Festival, Hamburg, Germany
+Photo by Pablo Heimplatz on Unsplash
+pablo-heimplatz-243307-unsplash.jpg
+
+confetti-guy.jpg
+The Color Factory, San Francisco, United States
+Photo by Ambreen Hasan on Unsplash
+ambreen-hasan-346960-unsplash.jpg
