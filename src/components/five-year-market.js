@@ -141,7 +141,7 @@ export class FiveYearMarket extends React.Component {
           <ul className="market-vector-wrapper">
              {listItemsMattress}
           </ul>
-            <Link to='/five-year-personal'>
+            <Link to='/personal'>
                 <Button name="Show Me Mine! " handleClick={ () => false} />
             </Link>
           </div>
