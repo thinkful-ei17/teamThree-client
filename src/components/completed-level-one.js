@@ -1,8 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+
+import requiresLogin from './requires-login';
 import Button from './button';
 
-export default function CompletedLevelOne(props){
+
+export function CompletedLevelOne(props){
 
     return (
         <div className='viewport'>
@@ -18,3 +21,5 @@ export default function CompletedLevelOne(props){
         </div>
     )
 }
+
+export default requiresLogin()(CompletedLevelOne)
