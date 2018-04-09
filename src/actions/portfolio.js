@@ -165,7 +165,6 @@ export const restartLevel1Error = (error) => ({
 
 
 export const restartLevel1 = ()=> (dispatch, getState) => {
-  console.log('Enter restart Level 1 async action');
   dispatch(restartLevel1Request());
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/users/restart/`, 

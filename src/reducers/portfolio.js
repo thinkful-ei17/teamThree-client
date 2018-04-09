@@ -64,6 +64,7 @@ export function portfolioReducer(state = initialState, action) {
         loading: false
       });
     } else if (action.type === INCREMENT_YEAR) {
+      console.log('Enter increment year')
       return Object.assign({}, state, {
         year: state.year + 1
       });
