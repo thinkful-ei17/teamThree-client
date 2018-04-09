@@ -9,10 +9,13 @@ import {
     FETCH_RISK_OVERVIEW_REQUEST,
     FETCH_RISK_OVERVIEW_SUCCESS,
     FETCH_RISK_OVERVIEW_ERROR,
-    INCREMENT_YEAR
-} from "../actions/portfolio";
-  
-const initialState = {
+    RESTART_LEVEL_1_REQUEST,
+    RESTART_LEVEL_1_SUCCESS,
+    RESTART_LEVEL_1_ERROR, 
+    INCREMENT_YEAR 
+} from '../actions/portfolio';
+
+  const initialState = {
   year: 0,
   previousFund: null,
   currentFund: 5000,
@@ -75,6 +78,26 @@ export function portfolioReducer(state = initialState, action) {
         error: null
       });
     } else if (action.type === FETCH_RISK_OVERVIEW_ERROR) {
+      return Object.assign({}, state, {
+        error: action.error,
+        loading: false
+      });
+    } else if (action.type === RESTART_LEVEL_1_REQUEST) {
+      return Object.assign({}, state, {
+        loading: true
+      });
+    } else if (action.type === RESTART_LEVEL_1_SUCCESS) {
+      return Object.assign({}, state, {
+        loading: false,
+        year: action.year,
+        previousFund: action.previousFund,
+        currentFund: action.currentFund,
+        riskChoice: null,
+        portfolio: null,
+        risk: null,
+        error: null
+      });
+    } else if (action.type === RESTART_LEVEL_1_ERROR) {
       return Object.assign({}, state, {
         error: action.error,
         loading: false
