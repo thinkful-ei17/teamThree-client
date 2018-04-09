@@ -46,7 +46,7 @@ export class Portfolio extends React.Component {
             const data = [
                 {									
                     color: '#C24275', 
-                    points: this.props.data
+                    points: [{x: 0, y: 5000},...this.props.data]
                 }
             ];
             portfolioContent = (

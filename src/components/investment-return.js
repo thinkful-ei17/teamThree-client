@@ -45,7 +45,7 @@ export class InvestmentReturn extends React.Component {
         if (portfolio) {
             const data = [
                 {									
-                    points: portfolio,
+                    points: [{x: 0, y: 5000},...portfolio],
                     color: '#C24275'
                 }
             ];
