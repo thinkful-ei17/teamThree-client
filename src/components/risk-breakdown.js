@@ -9,8 +9,9 @@ import PieChart from './pie-chart';
 
 import { introComplete } from '../actions/intro';
 
+
 export function RiskBreakdown(props){
-    
+
     const markIntroComplete = () => {
         props.dispatch(introComplete());
     };
@@ -32,7 +33,7 @@ export function RiskBreakdown(props){
                 <PieChart name='aggressive' stocksValue={80} bondsValue={20} />
                 </div>
             </section>
-            <Link to='/investment-form'>
+            <Link to={'/investment-form'}>
                 <Button class='blue-button' name="Let's Get Investing!" handleClick={markIntroComplete} />
             </Link>
         </div>    
