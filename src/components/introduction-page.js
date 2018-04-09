@@ -18,6 +18,7 @@ export class IntroductionPage extends React.Component {
     console.log('The button was clicked in intro page');
   }
 
+
   render() {
     let link = '';
 
