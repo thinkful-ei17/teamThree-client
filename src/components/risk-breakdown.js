@@ -7,11 +7,12 @@ import Button from './button';
 import RiskDetail from './risk-detail';
 import PieChart from './pie-chart';
 
-import { hideIntroCard } from '../actions/intro';
+import { introComplete } from '../actions/intro';
 
 export function RiskBreakdown(props){
+    
     const markIntroComplete = () => {
-        props.dispatch(hideIntroCard());
+        props.dispatch(introComplete());
     };
 
     return (

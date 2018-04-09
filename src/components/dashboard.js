@@ -8,12 +8,13 @@ import Portfolio from './portfolio';
 export class Dashboard extends React.Component {
 
     render() {
+
         let dashboardComponent;
 
-        if (!this.props.introComplete) {
-           dashboardComponent =  <IntroductionPage/>
-        } else {
+        if (this.props.introComplete || this.props.introStartValue) {
             dashboardComponent = <Portfolio/>
+        } else {
+            dashboardComponent =  <IntroductionPage/>
         }
 
         return (
@@ -27,10 +28,12 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = state => {
     const { currentUser } = state.auth;
+    console.log('state.auth.currentUser.intro', state.auth.currentUser.intro);
     return {
         username: state.auth.currentUser.username,
         name: currentUser.firstName,
-        introComplete: state.introReducer.introComplete
+        introComplete: state.introReducer.introComplete !== false,
+        introStartValue: state.auth.currentUser.intro !==false
     };
 };
 

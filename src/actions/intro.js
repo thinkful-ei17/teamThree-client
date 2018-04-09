@@ -1,3 +1,6 @@
+import { API_BASE_URL } from '../config';
+
+
 export const SHOW_INTRO_CARD = 'SHOW_INTRO_CARD';
 export const showIntroCard = (numCard, introCard) => ({
     introCard,
@@ -12,9 +15,56 @@ export const nextIntroCard = (numCard, introCard) => ({
     type: NEXT_INTRO_CARD
 });
 
-export const HIDE_INTRO_CARD = 'HIDE_INTRO_CARD';
-export const hideIntroCard = () => ({
-    type: HIDE_INTRO_CARD
+
+
+export const INTRO_COMPLETE_REQUEST = 'INTRO_COMPLETE_REQUEST';
+export const introCompleteRequest = () => ({
+    type: INTRO_COMPLETE_REQUEST
 });
+
+export const INTRO_COMPLETE_SUCCESS = 'INTRO_COMPLETE_SUCCESS';
+export const introCompleteSuccess = () => ({
+    type: INTRO_COMPLETE_SUCCESS
+});
+
+export const INTRO_COMPLETE_ERROR = 'INTRO_COMPLETE_ERROR';
+export const introCompleteError = err => ({
+    type: INTRO_COMPLETE_ERROR,
+    err,
+});
+
+
+
+
+export const introComplete = () => (dispatch, getState) => {
+    dispatch(introCompleteRequest());
+    const authToken = getState().auth.authToken;
+    const data = ({
+        intro: true
+    });
+    return fetch(`${API_BASE_URL}/risk/intro`,
+        {
+            method: 'PUT',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${authToken}`
+        }
+    })
+    .then(res => {
+        if(!res.ok){
+            return Promise.reject('Something went wrong with setting intro to true');
+        }
+        return res.json();
+    })
+    .then( (res) => {
+        console.log('response from introComplete:', res)
+        dispatch(introCompleteSuccess());
+    })
+    .catch(err =>
+        dispatch(introCompleteError(err))
+    );
+}
 
 
