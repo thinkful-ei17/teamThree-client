@@ -34,7 +34,7 @@ export const introCompleteError = err => ({
 });
 
 
-
+//==== This call records that the User has completed the Introduction slides ===============
 
 export const introComplete = () => (dispatch, getState) => {
     dispatch(introCompleteRequest());
@@ -58,10 +58,9 @@ export const introComplete = () => (dispatch, getState) => {
         }
         return res.json();
     })
-    .then( (res) => {
-        console.log('response from introComplete:', res)
-        dispatch(introCompleteSuccess());
-    })
+    .then( (res) => 
+        dispatch(introCompleteSuccess())
+    )
     .catch(err =>
         dispatch(introCompleteError(err))
     );
