@@ -1,5 +1,5 @@
 import React from 'react';
-import {App} from './App';
+import {App} from './app';
 import {shallow, mount} from 'enzyme';
 import './setupTests';
 import {spy} from 'sinon';

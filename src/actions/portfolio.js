@@ -141,4 +141,53 @@ export const fetchRiskOverview = year => (dispatch, getState) => {
         .catch(err => 
             dispatch(fetchRiskOverviewError(err))
         )
-}
+};
+
+export const RESTART_LEVEL_1_REQUEST = 'RESTART_LEVEL_1_REQUEST';
+export const restartLevel1Request = () => ({
+  type: RESTART_LEVEL_1_REQUEST,
+});
+
+export const RESTART_LEVEL_1_SUCCESS = 'RESTART_LEVEL_1_SUCCESS';
+export const restartLevel1Success = (user) => ({
+  type: RESTART_LEVEL_1_SUCCESS,
+  previousFund: user.previousFund,
+  currentFund: user.currentFund,
+  year: user.year,
+  portfolio: null,
+});
+
+export const RESTART_LEVEL_1_ERROR = 'RESTART_LEVEL_1_ERROR';
+export const restartLevel1Error = (error) => ({
+  type: RESTART_LEVEL_1_ERROR,
+  error
+});
+
+
+export const restartLevel1 = ()=> (dispatch, getState) => {
+  console.log('Enter restart Level 1 async action');
+  dispatch(restartLevel1Request());
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/users/restart/`, 
+    {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json', 
+        'Authorization': `Bearer ${authToken}`
+      }
+    })
+      .then(res => {
+          if (!res.ok) {
+              return Promise.reject('Something has gone wrong');
+          }
+          return res.json()
+      })
+      .then(user => {
+        console.log('User back from PUT = ', user);
+          dispatch(restartLevel1Success(user))
+      })
+      .catch(err => 
+          dispatch(restartLevel1Error(err))
+      )
+}; 
