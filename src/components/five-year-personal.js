@@ -1,13 +1,18 @@
 import React from "react";
 
 import { connect } from "react-redux";
-
-// import Button from "./button";
+import {Link} from 'react-router-dom';
+import Button from "./button";
 import Chart from "./chart";
 
-import { fetchPortfolio } from "../actions/portfolio";
+import { fetchPortfolio, restartLevel1 } from "../actions/portfolio";
 
 export class FiveYearPersonal extends React.Component {
+
+  startOver = () => {
+    this.props.dispatch(restartLevel1());
+  }
+
   render() {
     let listItems,
       profitloss,
@@ -139,13 +144,15 @@ export class FiveYearPersonal extends React.Component {
               Change: 87%
             </li>
         </ul>
-        {/* {Button} */}
-      </div>
-    );
+        <Link to='/investment-form'>
+          <Button class='green-button' name='Start Over' handleClick={this.startOver}/>
+        </Link>
+        </div>
+      );
+    }
   }
-}
 
-const mapStateToProps = state => {
+  const mapStateToProps = state => {
   return {
     user: state.auth.currentUser,
     data: state.portfolio.portfolio,
