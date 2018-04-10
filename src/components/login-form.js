@@ -25,14 +25,14 @@ export class LoginForm extends React.Component {
             );
         }
         return (
-            <div className='login'>
-                <span className="close js-close" onClick={() => this.props.dispatch(hideLoginForm())}> &times; </span>
+                
             <form
-                    className="login-form"
+                className="login-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-            
+                
+                <span className="close js-close" onClick={() => this.props.dispatch(hideLoginForm())}> &times; </span>
                 {error}
                 <label className="app-label" htmlFor="username">Username</label>
                 <Field
@@ -54,10 +54,8 @@ export class LoginForm extends React.Component {
                     className='user-form-button'
                     disabled={this.props.pristine || this.props.submitting}>
                     Log in
-                </button>
-                
+                </button> 
             </form>
-          </div>  
         );
     }
 }
