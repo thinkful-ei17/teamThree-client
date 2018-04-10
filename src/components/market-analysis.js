@@ -30,19 +30,19 @@ export class MarketAnalysis extends React.Component {
             <section className='vector-wrapper'>
               <div className='blurb-wrapper primary-text-color list-item-heading'>
                 <h4>Aggressive:</h4>
-                <p className='no-margins'>{this.props.risks[0].gain}%</p>
+                <p className='margin-bottom'>{this.props.risks[0].gain}%</p>
               </div>
               <div className='blurb-wrapper primary-text-color list-item-heading'>
                 <h4>Moderate:</h4>
-                <p className='no-margins'> {this.props.risks[2].gain}%</p>
+                <p className='margin-bottom'> {this.props.risks[2].gain}%</p>
               </div>  
               <div className='blurb-wrapper primary-text-color list-item-heading'>
                 <h4>Conservative:</h4>
-                <p className='no-margins'> {this.props.risks[1].gain}%</p>
+                <p className='margin-bottom'> {this.props.risks[1].gain}%</p>
               </div>  
               <div className='blurb-wrapper primary-text-color list-item-heading'>
                 <h4>Mattress:</h4>   
-                <p className='no-margins'>0.0%</p>
+                <p className='margin-bottom'>0.0%</p>
               </div>  
             </section> 
           );
@@ -59,7 +59,7 @@ export class MarketAnalysis extends React.Component {
             {marketRecap}
             <div className='right-align-object'>
                 <Link to='/investment-return'>
-                    <Button class='blue-button' name="View Portfolio" handleClick={handleClick}/>
+                    <Button class='blue-button' name="View Your Returns" handleClick={handleClick}/>
                 </Link>
             </div>
         </div>  
