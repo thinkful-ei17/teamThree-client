@@ -6,7 +6,7 @@ import './setupTests';
 describe('Test Requires Year Summary List Component', () => {
   it('Should smoke test the Year Summary List component', () => {
     let year = [{
-      x: 'high',
+      x: 'Aggresive',
       previousYear: 5000,
       y: 1
     }];
