@@ -51,23 +51,23 @@ export class FiveYearPersonal extends React.Component {
             },
             {
               x: 1,
-              y: 7800
+              y: 5409
             },
             {
               x: 2,
-              y: 13260
+              y: 5409
             },
             {
               x: 3,
-              y: 23735
+              y: 6761
             },
             {
               x: 4,
-              y: 37265
+              y: 7779
             },
             {
               x: 5,
-              y: 69685
+              y: 8113
             }
           ]
         },
@@ -99,49 +99,49 @@ export class FiveYearPersonal extends React.Component {
         <h3 className='secondary-heading primary-text-color'> Optimal Investment Strategy By Year:</h3>
         <ul className="vector-wrapper">
             <li className="blurb-wrapper">
-              Year 1: Moderate
+              Year 1: Low
               <br />
-              Start: $5000
+              Start: $5,000
               <br />
-              End: $7800
+              End: $5,409
               <br />
-              Change: 56%
+              Change: 8.18%
             </li>
             <li className="blurb-wrapper">
-              Year 2: Moderate
+              Year 2: Mattress
               <br />
-              Start: $7800
+              Start: $5,409
               <br />
-              End: $13,260
+              End: $5,409
               <br />
-              Change: 70%
+              Change: 0%
             </li>
             <li className="blurb-wrapper">
               Year 3: High
               <br />
-              Start: $13,260
+              Start: $5,409
               <br />
-              End: $23,735
+              End: $6,761
               <br />
-              Change: 79%
+              Change: 24.99%
             </li>
             <li className="blurb-wrapper">
-              Year 4: Moderate
+              Year 4: High
               <br />
-              Start: $23,735
+              Start: $6,761
               <br />
-              End: $37,265
+              End: $7,779
               <br />
-              Change: 57%
+              Change: 15.06%
             </li>
             <li className="blurb-wrapper">
-              Year 5: High
+              Year 5: Moderate
               <br />
-              Start: $37,265
+              Start: $7,779
               <br />
-              End: $69,685
+              End: $8,113
               <br />
-              Change: 87%
+              Change: 4.29%
             </li>
         </ul>
         <Link to='/investment-form'>
