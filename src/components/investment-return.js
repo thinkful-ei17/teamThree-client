@@ -52,9 +52,9 @@ export class InvestmentReturn extends React.Component {
             let growth,
                 strategy;
 
-            if (portfolio[year-1]) {
-                growth = portfolio[year-1].growth;
-                strategy = portfolio[year-1].strategy;
+            if (portfolio[year]) {
+                growth = portfolio[year].growth;
+                strategy = portfolio[year].strategy;
             }
             
             investmentReturnContent = (

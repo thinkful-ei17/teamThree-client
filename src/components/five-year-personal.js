@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import Button from "./button";
 import Chart from "./chart";
 
-import { fetchPortfolio, restartLevel1 } from "../actions/portfolio";
+import { restartLevel1 } from "../actions/portfolio";
 
 export class FiveYearPersonal extends React.Component {
 
@@ -15,7 +15,6 @@ export class FiveYearPersonal extends React.Component {
 
   render() {
     let listItems,
-      profitloss,
       currentFund,
       overallChange,
       overallGrowth,
@@ -28,6 +27,7 @@ export class FiveYearPersonal extends React.Component {
       overallGrowth = Math.round((overallChange/5000) * 100);
 
       let investmentData = this.props.data.slice(1);
+      console.log("investmentData = ", investmentData)
 
       listItems = investmentData.map((year, index) => (
           <li key={index} className="blurb-wrapper">
