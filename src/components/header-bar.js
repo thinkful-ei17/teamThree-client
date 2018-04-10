@@ -28,18 +28,21 @@ export class HeaderBar extends React.Component {
 
         if (this.props.loggedIn) {
 
-            portfolio = (
-                <li><Link to='/portfolio'>Portfolio</Link></li>
-            );
-            investmentData = (
-                <li><Link to='/market-analysis'>Investment Data</Link></li>
-            );
-
             logOutButton = (
                 <li className="red btn-logout" onClick={() => this.logOut()}>
                     <Link to='/market-analysis'>Log Out</Link>
                 </li>
             );
+        }
+
+        if(this.props.year && this.props.loggedIn) {
+          console.log('NavBar - year = ', this.props.year)
+          investmentData = (
+            <li><Link to='/market-analysis'>Investment Data</Link></li>
+          );
+          portfolio = (
+            <li><Link to='/portfolio'>Portfolio</Link></li>
+          ); 
         }
 
         if (!this.props.loggedIn) {
@@ -93,7 +96,8 @@ const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null,
     ShowLoginForm: state.userReducer.showLoginForm,
     ShowRegistrationForm: state.userReducer.showForm,
-    currentUser: state.auth.currentUser
+    currentUser: state.auth.currentUser,
+    year: state.portfolio.year
 });
 
 export default connect(mapStateToProps)(HeaderBar);
