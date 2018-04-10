@@ -99,7 +99,7 @@ export class FiveYearPersonal extends React.Component {
         <h3 className='secondary-heading primary-text-color'> Optimal Investment Strategy By Year:</h3>
         <ul className="vector-wrapper">
             <li className="blurb-wrapper">
-              Year 1: Low
+              Year 1: Conservative
               <br />
               Start: $5,000
               <br />
@@ -117,7 +117,7 @@ export class FiveYearPersonal extends React.Component {
               Change: 0%
             </li>
             <li className="blurb-wrapper">
-              Year 3: High
+              Year 3: Aggressive
               <br />
               Start: $5,409
               <br />
@@ -126,7 +126,7 @@ export class FiveYearPersonal extends React.Component {
               Change: 24.99%
             </li>
             <li className="blurb-wrapper">
-              Year 4: High
+              Year 4: Aggressive
               <br />
               Start: $6,761
               <br />
