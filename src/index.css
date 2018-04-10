@@ -29,22 +29,6 @@ body {
     text-align: left;
 }
 
-.center-object {
-    text-align: center;
-}
-
-.right-align-object {
-    text-align: end;
-}
-
-.no-margins {
-    margin: 0;
-}
-
-.margin-bottom {
-    margin: 0 0 1em;
-}
-
 
 /* ===========  TEXT OPTIONS ========================*/
 
@@ -347,4 +331,33 @@ li {
     list-style-type: none;
     font-size: 1.2em;
     margin: 10px;
+}
+
+/*== more-specific helper classes ===========*/
+
+.center-object {
+    text-align: center;
+}
+
+.right-align-object {
+    text-align: end;
+}
+
+.no-margins {
+    margin: 0;
+}
+
+.margin-top {
+    margin: 1em 0 0;
+}
+
+.margin-bottom {
+    margin: 0 0 1em;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
 }
