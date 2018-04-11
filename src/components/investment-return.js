@@ -8,7 +8,7 @@ import Button from './button';
 
 import { fetchPortfolio } from '../actions/portfolio';
 
-//let numeral = require('numeral');
+let numeral = require('numeral');
 
 export class InvestmentReturn extends React.Component {
     componentDidMount() {
@@ -45,9 +45,8 @@ export class InvestmentReturn extends React.Component {
         }
 
         if (portfolio) {
-        //   for(let i = 1; i < portfolio.length; i++) {
-        //     portfolio[i].y = numeral(portfolio[i].y).value();
-        //   } 
+            let previousFundFormat = numeral(previousFund).format('0,0');
+            let currentFundFormat = numeral(currentFund).format('0,0');
             const data = [
                 {									
                     points: portfolio,
@@ -73,7 +72,7 @@ export class InvestmentReturn extends React.Component {
                     <div className="vector-wrapper flex-start">
                         <div className='blurb-wrapper descriptive-content flex-row min-width-blurb'>
                             <h4 className='margin-top'>Start: </h4>
-                            <p className='margin-left'> ${previousFund}</p>
+                            <p className='margin-left'> ${previousFundFormat}</p>
                         </div>
                         <div className='blurb-wrapper descriptive-content flex-row min-width-blurb'>
                             <h4 className='margin-top'>Growth: </h4>
@@ -81,7 +80,7 @@ export class InvestmentReturn extends React.Component {
                         </div>
                         <div className='blurb-wrapper descriptive-content flex-row min-width-blurb'>
                             <h4 className='margin-top'>End: </h4>
-                            <p className='margin-left'> ${currentFund} </p>
+                            <p className='margin-left'> ${currentFundFormat} </p>
                         </div>
                     </div>
                     <div>

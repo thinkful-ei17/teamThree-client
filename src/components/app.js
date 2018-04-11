@@ -17,7 +17,7 @@ import FiveYearPersonal from './five-year-personal';
 import CompletedLevelOne from './completed-level-one';
 import Footer from './footer';
 import { refreshAuthToken } from '../actions/auth';
-import { fetchPortfolio } from '../actions/portfolio';
+//import { fetchPortfolio } from '../actions/portfolio';
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {

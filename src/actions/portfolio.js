@@ -1,5 +1,4 @@
 import { API_BASE_URL } from '../config';
-//let numeral = require('numeral');
 
 export const CHOOSE_RISK_TOLERANCE = 'CHOOSE_RISK_TOLERANCE';
 export const chooseRiskTolerance = riskChoice => ({
@@ -69,7 +68,6 @@ export const investFundsError = error => ({
 
 export const investFunds = (risk, year, currentFund) => (dispatch, getState) => {
   dispatch(investFundsRequest());
-  //currentFund = numeral(currentFund).value();
     const authToken = getState().auth.authToken;
     const data = ({
         risk,
@@ -184,7 +182,7 @@ export const restartLevel1 = ()=> (dispatch, getState) => {
           return res.json()
       })
       .then(user => {
-        console.log('User back from PUT = ', user);
+        //console.log('User back from PUT = ', user);
           dispatch(restartLevel1Success(user))
       })
       .catch(err => 
