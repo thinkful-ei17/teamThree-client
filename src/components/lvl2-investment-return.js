@@ -33,7 +33,7 @@ export class Lvl2InvestmentReturn extends React.Component {
             handleClick;
 
         if (this.props.year === 10){
-            investmentLink = '/ten-year-market';
+            investmentLink = '/lvl2-five-year-market';
             name = 'See Ten Year Review';
             handleClick = this.toTenYearReview;
         } else{
@@ -68,7 +68,7 @@ export class Lvl2InvestmentReturn extends React.Component {
                         <div className='blurb-wrapper secondary-heading'>Growth: {growth}%</div>
                         <div className='blurb-wrapper secondary-heading'>End: ${currentFund}</div>
                     </div>
-                    <Link to='/portfolio'>
+                    <Link to='/lvl2-portfolio'>
                         <Button class='green-button' name='Return to Portfolio' handleClick={this.returnToPortfolio} />
                     </Link>
                     <Link to={investmentLink}>

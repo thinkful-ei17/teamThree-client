@@ -9,7 +9,6 @@ import { fetchPortfolio, fetchRiskOverview } from '../actions/portfolio';
 
 export class Lvl2MarketAnalysis extends React.Component {
     componentDidMount() {
-      console.log('market-analysis componentDidMount year = ', this.props.year)
         if (this.props.year) {
             this.props.dispatch(fetchRiskOverview(this.props.year));
         } else {
@@ -25,7 +24,7 @@ export class Lvl2MarketAnalysis extends React.Component {
         let marketRecap;
         
         if(this.props.risks !== null) {
-          console.log('market-analysis risks =', this.props.risks)
+    
           marketRecap = (
             <section className='vector-wrapper'>
               <p className='blurb-wrapper'>Aggressive: {this.props.risks[0].gain}%</p>
