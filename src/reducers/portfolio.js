@@ -84,7 +84,16 @@ export function portfolioReducer(state = initialState, action) {
     } else if (action.type === INVEST_FUNDS_LVL2_SUCCESS) {
       return Object.assign({}, state, {
         loading: false,
-        error: null
+        error: null,
+        unassigned: initialState.unassigned, 
+        aggressive: initialState.aggressive, 
+        moderate: initialState.moderate, 
+        conservative: initialState.conservative, 
+        mattress: initialState.mattress,
+        google: initialState.google, 
+        autoZone: initialState.autoZone,
+        dollarTree: initialState.dollarTree, 
+        ea: initialState.ea
       });
     } else if (action.type === INVEST_FUNDS_LVL2_ERROR) {
       return Object.assign({}, state, {
