@@ -97,6 +97,60 @@ export const investFunds = (risk, year, currentFund) => (dispatch, getState) => 
 		)
 }
 
+export const INVEST_FUNDS_LVL2_REQUEST = 'INVEST_FUNDS_LVL2_REQUEST';
+export const investFundsLvl2Request = () => ({
+  type: INVEST_FUNDS_LVL2_REQUEST
+});
+
+export const INVEST_FUNDS_LVL2_SUCCESS = 'INVEST_FUNDS_LVL2_SUCCESS';
+export const investFundsLvl2Success = () => ({
+  type: INVEST_FUNDS_LVL2_SUCCESS
+});
+
+export const INVEST_FUNDS_LVL2_ERROR = 'INVEST_FUNDS_LVL2_ERROR';
+export const investFundsLvl2Error = error => ({
+  type: INVEST_FUNDS_LVL2_ERROR,
+  error
+});
+
+export const investFundsLvl2 = (aggressive, moderate, conservative, mattress, google, autoZone, dollarTree, ea, year, currentFund) => (dispatch, getState) => {
+	dispatch(investFundsLvl2Request());
+    const authToken = getState().auth.authToken;
+    const data = ({
+        aggressive, 
+        moderate, 
+        conservative, 
+        mattress, 
+        google, 
+        autoZone, 
+        dollarTree, 
+        ea,
+        year,
+        currentFund
+    });
+	return fetch(`${API_BASE_URL}/level2/invest`, 
+		{
+      method: 'PUT',
+      body: JSON.stringify(data),
+      headers: {
+        		'Content-Type': 'application/json',
+				'Accept': 'application/json',
+				'Authorization': `Bearer ${authToken}`
+			}
+		}).then(res => {
+			if (!res.ok) {
+				return Promise.reject('Something has gone wrong');
+			}
+			return res.json()
+		})
+		.then(() => {
+            dispatch(investFundsLvl2Success());
+		})
+		.catch(err => 
+			dispatch(investFundsLvl2Error(err))
+		)
+}
+
 export const INCREMENT_YEAR = 'INCREMENT_YEAR';
 export const incrementYear = () => ({
   type: INCREMENT_YEAR

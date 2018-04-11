@@ -6,7 +6,7 @@ import requiresLogin from './requires-login';
 import CompletedLevelOne from './completed-level-one';
 import Button from './button';
 
-import { fetchPortfolio, updateInvestmentStrategy, blankInvestmentStrategyEntry, investFunds, incrementYear } from '../actions/portfolio';
+import { fetchPortfolio, updateInvestmentStrategy, blankInvestmentStrategyEntry, investFundsLvl2, incrementYear } from '../actions/portfolio';
 
 export class Lvl2InvestmentForm extends React.Component {
     componentDidMount() {
@@ -17,7 +17,7 @@ export class Lvl2InvestmentForm extends React.Component {
     }
 
     invest = () => {
-        this.props.dispatch(investFunds(this.props.riskChoice, this.props.year + 1, this.props.currentFund));
+        this.props.dispatch(investFundsLvl2(this.props.aggressive, this.props.moderate, this.props.conservative, this.props.mattress, this.props.google, this.props.autoZone, this.props.dollarTree, this.props.ea , this.props.year + 1, this.props.currentFund));
         this.props.dispatch(incrementYear());
     }
 

@@ -6,6 +6,9 @@ import {
     INVEST_FUNDS_REQUEST,
     INVEST_FUNDS_SUCCESS,
     INVEST_FUNDS_ERROR,
+    INVEST_FUNDS_LVL2_ERROR,
+    INVEST_FUNDS_LVL2_REQUEST,
+    INVEST_FUNDS_LVL2_SUCCESS,
     FETCH_RISK_OVERVIEW_REQUEST,
     FETCH_RISK_OVERVIEW_SUCCESS,
     FETCH_RISK_OVERVIEW_ERROR,
@@ -70,6 +73,20 @@ export function portfolioReducer(state = initialState, action) {
         error: null
       });
     } else if (action.type === INVEST_FUNDS_ERROR) {
+      return Object.assign({}, state, {
+        error: action.error,
+        loading: false
+      });
+    } else if (action.type === INVEST_FUNDS_LVL2_REQUEST) {
+      return Object.assign({}, state, {
+        loading: true
+      });
+    } else if (action.type === INVEST_FUNDS_LVL2_SUCCESS) {
+      return Object.assign({}, state, {
+        loading: false,
+        error: null
+      });
+    } else if (action.type === INVEST_FUNDS_LVL2_ERROR) {
       return Object.assign({}, state, {
         error: action.error,
         loading: false
