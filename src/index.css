@@ -124,7 +124,7 @@ body {
 /*  ======================  BUTTONS ===================== */
 
 .blue-button {
-    margin: 1em;
+    margin: 2em 1em;
     padding: .5em;
     background-color: #3478A2;
     color: #EDF8E8;
@@ -315,7 +315,7 @@ ul {
     width: 250px;
     /* height: 150px; */
 
-    margin: 30px 10px 10px 10px;
+    margin: 10px;
 
     border-radius: 10px;
     background-color: rgb(232, 228, 228);
