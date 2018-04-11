@@ -32,7 +32,7 @@ export class FiveYearPersonal extends React.Component {
       overallGrowth = Math.round((overallChange/initialAmount) * 100);
 
       let investmentData = this.props.data.slice(1);
-      console.log("investmentData = ", investmentData)
+      //console.log("investmentData = ", investmentData)
       currentFundFormat = numeral(currentFund).format('0,0');
       overallChangeFormat = numeral(overallChange).format('0,0');
 

@@ -182,7 +182,7 @@ export const restartLevel1 = ()=> (dispatch, getState) => {
           return res.json()
       })
       .then(user => {
-        console.log('User back from PUT = ', user);
+        //console.log('User back from PUT = ', user);
           dispatch(restartLevel1Success(user))
       })
       .catch(err => 
