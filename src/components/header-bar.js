@@ -94,7 +94,7 @@ const mapStateToProps = state => ({
     ShowRegistrationForm: state.userReducer.showForm,
     currentUser: state.auth.currentUser,
     year: state.portfolio.year,
-    lvl2IntroComplete: state.portfolio.lvl2IntroComplete
+    lvl2IntroComplete: state.introReducer.lvl2IntroComplete
 });
 
 export default connect(mapStateToProps)(HeaderBar);

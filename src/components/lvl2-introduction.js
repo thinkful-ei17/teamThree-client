@@ -18,7 +18,7 @@ export class Lvl2Introduction extends React.Component {
     console.log('The button was clicked in intro page');
   }
 
-  markIntroComplete = () => {
+  markLvl2IntroComplete = () => {
 		this.props.dispatch(lvl2IntroComplete());
 	};
 
@@ -45,7 +45,7 @@ export class Lvl2Introduction extends React.Component {
                 </section>
                 <div className='right-align-object'>
                     <Link to={'/lvl2-investment-form'}>
-                        <Button class='blue-button' name="Let's Get Investing!" handleClick={() => this.markIntroComplete} />
+                        <Button class='blue-button' name="Let's Get Investing!" handleClick={this.markLvl2IntroComplete} />
                     </Link>
                 </div>
               </main>
@@ -59,8 +59,7 @@ export class Lvl2Introduction extends React.Component {
 const mapStateToProps = state => {
   return{
     introCard: state.introReducer.introCard,
-    numCard: state.introReducer.numCard,
-    introComplete: state.introReducer.introComplete
+    numCard: state.introReducer.numCard
   };
 };
 
