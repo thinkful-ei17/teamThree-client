@@ -21,6 +21,16 @@ body {
     text-align: left;
 }
 
+.medium-viewport {
+    width: 90%;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10em;
+    margin-top: 5em;
+    text-align: left;
+}
+
 .small-viewport {
     width: 90%;
     max-width: 600px;
@@ -261,9 +271,8 @@ body {
 }
 
 /*INTRO COMPONENT*/
-
 .intro-description {
-    padding: 2em 2em 4em;
+    padding: 2em;
     max-width: 700px;
     display: flex;
     flex-direction: column;
@@ -282,6 +291,11 @@ body {
     margin-bottom: 0;
     font-size: 2em;
     font-weight: bold;
+}
+
+.intro-button-alignment {
+    padding-right: 3em;
+    margin-top: 0;
 }
 
 /*RISK BREAKDOWN COMPONENT*/
@@ -355,6 +369,10 @@ li {
 
 .no-left-margin {
     margin-left: 0;
+}
+
+.no-top-margin {
+    margin-top: 0;
 }
 
 .margin-top {
