@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
-import requiresLogin from './requires-login';
+ import requiresLogin from './requires-login';
 import Chart from './chart';
 import Button from './button';
 import YearSummaryList from './year-summary-list';
@@ -41,7 +40,6 @@ export class Portfolio extends React.Component {
             name = 'Keep Investing!';
             handleClick = this.toInvestmentForm;
         }
-
         if (this.props.data) {
             const data = [
                 {									
