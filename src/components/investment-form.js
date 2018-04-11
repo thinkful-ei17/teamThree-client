@@ -28,13 +28,13 @@ export class InvestmentForm extends React.Component {
     }
 
     render() {
-        let currentFundFormat = numeral(this.props.currentFund).format('0,0');
         if (this.props.year >= 5){
             return (
                 <CompletedLevelOne/>
             );
         }
         else{
+            let currentFundFormat = numeral(this.props.currentFund).format('0,0');
             return (
                 <div className="small-viewport">
                     <h2 className="primary-heading">Year {this.props.year + 1}</h2>

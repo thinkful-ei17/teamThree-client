@@ -30,8 +30,6 @@ export class InvestmentReturn extends React.Component {
     render() {
         let investmentReturnContent = 'Loading...';
         let { portfolio, year, previousFund, currentFund } = this.props;
-        let previousFundFormat = numeral(previousFund).format('0,0');
-        let currentFundFormat = numeral(currentFund).format('0,0');
         let investmentLink,
             name,
             handleClick;
@@ -47,9 +45,8 @@ export class InvestmentReturn extends React.Component {
         }
 
         if (portfolio) {
-        //   for(let i = 1; i < portfolio.length; i++) {
-        //     portfolio[i].y = numeral(portfolio[i].y).value();
-        //   } 
+            let previousFundFormat = numeral(previousFund).format('0,0');
+            let currentFundFormat = numeral(currentFund).format('0,0');
             const data = [
                 {									
                     points: portfolio,

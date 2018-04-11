@@ -27,7 +27,6 @@ export class Portfolio extends React.Component {
     }
 
     render() {
-        let currentFundFormat = numeral(this.props.currentFund).format('0,0');
         let portfolioContent,
             investmentLink,
             name,
@@ -43,6 +42,7 @@ export class Portfolio extends React.Component {
             handleClick = this.toInvestmentForm;
         }
         if (this.props.data) {
+            let currentFundFormat = numeral(this.props.currentFund).format('0,0');
           const data = [
                 {									
                     color: '#C24275', 

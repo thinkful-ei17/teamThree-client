@@ -14,7 +14,6 @@ import {
     RESTART_LEVEL_1_ERROR, 
     INCREMENT_YEAR 
 } from '../actions/portfolio';
-//let numeral = require('numeral');
 
   const initialState = {
   year: 0,
@@ -39,15 +38,10 @@ export function portfolioReducer(state = initialState, action) {
     } else if (action.type === FETCH_PORTFOLIO_SUCCESS) {
 
       return Object.assign({}, state, {
-        portfolio: action.portfolio/*.map( values => {
-          return Object.assign({}, values, {
-            previousYear: numeral(values.previousYear).format('0,0'),
-            // y: numeral(values.y).format('0,0')
-          })
-       })*/,
+        portfolio: action.portfolio,
         year: action.year,
-        previousFund: action.previousFund/*numeral(action.previousFund).format('0,0')*/,
-        currentFund: action.currentFund/*numeral(action.currentFund).format('0,0')*/,
+        previousFund: action.previousFund,
+        currentFund: action.currentFund,
         loading: false,
         error: null
       });
