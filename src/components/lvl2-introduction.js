@@ -18,13 +18,18 @@ export class Lvl2Introduction extends React.Component {
     console.log('The button was clicked in intro page');
   }
 
+  markIntroComplete = () => {
+		// this.props.dispatch(lvl2IntroComplete());
+		console.log('level 2 intro complete')
+	};
+
 
   render() {
-    let link = '';
+    // let link = '';
 
-    if(this.props.numCard === 3 || this.props.introComplete) {
-      link = '/risk-breakdown';
-    }
+    // if(this.props.numCard === 3 || this.props.introComplete) {
+    //   link = '/lvl2-investment-form';
+    // }
     
     return (
       <div className="introduction viewport">
@@ -40,9 +45,9 @@ export class Lvl2Introduction extends React.Component {
                   <p className="descriptive-content primary-text-color intro-description-p intro-emphasis">{this.props.introCard[this.props.numCard].detailC}</p>
                 </section>
                 <div className='right-align-object'>
-                  <Link to={link}>
-                    <Button class='blue-button' name='Got It!' handleClick={this.nextCardClick}/>
-                  </Link>
+                    <Link to={'/lvl2-investment-form'}>
+                        <Button class='blue-button' name="Let's Get Investing!" handleClick={markIntroComplete} />
+                    </Link>
                 </div>
               </main>
           </section>
