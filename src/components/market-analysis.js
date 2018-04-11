@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
 import Button from './button';
 import requiresLogin from './requires-login';
 
@@ -10,6 +9,7 @@ import { fetchPortfolio, fetchRiskOverview } from '../actions/portfolio';
 
 export class MarketAnalysis extends React.Component {
     componentDidMount() {
+      console.log('market-analysis componentDidMount year = ', this.props.year)
         if (this.props.year) {
             this.props.dispatch(fetchRiskOverview(this.props.year));
         } else {
@@ -21,9 +21,11 @@ export class MarketAnalysis extends React.Component {
     }
     
     render () {    
+        
         let marketRecap;
         
         if(this.props.risks !== null) {
+          console.log('market-analysis risks =', this.props.risks)
           marketRecap = (
             <section className='vector-wrapper'>
               <p className='blurb-wrapper'>Aggressive: {this.props.risks[0].gain}%</p>

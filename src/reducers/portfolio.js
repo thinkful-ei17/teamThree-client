@@ -102,7 +102,7 @@ export function portfolioReducer(state = initialState, action) {
         currentFund: action.currentFund,
         riskChoice: null,
         portfolio: null,
-        risk: null,
+        risks: null,
         error: null
       });
     } else if (action.type === RESTART_LEVEL_1_ERROR) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
-
+import { login } from '../actions/auth';
 import { clearAuth } from '../actions/auth';
 import { showLoginForm } from '../actions/users';
 import { showRegistrationForm } from '../actions/users';
@@ -12,6 +12,10 @@ export class HeaderBar extends React.Component {
         this.props.dispatch(clearAuth());
         clearAuthToken();
     }
+    onSubmit(obj) {
+        console.log(obj);
+        return this.props.dispatch(login(obj.username, obj.password));
+    }
 
     render() {
         // Only render the log out button if we are logged in
@@ -20,6 +24,7 @@ export class HeaderBar extends React.Component {
             loginFormNav,
             regFormNav,
             portfolio,
+            demo,
             investmentData;
 
         let appName = (
@@ -28,18 +33,21 @@ export class HeaderBar extends React.Component {
 
         if (this.props.loggedIn) {
 
-            portfolio = (
-                <li><Link to='/portfolio'>Portfolio</Link></li>
-            );
-            investmentData = (
-                <li><Link to='/market-analysis'>Investment Data</Link></li>
-            );
-
             logOutButton = (
                 <li className="red btn-logout" onClick={() => this.logOut()}>
                     <Link to='/market-analysis'>Log Out</Link>
                 </li>
             );
+        }
+
+        if(this.props.year && this.props.loggedIn) {
+          console.log('NavBar - year = ', this.props.year)
+          investmentData = (
+            <li><Link to='/market-analysis'>Investment Data</Link></li>
+          );
+          portfolio = (
+            <li><Link to='/portfolio'>Portfolio</Link></li>
+          ); 
         }
 
         if (!this.props.loggedIn) {
@@ -48,6 +56,9 @@ export class HeaderBar extends React.Component {
             );
             regFormNav = (
                 <li className="login-text" href="#" onClick={() => this.props.dispatch(showRegistrationForm())}>Sign Up</li>
+            );
+            demo = (
+                <li className="demo" onClick={() => this.onSubmit({username:'Demo1',password:'blahblahdemo1'})}>Demo Account</li>
             );
         }
 
@@ -76,7 +87,7 @@ export class HeaderBar extends React.Component {
             <div className="header-bar">
                 <ul className="nav-bar-ul">
                     {appName}
-
+                    {demo}
                     {loginFormNav}
                     {regFormNav}
                     
@@ -93,7 +104,8 @@ const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null,
     ShowLoginForm: state.userReducer.showLoginForm,
     ShowRegistrationForm: state.userReducer.showForm,
-    currentUser: state.auth.currentUser
+    currentUser: state.auth.currentUser,
+    year: state.portfolio.year
 });
 
 export default connect(mapStateToProps)(HeaderBar);

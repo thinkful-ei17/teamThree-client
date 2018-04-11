@@ -1,35 +1,53 @@
 .registration-form {
-  padding-left: 1em;
   overflow: auto;
   width: 100%;
-  max-width:756px;
-  height: 400px;
+  max-width: 400px;
+  height: 30em;
   max-height: 100%;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 2em;
+  justify-content: flex-end;
 }
 
 .form-div {
   margin-left: 1em;
 }
+
 .registration-form button {
-  margin-top: .75em;
+  margin-top: 2em;
   width: 300px;
   max-width: 100%;
 }
 
-.registration .close {
-  position: relative;
-  top: 1.3em;
+.registration-form .close {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  width: 100%;
 }
 
 @media (min-width: 650px ){
 
   .registration-form {
-    flex-wrap: wrap;
+    height: 500px;
+    max-width:756px;
+    align-items: flex-end;
   }
 
-  .registration .close {
-    right: -7.8em;
+  .registration-form .close {
+    align-self: center;
   }
+
+  .flex-column {
+    flex-wrap: wrap;
+    width: 100%;
+    align-self: center;
+  }
+
 }

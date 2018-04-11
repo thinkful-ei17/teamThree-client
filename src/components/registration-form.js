@@ -24,61 +24,64 @@ export class RegistrationForm extends React.Component {
 
     render() {
         return (
-            <div className='registration'>
-                <span className="close js-close" onClick={() => this.props.dispatch(hideRegistrationForm())}> &times; </span>
+      
+               
                 <form
                     className="login-form registration-form"
                     onSubmit={this.props.handleSubmit(values =>
                         this.onSubmit(values)
                     )}>
-                    <div className='form-div'>
-                      <label className="app-label" htmlFor="firstName">First name</label>
-                        <Field component={Input} type="text" name="firstName" />
-                    </div>
-                    <div className='form-div'>
-                      <label className="app-label" htmlFor="lastName">Last name</label>
-                        <Field component={Input} type="text" name="lastName" />
-                    </div>
-                    <div className='form-div'>
-                        <label className="app-label" htmlFor="bday">Birth Day</label>
-                        <Field component={Input} type="date" name="bday" />
-                    </div>
-                    <div className='form-div'>
-                        <label className="app-label" htmlFor="email">Email</label>
-                        <Field
-                            component={Input}
-                            type="text"
-                            name="email"
-                            validate={[required, nonEmpty, isTrimmed]}
-                        />
-                    </div>
-                    <div className='form-div'>
-                        <label className="app-label" htmlFor="username">Username</label>
-                        <Field
-                            component={Input}
-                            type="text"
-                            name="username"
-                            validate={[required, nonEmpty, isTrimmed]}
-                        />
-                    </div>
-                    <div className='form-div'>
-                        <label className="app-label" htmlFor="password">Password</label>
-                        <Field
-                            component={Input}
-                            type="password"
-                            name="password"
-                            validate={[required, passwordLength, isTrimmed]}
-                        />
-                    </div>
-                    <div className='form-div'>
-                        <label className="app-label" htmlFor="passwordConfirm">Confirm password</label>
-                        <Field
-                            component={Input}
-                            type="password"
-                            name="passwordConfirm"
-                            validate={[required, nonEmpty, matchesPassword]}
-                        />
-                    </div>
+                     <span className="close js-close" onClick={() => this.props.dispatch(hideRegistrationForm())}> &times; </span>
+                     <div className='flex-column'>
+                        <div className='form-div'>
+                            <label className="app-label" htmlFor="firstName">First name</label>
+                            <Field component={Input} type="text" name="firstName" />
+                        </div>
+                        <div className='form-div'>
+                            <label className="app-label" htmlFor="lastName">Last name</label>
+                            <Field component={Input} type="text" name="lastName" />
+                        </div>
+                        <div className='form-div'>
+                            <label className="app-label" htmlFor="bday">Birth Day</label>
+                            <Field component={Input} type="date" name="bday" />
+                        </div>
+                        <div className='form-div'>
+                            <label className="app-label" htmlFor="email">Email</label>
+                            <Field
+                                component={Input}
+                                type="text"
+                                name="email"
+                                validate={[required, nonEmpty, isTrimmed]}
+                            />
+                        </div>
+                        <div className='form-div'>
+                            <label className="app-label" htmlFor="username">Username</label>
+                            <Field
+                                component={Input}
+                                type="text"
+                                name="username"
+                                validate={[required, nonEmpty, isTrimmed]}
+                            />
+                        </div>
+                        <div className='form-div'>
+                            <label className="app-label" htmlFor="password">Password</label>
+                            <Field
+                                component={Input}
+                                type="password"
+                                name="password"
+                                validate={[required, passwordLength, isTrimmed]}
+                            />
+                        </div>
+                        <div className='form-div'>
+                            <label className="app-label" htmlFor="passwordConfirm">Confirm password</label>
+                            <Field
+                                component={Input}
+                                type="password"
+                                name="passwordConfirm"
+                                validate={[required, nonEmpty, matchesPassword]}
+                            />
+                        </div>
+                    </div>    
                     <div className='form-div'>
                         <button 
                             className='user-form-button'
@@ -89,7 +92,7 @@ export class RegistrationForm extends React.Component {
                     </div>    
                     
                 </form>
-            </div>
+   
         );
     }
 }
