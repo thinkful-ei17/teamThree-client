@@ -70,7 +70,7 @@ export class InvestmentReturn extends React.Component {
                     
                     <h3 className='secondary-heading primary-text-color'>Portfolio Summary Year {year}:</h3>
                     
-                    <div className="vector-wrapper flex-start margin-left">
+                    <div className="vector-wrapper flex-start">
                         <div className='blurb-wrapper descriptive-content flex-row min-width-blurb'>
                             <h4 className='margin-top'>Start: </h4>
                             <p className='margin-left'> ${previousFund}</p>
@@ -97,7 +97,7 @@ export class InvestmentReturn extends React.Component {
         }
         
         return (
-            <div className="viewport">
+            <div className="medium-viewport">
                 {investmentReturnContent}    
             </div>
         );
