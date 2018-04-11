@@ -37,14 +37,14 @@ export function portfolioReducer(state = initialState, action) {
         loading: true
       });
     } else if (action.type === FETCH_PORTFOLIO_SUCCESS) {
-      console.log('action.portfolio = ', action.portfolio)
-      for(let i = 1; i < action.portfolio.length; i++){
-        action.portfolio[i].previousYear = numeral(action.portfolio[i].previousYear).format('0,0')
-        action.portfolio[i].y = numeral(action.portfolio[i].y).format('0,0')
-        console.log('previous year = ', action.portfolio[i].previousYear)
-      }
+
       return Object.assign({}, state, {
-        portfolio: action.portfolio,
+        portfolio: action.portfolio.map( values => {
+          return Object.assign({}, values, {
+            previousYear: numeral(values.previousYear).format('0,0'),
+            // y: numeral(values.y).format('0,0')
+          })
+       }),
         year: action.year,
         previousFund: numeral(action.previousFund).format('0,0'),
         currentFund: numeral(action.currentFund).format('0,0'),

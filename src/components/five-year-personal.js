@@ -29,6 +29,7 @@ export class FiveYearPersonal extends React.Component {
       let investmentData = this.props.data.slice(1);
       console.log("investmentData = ", investmentData)
 
+
       listItems = investmentData.map((year, index) => (
           <li key={index} className="blurb-wrapper">
             Year {year.x}: {year.strategy}
