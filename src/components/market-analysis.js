@@ -27,7 +27,7 @@ export class MarketAnalysis extends React.Component {
         if(this.props.risks !== null) {
           console.log('market-analysis risks =', this.props.risks)
           marketRecap = (
-            <section className='vector-wrapper market-width flex-start'>
+            <section className='vector-wrapper market-width'>
               <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
                 <h4>Aggressive:</h4>
                 <p className='no-margins margin-bottom'>{this.props.risks[0].gain}%</p>

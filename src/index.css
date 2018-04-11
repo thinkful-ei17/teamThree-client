@@ -320,7 +320,7 @@ body {
     width: 150px;
 } */
 .market-width {
-    width: 85%;
+    width: 90%;
 }
 
 
@@ -456,6 +456,10 @@ li {
      justify-content: flex-start;
      align-items: baseline;
  }
+
+.flex-end {
+    justify-content: flex-end   
+}
 
 .flex-row {
     display: flex;
