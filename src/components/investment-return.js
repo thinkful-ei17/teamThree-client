@@ -60,7 +60,7 @@ export class InvestmentReturn extends React.Component {
             investmentReturnContent = (
                 <div>    
                     <h2 className='primary-heading'>Investment Returns: Year {year}</h2>
-                    <h3 className='secondary-heading primary-text-color'>Investment Strategy Year {year}:  {strategy}</h3>
+                    <h3 className='secondary-heading primary-text-color'>Investment Strategy:  {strategy}</h3>
                     <Chart yMin={0} xMax={5} data={data} />
                     
                     <h3 className='secondary-heading primary-text-color'>Portfolio Summary Year {year}:</h3>
