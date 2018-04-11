@@ -26,6 +26,8 @@ export class Lvl2InvestmentForm extends React.Component {
             this.props.dispatch(blankInvestmentStrategyEntry(event.target.id))
         } else if (isNaN(this.strictParseIntCheck(event.target.value))) {
             alert('Invalid Entry. You can only input numbers.');
+        } else if (parseInt(event.target.value, 10) < 0) {
+            alert("Invalid Entry. You can't invest a negative percentage of your portfolio.")
         } else {
             this.props.dispatch(updateInvestmentStrategy(event.target.id, event.target.value));
         }
@@ -93,12 +95,12 @@ const mapStateToProps = state => {
         unassigned: state.portfolio.unassigned,
         aggressive: state.portfolio.aggressive,
         moderate: state.portfolio.moderate,
-        conservative: state.portfolio.aggressive,
+        conservative: state.portfolio.conservative,
         mattress: state.portfolio.mattress,
         google: state.portfolio.google,
         autoZone: state.portfolio.autoZone,
         dollarTree: state.portfolio.dollarTree,
-        ea: state.portfolio.ea,
+        ea: state.portfolio.ea
     };
 };
 

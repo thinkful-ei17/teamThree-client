@@ -26,6 +26,13 @@ import {
   risks: null,
   unassigned: 100,
   aggressive: 0,
+  moderate: 0,
+  conservative: 0,
+  mattress: 0,
+  google: 0,
+  autoZone: 0,
+  dollarTree: 0,
+  ea: 0,
   loading: false,
   error: null
 };
