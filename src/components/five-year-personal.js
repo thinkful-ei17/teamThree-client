@@ -5,12 +5,9 @@ import {Link} from 'react-router-dom';
 import Button from "./button";
 import Chart from "./chart";
 
-import { restartLevel1 } from "../actions/portfolio";
-
 export class FiveYearPersonal extends React.Component {
-
-  startOver = () => {
-    this.props.dispatch(restartLevel1());
+  completeLvl1 = () => {
+    console.log('Level 1 Completed.');
   }
 
   render() {
@@ -144,8 +141,8 @@ export class FiveYearPersonal extends React.Component {
               Change: 4.29%
             </li>
         </ul>
-        <Link to='/investment-form'>
-          <Button class='green-button' name='Start Over' handleClick={this.startOver}/>
+        <Link to='/completed-level-one'>
+          <Button class='blue-button' name='Continue' handleClick={this.completeLvl1}/>
         </Link>
         </div>
       );

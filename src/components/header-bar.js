@@ -47,8 +47,17 @@ export class HeaderBar extends React.Component {
           );
           portfolio = (
             <li><Link to='/portfolio'>Portfolio</Link></li>
-          ); 
+          );
+          if (this.props.year > 5 || this.props.lvl2IntroComplete) {
+            investmentData = (
+                <li><Link to='/lvl2-market-analysis'>Investment Data</Link></li>
+            );
+            portfolio = (
+                <li><Link to='/lvl2-portfolio'>Portfolio</Link></li>
+            );
+          }
         }
+
 
         if (!this.props.loggedIn) {
             loginFormNav = (
@@ -62,27 +71,6 @@ export class HeaderBar extends React.Component {
             );
         }
 
-        // if (this.props.loggedIn && this.props.level === 1) {
-        //     currentUsername = (
-        //         <li className="current-user">Logged in as <span className="user-span">{this.props.currentUser.username}</span></li>
-        //     );
-
-        //     logOutButton = (
-        //         <button className="red btn-logout" onClick={() => this.logOut()}>Log out</button>
-        //     );
-
-        //     appName = (
-        //         <li className="appname">App Name</li>
-        //     );
-
-        //     portfolio = (
-        //         <button className="portfolio" onClick={() => <Route exact path="/portfolio" component={portfoliothingy} />}>Portfolio</button>
-        //     );
-
-        //     investmentData = (
-        //         <button className="investment" onClick={() => <Route exact path="/investments" component={investment} />}>Investment Information</button>
-        //     );
-        // }
         return (
             <div className="header-bar">
                 <ul className="nav-bar-ul">
@@ -105,7 +93,8 @@ const mapStateToProps = state => ({
     ShowLoginForm: state.userReducer.showLoginForm,
     ShowRegistrationForm: state.userReducer.showForm,
     currentUser: state.auth.currentUser,
-    year: state.portfolio.year
+    year: state.portfolio.year,
+    lvl2IntroComplete: state.portfolio.lvl2IntroComplete
 });
 
 export default connect(mapStateToProps)(HeaderBar);

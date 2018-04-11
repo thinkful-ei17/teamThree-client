@@ -15,7 +15,15 @@ import InvestmentReturn from './investment-return';
 import FiveYearMarket from './five-year-market';
 import FiveYearPersonal from './five-year-personal';
 import CompletedLevelOne from './completed-level-one';
+import Lvl2Portfolio from './lvl2-portfolio';
+import Lvl2Introduction from './lvl2-introduction';
+import Lvl2InvestmentForm from './lvl2-investment-form';
+import Lvl2MarketAnalysis from './lvl2-market-analysis';
+import Lvl2InvestmentReturn from './lvl2-investment-return';
+import Lvl2FiveYearMarket from './lvl2-five-year-market';
+import TenYearPersonal from './ten-year-personal';
 import Footer from './footer';
+
 import { refreshAuthToken } from '../actions/auth';
 import { fetchPortfolio } from '../actions/portfolio';
 

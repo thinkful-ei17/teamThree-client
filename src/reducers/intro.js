@@ -3,7 +3,8 @@ import {
   NEXT_INTRO_CARD,
   INTRO_COMPLETE_REQUEST,
   INTRO_COMPLETE_SUCCESS,
-  INTRO_COMPLETE_ERROR  
+  INTRO_COMPLETE_ERROR,
+  LVL2_INTRO_COMPLETE
 } from "../actions/intro";
 
 
@@ -50,7 +51,11 @@ export function introReducer(state = initialState, action) {
       loading: false,
       error: action.err
     }); 
-  }
+  } else if (action.type === LVL2_INTRO_COMPLETE) {
+    return Object.assign({}, state, {
+      lvl2IntroComplete: true,
+    });
+  } 
 
   return state;
 

@@ -54,7 +54,7 @@ export class Lvl2Portfolio extends React.Component {
                     <h3 className='secondary-heading primary-text-color'>Current Worth: {this.props.currentFund}</h3>
                     <section>
                         <YearSummaryList />
-                        <Chart yMin={0} xMax={5} data={data} />
+                        <Chart yMin={0} xMax={10} data={data} />
                     </section>
                 </div>
             )

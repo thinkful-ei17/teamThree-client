@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 
 import Button from './button';
 
-import { showIntroCard , nextIntroCard } from '../actions/intro';
+import { showIntroCard , nextIntroCard, lvl2IntroComplete } from '../actions/intro';
 
 export class Lvl2Introduction extends React.Component {
-  componentDidMount(){
+  componentDidMount() {
     this.props.dispatch(showIntroCard(this.props.numCard, this.props.introCard));
     console.log('component did mount intro page');
   }
@@ -19,8 +19,7 @@ export class Lvl2Introduction extends React.Component {
   }
 
   markIntroComplete = () => {
-		// this.props.dispatch(lvl2IntroComplete());
-		console.log('level 2 intro complete')
+		this.props.dispatch(lvl2IntroComplete());
 	};
 
 
@@ -46,7 +45,7 @@ export class Lvl2Introduction extends React.Component {
                 </section>
                 <div className='right-align-object'>
                     <Link to={'/lvl2-investment-form'}>
-                        <Button class='blue-button' name="Let's Get Investing!" handleClick={markIntroComplete} />
+                        <Button class='blue-button' name="Let's Get Investing!" handleClick={() => this.markIntroComplete} />
                     </Link>
                 </div>
               </main>
