@@ -27,20 +27,20 @@ export class MarketAnalysis extends React.Component {
         if(this.props.risks !== null) {
           console.log('market-analysis risks =', this.props.risks)
           marketRecap = (
-            <section className='vector-wrapper'>
-              <div className='blurb-wrapper primary-text-color list-item-heading'>
+            <section className='vector-wrapper market-width flex-start'>
+              <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
                 <h4>Aggressive:</h4>
                 <p className='no-margins margin-bottom'>{this.props.risks[0].gain}%</p>
               </div>
-              <div className='blurb-wrapper primary-text-color list-item-heading'>
+              <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
                 <h4>Moderate:</h4>
                 <p className='no-margins margin-bottom'> {this.props.risks[2].gain}%</p>
               </div>  
-              <div className='blurb-wrapper primary-text-color list-item-heading'>
+              <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
                 <h4>Conservative:</h4>
                 <p className='no-margins margin-bottom'> {this.props.risks[1].gain}%</p>
               </div>  
-              <div className='blurb-wrapper primary-text-color list-item-heading'>
+              <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
                 <h4>Mattress:</h4>   
                 <p className='no-margins margin-bottom'>0.0%</p>
               </div>  
@@ -53,11 +53,11 @@ export class MarketAnalysis extends React.Component {
         };
 
         return(
-        <div className='viewport'>  
-            <h2 className='primary-heading'>Market Analysis: Year {this.props.year}</h2>
+        <div className='medium-viewport'>  
+            <h2 className='primary-heading'>Market Analysis Year {this.props.year}:</h2>
             <h3 className='secondary-heading primary-text-color'>Annual Percent Growth of Managed Funds</h3>
             {marketRecap}
-            <div className='right-align-object'>
+            <div className='right-align-object margin-top padding-right'>
                 <Link to='/investment-return'>
                     <Button class='blue-button' name="View Your Returns" handleClick={handleClick}/>
                 </Link>

@@ -314,6 +314,16 @@ body {
 
 }
 
+/* MARKET ANALYSIS */
+
+/* .market-items-width {
+    width: 150px;
+} */
+.market-width {
+    width: 85%;
+}
+
+
 /*FIVE-YEAR-PLAN-PERSONAL COMPONENT*/
 
 .vector-wrapper {
@@ -412,12 +422,19 @@ li {
     padding: 0;
 }
 
+.padding {
+    padding: 1em;
+}
 .padding-left{
     padding-left: 1em;
 }
 
 .padding-bottom {
     padding-bottom: 1em;
+}
+
+.padding-right{
+    padding-right: 3em;
 }
 
 .half-width {
@@ -445,4 +462,8 @@ li {
     flex-direction: row;
     /* flex-wrap: wrap; */
     align-items: baseline;
+}
+
+.justify-between {
+    justify-content: space-between;
 }
