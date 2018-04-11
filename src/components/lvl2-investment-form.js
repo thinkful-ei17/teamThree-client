@@ -8,7 +8,7 @@ import Button from './button';
 
 import { fetchPortfolio, chooseRiskTolerance, investFunds, incrementYear } from '../actions/portfolio';
 
-export class InvestmentForm extends React.Component {
+export class Lvl2InvestmentForm extends React.Component {
     componentDidMount() {
 
         if (this.props.portfolio === null) {
@@ -50,7 +50,7 @@ export class InvestmentForm extends React.Component {
                     </label>
                 </div>
                 <div className='center-object'>
-                    <Link to='/market-analysis'>
+                    <Link to='/lvl2-market-analysis'>
                         <Button class='blue-button' name='Invest' handleClick={this.invest} />
                     </Link>   
                 </div>
@@ -68,4 +68,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default requiresLogin()(connect(mapStateToProps)(InvestmentForm));
+export default requiresLogin()(connect(mapStateToProps)(Lvl2InvestmentForm));
