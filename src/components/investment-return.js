@@ -6,7 +6,7 @@ import requiresLogin from './requires-login';
 import Chart from './chart';
 import Button from './button';
 
-import { fetchPortfolio, FETCH_PORTFOLIO_ERROR } from '../actions/portfolio';
+import { fetchPortfolio } from '../actions/portfolio';
 
 let numeral = require('numeral');
 

@@ -4,7 +4,7 @@ import {
   FETCH_RISK_MARKET_ERROR
 } from "../actions/five-year-market";
 
-let numeral = require('numeral');
+//let numeral = require('numeral');
 
 const initialState = {
   data: null,
@@ -19,12 +19,12 @@ export function marketReducer(state = initialState, action) {
     });
   } else if (action.type === FETCH_RISK_MARKET_SUCCESS) {
     return Object.assign({}, state, {
-      data: action.data.map( values => {
+      data: action.data,/*.map( values => {
         return Object.assign({}, values, {
          amtChange: numeral(values.amtChange).format('$0,0'),
          y: numeral(values.y).format('$0,0)')
         })
-      }),
+      })*/
       loading: false,
       error: null
     });

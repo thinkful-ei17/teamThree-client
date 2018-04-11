@@ -39,12 +39,12 @@ export function portfolioReducer(state = initialState, action) {
     } else if (action.type === FETCH_PORTFOLIO_SUCCESS) {
 
       return Object.assign({}, state, {
-        portfolio: action.portfolio.map( values => {
+        portfolio: action.portfolio/*.map( values => {
           return Object.assign({}, values, {
             previousYear: numeral(values.previousYear).format('0,0'),
             // y: numeral(values.y).format('0,0')
           })
-       }),
+       })*/,
         year: action.year,
         previousFund: numeral(action.previousFund).format('0,0'),
         currentFund: numeral(action.currentFund).format('0,0'),
