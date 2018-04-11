@@ -169,9 +169,11 @@ export class FiveYearMarket extends React.Component {
           <ul className="market-vector-wrapper">
              {listItemsMattress}
           </ul>
+          <div className='right-align-object'>
             <Link to='/five-year-personal'>
-                <Button class='blue-button' name="Compare Personal Success" handleClick={ () => false} />
+                <Button class='blue-button margin-right' name="Compare Personal Success" handleClick={ () => false} />
             </Link>
+          </div>  
           </div>
         );
       } 
