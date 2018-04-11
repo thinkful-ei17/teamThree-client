@@ -8,6 +8,8 @@ import Button from './button';
 
 import { fetchPortfolio, chooseRiskTolerance, investFunds, incrementYear } from '../actions/portfolio';
 
+let numeral = require('numeral');
+
 export class InvestmentForm extends React.Component {
     componentDidMount() {
 
@@ -32,10 +34,11 @@ export class InvestmentForm extends React.Component {
             );
         }
         else{
+            let currentFundFormat = numeral(this.props.currentFund).format('0,0');
             return (
                 <div className="small-viewport">
                     <h2 className="primary-heading">Year {this.props.year + 1}</h2>
-                    <h3 className="secondary-heading primary-text-color">Current Fund: ${this.props.currentFund}</h3>
+                    <h3 className="secondary-heading primary-text-color">Current Fund: ${currentFundFormat}</h3>
                     <h3 className="secondary-heading primary-text-color">How would you like to invest this year?</h3>
                     <div className='radio-button-container'>
                         <label className="descriptive-content primary-text-color radio-button-label" htmlFor='rb1'>Aggressive
