@@ -6,7 +6,9 @@ import requiresLogin from './requires-login';
 import Chart from './chart';
 import Button from './button';
 
-import { fetchPortfolio } from '../actions/portfolio';
+import { fetchPortfolio, FETCH_PORTFOLIO_ERROR } from '../actions/portfolio';
+
+let numeral = require('numeral');
 
 export class InvestmentReturn extends React.Component {
     componentDidMount() {
@@ -43,6 +45,9 @@ export class InvestmentReturn extends React.Component {
         }
 
         if (portfolio) {
+          for(let i = 1; i < portfolio.length; i++) {
+            portfolio[i].y = numeral(portfolio[i].y).value();
+          } 
             const data = [
                 {									
                     points: portfolio,

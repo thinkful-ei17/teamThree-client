@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
-import requiresLogin from './requires-login';
+ import requiresLogin from './requires-login';
 import Chart from './chart';
 import Button from './button';
 import YearSummaryList from './year-summary-list';
-
 import { fetchPortfolio } from '../actions/portfolio';
+
+let numeral = require('numeral');
 
 export class Portfolio extends React.Component {    
     componentDidMount() {
@@ -41,9 +41,8 @@ export class Portfolio extends React.Component {
             name = 'Keep Investing!';
             handleClick = this.toInvestmentForm;
         }
-
         if (this.props.data) {
-            const data = [
+          const data = [
                 {									
                     color: '#C24275', 
                     points: this.props.data

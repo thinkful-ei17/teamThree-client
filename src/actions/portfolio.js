@@ -1,4 +1,5 @@
 import { API_BASE_URL } from '../config';
+let numeral = require('numeral');
 
 export const CHOOSE_RISK_TOLERANCE = 'CHOOSE_RISK_TOLERANCE';
 export const chooseRiskTolerance = riskChoice => ({
@@ -67,15 +68,15 @@ export const investFundsError = error => ({
 });
 
 export const investFunds = (risk, year, currentFund) => (dispatch, getState) => {
-	dispatch(investFundsRequest());
+  dispatch(investFundsRequest());
+  currentFund = numeral(currentFund).value();
     const authToken = getState().auth.authToken;
     const data = ({
         risk,
         year,
         currentFund
     });
-	return fetch(`${API_BASE_URL}/risk/invest`, 
-		{
+	return fetch(`${API_BASE_URL}/risk/invest`,{
       method: 'PUT',
       body: JSON.stringify(data),
       headers: {
