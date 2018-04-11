@@ -63,11 +63,22 @@ export class InvestmentReturn extends React.Component {
                     <Chart yMin={0} xMax={5} data={data} />
                     <h3 className='secondary-heading primary-text-color'>Investment Strategy Year {year}: {strategy}</h3>
                     <h3 className='secondary-heading primary-text-color'>Portfolio Review:</h3>
+                    
                     <div className="vector-wrapper">
-                        <div className='blurb-wrapper secondary-heading'>Start: ${previousFund}</div>
-                        <div className='blurb-wrapper secondary-heading'>Growth: {growth}%</div>
-                        <div className='blurb-wrapper secondary-heading'>End: ${currentFund}</div>
+                        <div className='blurb-wrapper descriptive-content flex-row'>
+                            <h4 className='margin-top'>Start: </h4>
+                            <p className='margin-left'> ${previousFund}</p>
+                        </div>
+                        <div className='blurb-wrapper descriptive-content flex-row'>
+                            <h4 className='margin-top'>Growth: </h4>
+                            <p className='margin-left'> {growth}%</p>
+                        </div>
+                        <div className='blurb-wrapper descriptive-content flex-row'>
+                            <h4 className='margin-top'>End: </h4>
+                            <p className='margin-left'> ${currentFund} </p>
+                        </div>
                     </div>
+
                     <Link to='/portfolio'>
                         <Button class='green-button' name='Return to Portfolio' handleClick={this.returnToPortfolio} />
                     </Link>
