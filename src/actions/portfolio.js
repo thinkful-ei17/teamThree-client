@@ -70,9 +70,7 @@ export const investFundsError = error => ({
 export const investFunds = (risk, year, currentFund) => (dispatch, getState) => {
   dispatch(investFundsRequest());
   currentFund = numeral(currentFund).value();
-  console.log('enter investFunds, currentFund = ', currentFund, year)
     const authToken = getState().auth.authToken;
-    console.log('token = ', authToken)
     const data = ({
         risk,
         year,

@@ -18,13 +18,13 @@ export function marketReducer(state = initialState, action) {
       loading: true
     });
   } else if (action.type === FETCH_RISK_MARKET_SUCCESS) {
-    console.log('market data = ', action.data)
-    for(let i = 0; i < action.data.length; i++) {
-      action.data[i].amtChange = numeral(action.data[i].amtChange).format('$0,0');
-      action.data[i].y = numeral(action.data[i].y).format('$0,0');
-    } 
     return Object.assign({}, state, {
-      data: action.data,
+      data: action.data.map( values => {
+        return Object.assign({}, values, {
+         amtChange: numeral(values.amtChange).format('$0,0'),
+         y: numeral(values.y).format('$0,0)')
+        })
+      }),
       loading: false,
       error: null
     });
