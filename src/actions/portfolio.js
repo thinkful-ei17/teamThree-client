@@ -143,6 +143,19 @@ export const fetchRiskOverview = year => (dispatch, getState) => {
         )
 };
 
+export const UPDATE_INVESTMENT_STRATEGY = 'UPDATE_INVESTMENT_STRATEGY';
+export const updateInvestmentStrategy = (strategy, riskAmount) => ({
+  type: UPDATE_INVESTMENT_STRATEGY,
+  strategy,
+  riskAmount
+});
+
+export const BLANK_INVESTMENT_STRATEGY_ENTRY = 'BLANK_INVESTMENT_STRATEGY_ENTRY';
+export const blankInvestmentStrategyEntry = strategy => ({
+  type: BLANK_INVESTMENT_STRATEGY_ENTRY,
+  strategy
+});
+
 export const RESTART_LEVEL_1_REQUEST = 'RESTART_LEVEL_1_REQUEST';
 export const restartLevel1Request = () => ({
   type: RESTART_LEVEL_1_REQUEST,
