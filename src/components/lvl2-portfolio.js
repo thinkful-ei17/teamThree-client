@@ -37,7 +37,7 @@ export class Lvl2Portfolio extends React.Component {
             name = 'See Ten Year Review';
             handleClick = this.toTenYearReview;
         } else {
-            investmentLink = '/investment-form';
+            investmentLink = '/lvl2-investment-form';
             name = 'Keep Investing!';
             handleClick = this.toInvestmentForm;
         }

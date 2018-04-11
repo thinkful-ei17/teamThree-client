@@ -17,7 +17,8 @@ export class Lvl2InvestmentForm extends React.Component {
     }
 
     invest = () => {
-        this.props.dispatch(investFundsLvl2(this.props.aggressive, this.props.moderate, this.props.conservative, this.props.mattress, this.props.google, this.props.autoZone, this.props.dollarTree, this.props.ea , this.props.year + 1, this.props.currentFund));
+        let { unassigned, aggressive, moderate, conservative, mattress, google, autoZone, dollarTree, ea } = this.props;
+        this.props.dispatch(investFundsLvl2(aggressive, moderate, conservative, mattress, google, autoZone, dollarTree, ea , this.props.year + 1, this.props.currentFund));
         this.props.dispatch(incrementYear());
     }
 
