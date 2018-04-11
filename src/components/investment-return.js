@@ -80,7 +80,7 @@ export class InvestmentReturn extends React.Component {
                     </div>
                     <div>
                         <Link to='/portfolio'>
-                            <Button class='green-button' name='Return to Portfolio' handleClick={this.returnToPortfolio} />
+                            <Button class='green-button no-left-margin' name='Return to Portfolio' handleClick={this.returnToPortfolio} />
                         </Link>
                         <Link to={investmentLink}>
                             <Button class='blue-button' name={name} handleClick={handleClick} />
