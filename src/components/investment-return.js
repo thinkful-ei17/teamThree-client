@@ -8,6 +8,8 @@ import Button from './button';
 
 import { fetchPortfolio } from '../actions/portfolio';
 
+//let numeral = require('numeral');
+
 export class InvestmentReturn extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchPortfolio());
@@ -43,6 +45,9 @@ export class InvestmentReturn extends React.Component {
         }
 
         if (portfolio) {
+        //   for(let i = 1; i < portfolio.length; i++) {
+        //     portfolio[i].y = numeral(portfolio[i].y).value();
+        //   } 
             const data = [
                 {									
                     points: portfolio,
@@ -91,7 +96,6 @@ export class InvestmentReturn extends React.Component {
             )
         }
         
-
         return (
             <div className="viewport">
                 {investmentReturnContent}    

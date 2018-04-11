@@ -30,9 +30,9 @@ export class FiveYearMarket extends React.Component {
       
       if (this.props.data) {
         
-        let investmentData = this.props.data;
+        let investmentData = this.props.data.filter(item => item.x <= 5);
 
-        listItemsAggressive = investmentData.filter(item => item.risk === 'Aggressive').map(risk => {
+        listItemsAggressive = investmentData.filter(item => item.risk === 'Aggressive' && item.x < 6).map(risk => {
             id++;
             return (
               <li key={id} className="market-blurb-wrapper">
@@ -46,7 +46,7 @@ export class FiveYearMarket extends React.Component {
             )
       });
 
-        listItemsConservative = investmentData.filter(item => item.risk === 'Conservative').map(risk => {
+        listItemsConservative = investmentData.filter(item => item.risk === 'Conservative' && item.x < 6).map(risk => {
           id++;
           return (
             <li key={id} className="market-blurb-wrapper">
@@ -60,7 +60,7 @@ export class FiveYearMarket extends React.Component {
           )
         });
 
-        listItemsModerate = investmentData.filter(item => item.risk === 'Moderate').map(risk => {
+        listItemsModerate = investmentData.filter(item => item.risk === 'Moderate' && item.x < 6).map(risk => {
           id++;
           return (
             <li key={id} className="market-blurb-wrapper">
@@ -74,7 +74,7 @@ export class FiveYearMarket extends React.Component {
           )
         });
 
-        listItemsMattress = investmentData.filter(item => item.risk === 'Mattress').map(risk => {
+        listItemsMattress = investmentData.filter(item => item.risk === 'Mattress' && item.x < 6).map(risk => {
           id++;
           return (
             <li key={id} className="market-blurb-wrapper">
@@ -88,28 +88,28 @@ export class FiveYearMarket extends React.Component {
           )
         });
 
-        graphMattress = investmentData.filter(item => item.risk === 'Mattress').map(risk => {
+        graphMattress = investmentData.filter(item => item.risk === 'Mattress' && item.x < 6).map(risk => {
           id++;
           return (
             {x: risk.x, y: risk.y, key: id}
           )
         });
 
-        graphAggressive = investmentData.filter(item => item.risk === 'Aggressive').map(risk => {
+        graphAggressive = investmentData.filter(item => item.risk === 'Aggressive' && item.x < 6).map(risk => {
           id++;
           return (
             {x: risk.x, y: risk.y, key: id}
           )
         });
 
-        graphConservative = investmentData.filter(item => item.risk === 'Conservative').map(risk => {
+        graphConservative = investmentData.filter(item => item.risk === 'Conservative' && item.x < 6).map(risk => {
           id++;
           return (
             {x: risk.x, y: risk.y, key: id}
           )
         });
 
-        graphModerate = investmentData.filter(item => item.risk === 'Moderate').map(risk => {
+        graphModerate = investmentData.filter(item => item.risk === 'Moderate' && item.x < 6).map(risk => {
           id++;
           return (
             {x: risk.x, y: risk.y, key: id}
