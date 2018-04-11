@@ -30,7 +30,7 @@ export class FiveYearMarket extends React.Component {
       
       if (this.props.data) {
         
-        let investmentData = this.props.data.filter(item => item.x === 1 || item.x === 2 || item.x === 3 || item.x === 4 || item.x === 5);
+        let investmentData = this.props.data.filter(item => item.x <= 5);
 
         listItemsAggressive = investmentData.filter(item => item.risk === 'Aggressive').map(risk => {
             id++;
