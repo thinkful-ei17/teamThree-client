@@ -16,13 +16,13 @@ export class FiveYearMarket extends React.Component {
     }
 
     render() {
-      let listItemsHigh,
-        listItemsLow,
+      let listItemsAggressive,
+        listItemsConservative,
         listItemsModerate,
         listItemsMattress,
         investmentReturnContent,
-        graphHigh,
-        graphLow,
+        graphAggressive,
+        graphConservative,
         graphModerate,
         graphMattress;
       
@@ -32,7 +32,7 @@ export class FiveYearMarket extends React.Component {
         
         let investmentData = this.props.data;
 
-        listItemsHigh = investmentData.filter(item => item.risk === 'high').map(risk => {
+        listItemsAggressive = investmentData.filter(item => item.risk === 'Aggressive').map(risk => {
             id++;
             return (
               <li key={id} className="market-blurb-wrapper">
@@ -46,7 +46,7 @@ export class FiveYearMarket extends React.Component {
             )
       });
 
-        listItemsLow = investmentData.filter(item => item.risk === 'low').map(risk => {
+        listItemsConservative = investmentData.filter(item => item.risk === 'Conservative').map(risk => {
           id++;
           return (
             <li key={id} className="market-blurb-wrapper">
@@ -60,7 +60,7 @@ export class FiveYearMarket extends React.Component {
           )
         });
 
-        listItemsModerate = investmentData.filter(item => item.risk === 'moderate').map(risk => {
+        listItemsModerate = investmentData.filter(item => item.risk === 'Moderate').map(risk => {
           id++;
           return (
             <li key={id} className="market-blurb-wrapper">
@@ -74,7 +74,7 @@ export class FiveYearMarket extends React.Component {
           )
         });
 
-        listItemsMattress = investmentData.filter(item => item.risk === 'mattress').map(risk => {
+        listItemsMattress = investmentData.filter(item => item.risk === 'Mattress').map(risk => {
           id++;
           return (
             <li key={id} className="market-blurb-wrapper">
@@ -88,28 +88,28 @@ export class FiveYearMarket extends React.Component {
           )
         });
 
-        graphMattress = investmentData.filter(item => item.risk === 'mattress').map(risk => {
+        graphMattress = investmentData.filter(item => item.risk === 'Mattress').map(risk => {
           id++;
           return (
             {x: risk.x, y: risk.y, key: id}
           )
         });
 
-        graphHigh = investmentData.filter(item => item.risk === 'high').map(risk => {
+        graphAggressive = investmentData.filter(item => item.risk === 'Aggressive').map(risk => {
           id++;
           return (
             {x: risk.x, y: risk.y, key: id}
           )
         });
 
-        graphLow = investmentData.filter(item => item.risk === 'low').map(risk => {
+        graphConservative = investmentData.filter(item => item.risk === 'Conservative').map(risk => {
           id++;
           return (
             {x: risk.x, y: risk.y, key: id}
           )
         });
 
-        graphModerate = investmentData.filter(item => item.risk === 'moderate').map(risk => {
+        graphModerate = investmentData.filter(item => item.risk === 'Moderate').map(risk => {
           id++;
           return (
             {x: risk.x, y: risk.y, key: id}
@@ -120,7 +120,7 @@ export class FiveYearMarket extends React.Component {
           {
             color: "#5DCB6E",
             name: "Aggressive",
-            points: [{x: 0, y: 5000},...graphHigh]
+            points: [{x: 0, y: 5000},...graphAggressive]
           },
           {
             color: "#39A7B1",
@@ -130,7 +130,7 @@ export class FiveYearMarket extends React.Component {
           {
             color: "#C24275",
             name: "Conservative",
-            points: [{x: 0, y: 5000},...graphLow]
+            points: [{x: 0, y: 5000},...graphConservative]
           },
           {
             color: "#783DB8",
@@ -155,7 +155,7 @@ export class FiveYearMarket extends React.Component {
           <h2 className='secondary-heading primary-text-color'> Investment Outcomes By Year:</h2>
           <h3 className='descriptive-content primary-text-color'>Aggressive</h3>
           <ul className="market-vector-wrapper">
-            {listItemsHigh}
+            {listItemsAggressive}
           </ul>
           <h3 className='descriptive-content primary-text-color'>Moderate</h3>
           <ul className="market-vector-wrapper">
@@ -163,7 +163,7 @@ export class FiveYearMarket extends React.Component {
           </ul>
           <h3 className='descriptive-content primary-text-color'>Conservative</h3>
           <ul className="market-vector-wrapper">
-            {listItemsLow}
+            {listItemsConservative}
           </ul>
           <h3 className='descriptive-content primary-text-color'>Mattress</h3>
           <ul className="market-vector-wrapper">

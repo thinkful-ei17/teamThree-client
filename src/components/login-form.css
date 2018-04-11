@@ -52,12 +52,13 @@
  border: 4px solid #5DCB6E;
 }
 
+
 .close {
   color:#EDF8E8;
-  font-size: 2.7em;
+  font-size: 2em;
   position: relative;
-  top: 1.2em;
-  right: -3.8em; 
+  bottom: .7em;
+  left: 6em; 
   z-index: 2; 
 }
 
