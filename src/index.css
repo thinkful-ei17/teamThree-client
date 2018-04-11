@@ -21,12 +21,23 @@ body {
     text-align: left;
 }
 
+.medium-viewport {
+    width: 90%;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10em;
+    margin-top: 5em;
+    text-align: left;
+}
+
 .small-viewport {
     width: 90%;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10em;
+    margin-top: 5em;
     text-align: left;
 }
 
@@ -261,9 +272,8 @@ body {
 }
 
 /*INTRO COMPONENT*/
-
 .intro-description {
-    padding: 2em 2em 4em;
+    padding: 2em;
     max-width: 700px;
     display: flex;
     flex-direction: column;
@@ -284,6 +294,11 @@ body {
     font-weight: bold;
 }
 
+.intro-button-alignment {
+    padding-right: 3em;
+    margin-top: 0;
+}
+
 /*RISK BREAKDOWN COMPONENT*/
 
 .risk-breakdown {
@@ -291,9 +306,24 @@ body {
 }
 
 .risk-details {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.4em;
     display: flex;
     justify-content: space-around;
+    width: 85%;
+
 }
+
+/* MARKET ANALYSIS */
+
+/* .market-items-width {
+    width: 150px;
+} */
+.market-width {
+    width: 90%;
+}
+
 
 /*FIVE-YEAR-PLAN-PERSONAL COMPONENT*/
 
@@ -349,12 +379,20 @@ li {
     text-align: left;
 }
 
+.no-border {
+    border: none;
+}
+
 .no-margins {
     margin: 0;
 }
 
 .no-left-margin {
     margin-left: 0;
+}
+
+.no-top-margin {
+    margin-top: 0;
 }
 
 .margin-top {
@@ -369,11 +407,35 @@ li {
     margin-left:8px;
 }
 
+.margin-left-large {
+    margin-left: 36px;
+}
+
+.margin-left-med {
+    margin-left: 1em;
+}
+
 .margin-right {
     margin-right: 8px;
 }
+
+.no-padding {
+    padding: 0;
+}
+
+.padding {
+    padding: 1em;
+}
+.padding-left{
+    padding-left: 1em;
+}
+
 .padding-bottom {
     padding-bottom: 1em;
+}
+
+.padding-right{
+    padding-right: 3em;
 }
 
 .half-width {
@@ -396,9 +458,17 @@ li {
      align-items: baseline;
  }
 
+.flex-end {
+    justify-content: flex-end   
+}
+
 .flex-row {
     display: flex;
     flex-direction: row;
     /* flex-wrap: wrap; */
     align-items: baseline;
+}
+
+.justify-between {
+    justify-content: space-between;
 }

@@ -154,9 +154,11 @@ export class FiveYearPersonal extends React.Component {
               Change: 4.29%
             </li>
         </ul>
-        <Link to='/investment-form'>
-          <Button class='green-button' name='Start Over' handleClick={this.startOver}/>
-        </Link>
+        <div className='right-align-object'>
+          <Link to='/investment-form'>
+            <Button class='green-button' name='Start Over' handleClick={this.startOver}/>
+          </Link>
+        </div>  
         </div>
       );
     }

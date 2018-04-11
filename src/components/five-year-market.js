@@ -161,30 +161,33 @@ export class FiveYearMarket extends React.Component {
       <div className="market-view viewport">
         <h2 className='primary-heading'>Five Year Market Summary:</h2>
           {investmentReturnContent}
-        <h2 className='secondary-heading primary-text-color'> Investment Outcomes By Year:</h2>
-        <h3 className='descriptive-content primary-text-color'>Aggressive</h3>
-        <ul className="market-vector-wrapper">
-          {listItemsAggressive}
-        </ul>
-        <h3 className='descriptive-content primary-text-color'>Moderate</h3>
-        <ul className="market-vector-wrapper">
-          {listItemsModerate}
-        </ul>
-        <h3 className='descriptive-content primary-text-color'>Conservative</h3>
-        <ul className="market-vector-wrapper">
-          {listItemsConservative}
-        </ul>
-        <h3 className='descriptive-content primary-text-color'>Mattress</h3>
-        <ul className="market-vector-wrapper">
-          {listItemsMattress}
-        </ul>
-          <Link to='/five-year-personal'>
-              <Button class='blue-button' name="Compare Personal Success" handleClick={ () => false} />
-          </Link>
-        </div>
-      );
-  } 
-}
+          <h2 className='secondary-heading primary-text-color'> Investment Outcomes By Year:</h2>
+          <h3 className='descriptive-content primary-text-color'>Aggressive</h3>
+          <ul className="market-vector-wrapper">
+            {listItemsAggressive}
+          </ul>
+          <h3 className='descriptive-content primary-text-color'>Moderate</h3>
+          <ul className="market-vector-wrapper">
+            {listItemsModerate}
+          </ul>
+          <h3 className='descriptive-content primary-text-color'>Conservative</h3>
+          <ul className="market-vector-wrapper">
+            {listItemsConservative}
+          </ul>
+          <h3 className='descriptive-content primary-text-color'>Mattress</h3>
+          <ul className="market-vector-wrapper">
+             {listItemsMattress}
+          </ul>
+          <div className='right-align-object'>
+            <Link to='/five-year-personal'>
+                <Button class='blue-button margin-right' name="Compare Personal Success" handleClick={ () => false} />
+            </Link>
+          </div>  
+          </div>
+        );
+      } 
+  }
+
 
 const mapStateToProps = state => {
   return {

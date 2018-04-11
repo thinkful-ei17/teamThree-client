@@ -27,7 +27,7 @@ export class IntroductionPage extends React.Component {
     }
     
     return (
-      <div className="introduction viewport">
+      <div className="introduction medium-viewport">
         <div className="row">
             <section className="introduction">
               <header>
@@ -37,11 +37,11 @@ export class IntroductionPage extends React.Component {
                 <section className='intro-description'>
                   <p className="descriptive-content primary-text-color intro-description-p">{this.props.introCard[this.props.numCard].detailA}</p>
                   <p className="descriptive-content primary-text-color intro-description-p">{this.props.introCard[this.props.numCard].detailB}</p>
-                  <p className="descriptive-content primary-text-color intro-description-p intro-emphasis">{this.props.introCard[this.props.numCard].detailC}</p>
+                  <p className="descriptive-content primary-text-color intro-description-p intro-emphasis no-top-margin">{this.props.introCard[this.props.numCard].detailC}</p>
                 </section>
-                <div className='right-align-object'>
+                <div className='right-align-object intro-button-alignment'>
                   <Link to={link}>
-                    <Button class='blue-button' name='Got It!' handleClick={this.nextCardClick}/>
+                    <Button class='blue-button no-top-margin' name='Got It!' handleClick={this.nextCardClick}/>
                   </Link>
                 </div>
               </main>
