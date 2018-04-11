@@ -14,7 +14,7 @@ import {
     RESTART_LEVEL_1_ERROR, 
     INCREMENT_YEAR 
 } from '../actions/portfolio';
-let numeral = require('numeral');
+//let numeral = require('numeral');
 
   const initialState = {
   year: 0,
@@ -46,8 +46,8 @@ export function portfolioReducer(state = initialState, action) {
           })
        })*/,
         year: action.year,
-        previousFund: numeral(action.previousFund).format('0,0'),
-        currentFund: numeral(action.currentFund).format('0,0'),
+        previousFund: action.previousFund/*numeral(action.previousFund).format('0,0')*/,
+        currentFund: action.currentFund/*numeral(action.currentFund).format('0,0')*/,
         loading: false,
         error: null
       });
