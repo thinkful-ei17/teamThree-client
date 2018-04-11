@@ -368,6 +368,10 @@ li {
     text-align: left;
 }
 
+.no-border {
+    border: none;
+}
+
 .no-margins {
     margin: 0;
 }
@@ -392,9 +396,26 @@ li {
     margin-left:8px;
 }
 
+.margin-left-large {
+    margin-left: 36px;
+}
+
+.margin-left-med {
+    margin-left: 1em;
+}
+
 .margin-right {
     margin-right: 8px;
 }
+
+.no-padding {
+    padding: 0;
+}
+
+.padding-left{
+    padding-left: 1em;
+}
+
 .padding-bottom {
     padding-bottom: 1em;
 }
