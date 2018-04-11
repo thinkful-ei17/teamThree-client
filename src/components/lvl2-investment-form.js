@@ -22,7 +22,6 @@ export class Lvl2InvestmentForm extends React.Component {
     }
 
     onChange = event => {
-        console.log(parseInt(event.target.value, 10))
         if (event.target.value === '') {
             this.props.dispatch(blankInvestmentStrategyEntry(event.target.id))
         } else if (isNaN(this.strictParseIntCheck(event.target.value))) {
@@ -41,7 +40,7 @@ export class Lvl2InvestmentForm extends React.Component {
 
     render() {
 
-        const { unassigned, aggressive } = this.props;
+        const { unassigned, aggressive, moderate, conservative, mattress, google, autoZone, dollarTree, ea } = this.props;
 
         return (
             <div className="small-viewport">
@@ -53,17 +52,26 @@ export class Lvl2InvestmentForm extends React.Component {
                     <label className="descriptive-content primary-text-color" htmlFor='aggressive'>Aggressive
                         <input type='text' name='strategy' id='aggressive' value={aggressive} onChange={this.onChange.bind(this)} />
                     </label>
-                    <label className="descriptive-content primary-text-color radio-button-label" htmlFor='rb2'>Moderate
-                        <input className='native-button' type='radio' name='strategy' id='rb2' value='Moderate' onChange={this.onChange.bind(this)} />
-                        <span className='custom-radio-button'></span>
+                    <label className="descriptive-content primary-text-color" htmlFor='moderate'>Moderate
+                        <input type='text' name='strategy' id='moderate' value={moderate} onChange={this.onChange.bind(this)} />
                     </label>
-                    <label className="descriptive-content primary-text-color radio-button-label" htmlFor='rb3'>Conservative
-                        <input className='native-button' type='radio' name='strategy' id='rb3' value='Conservative' onChange={this.onChange.bind(this)} />
-                        <span className='custom-radio-button'></span>
+                    <label className="descriptive-content primary-text-color" htmlFor='conservative'>Conservative
+                        <input type='text' name='strategy' id='conservative' value={conservative} onChange={this.onChange.bind(this)} />
                     </label>
-                    <label className="descriptive-content primary-text-color radio-button-label" htmlFor='rb4'>Under Your Mattress
-                        <input className='native-button' type='radio' name='strategy' id='rb4' value='Mattress' onChange={this.onChange.bind(this)} />
-                        <span className='custom-radio-button'></span>
+                    <label className="descriptive-content primary-text-color" htmlFor='mattress'>Mattress
+                        <input type='text' name='strategy' id='mattress' value={mattress} onChange={this.onChange.bind(this)} />
+                    </label>
+                    <label className="descriptive-content primary-text-color" htmlFor='google'>Google
+                        <input type='text' name='strategy' id='google' value={google} onChange={this.onChange.bind(this)} />
+                    </label>
+                    <label className="descriptive-content primary-text-color" htmlFor='autoZone'>AutoZone
+                        <input type='text' name='strategy' id='autoZone' value={autoZone} onChange={this.onChange.bind(this)} />
+                    </label>
+                    <label className="descriptive-content primary-text-color" htmlFor='dollarTree'>Dollar Tree
+                        <input type='text' name='strategy' id='dollarTree' value={dollarTree} onChange={this.onChange.bind(this)} />
+                    </label>
+                    <label className="descriptive-content primary-text-color" htmlFor='ea'>EA
+                        <input type='text' name='strategy' id='ea' value={ea} onChange={this.onChange.bind(this)} />
                     </label>
                 </div>
                 <div className='center-object'>
@@ -83,7 +91,14 @@ const mapStateToProps = state => {
         riskChoice: state.portfolio.riskChoice,
         portfolio: state.portfolio.portfolio,
         unassigned: state.portfolio.unassigned,
-        aggressive: state.portfolio.aggressive
+        aggressive: state.portfolio.aggressive,
+        moderate: state.portfolio.moderate,
+        conservative: state.portfolio.aggressive,
+        mattress: state.portfolio.mattress,
+        google: state.portfolio.google,
+        autoZone: state.portfolio.autoZone,
+        dollarTree: state.portfolio.dollarTree,
+        ea: state.portfolio.ea,
     };
 };
 
