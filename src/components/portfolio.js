@@ -51,7 +51,7 @@ export class Portfolio extends React.Component {
             ];
             portfolioContent = (
                 <div>
-                    <h3 className='secondary-heading primary-text-color'>Current Worth: {this.props.currentFund}</h3>
+                    <h3 className='secondary-heading primary-text-color'>Current Worth: ${this.props.currentFund}</h3>
                     <section>
                         <YearSummaryList />
                         <Chart yMin={0} xMax={5} data={data} />
