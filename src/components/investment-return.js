@@ -64,27 +64,28 @@ export class InvestmentReturn extends React.Component {
                     <h3 className='secondary-heading primary-text-color'>Investment Strategy Year {year}: {strategy}</h3>
                     <h3 className='secondary-heading primary-text-color'>Portfolio Review:</h3>
                     
-                    <div className="vector-wrapper">
-                        <div className='blurb-wrapper descriptive-content flex-row'>
+                    <div className="vector-wrapper flex-start margin-left">
+                        <div className='blurb-wrapper descriptive-content flex-row min-width-blurb'>
                             <h4 className='margin-top'>Start: </h4>
                             <p className='margin-left'> ${previousFund}</p>
                         </div>
-                        <div className='blurb-wrapper descriptive-content flex-row'>
+                        <div className='blurb-wrapper descriptive-content flex-row min-width-blurb'>
                             <h4 className='margin-top'>Growth: </h4>
                             <p className='margin-left'> {growth}%</p>
                         </div>
-                        <div className='blurb-wrapper descriptive-content flex-row'>
+                        <div className='blurb-wrapper descriptive-content flex-row min-width-blurb'>
                             <h4 className='margin-top'>End: </h4>
                             <p className='margin-left'> ${currentFund} </p>
                         </div>
                     </div>
-
-                    <Link to='/portfolio'>
-                        <Button class='green-button' name='Return to Portfolio' handleClick={this.returnToPortfolio} />
-                    </Link>
-                    <Link to={investmentLink}>
-                        <Button class='blue-button' name={name} handleClick={handleClick} />
-                    </Link>
+                    <div>
+                        <Link to='/portfolio'>
+                            <Button class='green-button' name='Return to Portfolio' handleClick={this.returnToPortfolio} />
+                        </Link>
+                        <Link to={investmentLink}>
+                            <Button class='blue-button' name={name} handleClick={handleClick} />
+                        </Link>
+                    </div>    
                 </div>
             )
         }

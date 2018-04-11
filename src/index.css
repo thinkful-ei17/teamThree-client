@@ -312,7 +312,8 @@ ul {
 
 .blurb-wrapper {
     display: flex;
-    width: 250px;
+   
+    max-width: 250px;
     /* height: 150px; */
 
     margin: 10px;
@@ -343,6 +344,10 @@ li {
     text-align: end;
 }
 
+.left-align-object {
+    text-align: left;
+}
+
 .no-margins {
     margin: 0;
 }
@@ -365,6 +370,26 @@ li {
 .padding-bottom {
     padding-bottom: 1em;
 }
+
+.half-width {
+    width: 50%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.min-width-blurb {
+    min-width: 200px;
+}
+
+.flex {
+    display: flex;
+}
+ .flex-start {
+     justify-content: flex-start;
+     align-items: baseline;
+ }
 
 .flex-row {
     display: flex;
