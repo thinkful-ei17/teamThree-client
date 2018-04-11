@@ -65,17 +65,17 @@ export class InvestmentReturn extends React.Component {
                     <h3 className='secondary-heading primary-text-color'>Portfolio Review:</h3>
                     
                     <div className="vector-wrapper">
-                        <div className='blurb-wrapper secondary-heading'>
+                        <div className='blurb-wrapper secondary-heading flex-row'>
                             <h4 className='margin-top'>Start: </h4>
-                            <p> ${previousFund}</p>
+                            <p className='margin-left'> ${previousFund}</p>
                         </div>
-                        <div className='blurb-wrapper secondary-heading'>
+                        <div className='blurb-wrapper secondary-heading flex-row'>
                             <h4 className='margin-top'>Growth: </h4>
-                            <p> {growth}%</p>
+                            <p className='margin-left'> {growth}%</p>
                         </div>
-                        <div className='blurb-wrapper secondary-heading'>
+                        <div className='blurb-wrapper secondary-heading flex-row'>
                             <h4 className='margin-top'>End: </h4>
-                            <p> ${currentFund} </p>
+                            <p className='margin-left'> ${currentFund} </p>
                         </div>
                     </div>
 
