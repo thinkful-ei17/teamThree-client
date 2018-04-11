@@ -1,13 +1,16 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Button from "./button";
 import Chart from "./chart";
 
-export class FiveYearPersonal extends React.Component {
-  completeLvl1 = () => {
-    console.log('Level 1 Completed.');
+import { restartLevel1 } from "../actions/portfolio";
+
+export class TenYearPersonal extends React.Component {
+
+  startOver = () => {
+    this.props.dispatch(restartLevel1());
   }
 
   render() {
@@ -25,7 +28,6 @@ export class FiveYearPersonal extends React.Component {
 
       let investmentData = this.props.data.slice(1);
       console.log("investmentData = ", investmentData)
-
 
       listItems = investmentData.map((year, index) => (
           <li key={index} className="blurb-wrapper">
@@ -142,8 +144,8 @@ export class FiveYearPersonal extends React.Component {
               Change: 4.29%
             </li>
         </ul>
-        <Link to='/completed-level-one'>
-          <Button class='blue-button' name='Continue' handleClick={this.completeLvl1}/>
+        <Link to='/investment-form'>
+          <Button class='green-button' name='Start Over' handleClick={this.startOver}/>
         </Link>
         </div>
       );
@@ -159,4 +161,4 @@ export class FiveYearPersonal extends React.Component {
   }
 };
 
-export default connect(mapStateToProps)(FiveYearPersonal);
+export default connect(mapStateToProps)(TenYearPersonal);

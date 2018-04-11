@@ -15,7 +15,15 @@ import InvestmentReturn from './investment-return';
 import FiveYearMarket from './five-year-market';
 import FiveYearPersonal from './five-year-personal';
 import CompletedLevelOne from './completed-level-one';
+import Lvl2Portfolio from './lvl2-portfolio';
+import Lvl2Introduction from './lvl2-introduction';
+import Lvl2InvestmentForm from './lvl2-investment-form';
+import Lvl2MarketAnalysis from './lvl2-market-analysis';
+import Lvl2InvestmentReturn from './lvl2-investment-return';
+import Lvl2FiveYearMarket from './lvl2-five-year-market';
+import TenYearPersonal from './ten-year-personal';
 import Footer from './footer';
+
 import { refreshAuthToken } from '../actions/auth';
 import { fetchPortfolio } from '../actions/portfolio';
 
@@ -69,6 +77,18 @@ export class App extends React.Component {
                 <Route exact path="/five-year-market" component={FiveYearMarket}/>
                 <Route exact path="/five-year-personal" component={FiveYearPersonal}/>
                 <Route exact path="/completed-level-one" component={CompletedLevelOne}/>
+                
+                <Route exact path="/lvl2-portfolio" component={Lvl2Portfolio} />
+               
+                <Route exact path="/lvl2-introduction" component={Lvl2Introduction}/>
+
+                <Route exact path="/lvl2-investment-form" component={Lvl2InvestmentForm}/>
+                <Route exact path="/lvl2-market-analysis" component={Lvl2MarketAnalysis}/>
+                <Route exact path="/lvl2-investment-return" component={Lvl2InvestmentReturn}/>
+
+                <Route exact path="/lvl2-five-year-market" component={Lvl2FiveYearMarket}/>
+                <Route exact path="/ten-year-personal" component={TenYearPersonal}/>
+
                 <Footer/>
             </div>
         );
