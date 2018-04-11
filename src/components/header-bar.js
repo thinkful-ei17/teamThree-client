@@ -19,7 +19,7 @@ export class HeaderBar extends React.Component {
 
     render() {
         // Only render the log out button if we are logged in
-        let currentUsername,
+        let /*currentUsername,*/
             logOutButton,
             loginFormNav,
             regFormNav,
