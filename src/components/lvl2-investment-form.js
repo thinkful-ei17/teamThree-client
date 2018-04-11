@@ -73,7 +73,7 @@ export class Lvl2InvestmentForm extends React.Component {
                     <label className="descriptive-content primary-text-color" htmlFor='dollarTree'>Dollar Tree
                         <input type='text' name='strategy' id='dollarTree' value={dollarTree} onChange={this.onChange.bind(this)} />
                     </label>
-                    <label className="descriptive-content primary-text-color" htmlFor='ea'>EA
+                    <label className="descriptive-content primary-text-color" htmlFor='ea'>Electronic Arts
                         <input type='text' name='strategy' id='ea' value={ea} onChange={this.onChange.bind(this)} />
                     </label>
                 </div>

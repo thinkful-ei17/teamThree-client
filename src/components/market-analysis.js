@@ -46,7 +46,7 @@ export class MarketAnalysis extends React.Component {
             <h3 className='secondary-heading primary-text-color'>Annual Percent Growth</h3>
             {marketRecap}
             <Link to='/investment-return'>
-                <Button class='blue-button' name="View Portfolio" handleClick={handleClick}/>
+                <Button class='blue-button' name="View Investment Returns" handleClick={handleClick}/>
             </Link>
         </div>  
         );

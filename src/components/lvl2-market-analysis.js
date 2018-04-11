@@ -27,10 +27,14 @@ export class Lvl2MarketAnalysis extends React.Component {
     
           marketRecap = (
             <section className='vector-wrapper'>
-              <p className='blurb-wrapper'>Aggressive: {this.props.risks[0].gain}%</p>
+              <p className='blurb-wrapper'>Aggressive: {this.props.risks[3].gain}%</p>
               <p className='blurb-wrapper'>Moderate: {this.props.risks[2].gain}%</p>
               <p className='blurb-wrapper'>Conservative: {this.props.risks[1].gain}%</p>
               <p className='blurb-wrapper'>Mattress: 0.0%</p>
+              <p className='blurb-wrapper'>Google: {this.props.risks[4].gain}%</p>
+              <p className='blurb-wrapper'>AutoZone: {this.props.risks[5].gain}%</p>
+              <p className='blurb-wrapper'>Dollar Tree: {this.props.risks[7].gain}%</p>
+              <p className='blurb-wrapper'>Electronic Arts: {this.props.risks[6].gain}%</p>
             </section> 
           );
         }
@@ -45,7 +49,7 @@ export class Lvl2MarketAnalysis extends React.Component {
             <h3 className='secondary-heading primary-text-color'>Annual Percent Growth</h3>
             {marketRecap}
             <Link to='/lvl2-investment-return'>
-                <Button class='blue-button' name="View Portfolio" handleClick={handleClick}/>
+                <Button class='blue-button' name="View Investment Returns" handleClick={handleClick}/>
             </Link>
         </div>  
         );
