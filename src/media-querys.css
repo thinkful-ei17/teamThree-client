@@ -1,0 +1,19 @@
+@media (max-width: 628px){
+
+    .html {
+        width: 100%;
+        min-width: 400px;
+    }
+    .header-ul {
+        height: 132px;
+        background-color: #192C4D;
+        position: fixed;
+    }
+    .header-links {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+
+    
+}

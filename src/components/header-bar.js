@@ -28,14 +28,14 @@ export class HeaderBar extends React.Component {
             investmentData;
 
         let appName = (
-            <li className="appname"><span>Cents</span>ible.</li>
+            <li className="appname header-li"><span>Cents</span>ible.</li>
         );
 
         if (this.props.loggedIn) {
 
             logOutButton = (
-                <li className="red btn-logout" onClick={() => this.logOut()}>
-                    <Link to='/market-analysis'>Log Out</Link>
+                <li  className="red btn-logout" onClick={() => this.logOut()}>
+                    <Link to='/market-analysis' className='header-link'>Log Out</Link>
                 </li>
             );
         }
@@ -43,17 +43,17 @@ export class HeaderBar extends React.Component {
         if(this.props.year && this.props.loggedIn) {
           //console.log('NavBar - year = ', this.props.year)
           investmentData = (
-            <li><Link to='/market-analysis'>Investment Data</Link></li>
+            <li className='header-li'><Link to='/market-analysis' className='header-link'>Investment Data</Link></li>
           );
           portfolio = (
-            <li><Link to='/portfolio'>Portfolio</Link></li>
+            <li className='header-li'><Link to='/portfolio' className='header-link'>Portfolio</Link></li>
           );
           if (this.props.year > 5 || this.props.lvl2IntroComplete) {
             investmentData = (
-                <li><Link to='/lvl2-market-analysis'>Investment Data</Link></li>
+                <li className='header-li'><Link to='/lvl2-market-analysis' className='header-link'>Investment Data</Link></li>
             );
             portfolio = (
-                <li><Link to='/lvl2-portfolio'>Portfolio</Link></li>
+                <li className='header-li'><Link to='/lvl2-portfolio' className='header-link'>Portfolio</Link></li>
             );
           }
         }
@@ -72,9 +72,10 @@ export class HeaderBar extends React.Component {
         }
 
         return (
-            <div className="header-bar">
-                <ul className="nav-bar-ul">
+            <div className="header-bar flex">
+                <ul className="header-ul flex-row wrap">
                     {appName}
+                    <div className='header-links'>
                     {demo}
                     {loginFormNav}
                     {regFormNav}
@@ -82,6 +83,7 @@ export class HeaderBar extends React.Component {
                     {portfolio}
                     {investmentData}
                     {logOutButton}
+                    </div>
                 </ul>
             </div>
         );
