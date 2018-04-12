@@ -13,6 +13,7 @@
     }
     .header-links {
         width: 100%;
+        justify-content: space-between;
         align-items: baseline;
         margin-bottom: 1em;
     }
