@@ -6,7 +6,7 @@ export default function Footer(props) {
     <footer className="footer">
       <div className="content-grid">
         <div>
-          <h4 className='footer-heading'>Made in 2018 by:</h4>
+          <h4 className='footer-heading'>Made in 2018</h4>
           <ul className='footer-ul'>
             <li>
               <a
