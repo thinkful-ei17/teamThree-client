@@ -68,11 +68,6 @@ export class InvestmentForm extends React.Component {
                         </Link>   
                     </div>
                 </div>
-                <div className='center-object'>
-                    <Link to='/market-analysis'>
-                        <Button class='blue-button' name='Invest' handleClick={this.invest} />
-                    </Link>   
-                </div>
             </div>
         );
     }
