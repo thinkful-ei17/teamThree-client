@@ -1,4 +1,4 @@
-svg {
+div [id*="react-linechart-"] > svg {
   width:700px;
   text-align: center;
 }
