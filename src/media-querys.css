@@ -11,9 +11,15 @@
     }
     .header-links {
         width: 100%;
-        justify-content: space-around;
+        justify-content: space-between;
+        align-items: baseline;
     }
 
+    .viewport, .medium-viewport,
+    .small-viewport {
+        width: 100%;
+        text-align: center;
+    }
 
     
 }
