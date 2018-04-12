@@ -47,12 +47,14 @@ export class InvestmentReturn extends React.Component {
         if (portfolio) {
             let previousFundFormat = numeral(previousFund).format('0,0');
             let currentFundFormat = numeral(currentFund).format('0,0');
+
             const data = [
                 {									
                     points: portfolio,
                     color: '#C24275'
                 }
             ];
+
             let growth,
                 strategy;
 
