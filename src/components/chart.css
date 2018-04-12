@@ -3,11 +3,6 @@ svg {
   text-align: center;
 }
 
-/* g{
-  transform: translate(55px,0);
-} */
-/*text-align: center;
-*/
 div [id*="-x-axis"]{
   transform: translate(50px,550px);
 }
