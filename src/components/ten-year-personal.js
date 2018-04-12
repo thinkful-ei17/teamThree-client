@@ -68,6 +68,26 @@ export class TenYearPersonal extends React.Component {
             {
               x: 5,
               y: 8113
+            },
+            {
+              x: 6,
+              y: 12085
+            },
+            {
+              x: 7,
+              y: 14647
+            },
+            {
+              x: 8,
+              y: 22710
+            },
+            {
+              x: 9,
+              y: 46799
+            },
+            {
+              x: 10,
+              y: 66624
             }
           ]
         },
@@ -79,7 +99,7 @@ export class TenYearPersonal extends React.Component {
       ];
       investmentReturnContent = (
         <div className='center-object'>
-          <Chart yMin={0} xMax={5} legend={true} data={data} />
+          <Chart yMin={0} xMax={10} legend={true} data={data} />
         </div>
       );
     }
@@ -142,6 +162,51 @@ export class TenYearPersonal extends React.Component {
               End: $8,113
               <br />
               Change: 4.29%
+            </li>
+            <li className="blurb-wrapper">
+              Year 6: Dollar Tree
+              <br />
+              Start: $8,113
+              <br />
+              End: $12,085
+              <br />
+              Change: 48.96%
+            </li>
+            <li className="blurb-wrapper">
+              Year 7: Aggressive
+              <br />
+              Start: $12,085
+              <br />
+              End: $14,647
+              <br />
+              Change: 21.2%
+            </li>
+            <li className="blurb-wrapper">
+              Year 8: Google
+              <br />
+              Start: $14,647
+              <br />
+              End: $22,710
+              <br />
+              Change: 55.05%
+            </li>
+            <li className="blurb-wrapper">
+              Year 9: Electronic Arts
+              <br />
+              Start: $22,710
+              <br />
+              End: $46,799
+              <br />
+              Change: 106.07%
+            </li>
+            <li className="blurb-wrapper">
+              Year 10: Electronic Arts
+              <br />
+              Start: $46,799
+              <br />
+              End: $66,624
+              <br />
+              Change: 42.36%
             </li>
         </ul>
         <Link to='/investment-form'>
