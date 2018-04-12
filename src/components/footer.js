@@ -17,7 +17,7 @@ export default function Footer(props) {
               >
                 Linda
               </a>
-              <span role="img">🧠</span>
+              <span role="img" aria-label="emoji" alt="brain emoji">🧠</span>
             </li>
             <li>
               <a
@@ -28,7 +28,7 @@ export default function Footer(props) {
               >
                 John
               </a>
-              <span role="img">👨‍💻</span>
+              <span role="img" aria-label="emoji" alt="technologist emoji">👨‍💻</span>
             </li>
             <li>
               <a
@@ -39,7 +39,7 @@ export default function Footer(props) {
               >
                 Sam
               </a>
-              <span role="img">🕵</span>
+              <span role="img" aria-label="emoji" alt="detective emoji">🕵</span>
             </li>
             <li>
               <a
@@ -50,7 +50,7 @@ export default function Footer(props) {
               >
                 Scott
               </a>
-              <span role="img">😎</span>
+              <span role="img" aria-label="emoji" alt="builder emoji">👩‍🔧</span>
             </li>
             <li>
               <a
@@ -61,9 +61,9 @@ export default function Footer(props) {
               >
                 Tricia
               </a>
-              <span role="img">🤗</span>
+              <span role="img" aria-label="emoji" alt="technologist emoji">👩‍💻</span>
             </li>
-          </ul>{" "}
+          </ul>
         </div>
       </div>
     </footer>
