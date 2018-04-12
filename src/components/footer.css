@@ -13,6 +13,8 @@
 .footer-ul {
     display: flex;
     align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 0;
 }
 
