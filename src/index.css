@@ -317,11 +317,14 @@ body {
 
 /* MARKET ANALYSIS */
 
-/* .market-items-width {
-    width: 150px;
-} */
 .market-width {
     width: 90%;
+}
+
+/*  PORTFOLIO COMPONENT */
+
+.portfolio-width {
+    min-width: 150px;
 }
 
 
