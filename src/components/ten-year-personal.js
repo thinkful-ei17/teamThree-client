@@ -29,12 +29,10 @@ export class TenYearPersonal extends React.Component {
       overallGrowth,
       investmentReturnContent,
       currentFundFormat,
-      overallChangeFormat,
-      initialAmount;
+      overallChangeFormat;
     
     if (this.props.data) {
       currentFund = this.props.currentFund;
-      initialAmount = this.props.data[0].y;
       overallChange = currentFund - 5000;
       overallGrowth = Math.round((overallChange/5000) * 100);
 

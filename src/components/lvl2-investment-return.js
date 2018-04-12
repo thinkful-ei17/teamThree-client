@@ -55,12 +55,10 @@ export class Lvl2InvestmentReturn extends React.Component {
                 }
             ];
 
-            let growth,
-                strategy;
+            let growth;
 
             if (portfolio[year]) {
                 growth = portfolio[year].growth;
-                strategy = portfolio[year].strategy;
             }
             
             investmentReturnContent = (

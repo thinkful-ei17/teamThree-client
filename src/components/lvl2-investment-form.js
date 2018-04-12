@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import requiresLogin from './requires-login';
-import CompletedLevelOne from './completed-level-one';
 import Button from './button';
 
 import { fetchPortfolio, updateInvestmentStrategy, blankInvestmentStrategyEntry, investFundsLvl2, incrementYear } from '../actions/portfolio';
@@ -63,7 +62,7 @@ export class Lvl2InvestmentForm extends React.Component {
     }
 
     strictParseIntCheck = value => {
-        if (/^(\-|\+)?([0-9]+(\.[0-9]+)?|Infinity)$/
+        if (/^(-|\+)?([0-9]+(\.[0-9]+)?|Infinity)$/
           .test(value))
           return Number(value);
       return NaN;
