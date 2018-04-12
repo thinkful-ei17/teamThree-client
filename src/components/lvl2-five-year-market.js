@@ -6,11 +6,11 @@ import Button from "./button";
 import Chart from "./chart";
 import { Link } from 'react-router-dom';
 
-import { fetchRiskMarket } from "../actions/five-year-market";
+import { fetchLvl2RiskMarket } from "../actions/five-year-market";
 
 export class Lvl2FiveYearMarket extends React.Component {
     componentWillMount() {
-      this.props.dispatch(fetchRiskMarket());
+      this.props.dispatch(fetchLvl2RiskMarket(this.props.year5Amt));
     }
 
     render() {
@@ -177,6 +177,7 @@ export class Lvl2FiveYearMarket extends React.Component {
 
 const mapStateToProps = state => {
   return {
+    year5Amt: state.portfolio.year5Amt,
     data: state.marketReducer.data,
   };
 };
