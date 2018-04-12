@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-let numeral = require('numeral');
+const numeral = require('numeral');
 
 export function YearSummaryList(props){
     const years = props.years.slice(1);

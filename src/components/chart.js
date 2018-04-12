@@ -1,7 +1,8 @@
 import React from 'react';
 import LineChart from 'react-linechart';
 import '../../node_modules/react-linechart/dist/styles.css';
- 
+import './chart.css';
+
 export default function Chart(props) {
     return (
         <div className="chart">
