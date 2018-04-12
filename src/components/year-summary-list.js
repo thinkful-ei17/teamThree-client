@@ -1,16 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+let numeral = require('numeral');
+
 export function YearSummaryList(props){
     const years = props.years.slice(1);
     const yearList = years.map( year => {
+        let previousYearFormat = numeral(year.previousYear).format('0,0');
+        let yFormat = numeral(year.y).format('0,0');
         return(
             <li key={year.x} className='year-summary-item blurb-wrapper'>
-                Year {year.x}: {year.strategy}
+                Year {year.x}: 
                 <br />
-                Start: ${year.previousYear}
+                {year.strategy}
                 <br />
-                End: ${year.y}
+                Start: ${previousYearFormat}
+                <br />
+                End: ${yFormat}
             </li>
         )
     });

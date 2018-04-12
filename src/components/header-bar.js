@@ -13,13 +13,13 @@ export class HeaderBar extends React.Component {
         clearAuthToken();
     }
     onSubmit(obj) {
-        console.log(obj);
+        //console.log(obj);
         return this.props.dispatch(login(obj.username, obj.password));
     }
 
     render() {
         // Only render the log out button if we are logged in
-        let currentUsername,
+        let /*currentUsername,*/
             logOutButton,
             loginFormNav,
             regFormNav,
@@ -41,7 +41,7 @@ export class HeaderBar extends React.Component {
         }
 
         if(this.props.year && this.props.loggedIn) {
-          console.log('NavBar - year = ', this.props.year)
+          //console.log('NavBar - year = ', this.props.year)
           investmentData = (
             <li><Link to='/market-analysis'>Investment Data</Link></li>
           );

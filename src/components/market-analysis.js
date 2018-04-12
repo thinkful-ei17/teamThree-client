@@ -6,10 +6,9 @@ import requiresLogin from './requires-login';
 
 import { fetchPortfolio, fetchRiskOverview } from '../actions/portfolio';
 
-
 export class MarketAnalysis extends React.Component {
     componentDidMount() {
-      console.log('market-analysis componentDidMount year = ', this.props.year)
+      //console.log('market-analysis componentDidMount year = ', this.props.year)
         if (this.props.year) {
             this.props.dispatch(fetchRiskOverview(this.props.year));
         } else {
@@ -25,13 +24,25 @@ export class MarketAnalysis extends React.Component {
         let marketRecap;
         
         if(this.props.risks !== null) {
-          console.log('market-analysis risks =', this.props.risks)
+          //console.log('market-analysis risks =', this.props.risks)
           marketRecap = (
-            <section className='vector-wrapper'>
-              <p className='blurb-wrapper'>Aggressive: {this.props.risks[0].gain}%</p>
-              <p className='blurb-wrapper'>Moderate: {this.props.risks[2].gain}%</p>
-              <p className='blurb-wrapper'>Conservative: {this.props.risks[1].gain}%</p>
-              <p className='blurb-wrapper'>Mattress: 0.0%</p>
+            <section className='vector-wrapper market-width'>
+              <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
+                <h4>Aggressive:</h4>
+                <p className='no-margins margin-bottom'>{this.props.risks[0].gain}%</p>
+              </div>
+              <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
+                <h4>Moderate:</h4>
+                <p className='no-margins margin-bottom'> {this.props.risks[2].gain}%</p>
+              </div>  
+              <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
+                <h4>Conservative:</h4>
+                <p className='no-margins margin-bottom'> {this.props.risks[1].gain}%</p>
+              </div>  
+              <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
+                <h4>Mattress:</h4>   
+                <p className='no-margins margin-bottom'>0.0%</p>
+              </div>  
             </section> 
           );
         }
@@ -41,13 +52,15 @@ export class MarketAnalysis extends React.Component {
         };
 
         return(
-        <div className='viewport'>  
-            <h2 className='primary-heading'>Market Analysis: Year {this.props.year}</h2>
-            <h3 className='secondary-heading primary-text-color'>Annual Percent Growth</h3>
+        <div className='medium-viewport'>  
+            <h2 className='primary-heading'>Market Analysis Year {this.props.year}:</h2>
+            <h3 className='secondary-heading primary-text-color'>Annual Percent Growth of Managed Funds</h3>
             {marketRecap}
-            <Link to='/investment-return'>
-                <Button class='blue-button' name="View Investment Returns" handleClick={handleClick}/>
-            </Link>
+            <div className='right-align-object margin-top padding-right'>
+                <Link to='/investment-return'>
+                    <Button class='blue-button' name="View Your Returns" handleClick={handleClick}/>
+                </Link>
+            </div>
         </div>  
         );
     }

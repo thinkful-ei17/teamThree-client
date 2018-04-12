@@ -17,6 +17,17 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10em;
+    margin-top: 5em;
+    text-align: left;
+}
+
+.medium-viewport {
+    width: 90%;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10em;
+    margin-top: 5em;
     text-align: left;
 }
 
@@ -26,16 +37,10 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10em;
+    margin-top: 5em;
     text-align: left;
 }
 
-.center-object {
-    text-align: center;
-}
-
-.right-align-object {
-    text-align: end;
-}
 
 /* ===========  TEXT OPTIONS ========================*/
 
@@ -131,7 +136,7 @@ body {
 /*  ======================  BUTTONS ===================== */
 
 .blue-button {
-    margin: 1em;
+    margin: 2em 1em;
     padding: .5em;
     background-color: #3478A2;
     color: #EDF8E8;
@@ -142,7 +147,7 @@ body {
 }
 
 .green-button {
-    margin: 1em;
+    margin: 2em 1em;
     padding: .5em;
     background-color: #5DCB6E ;
     color: #0C1F27;
@@ -267,9 +272,8 @@ body {
 }
 
 /*INTRO COMPONENT*/
-
 .intro-description {
-    padding: 2em 2em 4em;
+    padding: 2em;
     max-width: 700px;
     display: flex;
     flex-direction: column;
@@ -290,6 +294,11 @@ body {
     font-weight: bold;
 }
 
+.intro-button-alignment {
+    padding-right: 3em;
+    margin-top: 0;
+}
+
 /*RISK BREAKDOWN COMPONENT*/
 
 .risk-breakdown {
@@ -297,16 +306,34 @@ body {
 }
 
 .risk-details {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.4em;
     display: flex;
     justify-content: space-around;
+    width: 85%;
+
 }
+
+/* MARKET ANALYSIS */
+
+/* .market-items-width {
+    width: 150px;
+} */
+.market-width {
+    width: 90%;
+}
+
 
 /*FIVE-YEAR-PLAN-PERSONAL COMPONENT*/
 
 .vector-wrapper {
     display: flex;
+    /* flex-direction: column */
+    /* flex-wrap: wrap; */
     justify-content: space-evenly;
-    min-height: 250px;
+    /* min-height: 250px; */
+    /* flex-wrap: wrap; */
     /* border-bottom: 2px solid rgb(164, 164, 164); */
 }
 
@@ -316,18 +343,17 @@ ul {
 
 .blurb-wrapper {
     display: flex;
-    width: 250px;
-    height: 150px;
+   
+    max-width: 250px;
+    /* height: 150px; */
 
-
-
-    margin: 30px 10px 10px 10px;
+    margin: 10px;
 
     border-radius: 10px;
     background-color: rgb(232, 228, 228);
     justify-content: center;
     text-align: center;
-    align-content: center;
+    justify-content: center;
     flex-direction: column;
     color: rgb(67, 66, 66);
     padding: 5px;
@@ -337,4 +363,112 @@ li {
     list-style-type: none;
     font-size: 1.2em;
     margin: 10px;
+}
+
+/*== more-specific helper classes ===========*/
+
+.center-object {
+    text-align: center;
+}
+
+.right-align-object {
+    text-align: end;
+}
+
+.left-align-object {
+    text-align: left;
+}
+
+.no-border {
+    border: none;
+}
+
+.no-margins {
+    margin: 0;
+}
+
+.no-left-margin {
+    margin-left: 0;
+}
+
+.no-top-margin {
+    margin-top: 0;
+}
+
+.margin-top {
+    margin-top: 1em;
+}
+
+.margin-bottom {
+    margin-bottom:1em;
+}
+
+.margin-left {
+    margin-left:8px;
+}
+
+.margin-left-large {
+    margin-left: 36px;
+}
+
+.margin-left-med {
+    margin-left: 1em;
+}
+
+.margin-right {
+    margin-right: 8px;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.padding {
+    padding: 1em;
+}
+.padding-left{
+    padding-left: 1em;
+}
+
+.padding-bottom {
+    padding-bottom: 1em;
+}
+
+.padding-right{
+    padding-right: 3em;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.min-width-blurb {
+    min-width: 200px;
+}
+
+.flex {
+    display: flex;
+}
+ .flex-start {
+     justify-content: flex-start;
+     align-items: baseline;
+ }
+
+.flex-end {
+    justify-content: flex-end   
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    align-items: baseline;
+}
+
+.justify-between {
+    justify-content: space-between;
 }

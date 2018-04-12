@@ -69,15 +69,14 @@ export const investFundsError = error => ({
 });
 
 export const investFunds = (risk, year, currentFund) => (dispatch, getState) => {
-	dispatch(investFundsRequest());
+  dispatch(investFundsRequest());
     const authToken = getState().auth.authToken;
     const data = ({
         risk,
         year,
         currentFund
     });
-	return fetch(`${API_BASE_URL}/risk/invest`, 
-		{
+	return fetch(`${API_BASE_URL}/risk/invest`,{
       method: 'PUT',
       body: JSON.stringify(data),
       headers: {
@@ -294,7 +293,7 @@ export const restartLevel1 = ()=> (dispatch, getState) => {
           return res.json()
       })
       .then(user => {
-        console.log('User back from PUT = ', user);
+        //console.log('User back from PUT = ', user);
           dispatch(restartLevel1Success(user))
       })
       .catch(err => 

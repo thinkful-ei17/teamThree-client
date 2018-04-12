@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
 import requiresLogin from './requires-login';
 import Chart from './chart';
 import Button from './button';
 import YearSummaryList from './year-summary-list';
-
 import { fetchPortfolio } from '../actions/portfolio';
+
+let numeral = require('numeral');
 
 export class Portfolio extends React.Component {    
     componentDidMount() {
@@ -41,9 +41,9 @@ export class Portfolio extends React.Component {
             name = 'Keep Investing!';
             handleClick = this.toInvestmentForm;
         }
-
         if (this.props.data) {
-            const data = [
+            let currentFundFormat = numeral(this.props.currentFund).format('0,0');
+          const data = [
                 {									
                     color: '#C24275', 
                     points: this.props.data
@@ -51,7 +51,7 @@ export class Portfolio extends React.Component {
             ];
             portfolioContent = (
                 <div>
-                    <h3 className='secondary-heading primary-text-color'>Current Worth: {this.props.currentFund}</h3>
+                    <h3 className='secondary-heading primary-text-color'>Current Worth: ${currentFundFormat}</h3>
                     <section>
                         <YearSummaryList />
                         <Chart yMin={0} xMax={5} data={data} />

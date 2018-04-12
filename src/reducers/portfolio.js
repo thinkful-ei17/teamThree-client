@@ -54,6 +54,7 @@ export function portfolioReducer(state = initialState, action) {
         loading: true
       });
     } else if (action.type === FETCH_PORTFOLIO_SUCCESS) {
+
       return Object.assign({}, state, {
         portfolio: action.portfolio,
         year: action.year,
