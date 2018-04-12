@@ -19,8 +19,8 @@ Centible is an investment learning tool, which allows users to experiment with i
 
 #Link to Deployed Application 
 
-Client:  https://.netlify.com/
-Server:  https://.herokuapp.com
+Client:  https://nifty-bartik-6de922.netlify.com/
+Server:  https://teamthree-server.herokuapp.com
 MongoDb-production: mongodb://Jc:Asdfasdf1@ds123919.mlab.com:23919/teamthree
 MongoDb-test: mongodb://Jc:Asdfasdf1@ds123919.mlab.com:23919/teamthree-test
 
