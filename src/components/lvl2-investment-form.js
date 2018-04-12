@@ -18,8 +18,33 @@ export class Lvl2InvestmentForm extends React.Component {
 
     invest = () => {
         let { unassigned, aggressive, moderate, conservative, mattress, google, autoZone, dollarTree, ea } = this.props;
-        this.props.dispatch(investFundsLvl2(aggressive, moderate, conservative, mattress, google, autoZone, dollarTree, ea, this.props.year + 1, this.props.currentFund));
-        this.props.dispatch(incrementYear());
+
+        if (unassigned === 0){
+            if (aggressive === '') {
+                aggressive = '0';
+            } if (moderate === '') {
+                moderate = '0';
+            } if (conservative === '') {
+                conservative = '0';
+            } if (mattress === '') {
+                mattress = '0';
+            } if (google === '') {
+                google = '0';
+            } if (autoZone === '') {
+                autoZone = '0';
+            } if (dollarTree === '') {
+                dollarTree = '0';
+            } if (ea === '') {
+                ea = '0';
+            }
+            this.props.dispatch(investFundsLvl2(aggressive, moderate, conservative, mattress, google, autoZone, dollarTree, ea, this.props.year + 1, this.props.currentFund));
+            this.props.dispatch(incrementYear());
+        } else if (unassigned > 0) {
+            alert('Not so fast. Assign your entire portfolio before continuing.')
+        } else {
+            alert("Unfortunately you can't invest money you don't have. Assign exactly 100% of your portfolio.")
+        }
+        
     }
 
     onChange = event => {
@@ -44,6 +69,12 @@ export class Lvl2InvestmentForm extends React.Component {
     render() {
 
         const { unassigned, aggressive, moderate, conservative, mattress, google, autoZone, dollarTree, ea } = this.props;
+
+        let lvl2MarketAnalysis = '/lvl2-investment-form';
+
+        if (unassigned === 0) {
+            lvl2MarketAnalysis = '/lvl2-market-analysis';
+        }
 
         return (
             <div className="small-viewport">
@@ -78,8 +109,8 @@ export class Lvl2InvestmentForm extends React.Component {
                     </label>
                 </div>
                 <div className='center-object'>
-                    <Link to='/lvl2-market-analysis'>
-                        <Button class='blue-button' name='Invest' handleClick={this.invest} />
+                    <Link to={lvl2MarketAnalysis}>
+                        <Button class='blue-button' name='Invest' handleClick={this.invest()} />
                     </Link>   
                 </div>
             </div>

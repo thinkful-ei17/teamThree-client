@@ -17,8 +17,8 @@ export class Lvl2InvestmentReturn extends React.Component {
         console.log('Keep Investing');
     }
 
-    toTenYearReview = () => {
-        console.log('to Ten Year Review was clicked');
+    toLvl2FiveYearReview = () => {
+        console.log('to Lvl2 Five Year Review was clicked');
     }
 
     returnToPortfolio = () => {
@@ -34,8 +34,8 @@ export class Lvl2InvestmentReturn extends React.Component {
 
         if (this.props.year === 10){
             investmentLink = '/lvl2-five-year-market';
-            name = 'See Ten Year Review';
-            handleClick = this.toTenYearReview;
+            name = 'See Level 2 Review';
+            handleClick = this.toLvl2FiveYearReview;
         } else{
             investmentLink = '/lvl2-investment-form';
             name = 'Keep Investing!';
