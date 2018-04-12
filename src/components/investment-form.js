@@ -32,7 +32,7 @@ export class InvestmentForm extends React.Component {
                 <CompletedLevelOne/>
             );
         }
-        else{
+        else {
             let currentFundFormat = numeral(this.props.currentFund).format('0,0');
             return (
                 <div className="small-viewport">
@@ -67,7 +67,7 @@ export class InvestmentForm extends React.Component {
                         </Link>   
                     </div>
                 </div>
-        );
+        )}
     }
 }
 
