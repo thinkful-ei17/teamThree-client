@@ -213,7 +213,11 @@ body {
     color: #5DCB6E;
 }
 
+/* CHART WIDTH */
 
+.chart-width {
+    width: 100%;
+}
 /*INVESTMENT-FORM COMPONENT RADIO BUTTONS */
 
 .radio-button-container {

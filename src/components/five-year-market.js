@@ -151,7 +151,7 @@ export class FiveYearMarket extends React.Component {
       ];
 
       investmentReturnContent = (
-        <div className='center-object'>
+        <div className='center-object chart-width'>
           <Chart yMin={3000} xMax={5} legend={true} data={data} />
         </div>
       );

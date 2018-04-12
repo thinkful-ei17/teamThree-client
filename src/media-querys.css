@@ -1,9 +1,15 @@
+
+/* ++++++++++++++++ SMALLEST SCREEN ++++++++++ */
+
 @media (max-width: 674px){
 
     .html {
         width: 100%;
         min-width: 400px;
     }
+
+    /* ======== HEADER SPECIFIC ======== */
+
     .header-ul {
         height: 132px;
         background-color: #192C4D;
@@ -11,6 +17,7 @@
         padding-left: .5em;
         position: fixed;
     }
+
     .header-links {
         width: 100%;
         justify-content: space-between;
@@ -18,14 +25,28 @@
         margin-bottom: 1em;
     }
 
-    .viewport, .medium-viewport,
-    .small-viewport {
+    /* ========= GENERAL ============ */
+
+    .not-small {
+        display: none;
+    }
+
+    .viewport, .medium-viewport, .small-viewport {
         width: 100%;
         text-align: center;
     }
 
+    .vector-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
     
 }
+
+
+/* +++++++++++ MID-SIZED SCREEN +++++++++++ */
+
 
 @media (max-width: 730px){
     .appname {
