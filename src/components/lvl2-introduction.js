@@ -35,14 +35,14 @@ export class Lvl2Introduction extends React.Component {
         <div className="row">
             <section className="introduction">
               <header>
-                <h2 className="primary-heading">{this.props.introCard[this.props.numCard].title}</h2>
+                <h2 className="primary-heading">Level 2</h2>
               </header>
               <main>
-                <section className='intro-description'>
+                {/* <section className='intro-description'>
                   <p className="descriptive-content primary-text-color intro-description-p">{this.props.introCard[this.props.numCard].detailA}</p>
                   <p className="descriptive-content primary-text-color intro-description-p">{this.props.introCard[this.props.numCard].detailB}</p>
                   <p className="descriptive-content primary-text-color intro-description-p intro-emphasis">{this.props.introCard[this.props.numCard].detailC}</p>
-                </section>
+                </section> */}
                 <div className='right-align-object'>
                     <Link to={'/lvl2-investment-form'}>
                         <Button class='blue-button' name="Let's Get Investing!" handleClick={this.markLvl2IntroComplete} />

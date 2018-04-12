@@ -89,6 +89,7 @@ export function portfolioReducer(state = initialState, action) {
     } else if (action.type === PROCEED_TO_LVL2_SUCCESS) {
       return Object.assign({}, state, {
         year5Amt: action.year5Amt,
+        risks: null,
         loading: false,
         error: null
       });
