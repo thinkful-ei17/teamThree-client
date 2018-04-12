@@ -7,7 +7,7 @@ import Chart from "./chart";
 
 import { restartLevel1 } from "../actions/portfolio";
 
-let numeral = require('numeral');
+const numeral = require('numeral');
 
 export class FiveYearPersonal extends React.Component {
 

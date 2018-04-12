@@ -8,7 +8,7 @@ import Button from './button';
 
 import { fetchPortfolio } from '../actions/portfolio';
 
-let numeral = require('numeral');
+const numeral = require('numeral');
 
 export class InvestmentReturn extends React.Component {
     componentDidMount() {

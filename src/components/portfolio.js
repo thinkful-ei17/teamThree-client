@@ -7,7 +7,7 @@ import Button from './button';
 import YearSummaryList from './year-summary-list';
 import { fetchPortfolio } from '../actions/portfolio';
 
-let numeral = require('numeral');
+const numeral = require('numeral');
 
 export class Portfolio extends React.Component {    
     componentDidMount() {

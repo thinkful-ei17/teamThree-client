@@ -10,7 +10,7 @@ import { fetchRiskMarket } from "../actions/five-year-market";
 
 import "./five-year-market.css";
 
-let numeral = require('numeral');
+const numeral = require('numeral');
 
 export class FiveYearMarket extends React.Component {
   componentWillMount() {
