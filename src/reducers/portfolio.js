@@ -6,12 +6,15 @@ import {
     INVEST_FUNDS_REQUEST,
     INVEST_FUNDS_SUCCESS,
     INVEST_FUNDS_ERROR,
-    INVEST_FUNDS_LVL2_ERROR,
-    INVEST_FUNDS_LVL2_REQUEST,
-    INVEST_FUNDS_LVL2_SUCCESS,
     FETCH_RISK_OVERVIEW_REQUEST,
     FETCH_RISK_OVERVIEW_SUCCESS,
     FETCH_RISK_OVERVIEW_ERROR,
+    PROCEED_TO_LVL2_ERROR,
+    PROCEED_TO_LVL2_REQUEST,
+    PROCEED_TO_LVL2_SUCCESS,
+    INVEST_FUNDS_LVL2_ERROR,
+    INVEST_FUNDS_LVL2_REQUEST,
+    INVEST_FUNDS_LVL2_SUCCESS,
     UPDATE_INVESTMENT_STRATEGY,
     BLANK_INVESTMENT_STRATEGY_ENTRY,
     RESTART_LEVEL_1_REQUEST,
@@ -27,6 +30,7 @@ import {
   riskChoice: null,
   portfolio: null,
   risks: null,
+  year5Amt: null,
   unassigned: 100,
   aggressive: 0,
   moderate: 0,
@@ -55,6 +59,7 @@ export function portfolioReducer(state = initialState, action) {
         year: action.year,
         previousFund: action.previousFund,
         currentFund: action.currentFund,
+        year5Amt: action.year5Amt,
         loading: false,
         error: null
       });
@@ -73,6 +78,21 @@ export function portfolioReducer(state = initialState, action) {
         error: null
       });
     } else if (action.type === INVEST_FUNDS_ERROR) {
+      return Object.assign({}, state, {
+        error: action.error,
+        loading: false
+      });
+    } else if (action.type === PROCEED_TO_LVL2_REQUEST) {
+      return Object.assign({}, state, {
+        loading: true
+      });
+    } else if (action.type === PROCEED_TO_LVL2_SUCCESS) {
+      return Object.assign({}, state, {
+        year5Amt: action.year5Amt,
+        loading: false,
+        error: null
+      });
+    } else if (action.type === PROCEED_TO_LVL2_ERROR) {
       return Object.assign({}, state, {
         error: action.error,
         loading: false

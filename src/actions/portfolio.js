@@ -17,7 +17,8 @@ export const fetchPortfolioSuccess = user => ({
   year: user.year,
   portfolio: user.risk,
   previousFund: user.previousFund,
-  currentFund: user.currentFund
+  currentFund: user.currentFund,
+  year5Amt: user.year5Amt
 });
 
 export const FETCH_PORTFOLIO_ERROR = 'FETCH_PORTFOLIO_ERROR';
@@ -30,24 +31,25 @@ export const fetchPortfolio = () => (dispatch, getState) => {
     dispatch(fetchPortfolioRequest());
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/users/self`, 
-    {
-          method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${authToken}`
+      {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${authToken}`
         }
-    })
-        .then(res => {
-            if (!res.ok) {
-                return Promise.reject('Something has gone wrong');
-            }
-            return res.json()
-        })
-        .then(user => {
-            dispatch(fetchPortfolioSuccess(user))
-        })
-        .catch(err => 
-            dispatch(fetchPortfolioError(err))
-        )
+      }
+    )
+      .then(res => {
+        if (!res.ok) {
+          return Promise.reject('Something has gone wrong');
+        }
+        return res.json()
+      })
+      .then(user => {
+        dispatch(fetchPortfolioSuccess(user))
+      })
+      .catch(err => 
+        dispatch(fetchPortfolioError(err))
+      )
 }
 
 export const INVEST_FUNDS_REQUEST = 'INVEST_FUNDS_REQUEST';
@@ -90,10 +92,52 @@ export const investFunds = (risk, year, currentFund) => (dispatch, getState) => 
 			return res.json()
 		})
 		.then(() => {
-            dispatch(investFundsSuccess());
+      dispatch(investFundsSuccess());
 		})
 		.catch(err => 
 			dispatch(investFundsError(err))
+		)
+}
+
+export const PROCEED_TO_LVL2_REQUEST = 'PROCEED_TO_LVL2_REQUEST';
+export const proceedToLvl2Request = () => ({
+  type: PROCEED_TO_LVL2_REQUEST
+});
+
+export const PROCEED_TO_LVL2_SUCCESS = 'PROCEED_TO_LVL2_SUCCESS';
+export const proceedToLvl2Success = year5Amt => ({
+  type: PROCEED_TO_LVL2_SUCCESS,
+  year5Amt
+});
+
+export const PROCEED_TO_LVL2_ERROR = 'PROCEED_TO_LVL2_ERROR';
+export const proceedToLvl2Error = error => ({
+  type: PROCEED_TO_LVL2_ERROR,
+  error
+});
+
+export const proceedToLvl2 = fund => (dispatch, getState) => {
+	dispatch(proceedToLvl2Request());
+  const authToken = getState().auth.authToken;
+	return fetch(`${API_BASE_URL}/level2/${fund}`, 
+		{
+      method: 'PUT',
+      headers: {
+        		'Content-Type': 'application/json',
+				'Accept': 'application/json',
+				'Authorization': `Bearer ${authToken}`
+			}
+		}).then(res => {
+			if (!res.ok) {
+				return Promise.reject('Something has gone wrong');
+			}
+			return res.json()
+		})
+		.then(() => {
+      dispatch(proceedToLvl2Success(fund));
+		})
+		.catch(err => 
+			dispatch(proceedToLvl2Error(err))
 		)
 }
 
