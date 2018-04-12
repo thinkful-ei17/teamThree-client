@@ -65,14 +65,14 @@ export class Portfolio extends React.Component {
 
         return (
             <div className='viewport'> 
-            <h2 className='primary-heading'>Your Investment Portfolio</h2>
-            {portfolioContent}
-            <Link to='/market-analysis' >
-                <Button class='green-button' name='Review Investment Data' handleClick={this.toInvestmentData}/>
-            </Link>
-            <Link to={investmentLink}>
-                <Button class='blue-button' name={name} handleClick={handleClick}/> 
-            </Link>
+                <h2 className='primary-heading'>Your Investment Portfolio</h2>
+                {portfolioContent}
+                <Link to='/market-analysis' >
+                    <Button class='green-button' name='Review Investment Data' handleClick={this.toInvestmentData}/>
+                </Link>
+                <Link to={investmentLink}>
+                    <Button class='blue-button' name={name} handleClick={handleClick}/> 
+                </Link>
             </div> 
         );
     }  
