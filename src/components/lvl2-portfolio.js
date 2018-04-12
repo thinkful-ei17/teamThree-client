@@ -64,7 +64,7 @@ export class Lvl2Portfolio extends React.Component {
             <div className='viewport'> 
             <h2 className='primary-heading'>Your Investment Portfolio</h2>
             {portfolioContent}
-            <Link to='/market-analysis' >
+            <Link to='/lvl2-market-analysis' >
                 <Button class='green-button' name='Review Investment Data' handleClick={this.toInvestmentData}/>
             </Link>
             <Link to={investmentLink}>
