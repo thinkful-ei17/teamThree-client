@@ -8,6 +8,8 @@ import Button from './button';
 
 import { fetchPortfolio, chooseRiskTolerance, investFunds, incrementYear } from '../actions/portfolio';
 
+let numeral = require('numeral');
+
 export class InvestmentForm extends React.Component {
     componentDidMount() {
 
