@@ -154,6 +154,7 @@ export class FiveYearPersonal extends React.Component {
             </li>
         </ul>
 
+
         <Link to='/completed-level-one'>
           <Button class='blue-button' name='Continue' handleClick={this.completeLvl1}/>
         </Link>
@@ -163,6 +164,7 @@ export class FiveYearPersonal extends React.Component {
             <Button class='green-button' name='Start Over' handleClick={this.startOver}/>
           </Link>
         </div>  
+
 
         </div>
       );
