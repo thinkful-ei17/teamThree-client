@@ -19,7 +19,6 @@ circle {
   transform: translate(50px,0px);
 }
 
-
 div [id*="-y-axis"] {
   transform: translate(105px,0px)
 }
