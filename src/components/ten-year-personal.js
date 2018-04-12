@@ -1,23 +1,21 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Button from "./button";
 import Chart from "./chart";
 
-import { fetchPortfolio } from '../actions/portfolio';
+import { fetchPortfolio, restartLevel1 } from "../actions/portfolio";
 
-const numeral = require('numeral');
-
-export class FiveYearPersonal extends React.Component {
+export class TenYearPersonal extends React.Component {
   componentDidMount() {
     if (this.props.portfolio === null) {
         this.props.dispatch(fetchPortfolio());
     }
   }
 
-  completeLvl1 = () => {
-    console.log('Level 1 Completed.');
+  startOver = () => {
+    this.props.dispatch(restartLevel1());
   }
 
   render() {
@@ -25,36 +23,28 @@ export class FiveYearPersonal extends React.Component {
       currentFund,
       overallChange,
       overallGrowth,
-      investmentReturnContent,
-      currentFundFormat,
-      overallChangeFormat,
-      initialAmount;
+      investmentReturnContent;
     
     if (this.props.data) {
       currentFund = this.props.currentFund;
-      initialAmount = this.props.data[0].y; //user's initial funds at year 0 $5000
-      overallChange = currentFund - initialAmount;
-      overallGrowth = Math.round((overallChange/initialAmount) * 100);
+
+      overallChange = currentFund - 5000;
+      overallGrowth = Math.round((overallChange/5000) * 100);
 
       let investmentData = this.props.data.slice(1);
-      //console.log("investmentData = ", investmentData)
-      currentFundFormat = numeral(currentFund).format('0,0');
-      overallChangeFormat = numeral(overallChange).format('0,0');
+      console.log("investmentData = ", investmentData)
 
-      listItems = investmentData.map((year, index) => {
-        let yFormat = numeral(year.y).format('0,0');
-        let previousYearFormat = numeral(year.previousYear).format('0,0');
-        return (
+      listItems = investmentData.map((year, index) => (
           <li key={index} className="blurb-wrapper">
             Year {year.x}: {year.strategy}
             <br />
-            Start: ${previousYearFormat}
+            Start: ${year.previousYear}
             <br />
-            End: ${yFormat}
+            End: ${year.y}
             <br />
             Change: {year.growth}%
           </li>
-      )});
+      ));
       const data = [
         {
           color: "#783DB8",
@@ -83,6 +73,26 @@ export class FiveYearPersonal extends React.Component {
             {
               x: 5,
               y: 8113
+            },
+            {
+              x: 6,
+              y: 12085
+            },
+            {
+              x: 7,
+              y: 14647
+            },
+            {
+              x: 8,
+              y: 22710
+            },
+            {
+              x: 9,
+              y: 46799
+            },
+            {
+              x: 10,
+              y: 66624
             }
           ]
         },
@@ -94,16 +104,16 @@ export class FiveYearPersonal extends React.Component {
       ];
       investmentReturnContent = (
         <div className='center-object'>
-          <Chart yMin={0} xMax={5} legend={true} data={data} />
+          <Chart yMin={0} xMax={10} legend={true} data={data} />
         </div>
       );
     }
     return (
       //line graph
       <div className="portfolio-view viewport">
-        <h2 className='primary-heading'>Five Year Personal Summary:</h2>
-        <h3 className='secondary-heading primary-text-color'>Your Portfolio Worth: ${currentFundFormat}</h3>
-        <h3 className='descriptive-content accent-dk-green'>Change: ${overallChangeFormat}</h3>
+        <h2 className='primary-heading'>Ten Year Personal Summary:</h2>
+        <h3 className='secondary-heading primary-text-color'>Your Portfolio Worth: ${currentFund}</h3>
+        <h3 className='descriptive-content accent-dk-green'>Change: ${overallChange}</h3>
         <h3 className='descriptive-content accent-dk-green'>Growth: {overallGrowth}%</h3>
         <h3 className='secondary-heading primary-text-color'>Your Investment Strategy Vs Optimal Investment Strategy:</h3>
         {investmentReturnContent}
@@ -158,13 +168,55 @@ export class FiveYearPersonal extends React.Component {
               <br />
               Change: 4.29%
             </li>
+            <li className="blurb-wrapper">
+              Year 6: Dollar Tree
+              <br />
+              Start: $8,113
+              <br />
+              End: $12,085
+              <br />
+              Change: 48.96%
+            </li>
+            <li className="blurb-wrapper">
+              Year 7: Aggressive
+              <br />
+              Start: $12,085
+              <br />
+              End: $14,647
+              <br />
+              Change: 21.2%
+            </li>
+            <li className="blurb-wrapper">
+              Year 8: Google
+              <br />
+              Start: $14,647
+              <br />
+              End: $22,710
+              <br />
+              Change: 55.05%
+            </li>
+            <li className="blurb-wrapper">
+              Year 9: Electronic Arts
+              <br />
+              Start: $22,710
+              <br />
+              End: $46,799
+              <br />
+              Change: 106.07%
+            </li>
+            <li className="blurb-wrapper">
+              Year 10: Electronic Arts
+              <br />
+              Start: $46,799
+              <br />
+              End: $66,624
+              <br />
+              Change: 42.36%
+            </li>
         </ul>
-
-          <div className='right-align-object'>
-            <Link to='/completed-level-one'>
-              <Button class='blue-button' name='Continue' handleClick={this.completeLvl1}/>
-            </Link>
-          </div>  
+        <Link to='/investment-form'>
+          <Button class='green-button' name='Start Over' handleClick={this.startOver}/>
+        </Link>
         </div>
       );
     }
@@ -180,4 +232,4 @@ export class FiveYearPersonal extends React.Component {
   }
 };
 
-export default connect(mapStateToProps)(FiveYearPersonal);
+export default connect(mapStateToProps)(TenYearPersonal);

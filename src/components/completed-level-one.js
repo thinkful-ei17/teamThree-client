@@ -1,11 +1,16 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import requiresLogin from './requires-login';
 import Button from './button';
 
+import { proceedToLvl2 } from '../actions/portfolio';
 
 export function CompletedLevelOne(props){
+    const clickedToProceed = fund => {
+        props.dispatch(proceedToLvl2(fund));
+    };
 
     return (
         <div className='viewport'>
@@ -16,10 +21,18 @@ export function CompletedLevelOne(props){
                 You have completed Level 1 of Centsible.
             </h2>
             <Link to='/portfolio'>
-                <Button class='green-button' name='Return to Portfolio' handleClick={() => null}/>
+                <Button class='green-button' name='Return to Portfolio' handleClick={() => false} />
+            </Link>
+            <Link to='/lvl2-introduction'>
+                <Button class='blue-button' name='Proceed to Level 2' handleClick={() => clickedToProceed(props.currentFund)} />
             </Link>
         </div>
     )
 }
+const mapStateToProps = state => {
+    return {
+        currentFund: state.portfolio.currentFund
+    };
+};
 
-export default requiresLogin()(CompletedLevelOne)
+export default requiresLogin()(connect(mapStateToProps)(CompletedLevelOne));
