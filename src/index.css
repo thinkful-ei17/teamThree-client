@@ -166,7 +166,7 @@ body {
     /* text-align: center; */
     height: 100px;
     background-color: #192C4D;
-    color: #39A7B1;
+    /* color: #39A7B1; */
 }
 
 .header-ul {
@@ -191,7 +191,7 @@ body {
 .header-links {
     display: flex;
     flex: column;
-    align-items: space-around;
+    align-items: baseline;
 }
 
 .header-link {
