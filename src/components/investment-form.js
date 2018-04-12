@@ -42,7 +42,7 @@ export class InvestmentForm extends React.Component {
                     
                     <fieldset className='radio-button-container no-border no-padding margin-bottom'>
                         <legend className="secondary-heading primary-text-color margin-bottom  margin-left-med">How would you like to invest this year?</legend>
-                        <div className='margin-left-large'>
+                        <div className='margin-left-extra-large'>
                             <label className="descriptive-content primary-text-color radio-button-label" htmlFor='rb1'>Aggressive
                                 <input className='native-button' type='radio' name='strategy' id='rb1' value='Aggressive' onChange={this.onChange.bind(this)} />
                                 <span className='custom-radio-button'></span>
