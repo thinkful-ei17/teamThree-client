@@ -1,3 +1,34 @@
-/*.svg-line-chart-label{
+svg {
+  width:700px;
+  text-align: center;
+}
 
-}*/
+/* g{
+  transform: translate(55px,0);
+} */
+/*text-align: center;
+*/
+div [id*="-x-axis"]{
+  transform: translate(50px,550px);
+}
+
+.line{
+  transform: translate(50px,0px);
+}
+
+.legend{
+  transform: translate(50px,0px);
+}
+
+circle {
+  transform: translate(50px,0px);
+}
+
+
+div [id*="-y-axis"] {
+  transform: translate(105px,0px)
+}
+
+div [id*="-y-axis"] > text.svg-line-chart-label{
+  transform: translate(-60px, 300px) rotate(-90deg);
+}
