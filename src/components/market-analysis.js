@@ -33,11 +33,11 @@ export class MarketAnalysis extends React.Component {
               </div>
               <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
                 <h4>Moderate:</h4>
-                <p className='no-margins margin-bottom'> {this.props.risks[2].gain}%</p>
+                <p className='no-margins margin-bottom'>{this.props.risks[2].gain}%</p>
               </div>  
               <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
                 <h4>Conservative:</h4>
-                <p className='no-margins margin-bottom'> {this.props.risks[1].gain}%</p>
+                <p className='no-margins margin-bottom'>{this.props.risks[1].gain}%</p>
               </div>  
               <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
                 <h4>Mattress:</h4>   

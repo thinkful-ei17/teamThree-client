@@ -74,11 +74,11 @@ export class Lvl2InvestmentForm extends React.Component {
         const { unassigned, aggressive, moderate, conservative, mattress, google, autoZone, dollarTree, ea } = this.props;
 
         let lvl2MarketAnalysis = '/lvl2-investment-form';
-        let unassignedTrackerStyles = 'secondary-heading margin-bottom margin-left-large graph-pink'
+        let unassignedTrackerStyles = 'secondary-heading margin-bottom margin-left-extra-large graph-pink'
 
         if (unassigned === 0) {
             lvl2MarketAnalysis = '/lvl2-market-analysis';
-            unassignedTrackerStyles = 'secondary-heading margin-bottom margin-left-large accent-med-green'
+            unassignedTrackerStyles = 'secondary-heading margin-bottom margin-left-extra-large accent-med-green'
         }
 
         const currentFundFormat = numeral(this.props.currentFund).format('0,0');
