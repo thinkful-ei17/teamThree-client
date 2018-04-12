@@ -9,6 +9,8 @@ import YearSummaryList from './year-summary-list';
 
 import { fetchPortfolio } from '../actions/portfolio';
 
+const numeral = require('numeral');
+
 export class Lvl2Portfolio extends React.Component {    
     componentDidMount() {
         this.props.dispatch(fetchPortfolio());
@@ -43,17 +45,20 @@ export class Lvl2Portfolio extends React.Component {
         }
 
         if (this.props.data) {
+            const currentFundFormat = numeral(this.props.currentFund).format('0,0');
             const data = [
                 {									
                     color: '#C24275', 
                     points: this.props.data
                 }
             ];
+
             portfolioContent = (
                 <div>
-                    <h3 className='secondary-heading primary-text-color'>Current Worth: {this.props.currentFund}</h3>
+                    <h3 className='secondary-heading primary-text-color'>Current Worth: ${currentFundFormat}</h3>
                     <section>
-                        <YearSummaryList />
+                        <YearSummaryList start={1} end={6} />
+                        <YearSummaryList start={6} end={11} />
                         <Chart yMin={0} xMax={10} data={data} />
                     </section>
                 </div>

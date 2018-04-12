@@ -1,7 +1,8 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import Button from "./button";
 import Chart from "./chart";
 
@@ -32,12 +33,12 @@ export class FiveYearPersonal extends React.Component {
     
     if (this.props.data) {
       currentFund = this.props.currentFund;
-      initialAmount = this.props.data[0].y; //user's initial funds at year 0 $5000
+      initialAmount = this.props.data[0].y;
       overallChange = currentFund - initialAmount;
       overallGrowth = Math.round((overallChange/initialAmount) * 100);
 
       let investmentData = this.props.data.slice(1);
-      //console.log("investmentData = ", investmentData)
+
       currentFundFormat = numeral(currentFund).format('0,0');
       overallChangeFormat = numeral(overallChange).format('0,0');
 
@@ -99,7 +100,6 @@ export class FiveYearPersonal extends React.Component {
       );
     }
     return (
-      //line graph
       <div className="portfolio-view viewport">
         <h2 className='primary-heading'>Five Year Personal Summary:</h2>
         <h3 className='secondary-heading primary-text-color'>Your Portfolio Worth: ${currentFundFormat}</h3>
