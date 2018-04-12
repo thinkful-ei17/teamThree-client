@@ -5,9 +5,14 @@ import { Link } from 'react-router-dom';
 import Button from "./button";
 import Chart from "./chart";
 
-import { restartLevel1 } from "../actions/portfolio";
+import { fetchPortfolio, restartLevel1 } from "../actions/portfolio";
 
 export class TenYearPersonal extends React.Component {
+  componentDidMount() {
+    if (this.props.portfolio === null) {
+        this.props.dispatch(fetchPortfolio());
+    }
+  }
 
   startOver = () => {
     this.props.dispatch(restartLevel1());
@@ -106,7 +111,7 @@ export class TenYearPersonal extends React.Component {
     return (
       //line graph
       <div className="portfolio-view viewport">
-        <h2 className='primary-heading'>Five Year Personal Summary:</h2>
+        <h2 className='primary-heading'>Ten Year Personal Summary:</h2>
         <h3 className='secondary-heading primary-text-color'>Your Portfolio Worth: ${currentFund}</h3>
         <h3 className='descriptive-content accent-dk-green'>Change: ${overallChange}</h3>
         <h3 className='descriptive-content accent-dk-green'>Growth: {overallGrowth}%</h3>
@@ -222,7 +227,8 @@ export class TenYearPersonal extends React.Component {
     user: state.auth.currentUser,
     data: state.portfolio.portfolio,
     year: state.portfolio.year,
-    currentFund: state.portfolio.currentFund
+    currentFund: state.portfolio.currentFund,
+    portfolio: state.portfolio.portfolio
   }
 };
 

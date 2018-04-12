@@ -5,7 +5,15 @@ import {Link} from 'react-router-dom';
 import Button from "./button";
 import Chart from "./chart";
 
+import { fetchPortfolio } from '../actions/portfolio';
+
 export class FiveYearPersonal extends React.Component {
+  componentDidMount() {
+    if (this.props.portfolio === null) {
+        this.props.dispatch(fetchPortfolio());
+    }
+  }
+
   completeLvl1 = () => {
     console.log('Level 1 Completed.');
   }
@@ -154,7 +162,8 @@ export class FiveYearPersonal extends React.Component {
     user: state.auth.currentUser,
     data: state.portfolio.portfolio,
     year: state.portfolio.year,
-    currentFund: state.portfolio.currentFund
+    currentFund: state.portfolio.currentFund,
+    portfolio: state.portfolio.portfolio
   }
 };
 

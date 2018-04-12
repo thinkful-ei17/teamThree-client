@@ -10,7 +10,6 @@ import { fetchPortfolio, chooseRiskTolerance, investFunds, incrementYear } from 
 
 export class InvestmentForm extends React.Component {
     componentDidMount() {
-
         if (this.props.portfolio === null) {
             this.props.dispatch(fetchPortfolio());
         }
