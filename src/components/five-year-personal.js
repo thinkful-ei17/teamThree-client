@@ -153,17 +153,17 @@ export class FiveYearPersonal extends React.Component {
               Change: 4.29%
             </li>
         </ul>
-<<<<<<< HEAD
+
         <Link to='/completed-level-one'>
           <Button class='blue-button' name='Continue' handleClick={this.completeLvl1}/>
         </Link>
-=======
+
         <div className='right-align-object'>
           <Link to='/investment-form'>
             <Button class='green-button' name='Start Over' handleClick={this.startOver}/>
           </Link>
         </div>  
->>>>>>> 978643be189c9d7193f50de9432edcb64cb3885e
+
         </div>
       );
     }
