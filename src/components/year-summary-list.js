@@ -9,7 +9,7 @@ export function YearSummaryList(props){
         let previousYearFormat = numeral(year.previousYear).format('0,0');
         let yFormat = numeral(year.y).format('0,0');
         return(
-            <li key={year.x} className='year-summary-item blurb-wrapper'>
+            <li key={year.x} className='year-summary-item blurb-wrapper left-align-object min-width-portfolio padding'>
                 Year {year.x}: 
                 <br />
                 {year.strategy}

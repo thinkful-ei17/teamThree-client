@@ -317,13 +317,16 @@ body {
 
 /* MARKET ANALYSIS */
 
-/* .market-items-width {
-    width: 150px;
-} */
+
 .market-width {
     width: 90%;
 }
 
+/* PORTFOLIO COMPONENT */
+
+.min-width-portfolio {
+    min-width: 150px;
+}
 
 /*FIVE-YEAR-PLAN-PERSONAL COMPONENT*/
 
@@ -449,6 +452,7 @@ li {
 .min-width-blurb {
     min-width: 200px;
 }
+
 
 .flex {
     display: flex;
