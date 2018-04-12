@@ -110,7 +110,7 @@ export class Lvl2InvestmentForm extends React.Component {
                 </div>
                 <div className='center-object'>
                     <Link to={lvl2MarketAnalysis}>
-                        <Button class='blue-button' name='Invest' handleClick={this.invest()} />
+                        <Button class='blue-button' name='Invest' handleClick={() => this.invest()} />
                     </Link>   
                 </div>
             </div>
