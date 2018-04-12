@@ -1,6 +1,7 @@
 .lvl2-investment-input {
     width: 55px;
     text-align: center;
+    border: 1px solid #ccc;
     box-shadow: 1px 1px #ccc;
     background-color: #eee;
 }
