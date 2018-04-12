@@ -1,17 +1,16 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Button from "./button";
 import Chart from "./chart";
 
 import { restartLevel1 } from "../actions/portfolio";
 
-let numeral = require('numeral');
+export class TenYearPersonal extends React.Component {
 
-export class FiveYearPersonal extends React.Component {
-  completeLvl1 = () => {
-    console.log('Level 1 Completed.');
+  startOver = () => {
+    this.props.dispatch(restartLevel1());
   }
 
   render() {
@@ -19,36 +18,28 @@ export class FiveYearPersonal extends React.Component {
       currentFund,
       overallChange,
       overallGrowth,
-      investmentReturnContent,
-      currentFundFormat,
-      overallChangeFormat,
-      initialAmount;
+      investmentReturnContent;
     
     if (this.props.data) {
       currentFund = this.props.currentFund;
-      initialAmount = this.props.data[0].y; //user's initial funds at year 0 $5000
-      overallChange = currentFund - initialAmount;
-      overallGrowth = Math.round((overallChange/initialAmount) * 100);
+
+      overallChange = currentFund - 5000;
+      overallGrowth = Math.round((overallChange/5000) * 100);
 
       let investmentData = this.props.data.slice(1);
-      //console.log("investmentData = ", investmentData)
-      currentFundFormat = numeral(currentFund).format('0,0');
-      overallChangeFormat = numeral(overallChange).format('0,0');
+      console.log("investmentData = ", investmentData)
 
-      listItems = investmentData.map((year, index) => {
-        let yFormat = numeral(year.y).format('0,0');
-        let previousYearFormat = numeral(year.previousYear).format('0,0');
-        return (
+      listItems = investmentData.map((year, index) => (
           <li key={index} className="blurb-wrapper">
             Year {year.x}: {year.strategy}
             <br />
-            Start: ${previousYearFormat}
+            Start: ${year.previousYear}
             <br />
-            End: ${yFormat}
+            End: ${year.y}
             <br />
             Change: {year.growth}%
           </li>
-      )});
+      ));
       const data = [
         {
           color: "#783DB8",
@@ -96,8 +87,8 @@ export class FiveYearPersonal extends React.Component {
       //line graph
       <div className="portfolio-view viewport">
         <h2 className='primary-heading'>Five Year Personal Summary:</h2>
-        <h3 className='secondary-heading primary-text-color'>Your Portfolio Worth: ${currentFundFormat}</h3>
-        <h3 className='descriptive-content accent-dk-green'>Change: ${overallChangeFormat}</h3>
+        <h3 className='secondary-heading primary-text-color'>Your Portfolio Worth: ${currentFund}</h3>
+        <h3 className='descriptive-content accent-dk-green'>Change: ${overallChange}</h3>
         <h3 className='descriptive-content accent-dk-green'>Growth: {overallGrowth}%</h3>
         <h3 className='secondary-heading primary-text-color'>Your Investment Strategy Vs Optimal Investment Strategy:</h3>
         {investmentReturnContent}
@@ -153,19 +144,9 @@ export class FiveYearPersonal extends React.Component {
               Change: 4.29%
             </li>
         </ul>
-
-
-        <Link to='/completed-level-one'>
-          <Button class='blue-button' name='Continue' handleClick={this.completeLvl1}/>
+        <Link to='/investment-form'>
+          <Button class='green-button' name='Start Over' handleClick={this.startOver}/>
         </Link>
-
-        <div className='right-align-object'>
-          <Link to='/investment-form'>
-            <Button class='green-button' name='Start Over' handleClick={this.startOver}/>
-          </Link>
-        </div>  
-
-
         </div>
       );
     }
@@ -180,4 +161,4 @@ export class FiveYearPersonal extends React.Component {
   }
 };
 
-export default connect(mapStateToProps)(FiveYearPersonal);
+export default connect(mapStateToProps)(TenYearPersonal);

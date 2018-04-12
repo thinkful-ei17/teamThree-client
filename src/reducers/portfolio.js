@@ -9,6 +9,8 @@ import {
     FETCH_RISK_OVERVIEW_REQUEST,
     FETCH_RISK_OVERVIEW_SUCCESS,
     FETCH_RISK_OVERVIEW_ERROR,
+    UPDATE_INVESTMENT_STRATEGY,
+    BLANK_INVESTMENT_STRATEGY_ENTRY,
     RESTART_LEVEL_1_REQUEST,
     RESTART_LEVEL_1_SUCCESS,
     RESTART_LEVEL_1_ERROR, 
@@ -22,6 +24,15 @@ import {
   riskChoice: null,
   portfolio: null,
   risks: null,
+  unassigned: 100,
+  aggressive: 0,
+  moderate: 0,
+  conservative: 0,
+  mattress: 0,
+  google: 0,
+  autoZone: 0,
+  dollarTree: 0,
+  ea: 0,
   loading: false,
   error: null
 };
@@ -65,7 +76,6 @@ export function portfolioReducer(state = initialState, action) {
         loading: false
       });
     } else if (action.type === INCREMENT_YEAR) {
-      //console.log('Enter increment year')
       return Object.assign({}, state, {
         year: state.year + 1
       });
@@ -83,6 +93,20 @@ export function portfolioReducer(state = initialState, action) {
       return Object.assign({}, state, {
         error: action.error,
         loading: false
+      });
+    } else if (action.type === UPDATE_INVESTMENT_STRATEGY) {
+      let originalValue = parseInt(state[action.strategy], 10)
+      if (isNaN(originalValue)) {
+        originalValue = 0;
+      }
+      return Object.assign({}, state, {
+        unassigned: state.unassigned + originalValue - action.riskAmount,
+        [action.strategy]: action.riskAmount
+      });
+    } else if (action.type === BLANK_INVESTMENT_STRATEGY_ENTRY) {
+      return Object.assign({}, state, {
+        unassigned: state.unassigned + parseInt(state[action.strategy], 10),
+        [action.strategy]: ''
       });
     } else if (action.type === RESTART_LEVEL_1_REQUEST) {
       return Object.assign({}, state, {
