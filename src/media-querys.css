@@ -25,12 +25,52 @@
         margin-bottom: 1em;
     }
 
+    /* ========= RISK BREAKDOWN =========== */
+   
+    .risk-overview-container {
+        width: 85%;
+    }
+
+    .risk-overview-container h3 {
+        margin-bottom: 0em;
+    }
+
+    .risk-detail-units {
+        display: inline-block;
+        padding: .5em;
+        margin: .2em;
+        font-size: 1.5em;
+    }
+
+    .pie-chart-container{
+        width: 50%;
+        padding-bottom: 1em;
+        
+    }
+
     /* ========= GENERAL ============ */
 
     .not-small {
         display: none;
     }
 
+    .small-column {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* ====== TEXT ============ */
+
+    .primary-heading {
+        margin-left: .24em;
+    }
+
+    .smaller-heading {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
     .viewport, .medium-viewport, .small-viewport {
         width: 100%;
         text-align: center;

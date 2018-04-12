@@ -213,11 +213,6 @@ body {
     color: #5DCB6E;
 }
 
-/* CHART WIDTH */
-
-.chart-width {
-    width: 100%;
-}
 /*INVESTMENT-FORM COMPONENT RADIO BUTTONS */
 
 .radio-button-container {
@@ -320,14 +315,25 @@ body {
     text-align: center;
 }
 
+
 .risk-details {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2.4em;
     display: flex;
-    justify-content: space-around;
-    width: 85%;
+    justify-content: space-between;
+    width: 87%;
+}
 
+.risk-overview-container {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pie-chart-container {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* MARKET ANALYSIS */
