@@ -1,6 +1,5 @@
 import { API_BASE_URL } from '../config';
 
-
 export const SHOW_INTRO_CARD = 'SHOW_INTRO_CARD';
 export const showIntroCard = (numCard, introCard) => ({
     introCard,
@@ -14,8 +13,6 @@ export const nextIntroCard = (numCard, introCard) => ({
     numCard,
     type: NEXT_INTRO_CARD
 });
-
-
 
 export const INTRO_COMPLETE_REQUEST = 'INTRO_COMPLETE_REQUEST';
 export const introCompleteRequest = () => ({
@@ -32,7 +29,6 @@ export const introCompleteError = err => ({
     type: INTRO_COMPLETE_ERROR,
     err,
 });
-
 
 //==== This call records that the User has completed the Introduction slides ===============
 
@@ -66,4 +62,8 @@ export const introComplete = () => (dispatch, getState) => {
     );
 }
 
+export const LVL2_INTRO_COMPLETE = 'LVL2_INTRO_COMPLETE';
+export const lvl2IntroComplete = () => ({
+    type: LVL2_INTRO_COMPLETE
+});
 

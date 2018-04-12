@@ -12,7 +12,6 @@ let numeral = require('numeral');
 
 export class InvestmentForm extends React.Component {
     componentDidMount() {
-
         if (this.props.portfolio === null) {
             this.props.dispatch(fetchPortfolio());
         }
@@ -33,7 +32,7 @@ export class InvestmentForm extends React.Component {
                 <CompletedLevelOne/>
             );
         }
-        else{
+        else {
             let currentFundFormat = numeral(this.props.currentFund).format('0,0');
             return (
                 <div className="small-viewport">
@@ -63,14 +62,12 @@ export class InvestmentForm extends React.Component {
                         </div>    
                     </fieldset>
                     <div className='right-align-object'>
-
                         <Link to='/market-analysis'>
                             <Button class='blue-button' name='Invest' handleClick={this.invest} />
                         </Link>   
                     </div>
                 </div>
-            );
-        }
+        )}
     }
 }
 

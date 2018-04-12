@@ -40,3 +40,44 @@ export const fetchRiskMarket = () => (dispatch, getState) => {
             dispatch(fetchRiskMarketError(err))
         )
 }
+
+export const FETCH_LVL2_RISK_MARKET_REQUEST = 'FETCH_LVL2_RISK_MARKET_REQUEST';
+export const fetchLvl2RiskMarketRequest = () => ({
+  type: FETCH_LVL2_RISK_MARKET_REQUEST
+});
+
+export const FETCH_LVL2_RISK_MARKET_SUCCESS = 'FETCH_LVL2_RISK_MARKET_SUCCESS';
+export const fetchLvl2RiskMarketSuccess = data => ({
+  type: FETCH_LVL2_RISK_MARKET_SUCCESS,
+  data
+});
+
+export const FETCH_LVL2_RISK_MARKET_ERROR = 'FETCH_LVL2_RISK_MARKET_ERROR';
+export const fetchLvl2RiskMarketError = error => ({
+  type: FETCH_LVL2_RISK_MARKET_ERROR,
+  error
+});
+
+export const fetchLvl2RiskMarket = year5Amt => (dispatch, getState) => {
+    dispatch(fetchLvl2RiskMarketRequest());
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/level2/all/${year5Amt}`, 
+    {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${authToken}`
+        }
+    })
+        .then(res => {
+            if (!res.ok) {
+                return Promise.reject('Something has gone wrong');
+            }
+            return res.json()
+        })
+        .then(data => {
+            dispatch(fetchLvl2RiskMarketSuccess(data))
+        })
+        .catch(err => 
+            dispatch(fetchLvl2RiskMarketError(err))
+        )
+}
