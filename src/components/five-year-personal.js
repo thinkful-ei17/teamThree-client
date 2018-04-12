@@ -7,7 +7,7 @@ import Chart from "./chart";
 
 import { fetchPortfolio } from '../actions/portfolio';
 
-let numeral = require('numeral');
+const numeral = require('numeral');
 
 export class FiveYearPersonal extends React.Component {
   componentDidMount() {
@@ -94,7 +94,7 @@ export class FiveYearPersonal extends React.Component {
       ];
       investmentReturnContent = (
         <div className='center-object'>
-          <Chart yMin={0} xMax={5} legend={true} data={data} />
+          <Chart yMin={3000} xMax={5} legend={true} data={data} />
         </div>
       );
     }

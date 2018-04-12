@@ -7,7 +7,7 @@ import Button from './button';
 import YearSummaryList from './year-summary-list';
 import { fetchPortfolio } from '../actions/portfolio';
 
-let numeral = require('numeral');
+const numeral = require('numeral');
 
 export class Portfolio extends React.Component {    
     componentDidMount() {
@@ -54,7 +54,7 @@ export class Portfolio extends React.Component {
                     <h3 className='secondary-heading primary-text-color'>Current Worth: ${currentFundFormat}</h3>
                     <section>
                         <YearSummaryList />
-                        <Chart yMin={0} xMax={5} data={data} />
+                        <Chart yMin={3000} xMax={5} data={data} />
                     </section>
                 </div>
             )
