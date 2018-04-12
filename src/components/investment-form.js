@@ -18,8 +18,12 @@ export class InvestmentForm extends React.Component {
     }
 
     invest = () => {
-        this.props.dispatch(investFunds(this.props.riskChoice, this.props.year + 1, this.props.currentFund));
-        this.props.dispatch(incrementYear());
+        if (this.props.riskChoice === null) {
+            alert('Please select an investment strategy in order to continue.');
+        } else {
+            this.props.dispatch(investFunds(this.props.riskChoice, this.props.year + 1, this.props.currentFund));
+            this.props.dispatch(incrementYear());
+        }
     }
 
     onChange = event => {
@@ -27,12 +31,17 @@ export class InvestmentForm extends React.Component {
     }
 
     render() {
+        let linkDestination = '/market-analysis';
+        
+        if (this.props.riskChoice === null) {
+            linkDestination = '/investment-form';
+        }
+
         if (this.props.year >= 5){
             return (
-                <CompletedLevelOne/>
+                <CompletedLevelOne />
             );
-        }
-        else {
+        } else {
             let currentFundFormat = numeral(this.props.currentFund).format('0,0');
             return (
                 <div className="small-viewport">
@@ -62,7 +71,7 @@ export class InvestmentForm extends React.Component {
                         </div>    
                     </fieldset>
                     <div className='right-align-object'>
-                        <Link to='/market-analysis'>
+                        <Link to={linkDestination}>
                             <Button class='blue-button' name='Invest' handleClick={this.invest} />
                         </Link>   
                     </div>
