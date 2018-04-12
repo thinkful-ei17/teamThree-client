@@ -1,4 +1,4 @@
-@media (max-width: 628px){
+@media (max-width: 674px){
 
     .html {
         width: 100%;
@@ -7,11 +7,12 @@
     .header-ul {
         height: 132px;
         background-color: #192C4D;
+        padding-right: .5em;
+        padding-left: .5em;
         position: fixed;
     }
     .header-links {
         width: 100%;
-        justify-content: space-between;
         align-items: baseline;
         margin-bottom: 1em;
     }
@@ -23,4 +24,10 @@
     }
 
     
+}
+
+@media (max-width: 730px){
+    .appname {
+        margin-right: .2em;
+    }
 }
