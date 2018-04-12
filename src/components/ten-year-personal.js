@@ -8,6 +8,8 @@ import Chart from "./chart";
 
 import { fetchPortfolio, restartLevel1 } from "../actions/portfolio";
 
+const numeral = require('numeral');
+
 export class TenYearPersonal extends React.Component {
   componentDidMount() {
     if (this.props.portfolio === null) {
@@ -24,28 +26,37 @@ export class TenYearPersonal extends React.Component {
       currentFund,
       overallChange,
       overallGrowth,
-      investmentReturnContent;
+      investmentReturnContent,
+      currentFundFormat,
+      overallChangeFormat,
+      initialAmount;
     
     if (this.props.data) {
       currentFund = this.props.currentFund;
-
+      initialAmount = this.props.data[0].y;
       overallChange = currentFund - 5000;
       overallGrowth = Math.round((overallChange/5000) * 100);
 
       let investmentData = this.props.data.slice(1);
-      console.log("investmentData = ", investmentData)
 
-      listItems = investmentData.map((year, index) => (
+      currentFundFormat = numeral(currentFund).format('0,0');
+      overallChangeFormat = numeral(overallChange).format('0,0');
+
+      listItems = investmentData.map((year, index) => {
+        const yFormat = numeral(year.y).format('0,0');
+        const previousYearFormat = numeral(year.previousYear).format('0,0');
+        return (
           <li key={index} className="blurb-wrapper">
             Year {year.x}: {year.strategy}
             <br />
-            Start: ${year.previousYear}
+            Start: ${previousYearFormat}
             <br />
-            End: ${year.y}
+            End: ${yFormat}
             <br />
             Change: {year.growth}%
           </li>
-      ));
+        )  
+      });
       const data = [
         {
           color: "#783DB8",
@@ -110,11 +121,10 @@ export class TenYearPersonal extends React.Component {
       );
     }
     return (
-      //line graph
       <div className="portfolio-view viewport">
         <h2 className='primary-heading'>Ten Year Personal Summary:</h2>
-        <h3 className='secondary-heading primary-text-color'>Your Portfolio Worth: ${currentFund}</h3>
-        <h3 className='descriptive-content accent-dk-green'>Change: ${overallChange}</h3>
+        <h3 className='secondary-heading primary-text-color'>Your Portfolio Worth: ${currentFundFormat}</h3>
+        <h3 className='descriptive-content accent-dk-green'>Change: ${overallChangeFormat}</h3>
         <h3 className='descriptive-content accent-dk-green'>Growth: {overallGrowth}%</h3>
         <h3 className='secondary-heading primary-text-color'>Your Investment Strategy Vs Optimal Investment Strategy:</h3>
         {investmentReturnContent}
@@ -215,13 +225,15 @@ export class TenYearPersonal extends React.Component {
               Change: 42.36%
             </li>
         </ul>
-        <Link to='/investment-form'>
-          <Button class='green-button' name='Start Over' handleClick={this.startOver}/>
-        </Link>
+        <div className='right-align-object'>
+          <Link to='/investment-form'>
+            <Button class='green-button' name='Start Over' handleClick={this.startOver}/>
+          </Link>
         </div>
-      );
-    }
+      </div>
+    );
   }
+}
 
   const mapStateToProps = state => {
   return {

@@ -43,8 +43,8 @@ export class FiveYearPersonal extends React.Component {
       overallChangeFormat = numeral(overallChange).format('0,0');
 
       listItems = investmentData.map((year, index) => {
-        let yFormat = numeral(year.y).format('0,0');
-        let previousYearFormat = numeral(year.previousYear).format('0,0');
+        const yFormat = numeral(year.y).format('0,0');
+        const previousYearFormat = numeral(year.previousYear).format('0,0');
         return (
           <li key={index} className="blurb-wrapper">
             Year {year.x}: {year.strategy}
@@ -160,15 +160,15 @@ export class FiveYearPersonal extends React.Component {
             </li>
         </ul>
 
-          <div className='right-align-object'>
-            <Link to='/completed-level-one'>
-              <Button class='blue-button' name='Continue' handleClick={this.completeLvl1}/>
-            </Link>
-          </div>  
-        </div>
-      );
-    }
+        <div className='right-align-object'>
+          <Link to='/completed-level-one'>
+            <Button class='blue-button' name='Continue' handleClick={this.completeLvl1}/>
+          </Link>
+        </div>  
+      </div>
+    );
   }
+}
 
   const mapStateToProps = state => {
   return {
