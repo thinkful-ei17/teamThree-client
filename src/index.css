@@ -143,6 +143,7 @@ body {
     background-color: #3478A2;
     color: #EDF8E8;
     width: 15em;
+    min-width: 260px;
     max-width: 48%;
     font-size: 1.3em;
     border-radius: 10px;
@@ -154,6 +155,7 @@ body {
     background-color: #5DCB6E ;
     color: #0C1F27;
     width: 15em;
+    min-width: 260px;
     max-width: 48%;
     font-size: 1.3em;
     border-radius: 10px;
