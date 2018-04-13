@@ -118,6 +118,9 @@
         flex-wrap: wrap;
     }
 
+    .blurb-wrapper {
+        width: 170px;
+    }
 
     /* -- Alignment ----------------- */
     .small-center {
