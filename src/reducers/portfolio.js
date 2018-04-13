@@ -75,6 +75,7 @@ export function portfolioReducer(state = initialState, action) {
       });
     } else if (action.type === INVEST_FUNDS_SUCCESS) {
       return Object.assign({}, state, {
+        riskChoice: null,
         loading: false,
         error: null
       });

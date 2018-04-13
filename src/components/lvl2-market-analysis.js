@@ -26,16 +26,44 @@ export class Lvl2MarketAnalysis extends React.Component {
         if(this.props.risks !== null) {
     
           marketRecap = (
-            <section className='vector-wrapper'>
-              <p className='blurb-wrapper'>Aggressive: {this.props.risks[3].gain}%</p>
-              <p className='blurb-wrapper'>Moderate: {this.props.risks[2].gain}%</p>
-              <p className='blurb-wrapper'>Conservative: {this.props.risks[1].gain}%</p>
-              <p className='blurb-wrapper'>Mattress: 0.0%</p>
-              <p className='blurb-wrapper'>Google: {this.props.risks[4].gain}%</p>
-              <p className='blurb-wrapper'>AutoZone: {this.props.risks[5].gain}%</p>
-              <p className='blurb-wrapper'>Dollar Tree: {this.props.risks[7].gain}%</p>
-              <p className='blurb-wrapper'>Electronic Arts: {this.props.risks[6].gain}%</p>
-            </section> 
+            <div>
+                <section className='vector-wrapper market-width'>
+                    <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
+                        <h4>Aggressive:</h4>
+                        <p className='no-margins margin-bottom'>{this.props.risks[3].gain}%</p>
+                    </div>
+                    <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
+                        <h4>Moderate:</h4>
+                        <p className='no-margins margin-bottom'>{this.props.risks[2].gain}%</p>
+                    </div>  
+                    <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
+                        <h4>Conservative:</h4>
+                        <p className='no-margins margin-bottom'>{this.props.risks[1].gain}%</p>
+                    </div>  
+                    <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
+                        <h4>Mattress:</h4>   
+                        <p className='no-margins margin-bottom'>0.0%</p>
+                    </div>
+                </section> 
+                <section className='vector-wrapper market-width'>
+                    <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
+                    <h4>Google:</h4>
+                    <p className='no-margins margin-bottom'>{this.props.risks[4].gain}%</p>
+                    </div>
+                    <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
+                    <h4>AutoZone:</h4>
+                    <p className='no-margins margin-bottom'>{this.props.risks[5].gain}%</p>
+                    </div>  
+                    <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
+                    <h4>Dollar Tree:</h4>
+                    <p className='no-margins margin-bottom'>{this.props.risks[7].gain}%</p>
+                    </div>  
+                    <div className='blurb-wrapper primary-text-color list-item-heading market-width'>
+                    <h4>Electronic Arts:</h4>   
+                    <p className='no-margins margin-bottom'>{this.props.risks[6].gain}%</p>
+                    </div>
+                </section>
+            </div>
           );
         }
 
@@ -44,13 +72,15 @@ export class Lvl2MarketAnalysis extends React.Component {
         };
 
         return(
-        <div className='viewport'>  
+        <div className='medium-viewport'>  
             <h2 className='primary-heading'>Market Analysis: Year {this.props.year}</h2>
             <h3 className='secondary-heading primary-text-color'>Annual Percent Growth</h3>
             {marketRecap}
-            <Link to='/lvl2-investment-return'>
-                <Button class='blue-button' name="View Investment Returns" handleClick={handleClick}/>
-            </Link>
+            <div className='right-align-object margin-top padding-right'>
+                <Link to='/lvl2-investment-return'>
+                    <Button class='blue-button' name="View Your Returns" handleClick={handleClick}/>
+                </Link>
+            </div>
         </div>  
         );
     }

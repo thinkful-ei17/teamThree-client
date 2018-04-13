@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 const numeral = require('numeral');
 
 export function YearSummaryList(props){
-    const years = props.years.slice(1);
+    const years = props.years.slice(props.start, props.end);
     const yearList = years.map( year => {
-        let previousYearFormat = numeral(year.previousYear).format('0,0');
-        let yFormat = numeral(year.y).format('0,0');
+        const previousYearFormat = numeral(year.previousYear).format('0,0');
+        const yFormat = numeral(year.y).format('0,0');
         return(
             <li key={year.x} className='year-summary-item blurb-wrapper portfolio-width left-align-object padding portfolio-width'>
                 Year {year.x}: 

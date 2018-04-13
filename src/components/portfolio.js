@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import requiresLogin from './requires-login';
 import Chart from './chart';
 import Button from './button';
 import YearSummaryList from './year-summary-list';
+
 import { fetchPortfolio } from '../actions/portfolio';
 
 const numeral = require('numeral');
@@ -42,18 +44,19 @@ export class Portfolio extends React.Component {
             handleClick = this.toInvestmentForm;
         }
         if (this.props.data) {
-            let currentFundFormat = numeral(this.props.currentFund).format('0,0');
-          const data = [
+            const currentFundFormat = numeral(this.props.currentFund).format('0,0');
+            const data = [
                 {									
                     color: '#C24275', 
                     points: this.props.data
                 }
             ];
+
             portfolioContent = (
                 <div>
                     <h3 className='secondary-heading primary-text-color'>Current Worth: ${currentFundFormat}</h3>
                     <section>
-                        <YearSummaryList />
+                        <YearSummaryList start={1} end={6} />
                         <Chart yMin={3000} xMax={5} data={data} />
                     </section>
                 </div>
@@ -62,14 +65,14 @@ export class Portfolio extends React.Component {
 
         return (
             <div className='viewport'> 
-            <h2 className='primary-heading'>Your Investment Portfolio</h2>
-            {portfolioContent}
-            <Link to='/market-analysis' >
-                <Button class='green-button' name='Review Investment Data' handleClick={this.toInvestmentData}/>
-            </Link>
-            <Link to={investmentLink}>
-                <Button class='blue-button' name={name} handleClick={handleClick}/> 
-            </Link>
+                <h2 className='primary-heading'>Your Investment Portfolio</h2>
+                {portfolioContent}
+                <Link to='/market-analysis' >
+                    <Button class='green-button' name='Review Investment Data' handleClick={this.toInvestmentData}/>
+                </Link>
+                <Link to={investmentLink}>
+                    <Button class='blue-button' name={name} handleClick={handleClick}/> 
+                </Link>
             </div> 
         );
     }  

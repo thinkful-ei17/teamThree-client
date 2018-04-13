@@ -2,10 +2,13 @@ import React from "react";
 
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
+
 import Button from "./button";
 import Chart from "./chart";
 
 import { fetchPortfolio, restartLevel1 } from "../actions/portfolio";
+
+const numeral = require('numeral');
 
 export class TenYearPersonal extends React.Component {
   componentDidMount() {
@@ -19,32 +22,58 @@ export class TenYearPersonal extends React.Component {
   }
 
   render() {
-    let listItems,
+    let listItemsToYear5,
+      listItemsFromYear6To10,
       currentFund,
       overallChange,
       overallGrowth,
-      investmentReturnContent;
+      investmentReturnContent,
+      currentFundFormat,
+      overallChangeFormat;
     
     if (this.props.data) {
       currentFund = this.props.currentFund;
-
       overallChange = currentFund - 5000;
       overallGrowth = Math.round((overallChange/5000) * 100);
 
-      let investmentData = this.props.data.slice(1);
-      console.log("investmentData = ", investmentData)
+      let investmentDataToYear5 = this.props.data.slice(1,6);
+      let investmentDataFromYear6To10 = this.props.data.slice(6,11);
 
-      listItems = investmentData.map((year, index) => (
+      currentFundFormat = numeral(currentFund).format('0,0');
+      overallChangeFormat = numeral(overallChange).format('0,0');
+
+      listItemsToYear5 = investmentDataToYear5.map((year, index) => {
+        const yFormat = numeral(year.y).format('0,0');
+        const previousYearFormat = numeral(year.previousYear).format('0,0');
+        return (
           <li key={index} className="blurb-wrapper">
             Year {year.x}: {year.strategy}
             <br />
-            Start: ${year.previousYear}
+            Start: ${previousYearFormat}
             <br />
-            End: ${year.y}
+            End: ${yFormat}
             <br />
             Change: {year.growth}%
           </li>
-      ));
+        )  
+      });
+
+      listItemsFromYear6To10 = investmentDataFromYear6To10.map((year, index) => {
+        const yFormat = numeral(year.y).format('0,0');
+        const previousYearFormat = numeral(year.previousYear).format('0,0');
+        return (
+          <li key={index} className="blurb-wrapper">
+            Year {year.x}: {year.strategy}
+            <br />
+            Start: ${previousYearFormat}
+            <br />
+            End: ${yFormat}
+            <br />
+            Change: {year.growth}%
+          </li>
+        )  
+      });
+
       const data = [
         {
           color: "#783DB8",
@@ -109,118 +138,124 @@ export class TenYearPersonal extends React.Component {
       );
     }
     return (
-      //line graph
       <div className="portfolio-view viewport">
         <h2 className='primary-heading'>Ten Year Personal Summary:</h2>
-        <h3 className='secondary-heading primary-text-color'>Your Portfolio Worth: ${currentFund}</h3>
-        <h3 className='descriptive-content accent-dk-green'>Change: ${overallChange}</h3>
+        <h3 className='secondary-heading primary-text-color'>Your Portfolio Worth: ${currentFundFormat}</h3>
+        <h3 className='descriptive-content accent-dk-green'>Change: ${overallChangeFormat}</h3>
         <h3 className='descriptive-content accent-dk-green'>Growth: {overallGrowth}%</h3>
         <h3 className='secondary-heading primary-text-color'>Your Investment Strategy Vs Optimal Investment Strategy:</h3>
         {investmentReturnContent}
         <h3 className='secondary-heading primary-text-color'> Your Investment Strategy by Year:</h3>
         <ul className="vector-wrapper">
-          {listItems}
+          {listItemsToYear5}
+        </ul>
+        <ul className="vector-wrapper">
+          {listItemsFromYear6To10}
         </ul>
         <h3 className='secondary-heading primary-text-color'> Optimal Investment Strategy By Year:</h3>
         <ul className="vector-wrapper">
-            <li className="blurb-wrapper">
-              Year 1: Conservative
-              <br />
-              Start: $5,000
-              <br />
-              End: $5,409
-              <br />
-              Change: 8.18%
-            </li>
-            <li className="blurb-wrapper">
-              Year 2: Mattress
-              <br />
-              Start: $5,409
-              <br />
-              End: $5,409
-              <br />
-              Change: 0%
-            </li>
-            <li className="blurb-wrapper">
-              Year 3: Aggressive
-              <br />
-              Start: $5,409
-              <br />
-              End: $6,761
-              <br />
-              Change: 24.99%
-            </li>
-            <li className="blurb-wrapper">
-              Year 4: Aggressive
-              <br />
-              Start: $6,761
-              <br />
-              End: $7,779
-              <br />
-              Change: 15.06%
-            </li>
-            <li className="blurb-wrapper">
-              Year 5: Moderate
-              <br />
-              Start: $7,779
-              <br />
-              End: $8,113
-              <br />
-              Change: 4.29%
-            </li>
-            <li className="blurb-wrapper">
-              Year 6: Dollar Tree
-              <br />
-              Start: $8,113
-              <br />
-              End: $12,085
-              <br />
-              Change: 48.96%
-            </li>
-            <li className="blurb-wrapper">
-              Year 7: Aggressive
-              <br />
-              Start: $12,085
-              <br />
-              End: $14,647
-              <br />
-              Change: 21.2%
-            </li>
-            <li className="blurb-wrapper">
-              Year 8: Google
-              <br />
-              Start: $14,647
-              <br />
-              End: $22,710
-              <br />
-              Change: 55.05%
-            </li>
-            <li className="blurb-wrapper">
-              Year 9: Electronic Arts
-              <br />
-              Start: $22,710
-              <br />
-              End: $46,799
-              <br />
-              Change: 106.07%
-            </li>
-            <li className="blurb-wrapper">
-              Year 10: Electronic Arts
-              <br />
-              Start: $46,799
-              <br />
-              End: $66,624
-              <br />
-              Change: 42.36%
-            </li>
+          <li className="blurb-wrapper">
+            Year 1: Conservative
+            <br />
+            Start: $5,000
+            <br />
+            End: $5,409
+            <br />
+            Change: 8.18%
+          </li>
+          <li className="blurb-wrapper">
+            Year 2: Mattress
+            <br />
+            Start: $5,409
+            <br />
+            End: $5,409
+            <br />
+            Change: 0%
+          </li>
+          <li className="blurb-wrapper">
+            Year 3: Aggressive
+            <br />
+            Start: $5,409
+            <br />
+            End: $6,761
+            <br />
+            Change: 24.99%
+          </li>
+          <li className="blurb-wrapper">
+            Year 4: Aggressive
+            <br />
+            Start: $6,761
+            <br />
+            End: $7,779
+            <br />
+            Change: 15.06%
+          </li>
+          <li className="blurb-wrapper">
+            Year 5: Moderate
+            <br />
+            Start: $7,779
+            <br />
+            End: $8,113
+            <br />
+            Change: 4.29%
+          </li>
         </ul>
-        <Link to='/investment-form'>
-          <Button class='green-button' name='Start Over' handleClick={this.startOver}/>
-        </Link>
+        <ul className="vector-wrapper">
+          <li className="blurb-wrapper">
+            Year 6: Dollar Tree
+            <br />
+            Start: $8,113
+            <br />
+            End: $12,085
+            <br />
+            Change: 48.96%
+          </li>
+          <li className="blurb-wrapper">
+            Year 7: Aggressive
+            <br />
+            Start: $12,085
+            <br />
+            End: $14,647
+            <br />
+            Change: 21.2%
+          </li>
+          <li className="blurb-wrapper">
+            Year 8: Google
+            <br />
+            Start: $14,647
+            <br />
+            End: $22,710
+            <br />
+            Change: 55.05%
+          </li>
+          <li className="blurb-wrapper">
+            Year 9: Electronic Arts
+            <br />
+            Start: $22,710
+            <br />
+            End: $46,799
+            <br />
+            Change: 106.07%
+          </li>
+          <li className="blurb-wrapper">
+            Year 10: Electronic Arts
+            <br />
+            Start: $46,799
+            <br />
+            End: $66,624
+            <br />
+            Change: 42.36%
+          </li>
+        </ul>
+        <div className='right-align-object'>
+          <Link to='/investment-form'>
+            <Button class='green-button' name='Start Over' handleClick={this.startOver}/>
+          </Link>
         </div>
-      );
-    }
+      </div>
+    );
   }
+}
 
   const mapStateToProps = state => {
   return {
