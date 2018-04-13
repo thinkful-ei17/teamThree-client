@@ -18,8 +18,12 @@ export class InvestmentForm extends React.Component {
     }
 
     invest = () => {
-        this.props.dispatch(investFunds(this.props.riskChoice, this.props.year + 1, this.props.currentFund));
-        this.props.dispatch(incrementYear());
+        if (this.props.riskChoice === null) {
+            alert('Please select an investment strategy in order to continue.');
+        } else {
+            this.props.dispatch(investFunds(this.props.riskChoice, this.props.year + 1, this.props.currentFund));
+            this.props.dispatch(incrementYear());
+        }
     }
 
     onChange = event => {
@@ -27,12 +31,17 @@ export class InvestmentForm extends React.Component {
     }
 
     render() {
+        let linkDestination = '/market-analysis';
+        
+        if (this.props.riskChoice === null) {
+            linkDestination = '/investment-form';
+        }
+
         if (this.props.year >= 5){
             return (
-                <CompletedLevelOne/>
+                <CompletedLevelOne />
             );
-        }
-        else {
+        } else {
             let currentFundFormat = numeral(this.props.currentFund).format('0,0');
             return (
                 <div className="small-viewport">
@@ -42,7 +51,7 @@ export class InvestmentForm extends React.Component {
                     
                     <fieldset className='radio-button-container no-border no-padding margin-bottom'>
                         <legend className="secondary-heading primary-text-color margin-bottom  margin-left-med">How would you like to invest this year?</legend>
-                        <div className='margin-left-large'>
+                        <div className='margin-left-extra-large'>
                             <label className="descriptive-content primary-text-color radio-button-label" htmlFor='rb1'>Aggressive
                                 <input className='native-button' type='radio' name='strategy' id='rb1' value='Aggressive' onChange={this.onChange.bind(this)} />
                                 <span className='custom-radio-button'></span>
@@ -62,7 +71,7 @@ export class InvestmentForm extends React.Component {
                         </div>    
                     </fieldset>
                     <div className='right-align-object'>
-                        <Link to='/market-analysis'>
+                        <Link to={linkDestination}>
                             <Button class='blue-button' name='Invest' handleClick={this.invest} />
                         </Link>   
                     </div>

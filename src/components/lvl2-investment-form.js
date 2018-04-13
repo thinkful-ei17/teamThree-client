@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import requiresLogin from './requires-login';
-import CompletedLevelOne from './completed-level-one';
 import Button from './button';
 
 import { fetchPortfolio, updateInvestmentStrategy, blankInvestmentStrategyEntry, investFundsLvl2, incrementYear } from '../actions/portfolio';
@@ -63,7 +62,7 @@ export class Lvl2InvestmentForm extends React.Component {
     }
 
     strictParseIntCheck = value => {
-        if (/^(\-|\+)?([0-9]+(\.[0-9]+)?|Infinity)$/
+        if (/^(-|\+)?([0-9]+(\.[0-9]+)?|Infinity)$/
           .test(value))
           return Number(value);
       return NaN;
@@ -74,15 +73,11 @@ export class Lvl2InvestmentForm extends React.Component {
         const { unassigned, aggressive, moderate, conservative, mattress, google, autoZone, dollarTree, ea } = this.props;
 
         let lvl2MarketAnalysis = '/lvl2-investment-form';
-        let unassignedTrackerStyles = 'secondary-heading margin-bottom margin-left-med primary-text-color'
+        let unassignedTrackerStyles = 'secondary-heading margin-bottom margin-left-extra-large graph-pink'
 
         if (unassigned === 0) {
             lvl2MarketAnalysis = '/lvl2-market-analysis';
-            unassignedTrackerStyles = 'secondary-heading margin-bottom margin-left-med accent-med-green'
-        } 
-        
-        if (unassigned < 0) {
-            unassignedTrackerStyles = 'secondary-heading margin-bottom margin-left-med graph-pink'
+            unassignedTrackerStyles = 'secondary-heading margin-bottom margin-left-extra-large accent-med-green'
         }
 
         const currentFundFormat = numeral(this.props.currentFund).format('0,0');

@@ -8,6 +8,8 @@ import Button from './button';
 
 import { fetchPortfolio } from '../actions/portfolio';
 
+const numeral = require('numeral');
+
 export class Lvl2InvestmentReturn extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchPortfolio());
@@ -43,44 +45,58 @@ export class Lvl2InvestmentReturn extends React.Component {
         }
 
         if (portfolio) {
+            let previousFundFormat = numeral(previousFund).format('0,0');
+            let currentFundFormat = numeral(currentFund).format('0,0');
+
             const data = [
                 {									
                     points: portfolio,
                     color: '#C24275'
                 }
             ];
-            let growth,
-                strategy;
+
+            let growth;
 
             if (portfolio[year]) {
                 growth = portfolio[year].growth;
-                strategy = portfolio[year].strategy;
             }
             
             investmentReturnContent = (
                 <div>    
                     <h2 className='primary-heading'>Investment Returns: Year {year}</h2>
                     <Chart yMin={0} xMax={10} data={data} />
-                    <h3 className='secondary-heading primary-text-color'>Investment Strategy Year {year}</h3>
-                    <h3 className='secondary-heading primary-text-color'>Portfolio Review:</h3>
-                    <div className="vector-wrapper">
-                        <div className='blurb-wrapper secondary-heading'>Start: ${previousFund}</div>
-                        <div className='blurb-wrapper secondary-heading'>Growth: {growth}%</div>
-                        <div className='blurb-wrapper secondary-heading'>End: ${currentFund}</div>
+
+                    <h3 className='secondary-heading primary-text-color'>Portfolio Summary Year {year}:</h3>
+
+                    <div className="vector-wrapper flex-start">
+                        <div className='blurb-wrapper descriptive-content flex-row min-width-blurb'>
+                            <h4 className='margin-top'>Start: </h4>
+                            <p className='margin-left'> ${previousFundFormat}</p>
+                        </div>
+                        <div className='blurb-wrapper descriptive-content flex-row min-width-blurb'>
+                            <h4 className='margin-top'>Growth: </h4>
+                            <p className='margin-left'> {growth}%</p>
+                        </div>
+                        <div className='blurb-wrapper descriptive-content flex-row min-width-blurb'>
+                            <h4 className='margin-top'>End: </h4>
+                            <p className='margin-left'> ${currentFundFormat} </p>
+                        </div>
                     </div>
-                    <Link to='/lvl2-portfolio'>
-                        <Button class='green-button' name='Return to Portfolio' handleClick={this.returnToPortfolio} />
-                    </Link>
-                    <Link to={investmentLink}>
-                        <Button class='blue-button' name={name} handleClick={handleClick} />
-                    </Link>
+                    <div>
+                        <Link to='/lvl2-portfolio'>
+                            <Button class='green-button no-left-margin' name='Return to Portfolio' handleClick={this.returnToPortfolio} />
+                        </Link>
+                        <Link to={investmentLink}>
+                            <Button class='blue-button' name={name} handleClick={handleClick} />
+                        </Link>
+                    </div>
                 </div>
             )
         }
         
 
         return (
-            <div className="viewport">
+            <div className="medium-viewport">
                 {investmentReturnContent}    
             </div>
         );

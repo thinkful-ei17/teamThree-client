@@ -9,6 +9,8 @@ import Chart from "./chart";
 
 import { fetchLvl2RiskMarket } from "../actions/five-year-market";
 
+const numeral = require('numeral');
+
 export class Lvl2FiveYearMarket extends React.Component {
     componentWillMount() {
       this.props.dispatch(fetchLvl2RiskMarket(this.props.year5Amt));
@@ -41,112 +43,128 @@ export class Lvl2FiveYearMarket extends React.Component {
 
         listItemsAggressive = investmentData.filter(item => item.risk === 'Aggressive').map(risk => {
             id++;
+            const yFormat = numeral(risk.y).format('$0,0');
+            const amtChangeFormat = numeral(risk.amtChange).format('0,0');
             return (
               <li key={id} className="market-blurb-wrapper">
                 <div className='column-heading'>Year {risk.x}</div>
-                Balance: {risk.y}
+                Balance: {yFormat}
                 <br />
                 % Change: {risk.gain}
                 <br />
-                $ Change: {risk.amtChange}
+                $ Change: {amtChangeFormat}
               </li>
             )
       });
 
         listItemsConservative = investmentData.filter(item => item.risk === 'Conservative').map(risk => {
           id++;
+          const yFormat = numeral(risk.y).format('$0,0');
+          const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
             <li key={id} className="market-blurb-wrapper">
               <div className='column-heading'>Year {risk.x}</div>
-              Balance: {risk.y}
+              Balance: {yFormat}
               <br />
               % Change: {risk.gain}
               <br />
-              $ Change: {risk.amtChange}
+              $ Change: {amtChangeFormat}
             </li>
           )
         });
 
         listItemsModerate = investmentData.filter(item => item.risk === 'Moderate').map(risk => {
           id++;
+          const yFormat = numeral(risk.y).format('$0,0');
+          const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
             <li key={id} className="market-blurb-wrapper">
               <div className='column-heading'>Year {risk.x}</div>
-              Balance: {risk.y}
+              Balance: {yFormat}
               <br />
               % Change: {risk.gain}
               <br />
-              $ Change: {risk.amtChange}
+              $ Change: {amtChangeFormat}
             </li>
           )
         });
 
         listItemsMattress = investmentData.filter(item => item.risk === 'Mattress').map(risk => {
           id++;
+          const yFormat = numeral(risk.y).format('$0,0');
+          const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
             <li key={id} className="market-blurb-wrapper">
               <div className='column-heading'>Year {risk.x}</div>
-              Balance: {risk.y}
+              Balance: {yFormat}
               <br />
               % Change: {risk.gain}
               <br />
-              $ Change: {risk.amtChange}
+              $ Change: {amtChangeFormat}
             </li>
           )
         });
 
         listItemsGoogle = investmentData.filter(item => item.risk === 'Google').map(risk => {
           id++;
+          const yFormat = numeral(risk.y).format('$0,0');
+          const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
             <li key={id} className="market-blurb-wrapper">
               <div className='column-heading'>Year {risk.x}</div>
-              Balance: {risk.y}
+              Balance: {yFormat}
               <br />
               % Change: {risk.gain}
               <br />
-              $ Change: {risk.amtChange}
+              $ Change: {amtChangeFormat}
             </li>
           )
         });
 
         listItemsAutoZone = investmentData.filter(item => item.risk === 'AutoZone').map(risk => {
           id++;
+          const yFormat = numeral(risk.y).format('$0,0');
+          const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
             <li key={id} className="market-blurb-wrapper">
               <div className='column-heading'>Year {risk.x}</div>
-              Balance: {risk.y}
+              Balance: {yFormat}
               <br />
               % Change: {risk.gain}
               <br />
-              $ Change: {risk.amtChange}
+              $ Change: {amtChangeFormat}
             </li>
           )
         });
 
         listItemsDollarTree = investmentData.filter(item => item.risk === 'Dollar Tree').map(risk => {
           id++;
+          const yFormat = numeral(risk.y).format('$0,0');
+          const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
             <li key={id} className="market-blurb-wrapper">
               <div className='column-heading'>Year {risk.x}</div>
-              Balance: {risk.y}
+              Balance: {yFormat}
               <br />
               % Change: {risk.gain}
               <br />
-              $ Change: {risk.amtChange}
+              $ Change: {amtChangeFormat}
             </li>
           )
         });
 
         listItemsElectronicArts = investmentData.filter(item => item.risk === 'Electronic Arts').map(risk => {
           id++;
+          const yFormat = numeral(risk.y).format('$0,0');
+          const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
             <li key={id} className="market-blurb-wrapper">
               <div className='column-heading'>Year {risk.x}</div>
-              Balance: {risk.y}
+              Balance: {yFormat}
               <br />
               % Change: {risk.gain}
               <br />
-              $ Change: {risk.amtChange}
+              $ Change: {amtChangeFormat}
             </li>
           )
         });
@@ -263,7 +281,6 @@ export class Lvl2FiveYearMarket extends React.Component {
 
       }
       return (
-        //line graph
         <div className="market-view viewport">
           <h2 className='primary-heading'>Level 2 Five Year Market Summary:</h2>
           {investmentReturnContent}
@@ -300,12 +317,14 @@ export class Lvl2FiveYearMarket extends React.Component {
           <ul className="market-vector-wrapper">
              {listItemsElectronicArts}
           </ul>
+          <div className='right-align-object'>  
             <Link to='/ten-year-personal'>
-                <Button class='blue-button' name="Compare Personal Success" handleClick={ () => false} />
+                <Button class='blue-button margin-right' name="Compare Personal Success" handleClick={ () => false} />
             </Link>
           </div>
-        );
-      } 
+        </div>
+      );
+    } 
   }
 
 const mapStateToProps = state => {
