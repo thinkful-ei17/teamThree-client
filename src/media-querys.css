@@ -27,6 +27,11 @@
         z-index: 10;
     }
 
+    /* ======= INTRO ============ */
+
+    .intro-button-alignment {
+        padding-right: 0; 
+    }
     /* ========= RISK BREAKDOWN =========== */
    
     .risk-overview-container {
