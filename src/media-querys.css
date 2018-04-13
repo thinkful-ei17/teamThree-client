@@ -15,7 +15,7 @@
     /* ======== HEADER SPECIFIC ======== */
 
     .header-ul {
-        height: 132px;
+        height: 145px;
         background-color: #192C4D;
         padding-right: .5em;
         padding-left: .5em;
@@ -60,6 +60,9 @@
     .market-width {
         width: 150px;
     }
+
+    /* ==== LVL2 INVESTMENT FORM ==== */
+
 
 
     /* ========= GENERAL ============ */
@@ -136,6 +139,14 @@
 
     .right-align-object {
         margin-right: .8em;
+    }
+
+    .small-width-150 {
+        width: 150px;
+    }
+
+    .small-height-150 {
+        height: 150px;
     }
 
     /* -- Padding ------------ */
