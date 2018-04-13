@@ -38,7 +38,7 @@ export class InvestmentForm extends React.Component {
                 <div className="small-viewport">
                     <h2 className="primary-heading">Year {this.props.year + 1}</h2>
 
-                    <h3 className="secondary-heading primary-text-color margin-left-large">Current Fund: ${currentFundFormat}</h3>
+                    <h3 className="secondary-heading primary-text-color margin-left-large small-center">Current Fund: ${currentFundFormat}</h3>
                     
                     <fieldset className='radio-button-container no-border no-padding margin-bottom small-width small-center'>
                         <legend className="secondary-heading primary-text-color margin-bottom  margin-left-med">How would you like to invest this year?</legend>

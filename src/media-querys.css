@@ -84,11 +84,15 @@
         width: 85%;
     }
 
+    .right-align-object {
+        margin-right: .8em;
+    }
 
     /* ====== TEXT ============ */
 
     .primary-heading {
-        margin-left: .24em;
+        text-align: left;
+        margin-left: .8em;
     }
 
     .smaller-heading {
