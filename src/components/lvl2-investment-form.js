@@ -73,11 +73,11 @@ export class Lvl2InvestmentForm extends React.Component {
         const { unassigned, aggressive, moderate, conservative, mattress, google, autoZone, dollarTree, ea } = this.props;
 
         let lvl2MarketAnalysis = '/lvl2-investment-form';
-        let unassignedTrackerStyles = 'secondary-heading margin-bottom margin-left-extra-large graph-pink'
+        let unassignedTextColor = 'graph-pink'
 
         if (unassigned === 0) {
             lvl2MarketAnalysis = '/lvl2-market-analysis';
-            unassignedTrackerStyles = 'secondary-heading margin-bottom margin-left-extra-large accent-med-green'
+            unassignedTextColor = 'accent-med-green'
         }
 
         const currentFundFormat = numeral(this.props.currentFund).format('0,0');
@@ -89,7 +89,7 @@ export class Lvl2InvestmentForm extends React.Component {
                 <h3 className="secondary-heading primary-text-color margin-left-large">Current Fund: ${currentFundFormat}</h3>
 
                 <h3 className="secondary-heading primary-text-color margin-bottom  margin-left-med">How would you like to invest this year?</h3>
-                <h3 className={unassignedTrackerStyles}>{unassigned}% Unassigned</h3>
+                <h3 className='secondary-heading primary-text-color margin-bottom margin-left-extra-large'><span className={unassignedTextColor}>{unassigned}%</span> Unassigned</h3>
                 <fieldset className='investment-input-container no-border no-padding margin-bottom'>
                     <div className='margin-left-large flex justify-around'>
                         <div>
