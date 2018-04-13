@@ -46,7 +46,7 @@ export class FiveYearPersonal extends React.Component {
         const yFormat = numeral(year.y).format('0,0');
         const previousYearFormat = numeral(year.previousYear).format('0,0');
         return (
-          <li key={index} className="blurb-wrapper">
+          <li key={index} className="blurb-wrapper left-align-object">
             Year {year.x}: {year.strategy}
             <br />
             Start: ${previousYearFormat}
@@ -113,7 +113,7 @@ export class FiveYearPersonal extends React.Component {
         </ul>
         <h3 className='secondary-heading primary-text-color small-half-margin-bottom'> Optimal Investment Strategy By Year:</h3>
         <ul className="vector-wrapper">
-            <li className="blurb-wrapper">
+            <li className="blurb-wrapper left-align-object">
               Year 1: Conservative
               <br />
               Start: $5,000
@@ -122,7 +122,7 @@ export class FiveYearPersonal extends React.Component {
               <br />
               Change: 8.18%
             </li>
-            <li className="blurb-wrapper">
+            <li className="blurb-wrapper left-align-object">
               Year 2: Mattress
               <br />
               Start: $5,409
@@ -131,7 +131,7 @@ export class FiveYearPersonal extends React.Component {
               <br />
               Change: 0%
             </li>
-            <li className="blurb-wrapper">
+            <li className="blurb-wrapper left-align-object">
               Year 3: Aggressive
               <br />
               Start: $5,409
@@ -140,7 +140,7 @@ export class FiveYearPersonal extends React.Component {
               <br />
               Change: 24.99%
             </li>
-            <li className="blurb-wrapper">
+            <li className="blurb-wrapper left-align-object">
               Year 4: Aggressive
               <br />
               Start: $6,761
@@ -149,7 +149,7 @@ export class FiveYearPersonal extends React.Component {
               <br />
               Change: 15.06%
             </li>
-            <li className="blurb-wrapper">
+            <li className="blurb-wrapper left-align-object">
               Year 5: Moderate
               <br />
               Start: $7,779
