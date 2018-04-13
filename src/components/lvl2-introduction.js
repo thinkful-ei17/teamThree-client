@@ -8,41 +8,20 @@ import Button from './button';
 import { showIntroCard , nextIntroCard, lvl2IntroComplete } from '../actions/intro';
 
 export class Lvl2Introduction extends React.Component {
-  componentDidMount() {
-    this.props.dispatch(showIntroCard(this.props.numCard, this.props.introCard));
-    console.log('component did mount intro page');
-  }
-
-  nextCardClick = () => {
-    this.props.dispatch(nextIntroCard(this.props.numCard, this.props.introCard));
-    console.log('The button was clicked in intro page');
-  }
-
-  markLvl2IntroComplete = () => {
-		this.props.dispatch(lvl2IntroComplete());
-	};
-
-
   render() {
-    // let link = '';
-
-    // if(this.props.numCard === 3 || this.props.introComplete) {
-    //   link = '/lvl2-investment-form';
-    // }
-    
     return (
       <div className="introduction viewport">
         <div className="row">
             <section className="introduction">
               <header>
-                <h2 className="primary-heading">Level 2</h2>
+                <h2 className="primary-heading">Let's get more realistic...</h2>
               </header>
               <main>
-                {/* <section className='intro-description'>
-                  <p className="descriptive-content primary-text-color intro-description-p">{this.props.introCard[this.props.numCard].detailA}</p>
-                  <p className="descriptive-content primary-text-color intro-description-p">{this.props.introCard[this.props.numCard].detailB}</p>
-                  <p className="descriptive-content primary-text-color intro-description-p intro-emphasis">{this.props.introCard[this.props.numCard].detailC}</p>
-                </section> */}
+                <section className='intro-description'>
+                  <p className="descriptive-content primary-text-color intro-description-p">Rather than investing with a single strategy for the entire year, you can divide up your portfolio between the various strategies.</p>
+                  <p className="descriptive-content primary-text-color intro-description-p">Also in addition to being able to invest in managed funds, you can now invest in a set of specific companies.</p>
+                  <p className="descriptive-content primary-text-color intro-description-p intro-emphasis">Remember, diversification is still key.</p>
+                </section>
                 <div className='right-align-object'>
                     <Link to={'/lvl2-investment-form'}>
                         <Button class='blue-button' name="Let's Get Investing!" handleClick={this.markLvl2IntroComplete} />

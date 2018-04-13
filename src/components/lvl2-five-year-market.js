@@ -282,7 +282,7 @@ export class Lvl2FiveYearMarket extends React.Component {
       }
       return (
         <div className="market-view viewport">
-          <h2 className='primary-heading'>Level 2 Five Year Market Summary:</h2>
+          <h2 className='primary-heading'>Market Recap: Years 6-10</h2>
           {investmentReturnContent}
           <h2 className='secondary-heading primary-text-color'> Investment Outcomes By Year:</h2>
           <h3 className='descriptive-content primary-text-color'>Aggressive</h3>

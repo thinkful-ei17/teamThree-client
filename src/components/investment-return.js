@@ -36,7 +36,7 @@ export class InvestmentReturn extends React.Component {
 
         if (this.props.year === 5){
             investmentLink = '/five-year-market';
-            name = 'See Five Year Review';
+            name = 'See Market Recap';
             handleClick = this.toFiveYearReview;
         } else{
             investmentLink = '/investment-form';
