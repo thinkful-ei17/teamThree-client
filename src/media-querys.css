@@ -100,13 +100,18 @@
     .small-no-padding-right {
         padding: 0;
     }
+
     /* ====== TEXT ============ */
 
     .primary-heading {
         text-align: left;
-        margin-left: .8em;
+        margin-left: .6em;
     }
 
+    .secondary-heading {
+        text-align: left;
+        margin-left: 1em;
+    }
     .smaller-heading {
         font-size: 1.2em;
         font-weight: bold;
