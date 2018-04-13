@@ -46,7 +46,7 @@ export class Lvl2FiveYearMarket extends React.Component {
             const yFormat = numeral(risk.y).format('$0,0');
             const amtChangeFormat = numeral(risk.amtChange).format('0,0');
             return (
-              <li key={id} className="market-blurb-wrapper">
+              <li key={id} className="market-blurb-wrapper left-align-object">
                 <div className='column-heading'>Year {risk.x}</div>
                 Balance: {yFormat}
                 <br />
@@ -62,7 +62,7 @@ export class Lvl2FiveYearMarket extends React.Component {
           const yFormat = numeral(risk.y).format('$0,0');
           const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
-            <li key={id} className="market-blurb-wrapper">
+            <li key={id} className="market-blurb-wrapper left-align-object">
               <div className='column-heading'>Year {risk.x}</div>
               Balance: {yFormat}
               <br />
@@ -78,7 +78,7 @@ export class Lvl2FiveYearMarket extends React.Component {
           const yFormat = numeral(risk.y).format('$0,0');
           const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
-            <li key={id} className="market-blurb-wrapper">
+            <li key={id} className="market-blurb-wrapper left-align-object">
               <div className='column-heading'>Year {risk.x}</div>
               Balance: {yFormat}
               <br />
@@ -94,7 +94,7 @@ export class Lvl2FiveYearMarket extends React.Component {
           const yFormat = numeral(risk.y).format('$0,0');
           const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
-            <li key={id} className="market-blurb-wrapper">
+            <li key={id} className="market-blurb-wrapper left-align-object">
               <div className='column-heading'>Year {risk.x}</div>
               Balance: {yFormat}
               <br />
@@ -110,7 +110,7 @@ export class Lvl2FiveYearMarket extends React.Component {
           const yFormat = numeral(risk.y).format('$0,0');
           const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
-            <li key={id} className="market-blurb-wrapper">
+            <li key={id} className="market-blurb-wrapper left-align-object">
               <div className='column-heading'>Year {risk.x}</div>
               Balance: {yFormat}
               <br />
@@ -126,7 +126,7 @@ export class Lvl2FiveYearMarket extends React.Component {
           const yFormat = numeral(risk.y).format('$0,0');
           const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
-            <li key={id} className="market-blurb-wrapper">
+            <li key={id} className="market-blurb-wrapper left-align-object">
               <div className='column-heading'>Year {risk.x}</div>
               Balance: {yFormat}
               <br />
@@ -142,7 +142,7 @@ export class Lvl2FiveYearMarket extends React.Component {
           const yFormat = numeral(risk.y).format('$0,0');
           const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
-            <li key={id} className="market-blurb-wrapper">
+            <li key={id} className="market-blurb-wrapper left-align-object">
               <div className='column-heading'>Year {risk.x}</div>
               Balance: {yFormat}
               <br />
@@ -158,7 +158,7 @@ export class Lvl2FiveYearMarket extends React.Component {
           const yFormat = numeral(risk.y).format('$0,0');
           const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
-            <li key={id} className="market-blurb-wrapper">
+            <li key={id} className="market-blurb-wrapper left-align-object">
               <div className='column-heading'>Year {risk.x}</div>
               Balance: {yFormat}
               <br />
