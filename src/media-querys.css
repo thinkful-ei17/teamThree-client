@@ -140,9 +140,17 @@
         margin: 1em;
     }
 
+    .small-margin-top {
+        margin-top: 1em;
+    }
+    .small-no-margin-top {
+        margin-top: 0;
+    }
+
     .small-no-margin-bottom {
         margin-bottom: 0;
     }
+
 }
 /* +++++++++++ MID-SIZED SCREEN +++++++++++ */
 
