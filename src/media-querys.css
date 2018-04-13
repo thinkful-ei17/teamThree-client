@@ -38,10 +38,6 @@
         width: 85%;
     }
 
-    .risk-overview-container h3 {
-        margin-bottom: 0em;
-    }
-
     .risk-detail-units {
         display: inline-block;
         padding: .5em;
@@ -72,6 +68,34 @@
         justify-content: center;
     }
 
+   
+    /* ====== TEXT ============ */
+
+    .primary-heading {
+        text-align: left;
+        margin-left: .6em;
+    }
+
+    .secondary-heading {
+        text-align: left;
+        margin-left: 1em;
+    }
+
+    .smaller-heading {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    .viewport, .medium-viewport, .small-viewport {
+        width: 100%;
+        text-align: center;
+    }
+
+    .vector-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
     /* -- Alignment ----------------- */
     .small-center {
         text-align: center;
@@ -101,35 +125,20 @@
         padding: 0;
     }
 
-    /* ====== TEXT ============ */
+    /* -- Margins ------------ */
 
-    .primary-heading {
-        text-align: left;
-        margin-left: .6em;
-    }
-
-    .secondary-heading {
-        text-align: left;
-        margin-left: 1em;
-    }
-    .smaller-heading {
-        font-size: 1.2em;
-        font-weight: bold;
-    }
-    .viewport, .medium-viewport, .small-viewport {
-        width: 100%;
-        text-align: center;
+    .small-no-margins {
+        margin: 0;
     }
 
-    .vector-wrapper {
-        flex-direction: column;
-        align-items: center;
+    .small-all-margins {
+        margin: 1em;
     }
 
-    
+    .small-no-margin-bottom {
+        margin-bottom: 0;
+    }
 }
-
-
 /* +++++++++++ MID-SIZED SCREEN +++++++++++ */
 
 
