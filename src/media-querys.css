@@ -8,6 +8,10 @@
         min-width: 400px;
     }
 
+    .blue-button,
+    .green-button {
+        max-width: 85%;
+    }
     /* ======== HEADER SPECIFIC ======== */
 
     .header-ul {
@@ -88,6 +92,12 @@
         font-size: 1.2em;
         font-weight: bold;
     }
+
+    .descriptive-content {
+        text-align: left;
+        margin-left: 1em;
+    }
+
     .viewport, .medium-viewport, .small-viewport {
         width: 100%;
         text-align: center;
@@ -98,6 +108,10 @@
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
+    }
+
+    .market-vector-wrapper {
+        flex-wrap: wrap;
     }
 
 
@@ -143,13 +157,17 @@
     .small-margin-top {
         margin-top: 1em;
     }
-    
+
     .small-no-margin-top {
         margin-top: 0;
     }
 
     .small-no-margin-bottom {
         margin-bottom: 0;
+    }
+
+    .small-half-margin-bottom {
+        margin-bottom: .5em;
     }
 
 }
