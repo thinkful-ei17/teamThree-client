@@ -61,6 +61,7 @@
 
     /* ========= GENERAL ============ */
 
+
     .not-small {
         display: none;
     }
@@ -71,6 +72,7 @@
         justify-content: center;
     }
 
+    /* -- Alignment ----------------- */
     .small-center {
         text-align: center;
         margin-left: auto;
@@ -93,6 +95,11 @@
         margin-right: .8em;
     }
 
+    /* -- Padding ------------ */
+
+    .small-no-padding-right {
+        padding: 0;
+    }
     /* ====== TEXT ============ */
 
     .primary-heading {
