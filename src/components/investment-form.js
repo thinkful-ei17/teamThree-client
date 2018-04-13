@@ -72,7 +72,7 @@ export class InvestmentForm extends React.Component {
                             </label>
                         </div>    
                     </fieldset>
-                    <div className='right-align-object'>
+                    <div className='right-align-object small-center small-no-margins'>
                         <Link to={linkDestination}>
                             <Button class='blue-button' name='Invest' handleClick={this.invest} />
                         </Link>   
