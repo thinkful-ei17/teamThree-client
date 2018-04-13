@@ -36,7 +36,7 @@ export class Lvl2Portfolio extends React.Component {
 
         if (this.props.year === 10) {
             investmentLink = '/lvl2-five-year-market';
-            name = 'See Level 2 Five Year Review';
+            name = 'See Five Year Market Recap';
             handleClick = this.toLvl2FiveYearReview;
         } else {
             investmentLink = '/lvl2-investment-form';
