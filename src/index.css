@@ -338,6 +338,9 @@ body {
     margin-right: auto;
 }
 
+.pointer {
+    cursor: pointer;
+}
 /* MARKET ANALYSIS */
 
 .market-width {

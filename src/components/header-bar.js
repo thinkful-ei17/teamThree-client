@@ -34,7 +34,7 @@ export class HeaderBar extends React.Component {
         if (this.props.loggedIn) {
 
             logOutButton = (
-                <li  className="red btn-logout" onClick={() => this.logOut()}>
+                <li  className="red btn-logout pointer" onClick={() => this.logOut()}>
                     <Link to='/market-analysis' className='header-link'>Log Out</Link>
                 </li>
             );
@@ -61,13 +61,13 @@ export class HeaderBar extends React.Component {
 
         if (!this.props.loggedIn) {
             loginFormNav = (
-                <li className="login-text" href="#" onClick={() => this.props.dispatch(showLoginForm())} >Login</li>
+                <li className="login-text pointer" href="#" onClick={() => this.props.dispatch(showLoginForm())} >Login</li>
             );
             regFormNav = (
-                <li className="login-text" href="#" onClick={() => this.props.dispatch(showRegistrationForm())}>Sign Up</li>
+                <li className="login-text pointer" href="#" onClick={() => this.props.dispatch(showRegistrationForm())}>Sign Up</li>
             );
             demo = (
-                <li className="demo" onClick={() => this.onSubmit({username:'Demo1',password:'blahblahdemo1'})}>Demo Account</li>
+                <li className="demo pointer" onClick={() => this.onSubmit({username:'Demo1',password:'blahblahdemo1'})}>Demo Account</li>
             );
         }
 
