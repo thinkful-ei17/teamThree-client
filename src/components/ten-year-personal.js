@@ -46,7 +46,7 @@ export class TenYearPersonal extends React.Component {
         const yFormat = numeral(year.y).format('0,0');
         const previousYearFormat = numeral(year.previousYear).format('0,0');
         return (
-          <li key={index} className="blurb-wrapper">
+          <li key={index} className="blurb-wrapper left-align-object">
             Year {year.x}: {year.strategy}
             <br />
             Start: ${previousYearFormat}
@@ -62,7 +62,7 @@ export class TenYearPersonal extends React.Component {
         const yFormat = numeral(year.y).format('0,0');
         const previousYearFormat = numeral(year.previousYear).format('0,0');
         return (
-          <li key={index} className="blurb-wrapper">
+          <li key={index} className="blurb-wrapper left-align-object">
             Year {year.x}: {year.strategy}
             <br />
             Start: ${previousYearFormat}
@@ -143,18 +143,18 @@ export class TenYearPersonal extends React.Component {
         <h3 className='secondary-heading primary-text-color'>Your Portfolio Worth: ${currentFundFormat}</h3>
         <h3 className='descriptive-content accent-dk-green'>Change: ${overallChangeFormat}</h3>
         <h3 className='descriptive-content accent-dk-green'>Growth: {overallGrowth}%</h3>
-        <h3 className='secondary-heading primary-text-color'>Your Investment Strategy Vs Optimal Investment Strategy:</h3>
+        <h3 className='secondary-heading primary-text-color not-small'>Your Investment Strategy Vs Optimal Investment Strategy:</h3>
         {investmentReturnContent}
-        <h3 className='secondary-heading primary-text-color'> Your Investment Strategy by Year:</h3>
+        <h3 className='secondary-heading primary-text-color small-half-margin-bottom'> Your Investment Strategy by Year:</h3>
         <ul className="vector-wrapper">
           {listItemsToYear5}
         </ul>
         <ul className="vector-wrapper">
           {listItemsFromYear6To10}
         </ul>
-        <h3 className='secondary-heading primary-text-color'> Optimal Investment Strategy By Year:</h3>
+        <h3 className='secondary-heading primary-text-color small-half-margin-bottom'> Optimal Investment Strategy By Year:</h3>
         <ul className="vector-wrapper">
-          <li className="blurb-wrapper">
+          <li className="blurb-wrapper left-align-object">
             Year 1: Conservative
             <br />
             Start: $5,000
@@ -163,7 +163,7 @@ export class TenYearPersonal extends React.Component {
             <br />
             Change: 8.18%
           </li>
-          <li className="blurb-wrapper">
+          <li className="blurb-wrapper left-align-object">
             Year 2: Mattress
             <br />
             Start: $5,409
@@ -172,7 +172,7 @@ export class TenYearPersonal extends React.Component {
             <br />
             Change: 0%
           </li>
-          <li className="blurb-wrapper">
+          <li className="blurb-wrapper left-align-object">
             Year 3: Aggressive
             <br />
             Start: $5,409
@@ -181,7 +181,7 @@ export class TenYearPersonal extends React.Component {
             <br />
             Change: 24.99%
           </li>
-          <li className="blurb-wrapper">
+          <li className="blurb-wrapper left-align-object">
             Year 4: Aggressive
             <br />
             Start: $6,761
@@ -190,7 +190,7 @@ export class TenYearPersonal extends React.Component {
             <br />
             Change: 15.06%
           </li>
-          <li className="blurb-wrapper">
+          <li className="blurb-wrapper left-align-object">
             Year 5: Moderate
             <br />
             Start: $7,779
@@ -201,7 +201,7 @@ export class TenYearPersonal extends React.Component {
           </li>
         </ul>
         <ul className="vector-wrapper">
-          <li className="blurb-wrapper">
+          <li className="blurb-wrapper left-align-object">
             Year 6: Dollar Tree
             <br />
             Start: $8,113
@@ -210,7 +210,7 @@ export class TenYearPersonal extends React.Component {
             <br />
             Change: 48.96%
           </li>
-          <li className="blurb-wrapper">
+          <li className="blurb-wrapper left-align-object">
             Year 7: Aggressive
             <br />
             Start: $12,085
@@ -219,7 +219,7 @@ export class TenYearPersonal extends React.Component {
             <br />
             Change: 21.2%
           </li>
-          <li className="blurb-wrapper">
+          <li className="blurb-wrapper left-align-object">
             Year 8: Google
             <br />
             Start: $14,647
@@ -228,7 +228,7 @@ export class TenYearPersonal extends React.Component {
             <br />
             Change: 55.05%
           </li>
-          <li className="blurb-wrapper">
+          <li className="blurb-wrapper left-align-object">
             Year 9: Electronic Arts
             <br />
             Start: $22,710
@@ -237,7 +237,7 @@ export class TenYearPersonal extends React.Component {
             <br />
             Change: 106.07%
           </li>
-          <li className="blurb-wrapper">
+          <li className="blurb-wrapper left-align-object">
             Year 10: Electronic Arts
             <br />
             Start: $46,799
@@ -247,7 +247,7 @@ export class TenYearPersonal extends React.Component {
             Change: 42.36%
           </li>
         </ul>
-        <div className='right-align-object'>
+        <div className='right-align-object small-no-margins small-center'>
           <Link to='/investment-form'>
             <Button class='green-button' name='Start Over' handleClick={this.startOver}/>
           </Link>
