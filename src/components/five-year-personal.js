@@ -105,13 +105,13 @@ export class FiveYearPersonal extends React.Component {
         <h3 className='secondary-heading primary-text-color'>Your Portfolio Worth: ${currentFundFormat}</h3>
         <h3 className='descriptive-content accent-dk-green'>Change: ${overallChangeFormat}</h3>
         <h3 className='descriptive-content accent-dk-green'>Growth: {overallGrowth}%</h3>
-        <h3 className='secondary-heading primary-text-color'>Your Investment Strategy Vs Optimal Investment Strategy:</h3>
+        <h3 className='secondary-heading primary-text-color not-small'>Your Investment Strategy Vs Optimal Investment Strategy:</h3>
         {investmentReturnContent}
-        <h3 className='secondary-heading primary-text-color'> Your Investment Strategy by Year:</h3>
+        <h3 className='secondary-heading primary-text-color small-half-margin-bottom'> Your Investment Strategy by Year:</h3>
         <ul className="vector-wrapper">
           {listItems}
         </ul>
-        <h3 className='secondary-heading primary-text-color'> Optimal Investment Strategy By Year:</h3>
+        <h3 className='secondary-heading primary-text-color small-half-margin-bottom'> Optimal Investment Strategy By Year:</h3>
         <ul className="vector-wrapper">
             <li className="blurb-wrapper">
               Year 1: Conservative
@@ -160,7 +160,7 @@ export class FiveYearPersonal extends React.Component {
             </li>
         </ul>
 
-        <div className='right-align-object'>
+        <div className='right-align-object small-no-margins small-center'>
           <Link to='/completed-level-one'>
             <Button class='blue-button' name='Continue' handleClick={this.completeLvl1}/>
           </Link>
