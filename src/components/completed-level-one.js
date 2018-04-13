@@ -24,7 +24,7 @@ export function CompletedLevelOne(props){
                 <Button class='green-button' name='Return to Portfolio' handleClick={() => false} />
             </Link>
             <Link to='/lvl2-introduction'>
-                <Button class='blue-button' name='Proceed to Level 2' handleClick={() => clickedToProceed(props.currentFund)} />
+                <Button class='blue-button small-no-margin-top' name='Proceed to Level 2' handleClick={() => clickedToProceed(props.currentFund)} />
             </Link>
         </div>
     )

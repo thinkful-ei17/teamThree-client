@@ -34,12 +34,12 @@ export class IntroductionPage extends React.Component {
                 <h2 className="primary-heading">{this.props.introCard[this.props.numCard].title}</h2>
               </header>
               <main>
-                <section className='intro-description'>
+                <section className='intro-description small-left small-no-padding-right'>
                   <p className="descriptive-content primary-text-color intro-description-p">{this.props.introCard[this.props.numCard].detailA}</p>
                   <p className="descriptive-content primary-text-color intro-description-p">{this.props.introCard[this.props.numCard].detailB}</p>
                   <p className="descriptive-content primary-text-color intro-description-p intro-emphasis no-top-margin">{this.props.introCard[this.props.numCard].detailC}</p>
                 </section>
-                <div className='right-align-object intro-button-alignment'>
+                <div className='right-align-object intro-button-alignment small-right'>
                   <Link to={link}>
                     <Button class='blue-button no-top-margin' name='Got It!' handleClick={this.nextCardClick}/>
                   </Link>

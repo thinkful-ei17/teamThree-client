@@ -4,7 +4,7 @@ export default function RiskDetail(props){
 
     return(
        <div className='risk-detail'> 
-            <h3 className='secondary-heading primary-text-color'>{props.riskType}</h3>
+            <h3 className='secondary-heading primary-text-color small-center small-no-margin-bottom'>{props.riskType}</h3>
             <p className='risk-detail-units'>
                 {props.stocks}% Stocks
             </p>

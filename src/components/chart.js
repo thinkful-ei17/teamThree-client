@@ -5,7 +5,7 @@ import './chart.css';
 
 export default function Chart(props) {
     return (
-        <div className="chart">
+        <div className="chart not-small">
             <LineChart 
                 width={600}
                 height={600}

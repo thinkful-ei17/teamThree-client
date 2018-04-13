@@ -4,8 +4,10 @@ body * {
 
 body {
   margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
-
+  width: 100%;
   font-family: 'Lato', 'Roboto', Helvetica, sans-serif;
 }
 
@@ -141,6 +143,7 @@ body {
     background-color: #3478A2;
     color: #EDF8E8;
     width: 15em;
+    min-width: 260px;
     max-width: 48%;
     font-size: 1.3em;
     border-radius: 10px;
@@ -152,6 +155,7 @@ body {
     background-color: #5DCB6E ;
     color: #0C1F27;
     width: 15em;
+    min-width: 260px;
     max-width: 48%;
     font-size: 1.3em;
     border-radius: 10px;
@@ -161,13 +165,13 @@ body {
 
 .header-bar {
     display: flex;
-    text-align: center;
+    /* text-align: center; */
     height: 100px;
     background-color: #192C4D;
     color: #39A7B1;
 }
 
-.nav-bar-ul {
+.header-ul {
     list-style: none;
     margin: 0 auto;
     padding: 2em;
@@ -179,16 +183,25 @@ body {
     align-items: baseline;
 }
 
-.nav-bar-ul li {
+.header-li {
     text-decoration: none;
     list-style: none;
     text-align: left;
     margin: 0 1em;
 }
 
-.nav-bar-ul li a {
+.header-links {
+    display: flex;
+    flex: column;
+    align-items: baseline;
+}
+
+.header-link {
     text-decoration: none;
     color: #39A7B1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .appname {
@@ -201,7 +214,6 @@ body {
 .appname span {
     color: #5DCB6E;
 }
-
 
 /*INVESTMENT-FORM COMPONENT RADIO BUTTONS */
 
@@ -305,14 +317,25 @@ body {
     text-align: center;
 }
 
+
 .risk-details {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2.4em;
     display: flex;
-    justify-content: space-around;
-    width: 85%;
+    justify-content: space-between;
+    width: 87%;
+}
 
+.risk-overview-container {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pie-chart-container {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* MARKET ANALYSIS */
@@ -466,7 +489,7 @@ li {
  }
 
 .flex-end {
-    justify-content: flex-end   
+    justify-content: flex-end;  
 }
 
 .flex-row {
@@ -474,6 +497,14 @@ li {
     flex-direction: row;
     /* flex-wrap: wrap; */
     align-items: baseline;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.reverse-wrap {
+    flex-wrap: wrap-reverse;
 }
 
 .justify-between {

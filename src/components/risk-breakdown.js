@@ -19,7 +19,7 @@ export function RiskBreakdown(props){
     return (
         <div className='risk-breakdown viewport'>
             <h2 className='primary-heading left-align-object'>Risk Breakdown</h2>
-            <section className='risk-details'>
+            <section className='risk-details flex-row small-column'>
                 <div className='risk-overview-container'>
                 <RiskDetail riskType='Conservative' stocks='20' bonds='80'/>
                 <PieChart name='conservative' stocksValue={20} bondsValue={80} />

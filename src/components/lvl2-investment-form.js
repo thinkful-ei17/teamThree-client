@@ -89,48 +89,50 @@ export class Lvl2InvestmentForm extends React.Component {
                 <h3 className="secondary-heading primary-text-color margin-left-large">Current Fund: ${currentFundFormat}</h3>
 
                 <h3 className="secondary-heading primary-text-color margin-bottom  margin-left-med">How would you like to invest this year?</h3>
+
                 <h3 className='secondary-heading primary-text-color margin-bottom margin-left-extra-large'><span className={unassignedTextColor}>{unassigned}%</span> Unassigned</h3>
-                <fieldset className='investment-input-container no-border no-padding margin-bottom'>
-                    <div className='margin-left-large flex justify-around'>
+                <fieldset className='investment-input-container no-border no-padding margin-bottom small-no-margins'>
+                    <div className='margin-left-large flex justify-around small-no-margins'>
+
                         <div>
-                            <div className='padding'>
+                            <div className='padding small-width-150 small-height-150'>
                                 <input className='lvl2-investment-input accent-med-green descriptive-content margin-right' type='text' name='strategy' id='aggressive' value={aggressive} onChange={this.onChange.bind(this)} />
-                                <label className="descriptive-content primary-text-color margin-left" htmlFor='aggressive'>Aggressive</label>
+                                <label className="descriptive-content primary-text-color margin-left small-no-margins" htmlFor='aggressive'>Aggressive</label>
                             </div>
-                            <div className='padding'>
+                            <div className='padding small-width-150 small-height-150'>
                                 <input className='lvl2-investment-input accent-med-green descriptive-content margin-right' type='text' name='strategy' id='moderate' value={moderate} onChange={this.onChange.bind(this)} />
-                                <label className="descriptive-content primary-text-color margin-left" htmlFor='moderate'>Moderate</label>
+                                <label className="descriptive-content primary-text-color margin-left small-no-margins" htmlFor='moderate'>Moderate</label>
                             </div>
-                            <div className='padding'>
+                            <div className='padding small-width-150 small-height-150'>
                                 <input className='lvl2-investment-input accent-med-green descriptive-content margin-right' type='text' name='strategy' id='conservative' value={conservative} onChange={this.onChange.bind(this)} />
-                                <label className="descriptive-content primary-text-color margin-left" htmlFor='conservative'>Conservative</label>
+                                <label className="descriptive-content primary-text-color margin-left small-no-margins" htmlFor='conservative'>Conservative</label>
                             </div>
-                            <div className='padding'>
+                            <div className='padding small-width-150 small-height-150'>
                                 <input className='lvl2-investment-input accent-med-green descriptive-content margin-right' type='text' name='strategy' id='mattress' value={mattress} onChange={this.onChange.bind(this)} />
-                                <label className="descriptive-content primary-text-color margin-left" htmlFor='mattress'>Mattress</label>
+                                <label className="descriptive-content primary-text-color margin-left small-no-margins" htmlFor='mattress'>Mattress</label>
                             </div>
                         </div>
                         <div>
-                            <div className='padding'>
+                            <div className='padding small-width-150 small-height-150'>
                                 <input className='lvl2-investment-input accent-med-green descriptive-content margin-right' type='text' name='strategy' id='google' value={google} onChange={this.onChange.bind(this)} />
-                                <label className="descriptive-content primary-text-color margin-left" htmlFor='google'>Google</label>
+                                <label className="descriptive-content primary-text-color margin-left small-no-margins" htmlFor='google'>Google</label>
                             </div>
-                            <div className='padding'>
+                            <div className='padding small-width-150 small-height-150'>
                                 <input className='lvl2-investment-input accent-med-green descriptive-content margin-right' type='text' name='strategy' id='autoZone' value={autoZone} onChange={this.onChange.bind(this)} />
-                                <label className="descriptive-content primary-text-color margin-left" htmlFor='autoZone'>AutoZone</label>
+                                <label className="descriptive-content primary-text-color margin-left small-no-margins" htmlFor='autoZone'>AutoZone</label>
                             </div>
-                            <div className='padding'>
+                            <div className='padding small-width-150 small-height-150'>
                                 <input className='lvl2-investment-input accent-med-green descriptive-content margin-right' type='text' name='strategy' id='dollarTree' value={dollarTree} onChange={this.onChange.bind(this)} />
-                                <label className="descriptive-content primary-text-color margin-left" htmlFor='dollarTree'>Dollar Tree</label>
+                                <label className="descriptive-content primary-text-color margin-left small-no-margins" htmlFor='dollarTree'>Dollar Tree</label>
                             </div>
-                            <div className='padding'>
+                            <div className='padding small-width-150 small-height-150'>
                                 <input className='lvl2-investment-input accent-med-green descriptive-content margin-right' type='text' name='strategy' id='ea' value={ea} onChange={this.onChange.bind(this)} />
-                                <label className="descriptive-content primary-text-color margin-left" htmlFor='ea'>Electronic Arts</label>
+                                <label className="descriptive-content primary-text-color margin-left small-no-margins" htmlFor='ea'>Electronic Arts</label>
                             </div>
                         </div>
                     </div>
                 </fieldset>
-                <div className='right-align-object'>
+                <div className='right-align-object small-no-margins small-center'>
                     <Link to={lvl2MarketAnalysis}>
                         <Button class='blue-button' name='Invest' handleClick={this.invest} />
                     </Link>   

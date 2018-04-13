@@ -85,12 +85,12 @@ export class InvestmentReturn extends React.Component {
                             <p className='margin-left'> ${currentFundFormat} </p>
                         </div>
                     </div>
-                    <div>
+                    <div className='small-margin-top'>
                         <Link to='/portfolio'>
-                            <Button class='green-button no-left-margin' name='Return to Portfolio' handleClick={this.returnToPortfolio} />
+                            <Button class='green-button no-left-margin small-all-margins' name='Return to Portfolio' handleClick={this.returnToPortfolio} />
                         </Link>
                         <Link to={investmentLink}>
-                            <Button class='blue-button' name={name} handleClick={handleClick} />
+                            <Button class='blue-button small-no-margin-top' name={name} handleClick={handleClick} />
                         </Link>
                     </div>    
                 </div>

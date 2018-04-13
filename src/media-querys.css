@@ -1,0 +1,193 @@
+
+/* ++++++++++++++++ SMALLEST SCREEN ++++++++++ */
+
+@media (max-width: 674px){
+
+    .html {
+        width: 100%;
+        min-width: 400px;
+    }
+
+    .blue-button,
+    .green-button {
+        max-width: 85%;
+    }
+    /* ======== HEADER SPECIFIC ======== */
+
+    .header-ul {
+        height: 145px;
+        background-color: #192C4D;
+        padding-right: .5em;
+        padding-left: .5em;
+        position: fixed;
+        z-index: 10;
+    }
+
+    .header-links {
+        width: 100%;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 1em;
+        z-index: 10;
+    }
+
+    /* ======= INTRO ============ */
+
+    .intro-button-alignment {
+        padding-right: 0; 
+    }
+    /* ========= RISK BREAKDOWN =========== */
+   
+    .risk-overview-container {
+        width: 85%;
+    }
+
+    .risk-detail-units {
+        display: inline-block;
+        padding: .5em;
+        margin: .2em;
+        font-size: 1.5em;
+    }
+
+    .pie-chart-container{
+        width: 50%;
+        padding-bottom: 1em;
+        
+    }
+
+    /* ======= MARKET ANALYSIS ===== */
+    
+    .market-width {
+        width: 150px;
+    }
+
+    /* ==== LVL2 INVESTMENT FORM ==== */
+
+
+
+    /* ========= GENERAL ============ */
+
+
+    .not-small {
+        display: none;
+    }
+
+    .small-column {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+   
+    /* ====== TEXT ============ */
+
+    .primary-heading {
+        font-size: 2.7em;
+        text-align: left;
+        margin-left: .6em;
+    }
+
+    .secondary-heading {
+        text-align: left;
+        margin-left: 1em;
+    }
+
+    .smaller-heading {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    .descriptive-content {
+        text-align: left;
+        margin-left: 1em;
+    }
+
+    .viewport, .medium-viewport, .small-viewport {
+        width: 100%;
+        text-align: center;
+    }
+
+    .vector-wrapper {
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .market-vector-wrapper {
+        flex-wrap: wrap;
+    }
+
+
+    /* -- Alignment ----------------- */
+    .small-center {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;   
+    }
+
+    .small-left {
+        text-align: left;
+    }
+
+    .small-right {
+        text-align: right;
+    }
+
+    .small-width   {
+        width: 85%;
+    }
+
+    .right-align-object {
+        margin-right: .8em;
+    }
+
+    .small-width-150 {
+        width: 150px;
+    }
+
+    .small-height-150 {
+        height: 150px;
+    }
+
+    /* -- Padding ------------ */
+
+    .small-no-padding-right {
+        padding: 0;
+    }
+
+    /* -- Margins ------------ */
+
+    .small-no-margins {
+        margin: 0;
+    }
+
+    .small-all-margins {
+        margin: 1em;
+    }
+
+    .small-margin-top {
+        margin-top: 1em;
+    }
+
+    .small-no-margin-top {
+        margin-top: 0;
+    }
+
+    .small-no-margin-bottom {
+        margin-bottom: 0;
+    }
+
+    .small-half-margin-bottom {
+        margin-bottom: .5em;
+    }
+
+}
+/* +++++++++++ MID-SIZED SCREEN +++++++++++ */
+
+
+@media (max-width: 730px){
+    .appname {
+        margin-right: .2em;
+    }
+}
