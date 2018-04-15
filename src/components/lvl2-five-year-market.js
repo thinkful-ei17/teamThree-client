@@ -46,7 +46,7 @@ export class Lvl2FiveYearMarket extends React.Component {
             const yFormat = numeral(risk.y).format('$0,0');
             const amtChangeFormat = numeral(risk.amtChange).format('0,0');
             return (
-              <li key={id} className="market-blurb-wrapper">
+              <li key={id} className="market-blurb-wrapper left-align-object">
                 <div className='column-heading'>Year {risk.x}</div>
                 Balance: {yFormat}
                 <br />
@@ -62,7 +62,7 @@ export class Lvl2FiveYearMarket extends React.Component {
           const yFormat = numeral(risk.y).format('$0,0');
           const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
-            <li key={id} className="market-blurb-wrapper">
+            <li key={id} className="market-blurb-wrapper left-align-object">
               <div className='column-heading'>Year {risk.x}</div>
               Balance: {yFormat}
               <br />
@@ -78,7 +78,7 @@ export class Lvl2FiveYearMarket extends React.Component {
           const yFormat = numeral(risk.y).format('$0,0');
           const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
-            <li key={id} className="market-blurb-wrapper">
+            <li key={id} className="market-blurb-wrapper left-align-object">
               <div className='column-heading'>Year {risk.x}</div>
               Balance: {yFormat}
               <br />
@@ -94,7 +94,7 @@ export class Lvl2FiveYearMarket extends React.Component {
           const yFormat = numeral(risk.y).format('$0,0');
           const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
-            <li key={id} className="market-blurb-wrapper">
+            <li key={id} className="market-blurb-wrapper left-align-object">
               <div className='column-heading'>Year {risk.x}</div>
               Balance: {yFormat}
               <br />
@@ -110,7 +110,7 @@ export class Lvl2FiveYearMarket extends React.Component {
           const yFormat = numeral(risk.y).format('$0,0');
           const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
-            <li key={id} className="market-blurb-wrapper">
+            <li key={id} className="market-blurb-wrapper left-align-object">
               <div className='column-heading'>Year {risk.x}</div>
               Balance: {yFormat}
               <br />
@@ -126,7 +126,7 @@ export class Lvl2FiveYearMarket extends React.Component {
           const yFormat = numeral(risk.y).format('$0,0');
           const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
-            <li key={id} className="market-blurb-wrapper">
+            <li key={id} className="market-blurb-wrapper left-align-object">
               <div className='column-heading'>Year {risk.x}</div>
               Balance: {yFormat}
               <br />
@@ -142,7 +142,7 @@ export class Lvl2FiveYearMarket extends React.Component {
           const yFormat = numeral(risk.y).format('$0,0');
           const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
-            <li key={id} className="market-blurb-wrapper">
+            <li key={id} className="market-blurb-wrapper left-align-object">
               <div className='column-heading'>Year {risk.x}</div>
               Balance: {yFormat}
               <br />
@@ -158,7 +158,7 @@ export class Lvl2FiveYearMarket extends React.Component {
           const yFormat = numeral(risk.y).format('$0,0');
           const amtChangeFormat = numeral(risk.amtChange).format('0,0');
           return (
-            <li key={id} className="market-blurb-wrapper">
+            <li key={id} className="market-blurb-wrapper left-align-object">
               <div className='column-heading'>Year {risk.x}</div>
               Balance: {yFormat}
               <br />
@@ -285,41 +285,41 @@ export class Lvl2FiveYearMarket extends React.Component {
           <h2 className='primary-heading'>Market Recap: Years 6-10</h2>
           {investmentReturnContent}
           <h2 className='secondary-heading primary-text-color'> Investment Outcomes By Year:</h2>
-          <h3 className='descriptive-content primary-text-color'>Aggressive</h3>
-          <ul className="market-vector-wrapper">
+          <h3 className='descriptive-content primary-text-color small-half-margin-bottom'>Aggressive</h3>
+          <ul className="market-vector-wrapper small-no-margin-top">
             {listItemsAggressive}
           </ul>
-          <h3 className='descriptive-content primary-text-color'>Moderate</h3>
-          <ul className="market-vector-wrapper">
+          <h3 className='descriptive-content primary-text-color small-half-margin-bottom'>Moderate</h3>
+          <ul className="market-vector-wrapper small-no-margin-top">
             {listItemsModerate}
           </ul>
-          <h3 className='descriptive-content primary-text-color'>Conservative</h3>
-          <ul className="market-vector-wrapper">
+          <h3 className='descriptive-content primary-text-color small-half-margin-bottom'>Conservative</h3>
+          <ul className="market-vector-wrapper small-no-margin-top">
             {listItemsConservative}
           </ul>
-          <h3 className='descriptive-content primary-text-color'>Mattress</h3>
-          <ul className="market-vector-wrapper">
+          <h3 className='descriptive-content primary-text-color small-half-margin-bottom'>Mattress</h3>
+          <ul className="market-vector-wrapper small-no-margin-top">
              {listItemsMattress}
           </ul>
-          <h3 className='descriptive-content primary-text-color'>Google</h3>
-          <ul className="market-vector-wrapper">
+          <h3 className='descriptive-content primary-text-color small-half-margin-bottom'>Google</h3>
+          <ul className="market-vector-wrapper small-no-margin-top">
              {listItemsGoogle}
           </ul>
-          <h3 className='descriptive-content primary-text-color'>AutoZone</h3>
-          <ul className="market-vector-wrapper">
+          <h3 className='descriptive-content primary-text-color small-half-margin-bottom'>AutoZone</h3>
+          <ul className="market-vector-wrapper small-no-margin-top">
              {listItemsAutoZone}
           </ul>
-          <h3 className='descriptive-content primary-text-color'>Dollar Tree</h3>
-          <ul className="market-vector-wrapper">
+          <h3 className='descriptive-content primary-text-color small-half-margin-bottom'>Dollar Tree</h3>
+          <ul className="market-vector-wrapper small-no-margin-top">
              {listItemsDollarTree}
           </ul>
-          <h3 className='descriptive-content primary-text-color'>Electronic Arts</h3>
-          <ul className="market-vector-wrapper">
+          <h3 className='descriptive-content primary-text-color small-half-margin-bottom'>Electronic Arts</h3>
+          <ul className="market-vector-wrapper small-no-margin-top">
              {listItemsElectronicArts}
           </ul>
-          <div className='right-align-object'>  
+          <div className='right-align-object small-no-margins small-center'>  
             <Link to='/ten-year-personal'>
-                <Button class='blue-button margin-right' name="Compare Personal Success" handleClick={ () => false} />
+                <Button class='blue-button margin-right small-all-margins' name="Compare Personal Success" handleClick={ () => false} />
             </Link>
           </div>
         </div>

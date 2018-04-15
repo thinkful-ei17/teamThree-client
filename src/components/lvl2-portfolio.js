@@ -73,7 +73,7 @@ export class Lvl2Portfolio extends React.Component {
                     <Button class='green-button' name='Review Investment Data' handleClick={this.toInvestmentData}/>
                 </Link>
                 <Link to={investmentLink}>
-                    <Button class='blue-button' name={name} handleClick={handleClick}/> 
+                    <Button class='blue-button small-no-margin-top' name={name} handleClick={handleClick}/> 
                 </Link>
             </div> 
         );

@@ -9,7 +9,7 @@ import App from './components/app';
 import store from './store';
 
 import './index.css';
-import './media-querys.css'
+import './media-querys.css';
 
 ReactDOM.render(
     <Provider store={store}>

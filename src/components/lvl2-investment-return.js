@@ -66,7 +66,7 @@ export class Lvl2InvestmentReturn extends React.Component {
                     <h2 className='primary-heading'>Investment Returns: Year {year}</h2>
                     <Chart yMin={0} xMax={10} data={data} />
 
-                    <h3 className='secondary-heading primary-text-color'>Portfolio Summary Year {year}:</h3>
+                    <h3 className='secondary-heading primary-text-color small-padding-right'>Portfolio Summary Year {year}:</h3>
 
                     <div className="vector-wrapper flex-start">
                         <div className='blurb-wrapper descriptive-content flex-row min-width-blurb'>
@@ -84,10 +84,10 @@ export class Lvl2InvestmentReturn extends React.Component {
                     </div>
                     <div>
                         <Link to='/lvl2-portfolio'>
-                            <Button class='green-button no-left-margin' name='Return to Portfolio' handleClick={this.returnToPortfolio} />
+                            <Button class='green-button no-left-margin small-all-margins' name='Return to Portfolio' handleClick={this.returnToPortfolio} />
                         </Link>
                         <Link to={investmentLink}>
-                            <Button class='blue-button' name={name} handleClick={handleClick} />
+                            <Button class='blue-button small-no-margin-top' name={name} handleClick={handleClick} />
                         </Link>
                     </div>
                 </div>
