@@ -27,15 +27,15 @@ export class RegistrationForm extends React.Component {
       
                
                 <form
-                    className="login-form registration-form"
+                    className="registration-form"
                     onSubmit={this.props.handleSubmit(values =>
                         this.onSubmit(values)
                     )}>
                      <span className="close js-close" onClick={() => this.props.dispatch(hideRegistrationForm())}> &times; </span>
-                     <div className='flex-column'>
+                     <div className='field-container'>
                         <div className='form-div'>
                             <label className="app-label" htmlFor="firstName">First name</label>
-                            <Field component={Input} type="text" name="firstName" />
+                            <Field  component={Input} type="text" name="firstName" />
                         </div>
                         <div className='form-div'>
                             <label className="app-label" htmlFor="lastName">Last name</label>
@@ -56,7 +56,7 @@ export class RegistrationForm extends React.Component {
                         </div>
                         <div className='form-div'>
                             <label className="app-label" htmlFor="username">Username</label>
-                            <Field
+                            <Field 
                                 component={Input}
                                 type="text"
                                 name="username"
@@ -65,7 +65,7 @@ export class RegistrationForm extends React.Component {
                         </div>
                         <div className='form-div'>
                             <label className="app-label" htmlFor="password">Password</label>
-                            <Field
+                            <Field 
                                 component={Input}
                                 type="password"
                                 name="password"
@@ -74,7 +74,8 @@ export class RegistrationForm extends React.Component {
                         </div>
                         <div className='form-div'>
                             <label className="app-label" htmlFor="passwordConfirm">Confirm password</label>
-                            <Field
+                            <Field 
+                            
                                 component={Input}
                                 type="password"
                                 name="passwordConfirm"
