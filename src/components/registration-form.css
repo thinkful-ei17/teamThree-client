@@ -72,11 +72,13 @@
   .registration-form .field-container {
     width: 600px;
     height: 350px;
+    text-align: right;
     overflow-y: auto;
   }
 
   .registration-form .form-div{
     display: inline-block;
+    text-align: left;
     margin-left: 24px;
     margin-right: 24px;
   }
