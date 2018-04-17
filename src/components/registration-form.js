@@ -32,7 +32,7 @@ export class RegistrationForm extends React.Component {
                         this.onSubmit(values)
                     )}>
                      <span className="close js-close" onClick={() => this.props.dispatch(hideRegistrationForm())}> &times; </span>
-                     <div className='field-container'>
+                    <div className='field-container'>
                         <div className='form-div'>
                             <label className="app-label" htmlFor="firstName">First name</label>
                             <Field  component={Input} type="text" name="firstName" />

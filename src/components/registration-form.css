@@ -25,7 +25,7 @@
 .registration-form input {
   width: 250px;
   color: #B6DF9B;
-  font-size: 32px;
+  font-size: 28px;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -65,19 +65,28 @@
 @media (min-width: 650px ){
 
   .registration-form {
-    height: 500px;
-    max-width:756px;
-    align-items: flex-end;
+    width: 700px;
+    height: 500px; 
+  }
+
+  .registration-form .field-container {
+    width: 600px;
+    height: 350px;
+    overflow-y: auto;
+  }
+
+  .registration-form .form-div{
+    display: inline-block;
+    margin-left: 24px;
+    margin-right: 24px;
   }
 
   .registration-form .close {
-    align-self: center;
+    left: 280px;
   }
 
-  .flex-column {
-    flex-wrap: wrap;
-    width: 100%;
-    align-self: center;
+  .registration-form button {
+    margin-top: .2em;
   }
 
 }
