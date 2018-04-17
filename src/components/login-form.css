@@ -60,3 +60,13 @@
   z-index: 2; 
 }
 
+@media (min-width: 500px){
+  .login-form {
+    width: 380px;
+  }
+
+  .login-form .close {
+    left: 316px;
+  }
+}
+
