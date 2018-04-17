@@ -1,28 +1,58 @@
-.registration-form {
-  overflow: auto;
-  width: 100%;
-  max-width: 400px;
-  height: 30em;
-  max-height: 100%;
-  display: flex;
-  flex-direction: column;
+.registration-form { 
   margin: 0;
-  padding: 2em;
-  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color:#3478A2;
+
+  width: 350px;
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+
+  position: relative;
+  top: 75px;
+
+  color: #EDF8E8;
+  font-size: 28px;
+  border-radius: 10px;
 }
 
 .form-div {
-  margin-left: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.registration-form input {
+  width: 250px;
+  color: #B6DF9B;
+  font-size: 28px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: transparent;
+}
+
+.registration-form .field-container {
+  text-align: left;
 }
 
 .registration-form button {
+  height: 48px;
+  width: 250px;
   margin-top: 2em;
-  width: 300px;
-  max-width: 100%;
+  margin-bottom: 2em;
+  font-size: 1em;
+  background-color: #EDF8E8;
+  border-radius: 7px;
+  border: 4px solid #5DCB6E;
 }
 
 .registration-form .close {
-  display: flex;
+  color:#EDF8E8;
+  font-size: 56px;
+  position: relative;
+  left: 144px; 
+  z-index: 2; 
 }
 
 .flex-column {
@@ -35,19 +65,30 @@
 @media (min-width: 650px ){
 
   .registration-form {
-    height: 500px;
-    max-width:756px;
-    align-items: flex-end;
+    width: 700px;
+    height: 500px; 
+  }
+
+  .registration-form .field-container {
+    width: 600px;
+    height: 350px;
+    text-align: right;
+    overflow-y: auto;
+  }
+
+  .registration-form .form-div{
+    display: inline-block;
+    text-align: left;
+    margin-left: 24px;
+    margin-right: 24px;
   }
 
   .registration-form .close {
-    align-self: center;
+    left: 280px;
   }
 
-  .flex-column {
-    flex-wrap: wrap;
-    width: 100%;
-    align-self: center;
+  .registration-form button {
+    margin-top: .2em;
   }
 
 }

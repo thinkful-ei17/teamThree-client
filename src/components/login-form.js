@@ -33,6 +33,7 @@ export class LoginForm extends React.Component {
                 )}>
                 
                 <span className="close js-close" onClick={() => this.props.dispatch(hideLoginForm())}> &times; </span>
+                <div className="field-container">
                 {error}
                 <label className="app-label" htmlFor="username">Username</label>
                 <Field
@@ -54,7 +55,8 @@ export class LoginForm extends React.Component {
                     className='user-form-button'
                     disabled={this.props.pristine || this.props.submitting}>
                     Log in
-                </button> 
+                </button>
+               </div> 
             </form>
         );
     }
