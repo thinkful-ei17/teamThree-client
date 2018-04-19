@@ -1,4 +1,6 @@
 
+##CENTSIBLE - The investment learning app
+
 
 ## Table of Contents
 
