@@ -1,21 +1,6 @@
 
 # CENTSIBLE - The Investment Learning App
 
-
-## Table of Contents
-
-- [Project Description](#Product-Description)
-- [Application Links](#Link-to-Deployed-Application)
-- [Application Release version](#Release Version)
-- [User Guide](#User Guide)
-- [Tech Resources used in this application](#Tech-Stack)
-- [Server side REST API description](#Server- REST API)
-- [Client component description](#Client - Components)
-- [Defects](#Defects)
-- [Defects fixed in this release](#Defects Fixed)
-
-
-
 ## Project Description
 Centible is an investment learning tool, which allows users to experiment with investing in low to high risk funds.  Users learn how a mix of stocks and bonds define a strategy as low, moderate or high.  Based on this information, users select an investment strategy for year 1 through 5 and are able to see how their investments (gain/losses) compare with real market data over the same period.  Throughout the application, users are provided with textual descriptions and graphs which depict their investment selections and resulting data.  
 
