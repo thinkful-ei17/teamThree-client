@@ -1,5 +1,5 @@
 
-##CENTSIBLE - The investment learning app
+# CENTSIBLE - The Investment Learning App
 
 
 ## Table of Contents
@@ -16,32 +16,23 @@
 
 
 
-#Project Description
+## Project Description
 Centible is an investment learning tool, which allows users to experiment with investing in low to high risk funds.  Users learn how a mix of stocks and bonds define a strategy as low, moderate or high.  Based on this information, users select an investment strategy for year 1 through 5 and are able to see how their investments (gain/losses) compare with real market data over the same period.  Throughout the application, users are provided with textual descriptions and graphs which depict their investment selections and resulting data.  
 
-#Link to Deployed Application 
+##### Live Deploy:  https://centsible.netlify.com/
 
-Client:  https://nifty-bartik-6de922.netlify.com/
-Server:  https://teamthree-server.herokuapp.com
-MongoDb-production: mongodb://Jc:Asdfasdf1@ds123919.mlab.com:23919/teamthree
-MongoDb-test: mongodb://Jc:Asdfasdf1@ds123919.mlab.com:23919/teamthree-test
+## Release Version
+v2.2.0
 
-# Release Version
-v1.0.0
+## Tech Stack
 
-# User Guide
-User Guide Location:  Not yet available
-
-#Tech Stack
-
-* Node.js
-* Express.js
-* Mocha and Chai
-* Mongoose and MongoDB
-* Travis CI, Netlify, and Heroku for CICD
 * Front End: HTML, CSS, JavaScript, React, Redux
+* Back End: Node.js, Express.js
+* Testing: Mocha and Chai
+* Database: Mongoose and MongoDB
+* Hosting: Travis CI, Netlify, and Heroku for CICD
 
-#Server - REST API
+## Server - REST API
 
 * User Router:
   *  POST - /api/users
@@ -87,7 +78,7 @@ User Guide Location:  Not yet available
         Required Fields: none
 
 
-#Client - Components
+## Client - Components
 
 * App
     Purpose: Start of application
@@ -247,11 +238,11 @@ User Guide Location:  Not yet available
 
 
 
-# Defects
+## Defects
 
 
 
-# Defects fixed in this release
+## Defects fixed in this release
 
 
 
