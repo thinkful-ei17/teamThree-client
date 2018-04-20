@@ -9,6 +9,30 @@ Centible is an investment learning tool, which allows users to experiment with i
 ## Release Version
 v2.2.0
 
+## Screenshots
+
+Splash Page:
+----------------------------------------------------------------------------------------------
+![SplashPage](./screenshots/centsible-splash-page.png "SplashPage")
+
+Intro Page:
+----------------------------------------------------------------------------------------------
+![IntroPage](./screenshots/centsible-intro-page.png "IntroPage")
+
+Level 1 Invest Page:
+----------------------------------------------------------------------------------------------
+![Level1InvestPage](./screenshots/centsible-lvl1-invest-page.png "Level1InvestPage")
+
+Level 2 Invest Page:
+----------------------------------------------------------------------------------------------
+![Level2InvestPage](./screenshots/centsible-lvl2-invest-page.png "Level2InvestPage")
+
+Portfolio:
+----------------------------------------------------------------------------------------------
+![Portfolio](./screenshots/centsible-portfolio.png "Portfolio")
+
+
+
 ## Tech Stack
 
 * Front End: HTML, CSS, JavaScript, React, Redux
